@@ -1,0 +1,24 @@
+.p-blog__title::before {
+	content: "Blog";
+	display: block;
+	font-size: rem(50);
+	font-weight: normal;
+	left: 50%;
+	opacity: 0.2;
+	position: absolute;
+	top: rem(-49);
+	transform: translateX(-50%);
+}
+
+.p-blog__items {
+	margin-top: rem(64);
+}
+
+.p-blog__item + .p-blog__item {
+	margin-top: rem(24);
+}
+
+.p-blog__btn {
+	margin-top: rem(24);
+}
+

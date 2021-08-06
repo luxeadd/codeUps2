@@ -1,0 +1,29 @@
+.p-content-box {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.p-content-box__item {
+  position: relative;
+  flex: 0 0 50%;
+}
+
+.p-content-box__link{
+
+}
+
+.p-content-box__link img {
+
+}
+
+.p-content-box__text {
+  font-size: rem(20);
+  font-weight: 400;
+  letter-spacing: 0.02em;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 100%;
+  text-align: center;
+}

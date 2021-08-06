@@ -1,0 +1,31 @@
+.p-news-info{
+
+}
+
+.p-news-info__head {
+   display:  flex;
+}
+
+.p-news-info__date{
+
+
+}
+
+.p-news-info__category {
+   font-size: rem(14);
+   line-height: 1;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   border: 1px solid $text-color;
+   padding: rem(5) rem(20);
+   margin-left: rem(30);
+}
+
+.p-news-info__body {
+  margin-top: rem(16);
+}
+
+.p-news-info__text {
+  line-height: (23 / 16);
+}

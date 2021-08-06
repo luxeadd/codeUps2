@@ -1,0 +1,38 @@
+.p-contact {
+   padding-top: rem(64);
+   padding-bottom: rem(64);
+   background: #3D3D3D;
+}
+
+
+.p-contact__title {
+   font-size: rem(25);
+   letter-spacing: 0.02em;
+
+
+  &::before {
+    content: "Contact";
+    display: block;
+    font-size: rem(50);
+    font-weight: normal;
+    position: absolute;
+    top: rem(-49);
+    left: 50%;
+    transform: translateX(-50%);
+    color: $title-color;
+    opacity: 0.2;
+    font-family: $font-family-sub;
+  }
+}
+
+.p-contact__text {
+  margin-top: rem(16);
+  font-size: rem(16);
+  letter-spacing: 0.13em;
+  line-height: (23 / 16);
+
+}
+
+.p-contact__btn {
+ margin-top: rem(40);
+}

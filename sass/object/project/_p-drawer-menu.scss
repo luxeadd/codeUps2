@@ -1,0 +1,31 @@
+.p-drawer-menu {
+  width: 100%;
+  max-width: rem(520);
+  margin-left: auto;
+  height: 100vh;
+  background: $background;
+  z-index: 100;
+  text-align: center;
+  transform: translateX(200%);
+  transition: all 0.3s;
+
+  &.open {
+    transform: translateX(0);
+  }
+}
+
+
+.p-drawer-menu__items {
+ 
+}
+
+.p-drawer-menu__item a{
+  display: block;
+  width: 100%;
+  padding: rem(15) 0;
+  line-height: 1;
+  letter-spacing: 0.2em;
+
+
+
+}

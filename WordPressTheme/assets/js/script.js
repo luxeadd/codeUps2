@@ -22,6 +22,26 @@ jQuery(function() {
 		return false;
 	});
 
+	//ナビバートグル
+$('.js-hamburger').on('click', function () {
+	if($('.js-hamburger').hasClass('open')) {
+		$('.js-drawer-menu').removeClass('open');
+		$('.js-overlay').fadeOut();
+		$(this).removeClass('open');
+	} else {
+		$('.js-drawer-menu').addClass('open');
+		$('.js-overlay').fadeIn();
+		$(this).addClass('open');
+	 }
+  });
+
+$('.js-overlay').on('click', function () {
+		$('.js-drawer-menu').removeClass('open');
+		$('.js-hamburger').removeClass('open');
+		$(this).fadeOut();
+  });
+
+
 	/* スムーススクロール */
 	jQuery('a[href^="#"]').click(function() {
 		let header = jQuery(".js-header").height();
@@ -54,4 +74,91 @@ jQuery(function() {
 			});
 	}
 });
+
+
+//Swiper-------------------------------------------------------------------
+     const swiper = new Swiper('.js-mv-swiper-container', {
+   　//自動スライド
+       autoplay: {
+         delay: 2000,
+        
+       },
+      
+     //切り替えエフェクトの指定
+       //slide  fade  cube coverflow  flip
+     effect: "fade",
+    
+     //切り替わる速さ
+     speed: 4000,
+     
+     //ループの有無
+     loop: true,
+   
+     // If we need pagination
+     pagination: {
+      el: '.swiper-pagination',
+       clickable : true,
+      },
+     
+     // Navigation arrows
+    //  navigation: {
+    //    nextEl: '.swiper-button-next',
+    //    prevEl: '.swiper-button-prev',
+    //   },
+     // And if we need scrollbar
+     // scrollbar: {
+     // el: '.swiper-scrollbar',
+     // },
+   
+   //ビューごとのスライド
+    // speed: 600,
+     //loopedSlides: 6,
+     //sp
+     //spaceBetween: 24,
+     //width: 274,
+     //pc,tab
+     //breakpoints: {
+       //768: {
+         //spaceBetween: 40,
+         //width: 400,
+       //}
+    //}
+     });
+
+		    // べージトップボタン=========================
+				jQuery('.js-to-top').click(function() {
+					jQuery('html,body').animate({scrollTop:0},'500');
+					});
+				 
+				 // page-topクラスをクリックでイベント発火。html,bodyで全体の情報を取得しanimateメソッドで移動をかける。500ms（0.5秒）でTopまでスクロール
+				 
+				 jQuery('.js-to-top').hide();
+				 // page-topクラスを消す
+				 jQuery(window).scroll(function () {
+					 if($(window).scrollTop() > 80 ) {
+						jQuery('.js-to-top').slideDown(300);
+					 } else {
+						jQuery('.js-to-top').slideUp(300);
+						}
+					});
+				 
+				 // ウインドウをスクロールしてイベント発火
+				 // ウインドウを80px TopからスクロールしたらslideDownで表示。0.3秒で
+				 
+					 
+			//スティッキーヘッダー=======================
+     //スクロールしたらheaderの色を変える
+    //headerにchange-colorクラスをつけ色を指定
+    jQuery(window).on('scroll', function () {
+			var MV =  jQuery(".p-mv").innerHeight(); //headerの高さ取得 
+			if (  MV <  jQuery(this).scrollTop()) { 
+			 jQuery('.p-header').addClass('change-color'); }
+			else {
+			 jQuery('.p-header').removeClass('change-color'); } });
+ 
+
+		
+
+
 });
+

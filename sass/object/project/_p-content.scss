@@ -1,0 +1,28 @@
+.p-content{
+
+}
+
+.p-content__title {
+
+  &::before {
+    content: "Content";
+    display: block;
+    font-size: rem(50);
+    font-weight: normal;
+    position: absolute;
+    top: rem(-49);
+    left: 50%;
+    transform: translateX(-50%);
+    color: $title-color;
+    opacity: 0.2;
+    font-family: $font-family-sub;
+  }
+
+ 
+}
+
+.p-content__items {
+  margin-top: rem(48);
+
+}
+

@@ -1,0 +1,37 @@
+.p-blog {
+
+}
+.p-blog__title {
+
+  &::before {
+    content: "Blog";
+    display: block;
+    font-size: rem(50);
+    font-weight: normal;
+    position: absolute;
+    top: rem(-49);
+    left: 50%;
+    transform: translateX(-50%);
+    color: $title-color;
+    opacity: 0.2;
+    font-family: $font-family-sub;
+  }
+}
+
+.p-blog__items{
+   margin-top: rem(64);
+
+}
+
+.p-blog__item {
+
+  &+& {
+    margin-top: rem(24);
+
+  }
+}
+
+.p-blog__btn {
+  margin-top: rem(24);
+
+}
