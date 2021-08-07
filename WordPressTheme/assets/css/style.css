@@ -579,7 +579,13 @@ summary {
 /* Remove all animations and transitions for people that prefer not to see them */
 
 .l-bg-line {
-	background: url(../img/common/line-sp.png) no-repeat center center/cover;
+	background: url(../img/common/line-sp.png) no-repeat top/cover;
+	height: 2110px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -100;
 }
 
 .l-header {
@@ -610,7 +616,8 @@ summary {
 }
 
 .l-top-content {
-	margin-top: 9.375rem;
+	margin-top: 7.625rem;
+	position: relative;
 }
 
 .l-top-news {
@@ -851,6 +858,10 @@ summary {
 	width: 100%;
 }
 
+.p-content {
+	padding-top: 1.75rem;
+}
+
 .p-content__title::before {
 	color: #F9F871;
 	content: "Content";
@@ -942,9 +953,17 @@ summary {
 }
 
 .p-header__logo {
+	align-items: center;
+	display: flex;
 	height: inherit;
-	margin-top: 0.625rem;
 	width: 4.375rem;
+}
+
+.p-header__logo img {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	width: 100%;
 }
 
 .p-header__drawer {
@@ -973,6 +992,11 @@ summary {
 	top: 0;
 	width: 100%;
 	z-index: 99;
+}
+
+.p-header__pc-menu {
+	height: inherit;
+	margin-left: auto;
 }
 
 .p-mv {
@@ -1018,13 +1042,15 @@ summary {
 .p-mv__title {
 	font-size: 1.75rem;
 	font-weight: 700;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.017em;
+	line-height: 1;
 }
 
 .p-mv__suv-title {
 	font-size: 1.25rem;
 	font-weight: 700;
-	letter-spacing: 0.05em;
+	letter-spacing: 0.025em;
+	line-height: 1;
 	margin-top: 1.5rem;
 }
 
@@ -1137,6 +1163,28 @@ summary {
 
 .p-overview__btn {
 	margin-top: 1.25rem;
+}
+
+.p-pc-menu__items {
+	display: flex;
+	height: inherit;
+}
+
+.p-pc-menu__item {
+	height: inherit;
+	letter-spacing: 0.125em;
+}
+
+.p-pc-menu__item + .p-pc-menu__item {
+	margin-left: 2rem;
+}
+
+.p-pc-menu__item a {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	width: 100%;
 }
 
 .p-test {
@@ -1279,6 +1327,16 @@ html {
 	font-size: 1.44144vw;
 }
 
+.l-bg-line {
+	background: url(../img/common/line-pc.png) no-repeat top/cover;
+	height: 2552px;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: -100;
+}
+
 .l-inner {
 	max-width: 1160px;
 	padding-left: 25px;
@@ -1288,6 +1346,32 @@ html {
 .c-test {
 	color: green;
 	font-size: 3.125rem;
+}
+
+.p-header__inner {
+	display: flex;
+}
+
+.p-header__logo {
+	width: 5.9625rem;
+}
+
+.p-mv__title {
+	font-size: 3.125rem;
+	letter-spacing: 0.1em;
+}
+
+.p-mv__suv-title {
+	font-size: 1.5625rem;
+	letter-spacing: 0.02em;
+}
+
+.p-news-info {
+	display: flex;
+}
+
+.p-news__items {
+	display: flex;
 }
 
 .p-test {

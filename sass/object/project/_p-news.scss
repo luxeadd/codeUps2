@@ -3,7 +3,9 @@
 }
 
 .p-news__items {
-
+  @include mq(tab) {
+     display: flex;
+  }
 }
 
 .p-news__item {

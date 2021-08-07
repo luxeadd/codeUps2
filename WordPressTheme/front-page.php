@@ -10,17 +10,26 @@
           <!-- Slides -->
           <div class="swiper-slide">
           <div class="p-mv__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-sp.jpg" alt="">
+          <picture>
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-sp.jpg" alt="">
+            </picture>
           </div>
           </div> 
           <div class="swiper-slide">
           <div class="p-mv__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-sp.jpg" alt="">
+          <picture>
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-sp.jpg" alt="">
+            </picture>
              </div>
           </div>
          <div class="swiper-slide">
          <div class="p-mv__img">
-            <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-sp.jpg" alt="">
+         <picture>
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-sp.jpg" alt="">
+            </picture>
             </div>
         </div>
       </div>
@@ -58,9 +67,9 @@
 </section><!-- /.l-top-news -->
 
 
-<div class="l-bg-line">
 
-  <section class="l-top-content p-content">
+<section class="l-top-content p-content">
+    <div class="l-bg-line"></div><!-- /.l-bg-line -->
     <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item">
@@ -159,7 +168,7 @@
   </div><!-- /.p-works__content -->
 </section><!-- /.l-top-works -->
 
-</div><!-- /.l-bg-line -->
+
 
 <section class="l-top-blog p-blog">
   <div class="l-inner">

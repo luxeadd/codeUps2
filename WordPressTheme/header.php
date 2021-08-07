@@ -30,7 +30,7 @@
       </h1><!-- /.p-header__logo -->
 
      <!-- ドロワーアイコン  -->
-      <div class="p-header__drawer c-hamburger js-hamburger">
+      <div class="p-header__drawer c-hamburger js-hamburger u-hidden-sp">
           <span></span>
           <span></span>
           <span></span>
@@ -49,6 +49,20 @@
           <li class="p-drawer-menu__item"><a href="">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
         </ul><!-- /.p-drawer-menu__items -->
       </div><!-- /.p-header__menu -->
+
+
+          <!-- pcーメニュー -->
+      <nav class="p-header__pc-menu p-pc-menu">
+        <ul class="p-pc-menu__items">
+          <li class="p-pc-menu__item"><a href="">トップ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">お知らせ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">事業内容</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">制作実績</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">企業概要</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">ブログ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="">お問い合わせ</a></li><!-- /.p-pc-menu__item -->
+        </ul><!-- /.p-pc-menu__items -->
+      </nav><!-- /.p-header__menu -->
      
       <!-- ドロワーメニュー展開時背景 -->
       <div class="p-header__overlay js-overlay"></div><!-- /.p-header__overlay -->
