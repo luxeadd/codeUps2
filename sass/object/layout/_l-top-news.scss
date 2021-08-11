@@ -1,3 +1,8 @@
 .l-top-news {
   margin-top: rem(24);
+
+  @include mq(sp) {
+     margin-top: rem(30);
+
+  }
 }

@@ -1,4 +1,8 @@
 .l-top-content {
-  margin-top: rem(122);
+  margin-top: rem(118);
   position: relative;
+
+  @include mq(tab) {
+    margin-top: rem(84);
+  }
 }

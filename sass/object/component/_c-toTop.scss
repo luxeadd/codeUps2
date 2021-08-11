@@ -1,8 +1,39 @@
 .c-toTop {
   position: fixed;
   right: rem(21);
-  bottom: rem(41);
+  bottom: rem(21);
   cursor: pointer;
   width: rem(45);
   height: rem(45);
+  background: #fff;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: all 0.3s;
+  z-index: 100;
+ 
+
+
+  &:hover {
+    background: #333333;
+
+    .arrow-top {
+      border-top: 4px solid #fff;
+      border-left: 4px solid #fff;
+    }
+   
+
+  }
+ 
+}
+
+.arrow-top {
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  margin: 8px 10px 0;
+  border-top: 4px solid #000;
+  border-left: 4px solid #000;
+  transform: rotate(45deg);
+  transition: all .3s;
 }

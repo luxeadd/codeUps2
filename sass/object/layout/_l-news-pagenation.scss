@@ -1,0 +1,9 @@
+.l-news-pagination {
+   display: none;
+
+  @include mq(tab) {
+    display: block;
+    margin-top: rem(102);
+    
+  }
+}

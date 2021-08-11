@@ -1,13 +1,22 @@
 .p-contact {
-   padding-top: rem(64);
+   padding-top: rem(58);
    padding-bottom: rem(64);
    background: #3D3D3D;
+
+   @include mq(tab) {
+    padding-top: rem(143);
+    padding-bottom: rem(149);
+  }
 }
 
 
 .p-contact__title {
    font-size: rem(25);
-   letter-spacing: 0.02em;
+  
+
+   @include mq(sp) {
+     letter-spacing: 0.0667em;
+   }
 
 
   &::before {
@@ -16,23 +25,65 @@
     font-size: rem(50);
     font-weight: normal;
     position: absolute;
-    top: rem(-49);
+    top: rem(-41);
     left: 50%;
     transform: translateX(-50%);
     color: $title-color;
     opacity: 0.2;
     font-family: $font-family-sub;
+
+    @include mq(tab) {
+      left: rem(-249);
+      font-size: rem(110);
+      top: rem(-95);
+      
+    }
   }
 }
 
 .p-contact__text {
   margin-top: rem(16);
   font-size: rem(16);
-  letter-spacing: 0.13em;
+  letter-spacing: 0.125em;
   line-height: (23 / 16);
+
+  @include mq(tab) {
+  display: none;
+  }
+
+}
+
+.p-contact__text--pc {
+  font-size: rem(16);
+  letter-spacing: 0.125em;
+  line-height: (23 / 16);
+  display: none;
+
+  @include mq(tab) {
+    margin-top: rem(24);
+   text-align: center;  
+   display: block;
+  }
 
 }
 
 .p-contact__btn {
- margin-top: rem(40);
+  margin-top: rem(46);
+  text-align: center;
+  
+  @include mq(tab) {
+   margin-top: rem(40);
+ display: none;
+}
+
+}
+.p-contact__btn--pc {
+ display: none;
+
+ @include mq(tab) {
+ margin-top: rem(54);    
+ display: flex;
+ justify-content: center;
+}
+
 }

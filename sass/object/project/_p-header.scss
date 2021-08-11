@@ -13,7 +13,8 @@ background: rgba($color: #111111, $alpha: 0.5);
 
   @include mq(tab) {
     display: flex;
-    
+    padding-left: rem(33);
+    padding-right: 0;
   }
 
 }

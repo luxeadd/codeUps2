@@ -77,8 +77,8 @@ $('.js-overlay').on('click', function () {
 
 
 //Swiper-------------------------------------------------------------------
-     const swiper = new Swiper('.js-mv-swiper-container', {
-   　//自動スライド
+     let mvswiper = new Swiper('.p-mv-swiper', {
+   //自動スライド
        autoplay: {
          delay: 2000,
         
@@ -125,6 +125,57 @@ $('.js-overlay').on('click', function () {
     //}
      });
 
+
+		 let workswiper = new Swiper('.p-works-swiper', {
+			//自動スライド
+					autoplay: {
+						delay: 2000,
+					 
+					},
+				 
+				//切り替えエフェクトの指定
+					//slide  fade  cube coverflow  flip
+				effect: "fade",
+			 
+				//切り替わる速さ
+				speed: 4000,
+				
+				//ループの有無
+				loop: true,
+			
+				// If we need pagination
+				pagination: {
+				 el: '.swiper-pagination',
+					clickable : true,
+				 },
+				
+				// Navigation arrows
+			 //  navigation: {
+			 //    nextEl: '.swiper-button-next',
+			 //    prevEl: '.swiper-button-prev',
+			 //   },
+				// And if we need scrollbar
+				// scrollbar: {
+				// el: '.swiper-scrollbar',
+				// },
+			
+			//ビューごとのスライド
+			 // speed: 600,
+				//loopedSlides: 6,
+				//sp
+				//spaceBetween: 24,
+				//width: 274,
+				//pc,tab
+				//breakpoints: {
+					//768: {
+						//spaceBetween: 40,
+						//width: 400,
+					//}
+			 //}
+				});
+	 
+
+
 		    // べージトップボタン=========================
 				jQuery('.js-to-top').click(function() {
 					jQuery('html,body').animate({scrollTop:0},'500');
@@ -150,11 +201,11 @@ $('.js-overlay').on('click', function () {
      //スクロールしたらheaderの色を変える
     //headerにchange-colorクラスをつけ色を指定
     jQuery(window).on('scroll', function () {
-			var MV =  jQuery(".p-mv").innerHeight(); //headerの高さ取得 
+			var MV =  jQuery(".js-mv").innerHeight(); //headerの高さ取得 
 			if (  MV <  jQuery(this).scrollTop()) { 
-			 jQuery('.p-header').addClass('change-color'); }
+			 jQuery('.js-header').addClass('change-color'); }
 			else {
-			 jQuery('.p-header').removeClass('change-color'); } });
+			 jQuery('.js-header').removeClass('change-color'); } });
  
 
 		

@@ -1,8 +1,17 @@
 .p-content{
   padding-top: rem(28);
+
+  @include mq(tab) {
+    padding-top: rem(103);
+    
+  }
 }
 
 .p-content__title {
+  @include mq(tab) {
+    letter-spacing: 0.0667em;
+  }
+
 
   &::before {
     content: "Content";
@@ -16,13 +25,26 @@
     color: $title-color;
     opacity: 0.2;
     font-family: $font-family-sub;
+
+    @include mq(tab) {
+      left: rem(-271);
+      font-size: rem(110);
+      top: rem(-44);
+      
+    }
   }
 
  
 }
 
 .p-content__items {
-  margin-top: rem(48);
+  margin-top: rem(45);
+
+  @include mq(tab) {
+    margin-top: rem(40);
+    
+  }
+
 
 }
 

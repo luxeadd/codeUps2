@@ -23,14 +23,14 @@
     <div class="p-header__inner">
     
     <!-- ヘッダーロゴ -->
-      <h1 class="p-header__logo">
-        <a href="">
+      <div class="p-header__logo">
+        <a href="home">
           <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
         </a>
-      </h1><!-- /.p-header__logo -->
+      </div><!-- /.p-header__logo -->
 
      <!-- ドロワーアイコン  -->
-      <div class="p-header__drawer c-hamburger js-hamburger u-hidden-sp">
+      <div class="p-header__drawer c-hamburger js-hamburger ">
           <span></span>
           <span></span>
           <span></span>
@@ -40,30 +40,35 @@
       <!-- ドロワーメニュー -->
       <div class="p-header__menu p-drawer-menu js-drawer-menu">
         <ul class="p-drawer-menu__items">
-          <li class="p-drawer-menu__item"><a href="">トップ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">お知らせ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">事業内容</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">制作実績</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">企業概要</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">ブログ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="home">トップ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/content">事業内容</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/works">制作実績</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/overview">企業概要</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/blog">ブログ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/contact">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
         </ul><!-- /.p-drawer-menu__items -->
       </div><!-- /.p-header__menu -->
 
 
           <!-- pcーメニュー -->
-      <nav class="p-header__pc-menu p-pc-menu">
+      <nav class="p-header__pc-menu p-pc-menu ">
         <ul class="p-pc-menu__items">
-          <li class="p-pc-menu__item"><a href="">トップ</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">お知らせ</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">事業内容</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">制作実績</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">企業概要</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">ブログ</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="">お問い合わせ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="/content">事業内容</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="/works">制作実績</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="/overview">企業概要</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="/blog">ブログ</a></li><!-- /.p-pc-menu__item -->
         </ul><!-- /.p-pc-menu__items -->
       </nav><!-- /.p-header__menu -->
-     
+
+      
+        <!-- pcーメニューボタン -->
+      <div class="p-pc-menu__btn c-btn--slide ">
+         <a href="/contact" class="p-pc-menu__btn-in c-btn--header">お問い合わせ</a><!-- /.p-pc-menu__item -->
+      </div><!-- /.p-pc-menu__btn -->
+
+
       <!-- ドロワーメニュー展開時背景 -->
       <div class="p-header__overlay js-overlay"></div><!-- /.p-header__overlay -->
 

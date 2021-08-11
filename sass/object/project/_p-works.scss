@@ -3,6 +3,9 @@
 }
 
 .p-works__title {
+  @include mq(tab) {
+    letter-spacing: 0.0167em;  
+  }
 
 
   &::before {
@@ -17,6 +20,14 @@
     color: $title-color;
     opacity: 0.2;
     font-family: $font-family-sub;
+
+    @include mq(tab) {
+      left: rem(438);
+      font-size: rem(110);
+      top: rem(-57);
+      letter-spacing: 0.0182em;
+      
+    }
   }
 }
 
@@ -24,13 +35,48 @@
     margin-top: rem(48);
     background: $bg-sub-color;
     padding-bottom: rem(22);
+
+    @include mq(tab) {
+      margin-top: rem(32);
+      background: linear-gradient(to right, transparent 30.5%,  $bg-sub-color 30.5%);
+      width: 100%;
+      padding-top: rem(80);
+      padding-bottom: rem(55);
+    }
+  }
+  
+  .p-works__inner {
+
+    @include mq(tab) {
+      display: flex;
+      align-items: center;
+      margin-left: auto;
+      margin-right: auto;
+      padding-left: rem(5);
+      width: 100%;
+      max-width: rem(1110);
+    }
   }
 
-  .p-works__img {
+.p-works__img-box {
+  @include mq(tab) {
+    display: flex;
+    align-items: center;
     width: 100%;
-    position: relative;
+    max-width: rem(557);
+  }
+  img {
+    vertical-align: bottom;
+    width: 100%;
+    @include mq(tab) {
+      max-width: rem(557);
+    
+    }
+   
+  }
     
   }
+
 
     .p-works__img::after {
       content: "";
@@ -44,73 +90,122 @@
     }
     
     
-    .p-works__img::before {
-      padding-top: 69.6%; //画像の縦 261/ 375横
-      display: block;
-      content: "";
-    
-    }
-    
-    .p-works__img img {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(-50%, -50%);
-      object-fit: cover;
-      object-position: center;
-      width: 100%;
-      height: 100%;
 
-      
-    }
   
   .p-works__text-box {
   width: 100%;
-  margin-top: rem(2);
-  max-width: rem(590);
+  margin-top: rem(-6);
   padding-left: rem(21);
   padding-right: rem(21);
-
+ 
+  
+  @include mq(tab) {
+    margin-top: rem(0);
+    flex: 0 1 rem(574);
+    padding-left: rem(32);
+    padding-right: rem(0);
+    padding-bottom: rem(28);
+    
+  }
 }
 
 .p-works__sub-title {
    font-size: rem(20);
-   letter-spacing: 0.02em;
+   letter-spacing: 0.1em;
    text-align: center;
+   
+   @include mq(tab) {
+     text-align: left; 
+     font-size: rem(25);
+     letter-spacing: 0.02em;
+   }
 }
 
 .p-works__text {
   margin-top: rem(24);
-  letter-spacing: 0.02em;
+  letter-spacing: 0.125em;
   line-height: (23 / 16);
+
+  @include mq(tab) {
+    margin-top: rem(35);
+   font-size: rem(16);  
+   line-height: (35 / 16);
+   letter-spacing: 0.0313em;
+  }
 
 }
 
 .p-works__btn {
-  margin-top: rem(20);
+  margin-top: rem(26);
+  text-align: center;
+
+  @include mq(tab) {
+   margin-top: rem(50);  
+   text-align: left;
+  }
 }
 
-.js-mv-swiper {
 
+
+
+.p-works-swiper {
   
+  .swiper-container img{
+    width: 100%;
+    @include mq(tab) {
+      max-width: rem(557);
+      
+    }
+  }
+  
+  .swiper-wrapper {
+    width: 100%;
+    @include mq(tab) {
+      max-width: rem(557);
+      
+    }
+   
+  
+  }
+  
+  .swiper-slide {
+    width: 100%; 
+    @include mq(tab) {
+      max-width: rem(557);
+      
+    }
+  }  
   .swiper-pagination {
-    position: static;  //要素内に入れるときは消すこと
+    position: relative;  //要素内に入れるときは消すこと
     text-align: center;
-    margin-top: 0;
+    top: -4px;
+    left: 0;
+
+     
+    @include mq(tab) {
+      top: rem(6);
+      left: rem(-20);  
+      
+    }
     
   }
 
   .swiper-pagination-bullet {
-    margin-left: rem(5.5);
-    margin-right: rem(5.5);
+    display: inline-block;
     background: #C4C4C4;
     width: rem(8);
     height: rem(8);
     opacity: 1;
   }
-  
+
+ 
   .swiper-pagination-bullet-active  {
     background: $title-color;
   }
   
 }
+
+.swiper-container-horizontal>.swiper-pagination-bullets .swiper-pagination-bullet {
+  margin: 0 5.5px;
+}
+
