@@ -1,13 +1,13 @@
 .p-news-news__inner {
   width: 100%;
-  max-width: rem(910);
   margin: 0 auto;
-  padding-left: rem(20);
-  padding-right: rem(20);
-
-@include mq(tab) {
-  padding-left: rem(25);
-  padding-right: rem(25);
+  //   padding-left: rem(20);
+  //   padding-right: rem(20);
+  
+  @include mq(tab) {
+  max-width: rem(910);
+  // padding-left: rem(25);
+  // padding-right: rem(25);
   
 }
 }
@@ -16,6 +16,10 @@
 .p-news-news__item {
   
   &+& {
-     margin-top: rem(32);
+     margin-top: rem(30);
+
+     @include mq(tab) {
+       margin-top: rem(32);
+     }
   }
 }

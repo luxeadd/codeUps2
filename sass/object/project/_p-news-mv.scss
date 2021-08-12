@@ -1,23 +1,9 @@
 .p-news-mv {
   background: url(../../../WordPressTheme/assets/img/news/news-ul-sp.jpg) no-repeat center /cover;
-  padding-top: rem(190);
-  padding-bottom: rem(187);
+ 
 
   @include mq(tab) {
     background: url(../../../WordPressTheme/assets/img/news/news-ul-pc.jpg) no-repeat center /cover;
-    padding-top: rem(158);
-  padding-bottom: rem(155);
+ 
   }
-}
-
-.p-news-mv__title {
-   font-size: rem(30);
-   letter-spacing: 0.0667em;
-   font-weight: 700;
-   text-align: center;
-
-   @include mq(tab) {
-     font-size: rem(35);
-     letter-spacing: 0.057em;
-   }
 }

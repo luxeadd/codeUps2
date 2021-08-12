@@ -2,25 +2,18 @@
   
 
 
-<div class="l-news-mv p-news-mv js-mv">
-  <h1 class="p-news-mv__title">お知らせ</h1><!-- /.p-news-mv__title -->
+<div class="l-news-mv p-news-mv p-under-mv js-mv">
+  <h1 class="p-under-mv__title">お知らせ</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
   
 
+<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 
-<div class="breadcrumbs">
-  <div class="l-inner">
-    <?php if(function_exists('bcn_display'))
-    {
-      bcn_display();
-    }?>
-    </div><!-- /.l-inner -->
-</div>
 
 
 <section class="l-news-news">
 <div class="p-news-news">
-  <div class="p-news-news__inner">
+  <div class="p-news-news__inner l-inner">
     <div class="p-news-news__items">
 
       <article class="p-news-news__item p-news-info">
@@ -127,7 +120,7 @@
      
      
     </div><!-- /.p-news__items -->
-  </div><!-- /.linner -->
+  </div><!-- /.l-inner -->
 </div><!-- /.l-top-news -->
 
 </section>
@@ -136,7 +129,7 @@
 
 <div class="l-news-pagination">
 
-    <div class='wp-pagenavi'>
+   <div class='wp-pagenavi'>
       <a class="previouspostslink" rel="prev" href="#">PREV</a>
       <span class='current'>1</span>
       <a class="page smaller" href="#">2</a>
@@ -144,7 +137,7 @@
       <a class="page larger" href="#">4</a>
       <a class="nextpostslink" rel="next" href="#">NEXT</a>
     </div>
-  
+
 </div><!-- /.l-news-paginaition -->
 
 

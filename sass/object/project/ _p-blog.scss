@@ -42,7 +42,7 @@
 .p-blog__item {
  
   &+& {
-    margin-top: rem(24);
+    margin-top: rem(22);
     
     
    @include mq(tab) {

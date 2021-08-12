@@ -1,0 +1,9 @@
+.l-lower-content-head {
+  margin-top: rem(81);
+  
+  @include mq(tab) {
+    margin-top: rem(64);
+    
+    
+  }
+}

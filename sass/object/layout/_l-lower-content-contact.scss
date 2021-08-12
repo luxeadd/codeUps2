@@ -1,0 +1,7 @@
+.l-lower-content-contact {
+  margin-top: rem(128);
+
+  @include mq(tab) {
+   margin-top: rem(150);  
+  }
+}
