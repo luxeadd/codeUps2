@@ -1,0 +1,8 @@
+.l-lower-blog-pagination {
+  margin-top: rem(80);
+
+  @include mq(tab) {
+    margin-top: rem(101);
+    
+  }
+}

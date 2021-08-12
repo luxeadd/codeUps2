@@ -26,6 +26,8 @@
   letter-spacing: 0.0667em;
   font-weight: 700;
   text-align: center;
+  position: relative;
+  z-index: 10;
 
   @include mq(tab) {
     font-size: rem(35);

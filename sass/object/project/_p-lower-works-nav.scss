@@ -1,0 +1,54 @@
+.p-lower-works-nav {
+}
+
+.p-lower-works-nav__inner {
+  
+
+  @include mq(tab) {
+    display: flex;
+    
+    
+  }
+
+}
+
+.p-lower-works-nav__top {
+
+}
+
+.p-lower-works-nav__item {
+  font-size: rem(16);
+  letter-spacing: 0.125em;
+  &+& {
+    margin-left: rem(18);
+
+    @include mq(tab) {
+      margin-left: rem(34);
+    }
+    
+  }
+  
+  @include mq(tab) {
+    margin-left: rem(40);
+  }
+}
+.p-lower-works-nav__item--is-active {
+  padding: rem(2) rem(7);
+    background: #fff;
+    color: #333;;
+
+    @include mq(tab) {
+      margin-left: 0;
+    }
+
+  }
+
+.p-lower-works-nav__bottom {
+  margin-top: rem(14);
+
+  @include mq(tab) {
+    margin-top: 0;
+  }
+}
+
+

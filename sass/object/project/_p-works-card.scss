@@ -1,0 +1,64 @@
+.p-works-card {
+  display: block;
+  position: relative;
+  transition: all 0.3s;
+  
+  &:hover {
+    .p-work-card__img img {
+      transform: scale(1.1) translate(-45%, -45%);
+    }
+  }
+  
+
+
+}
+
+.p-work-card__img {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  
+  }
+  
+  .p-work-card__img::before {
+    padding-top: 66.4%; //画像縦 249/375 横
+    display: block;
+    content: "";
+  
+  }
+  
+  .p-work-card__img img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    object-fit: cover;
+    object-position: center;
+    width: 100%;
+    height: 100%;
+    transition: all 0.3s;
+  }
+
+.p-works-card__category {
+  font-size: rem(16);
+  letter-spacing: 0.125em;
+  background:#111111; 
+  position: absolute; 
+  top: 0;
+  right: 0;
+  padding: rem(7) rem(23);
+
+}
+
+.p-works-card__title {
+   font-size: rem(20);
+   letter-spacing: 0.1em;
+   font-weight: 500; 
+   text-align: center;
+   margin-top: rem(27);
+
+  @include mq(tab) {
+   margin-top: rem(15);  
+   }
+
+}

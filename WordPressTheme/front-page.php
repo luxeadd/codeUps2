@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
 
   <div class="swiper">
@@ -46,6 +47,9 @@
 
 
 
+
+<!-- トップページコンテンツ -->
+<!-- お知らせ -->
 <section class="l-top-news p-news">
   <div class="p-news__inner">
     <div class="p-news__items">
@@ -69,7 +73,7 @@
 </section><!-- /.l-top-news -->
 
 
-
+<!-- 事業内容 -->
 <section class="l-top-content p-content">
     <div class="l-bg-line"></div><!-- /.l-bg-line -->
     <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
@@ -116,7 +120,7 @@
 
 
 
-
+<!-- 制作実績 -->
 <section class="l-top-works p-works">
   <h2 class="p-works__title c-section-title">制作実績</h2><!-- /.p-works__title -->
   <div class="p-works__content">
@@ -168,7 +172,7 @@
   </section><!-- /.l-top-works -->
   
   
-
+<!--企業概要 -->
 <section class="l-top-overview p-overview">
   <h2 class="p-overview__title c-section-title">企業概要</h2><!-- /.p-works__title -->
   <div class="p-overview__content">
@@ -188,12 +192,11 @@
   </section><!-- /.l-top-works -->
 
 
-
+<!-- ブログ -->
 <section class="l-top-blog p-blog">
   <div class="l-inner">
     <h2 class="p-blog__title c-section-title">ブログ</h2><!-- /.p-blog__title -->
-    
-    <div class="p-blog__items">
+    <div class="l-blog-items p-blog__items">
       <a href="" class="p-blog__item p-card">
          <div class="p-card__img">
              <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog1.jpg" alt="blog画像1">
@@ -280,12 +283,12 @@
   </div><!-- /.l-inner -->
 </section><!-- /.l-top-blog p-blog -->
 
-
+<!-- お問い合わせ -->
 <section class="l-top-contact">
    <?php get_template_part( 'template-parts/contact' ); ?>
 </section><!-- /.l-top-contact -->
 
-
+<!-- toTopボタン -->
 <div class="c-toTop js-to-top">
     <div class="arrow-top"></div>
 </div><!-- /.c-toTop -->

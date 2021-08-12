@@ -9,7 +9,7 @@
 .sp-only {
 
 	@include mq(tab) {
-		display: none;
+		display: none !important; 
 	}
 }
 

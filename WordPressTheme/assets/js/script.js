@@ -207,7 +207,9 @@ $('.js-overlay').on('click', function () {
 			else {
 			 jQuery('.js-header').removeClass('change-color'); } });
  
-
+      
+			
+	
 		
 
 

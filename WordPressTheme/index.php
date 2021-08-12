@@ -1,16 +1,17 @@
 <?php get_header(); ?>
   
+<!----------- 投稿ページ ------------>
 
-
-<div class="l-news-mv p-news-mv p-under-mv js-mv">
-  <h1 class="p-under-mv__title">お知らせ</h1><!-- /.p-news-mv__title -->
+<!-- 下層ページMV -->
+<div class="l-news-mv p-news-mv p-lower-common-mv js-mv">
+  <h1 class="p-lower-common-mv__title">お知らせ</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
   
-
+<!-- breadcrumbs -->
 <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 
 
-
+<!-- 下層ページコンテンツ -->
 <section class="l-news-news">
 <div class="p-news-news">
   <div class="p-news-news__inner l-inner">
@@ -126,7 +127,7 @@
 </section>
 
 
-
+<!-- pagination -->
 <div class="l-news-pagination">
 
    <div class='wp-pagenavi'>
@@ -146,6 +147,7 @@
    <?php get_template_part( 'template-parts/contact' ); ?>
 </section><!-- /.l-top-contact -->
 
+<!-- toTopボタン -->
 <div class="c-toTop js-to-top">
     <div class="arrow-top"></div>
 </div><!-- /.c-toTop -->
