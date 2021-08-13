@@ -65,7 +65,7 @@
          </div><!-- /.p-news-info__body -->
 
          <div class="p-news__btn c-btn--slide">
-             <a href="" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
+             <a href="/news" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
          </div><!-- /.p-news-info__btn -->
         </article>
     </div><!-- /.p-news__items -->
@@ -164,7 +164,7 @@
         <div class="p-works__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
         <p class="p-works__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
         <div class="p-works__btn c-btn--slide--white" >
-          <a href="" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="/works" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-works__inner -->
@@ -184,7 +184,7 @@
         <div class="p-overview__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
         <p class="p-overview__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
         <div class="p-overview__btn c-btn--slide--white">
-          <a href="" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="/overview" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-overview__inner -->
@@ -278,7 +278,7 @@
     </div><!-- /.p-blog__items -->
 
     <div class="p-blog__btn c-btn--slide--white">
-       <a href="" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+       <a href="blog" class="c-btn">詳しく見る</a><!-- /.c-btn -->
     </div><!-- /.p-blog__btn -->
   </div><!-- /.l-inner -->
 </section><!-- /.l-top-blog p-blog -->

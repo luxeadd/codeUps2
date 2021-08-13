@@ -7,7 +7,7 @@
 
        <!-- spメニュー -->
       <ul class="p-footer__menu p-footer-menu">
-        <li class="p-footer-menu__item"><a href="home">トップ</a></li><!-- /.p-footer__item -->
+        <li class="p-footer-menu__item"><a href="/home">トップ</a></li><!-- /.p-footer__item -->
         <li class="p-footer-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-footer__item -->
         <li class="p-footer-menu__item"><a href="/content">事業内容</a></li><!-- /.p-footer__item -->
         <li class="p-footer-menu__item"><a href="/overview">企業概要</a></li><!-- /.p-footer__item -->

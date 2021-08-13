@@ -1,0 +1,40 @@
+.p-post-news-article {
+
+}
+
+.p-post-news-article__head--sp,
+.p-post-news-article__head--pc {
+   font-size: rem(16);
+   padding: rem(8) 0;
+   line-height: 1;
+   letter-spacing: 0.125em;
+   text-align: center;
+   width: 100%;
+   border: 1px solid $text-color;
+
+   @include mq(tab) {
+    background: $bg-sub-color;
+  }
+}
+
+.p-post-news-article__box {
+margin-top: rem(32);
+text-align: center;
+@include mq(tab) {
+  display: flex;
+  margin-top: rem(80);
+  
+}
+}
+
+.p-post-news-article__item {
+ margin-top: rem(24);
+
+ @include mq(tab) {
+   margin-top: 0;
+   width: calc(26% - 108px / 4);
+   &+& {
+     margin-left: rem(32);
+   }
+ }
+}

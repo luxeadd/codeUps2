@@ -15,7 +15,7 @@
 
           <!-- PCボタン -->
        <div class="p-contact__btn--pc c-btn--slide--white">
-         <a href="" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+         <a href="/contact" class="c-btn">詳しく見る</a><!-- /.c-btn -->
        </div><!-- /.p-contact__btn -->
 
     </div><!-- /.l-inner -->

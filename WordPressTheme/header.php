@@ -24,7 +24,7 @@
     
     <!-- ヘッダーロゴ -->
       <div class="p-header__logo">
-        <a href="home">
+        <a href="/home">
           <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
         </a>
       </div><!-- /.p-header__logo -->
@@ -40,7 +40,7 @@
       <!-- ドロワーメニュー -->
       <div class="p-header__menu p-drawer-menu js-drawer-menu">
         <ul class="p-drawer-menu__items">
-          <li class="p-drawer-menu__item"><a href="home">トップ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="/home">トップ</a></li><!-- /.p-drawer-menu__item -->
           <li class="p-drawer-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-drawer-menu__item -->
           <li class="p-drawer-menu__item"><a href="/content">事業内容</a></li><!-- /.p-drawer-menu__item -->
           <li class="p-drawer-menu__item"><a href="/works">制作実績</a></li><!-- /.p-drawer-menu__item -->
