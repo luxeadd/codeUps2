@@ -211,7 +211,7 @@
         <?php $related_query->the_post(); ?>
 
 
-        <a href="" class="p-post-works-article__item p-card">
+        <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-post-works-article__item p-card">
             <div class="p-card__img">
             <?php
                if (has_post_thumbnail() ) {

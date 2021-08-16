@@ -48,7 +48,7 @@
   position: relative;
   width: 100%;
   height: 100%;
-  padding: rem(71) 0 ;
+  padding: rem(81) 0 ;
 
 
   &::after {
@@ -68,7 +68,7 @@
     }
 
     @include mq(tab) {
-      padding: rem(151) 0 ;
+      padding: rem(157) 0 ;
     }
   
 }

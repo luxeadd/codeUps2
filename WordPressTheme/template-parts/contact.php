@@ -10,7 +10,7 @@
 
        <!-- SPボタン -->
        <div class="p-contact__btn c-btn--slide--white">
-         <a href="" class="c-btn">お問い合わせへ</a><!-- /.c-btn -->
+         <a href="/contact" class="c-btn">お問い合わせへ</a><!-- /.c-btn -->
        </div><!-- /.p-contact__btn -->
 
           <!-- PCボタン -->

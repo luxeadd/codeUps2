@@ -1165,7 +1165,7 @@ summary {
 .p-content-box__link {
 	display: inline-block;
 	height: 100%;
-	padding: 4.4375rem 0;
+	padding: 5.0625rem 0;
 	position: relative;
 	width: 100%;
 }
@@ -1225,6 +1225,7 @@ summary {
 	height: 100vh;
 	margin-left: auto;
 	max-width: 32.5rem;
+	min-height: 100vh;
 	text-align: center;
 	transform: translateX(200%);
 	transition: all 0.3s;
@@ -3246,7 +3247,7 @@ html {
 }
 
 .p-content-box__link {
-	padding: 9.4375rem 0;
+	padding: 9.8125rem 0;
 }
 
 .p-content-box__text {
