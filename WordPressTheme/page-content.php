@@ -23,7 +23,7 @@
 
 <section class="l-lower-content-body">
   
-     <div class="p-lower-content-body">
+     <div  id="content1" class="p-lower-content-body">
         <div class="p-lower-content-body__img">
            <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/content/under-content1-pc.jpg" alt="lower-content画像1">      
          </div><!-- /.p-lower-content-body__img -->
@@ -37,7 +37,7 @@
          </div><!-- /.p-lower-content-body__title-box -->
       </div><!-- /.p-lower-content-body -->
       
-     <div class="p-lower-content-body">
+     <div id="content2" class="p-lower-content-body">
         <div class="p-lower-content-body__img">
            <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/content/under-content2-pc.jpg" alt="lower-content画像2">      
          </div><!-- /.p-lower-content-body__img -->
@@ -51,7 +51,7 @@
          </div><!-- /.p-lower-content-body__title-box -->
       </div><!-- /.p-lower-content-body -->
       
-     <div class="p-lower-content-body">
+     <div id="content3" class="p-lower-content-body">
         <div class="p-lower-content-body__img">
            <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/content/under-content3-pc.jpg" alt="lower-content画像3">      
          </div><!-- /.p-lower-content-body__img -->

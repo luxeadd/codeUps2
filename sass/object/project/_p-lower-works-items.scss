@@ -8,6 +8,8 @@
     padding-right: rem(25);
     display: flex;
     flex-wrap: wrap;
+    justify-content: start;
+    
   }
 }
 
@@ -22,6 +24,7 @@
     
     @include mq(tab) {
       margin-top: 0;
+      margin-left: 0;
     }
   }
 

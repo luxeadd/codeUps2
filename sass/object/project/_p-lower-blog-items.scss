@@ -10,6 +10,25 @@
 
 .p-lower-blog-items__item {
 
+  &:first-child {
+
+    &::after {
+      content: "New";
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: rem(60);
+      height: rem(60);
+      border-radius: 50%;
+     background: #FFBA6A;
+     color: #333333;
+     position: absolute;
+     top: rem(-12);
+     left: rem(-12);
+    }
+  }
+ 
+
   &+& {
     margin-top: rem(22);
     

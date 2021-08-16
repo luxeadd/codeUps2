@@ -53,21 +53,47 @@
 <section class="l-top-news p-news">
   <div class="p-news__inner">
     <div class="p-news__items">
-      <article class="p-news__item p-news-info">
+      <div class="p-news__items-inner">
 
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">お知らせ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
+    <?php
+  $args = [
+    'post_type' => 'post', // カスタム投稿名が「」の場合
+    'posts_per_page' => 1, // 表示する数
+		  ];
+	  $my_query = new WP_Query($args); ?>
 
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
+		<?php if ($my_query->have_posts()): // 投稿がある場合 ?>
+	  <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
+
+       <article class="p-news__item p-news-info">
+         
+         <div class="p-news-info__head">
+           <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+           <?php
+              // カテゴリー１つ目の名前を表示
+              $category = get_the_category();
+              if ($category[0] ) {
+                echo '<div class="p-news-info__category">' . $category[0]->cat_name . '</div>';
+              }
+              ?>
+
+      </div><!-- /.p-news-info__head -->
+
+            <div class="p-news-info__body">
+                <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-news-info__text"><?php the_title(); //タイトルを表示 ?></a><!-- /.p-news-info__text -->
+          </div><!-- /.p-news-info__body -->
+        </article>
+        
+        <?php endwhile; ?>
+        <?php endif; wp_reset_postdata(); ?>
+        
+        
+        
+      </div><!-- /.p-news__items-inner -->
          <div class="p-news__btn c-btn--slide">
              <a href="/news" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
          </div><!-- /.p-news-info__btn -->
-        </article>
     </div><!-- /.p-news__items -->
   </div><!-- /.linner -->
 </section><!-- /.l-top-news -->
@@ -79,40 +105,28 @@
     <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item">
-      <a href="" class="p-content-box__link">
-      <picture>
-          <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content1.jpg" media="(min-width: 786px)"/><!-- 幅786px以上なら表示 -->
-          <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content1-sp.jpg" alt="contact画像1">
-        </picture>
+      <a href="/content" class="p-content-box__link">
+         <h3  class="p-content-box__text">経営理念ページへ</h3>
+      
       </a>
-        <h3 class="p-content-box__text">経営理念ページへ</h3>
     </li>
     <li class="p-content-box__item">
-      <a href="" class="p-content-box__link">
-      <picture>
-          <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content2.jpg" media="(min-width: 786px)"/><!-- 幅786px以上なら表示 -->
-          <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content2-sp.jpg" alt="contact画像2">
-        </picture>
+      <a href="/content/#content1" class="p-content-box__link">
+      <h3 class="p-content-box__text">理念1へ</h3>
+      
       </a>
-        <h3 class="p-content-box__text">理念1へ</h3>
     </li>
     <li class="p-content-box__item">
-      <a href="" class="p-content-box__link">
-      <picture>
-          <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content3.jpg" media="(min-width: 786px)"/><!-- 幅786px以上なら表示 -->
-          <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content3-sp.jpg" alt="contact画像3">
-        </picture>
+      <a href="/content/#content2" class="p-content-box__link">     
+      <h3  class="p-content-box__text">理念2へ</h3>
+       
       </a>
-        <h3 class="p-content-box__text">理念2へ</h3>
     </li>
     <li class="p-content-box__item">
-      <a href="" class="p-content-box__link">
-      <picture>
-          <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content4.jpg" media="(min-width: 786px)"/><!-- 幅786px以上なら表示 -->
-          <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/content1-sp.jpg" alt="contact画像4">
-        </picture>
+      <a href="/content/#content3" class="p-content-box__link">
+      <h3  class="p-content-box__text">理念3へ</h3>
+     
       </a>
-        <h3 class="p-content-box__text">理念3へ</h3>
     </li>
     
   </ul>
@@ -134,21 +148,27 @@
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper ">
               <!-- Slides -->
+
+              <?php
+                    $args = [
+                      'post_type' => 'works', // カスタム投稿名が「gourmet」の場合
+                      'posts_per_page' => 3, // 表示する数
+                    ];
+                    $my_query = new WP_Query($args); ?>
+                  
+                  <?php if ($my_query->have_posts()): // 投稿がある場合 ?>
+                    <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+
               <div class="swiper-slide ">
-                
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/works1.jpg" alt="works画像1">
-                
+                    <?php
+                  if (has_post_thumbnail() ) {
+                  // アイキャッチ画像が設定されてれば大サイズで表示
+                  the_post_thumbnail('large');
+                  } 
+                  ?>
               </div>
-              <div class="swiper-slide">
-                
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/works2.jpg" alt="works画像2">
-                
-              </div>
-              <div class="swiper-slide">
-                
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/works3.jpg" alt="works画像3">
-                
-              </div>
+              <?php endwhile; ?>
+              <?php endif; wp_reset_postdata(); ?>
             </div>
             
             <!-- If we need pagination -->
@@ -197,84 +217,50 @@
   <div class="l-inner">
     <h2 class="p-blog__title c-section-title">ブログ</h2><!-- /.p-blog__title -->
     <div class="l-blog-items p-blog__items">
+
+    <?php
+      $args = [
+        'post_type' => 'blog', // カスタム投稿名が「」の場合
+        'posts_per_page' => 6, // 表示する数
+          ];
+        $my_query = new WP_Query($args); ?>
+
+        <?php if ($my_query->have_posts()): // 投稿がある場合 ?>
+        <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
+
       <a href="" class="p-blog__item p-card">
          <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog1.jpg" alt="blog画像1">
+         
+            <?php
+              if (has_post_thumbnail() ) {
+              // アイキャッチ画像が設定されてれば大サイズで表示
+              the_post_thumbnail('large');
+              } 
+              ?>
+
          </div><!-- /.p-card_img -->
          <div href="" class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
+             <h3 class="p-card__title">
+             <?php the_title(); //タイトルを表示 ?>
+             </h3><!-- /.p-card__title -->
+             <div class="p-card__text">
+                <?php if(SCF::get( 'news-text-sub' )) {
+                  echo mb_substr(SCF::get( 'news-text-sub' ),0,39);
+                } ?>
+             </div><!-- /.p-card__text -->
              <div href="" class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
+                <div class="p-card__category">
+                <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+                 </div>
+                
+               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->
        </a>
-      <a href="" class="p-blog__item p-card">
-         <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog2.jpg" alt="blog画像2">
-         </div><!-- /.p-card_img -->
-         <div class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-             <div class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-       </a>
-      <a href="" class="p-blog__item p-card">
-         <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog3.jpg" alt="blog画像3">
-         </div><!-- /.p-card_img -->
-         <div class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-             <div class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-       </a>
-      <a href="" class="p-blog__item p-card">
-         <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog4.jpg" alt="blog画像4">
-         </div><!-- /.p-card_img -->
-         <div class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-             <div class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-       </a>
-      <a href="" class="p-blog__item p-card">
-         <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog5.jpg" alt="blog画像5">
-         </div><!-- /.p-card_img -->
-         <div class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-             <div class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-       </a>
-      <a href="" class="p-blog__item p-card">
-         <div class="p-card__img">
-             <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog6.jpg" alt="blog画像6">
-         </div><!-- /.p-card_img -->
-         <div class="p-card__body">
-             <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-             <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-             <div class="p-card__bottom">
-               <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-       </a>
+
+       <?php endwhile; ?>
+    <?php endif; wp_reset_postdata(); ?>
+
     </div><!-- /.p-blog__items -->
 
     <div class="p-blog__btn c-btn--slide--white">

@@ -14,13 +14,19 @@
 <div class="l-lower-works-nav p-lower-works-nav">
   <div class="l-inner p-lower-works-nav__inner">
     <div class="p-lower-works-nav__top">
-      <a href="" class="p-lower-works-nav__item p-lower-works-nav__item--is-active">GENRE</a>
+    <a href="" class="p-lower-works-nav__item--top is-genre-active">GENRE</a>
     </div><!-- /.p-lower-works-nav__top -->
 
     <div class="p-lower-works-nav__bottom">
-      <a href="" class="p-lower-works-nav__item">カテゴリ１</a>
-      <a href="" class="p-lower-works-nav__item">カテゴリカテゴリ</a>
-      <a href="" class="p-lower-works-nav__item">カテ</a>
+    <?php
+    $worksGenre_terms = get_terms( 'works_genre', array( 'hide_empty' => false ) );
+    foreach ( $worksGenre_terms as $worksGenre_term ) :
+  ?>
+      <a href="<?php echo esc_url( get_term_link( $worksGenre_term, 'works_genre' ) ); ?>" class="p-lower-works-nav__item"><?php echo esc_html( $worksGenre_term->name ); ?></a>
+      
+      <?php
+    endforeach;
+    ?>
     </div><!-- /.p-lower-works-nav__top -->
   </div><!-- /.l-inner -->
 </div><!-- /.p-lower-works-nav -->
@@ -28,53 +34,36 @@
 
 <div class="l-lower-works-items p-lower-works-items">
 
-   <a href="" class="p-lower-works-items__item p-works-card">
+       <?php
+         //記事があればentriesブロック以下を表示
+         if ( have_posts() ) : ?>
+            <?php
+            //記事数ぶんループ
+            while ( have_posts() ) :
+            the_post(); ?>
+
+
+   <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-works-items__item p-works-card">
       <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works1-pc.jpg" alt="lower-works画像1">      
+          <?php
+            if (has_post_thumbnail() ) {
+            // アイキャッチ画像が設定されてれば大サイズで表示
+            the_post_thumbnail('large');
+            } 
+            ?>
       </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
+      <div class="p-works-card__category">
+      <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
+      </div><!-- /.p-works-card__category -->
+      <div class="p-works-card__title">
+      <?php the_title(); //タイトルを表示 ?>
+      </div><!-- /.p-lower-card__title -->
    </a><!-- /.p-lower-works__item -->
 
-   <a href="" class="p-lower-works-items__item p-works-card">
-      <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works2-pc.jpg" alt="lower-works画像2">      
-      </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
-   </a><!-- /.p-lower-works__item -->
-
-   <a href="" class="p-lower-works-items__item p-works-card">
-      <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works3-pc.jpg" alt="lower-works画像3">      
-      </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
-   </a><!-- /.p-lower-works__item -->
-
-   <a href="" class="p-lower-works-items__item p-works-card">
-      <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works4-pc.jpg" alt="lower-works画像4">      
-      </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
-   </a><!-- /.p-lower-works__item -->
-
-   <a href="" class="p-lower-works-items__item p-works-card">
-      <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works5-pc.jpg" alt="lower-works画像5">      
-      </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
-   </a><!-- /.p-lower-works__item -->
-
-   <a href="" class="p-lower-works-items__item p-works-card">
-      <div class="p-work-card__img">
-           <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/works/lower-works6-pc.jpg" alt="lower-works画像6">      
-      </div><!-- /.p-work-card__img -->
-      <div class="p-works-card__category">カテゴリ1</div><!-- /.p-works-card__category -->
-      <div class="p-works-card__title">CodeUps株式会社</div><!-- /.p-lower-card__title -->
-   </a><!-- /.p-lower-works__item -->
+   <?php
+      endwhile;
+      ?>      
+      <?php endif; ?>
 
 </div><!-- /.l-lower-works-items -->
 
@@ -82,14 +71,7 @@
 <!-- pagination -->
 <div class="l-lower-works-pagination p-lower-works-pagination">
 
-   <div class='wp-pagenavi'>
-      <a class="previouspostslink" rel="prev" href="#">PREV</a>
-      <span class='current'>1</span>
-      <a class="page smaller" href="#">2</a>
-      <a class="page smaller" href="#">3</a>
-      <a class="page larger" href="#">4</a>
-      <a class="nextpostslink" rel="next" href="#">NEXT</a>
-    </div>
+<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
 </div><!-- /.l-news-paginaition -->
 

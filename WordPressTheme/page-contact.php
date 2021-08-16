@@ -15,75 +15,11 @@
 
 
     <div  class="contact__form">
-      <form  action=""  class="contact-form"  id="js-form" method="POST">
-        <dl  class="contact__form--dl">
-          
-          <div  class="contact__form--row">
-            <dt  class="contact__form--label">
-              <label  for="your-name"  class="is-required pc-only"  >※会社名
-                </label>
-              <label  for="your-name"  class="is-required sp-only" >※会社名・団体名
-                </label>
-              </dt>
-              <dd  class="contact__form--input">
-                <input  type="text"  id="your-name " name=""  placeholder="テキストがはいります">
-              </dd>
-            </div>
-
-          <div  class="contact__form--row sp-only">
-            <dt  class="contact__form--label ">
-              <label  for="your-name"  class="is-required "  >※部署名
-                </label>
-              </dt>
-              <dd  class="contact__form--input">
-                <input  type="text"  id="your-name " name=""  placeholder="テキストがはいります">
-              </dd>
-            </div>
-            
-            <div  class="contact__form--row">
-              <dt  class="contact__form--label">
-                <label  for="your-name"  class="is-required"  >※お名前</label>
-              </dt>
-              <dd  class="contact__form--input">
-                <input  type="text"  id="your-name " name=""  placeholder="テキストがはいります">
-              </dd>
-            </div>
-            
-            <div  class="contact__form--row">
-              <dt  class="contact__form--label">
-                <label  for="your-name"  class="is-required"  >※ふりがな</label>
-              </dt>
-              <dd  class="contact__form--input">
-                <input  type="text"  id="your-name " name=""  placeholder="テキストがはいります">
-              </dd>
-            </div>
-            
-            <div  class="contact__form--row pc-only">
-              <dt  class="contact__form--label">
-                <label  for="your-email"  class="is-required">※メールアドレス</label>
-              </dt>
-              <dd  class="contact__form--input">
-                <input  type="email"  id="your-email" name="" placeholder="text@example.com">
-              </dd>
-            </div>
-            
-            
-            <div  class="contact__form--row">
-              <dt  class="contact__form--label">
-                <label  for="your-message">※お問い合わせ内容</label>
-              </dt>
-              <dd  class="contact__form--input">
-                <textarea  name=""  id="your-message"  placeholder="テキストがはいります"></textarea>
-              </dd>
-            </div>
-          </dl>
-          
-          
-          <div  class="contact__form--submit">
-            <input  type="submit"  id="submit" name="" value="送信"  disabled>
-          </div>
-          
-        </form><!-- /.contact-form -->
+      <div  action=""  class="contact-form"  id="js-form" >
+     
+      <?php echo do_shortcode('[contact-form-7 id="332" title="オリジナルフォーム"]'); ?>
+       
+        </div><!-- /.contact-form -->
         
         <div  id="js-success"  class="contact__message">
           <p>送信完了しました。ありがとうございました。 </p>

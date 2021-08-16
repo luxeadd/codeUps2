@@ -1,5 +1,5 @@
 <?php get_header(); ?>
-  
+
 <!----------- 投稿ページ ------------>
 
 <!-- 下層ページMV -->
@@ -15,129 +15,56 @@
 <section class="l-news-news">
 <div class="p-news-news">
   <div class="p-news-news__inner l-inner">
+
+
     <div class="p-news-news__items">
+
+  <?php
+//記事があればentriesブロック以下を表示
+if ( have_posts() ) : ?>
+   <?php
+    //記事数ぶんループ
+    while ( have_posts() ) :
+    the_post(); ?>
 
       <article class="p-news-news__item p-news-info">
         <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
+          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+           
+           <?php
+                // カテゴリー１つ目の名前を表示
+                $category = get_the_category();
+                if ($category[0] ) {
+                echo '<div class="p-news-info__category">' . $category[0]->cat_name . '</div><!-- /.p-news-info__category -->';
+                }
+                ?>
+            
          </div><!-- /.p-news-info__head -->
          <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
+           <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-news-info__text--hover-yellow"><?php the_title(); //タイトルを表示 ?></a><!-- /.p-news-info__text -->
          </div><!-- /.p-news-info__body -->
         </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-      <article class="p-news-news__item p-news-info">
-        <div class="p-news-info__head">
-          <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>">2020.07.20</time>
-           <div class="p-news-info__category">カテゴリ</div><!-- /.p-news-info__category -->
-         </div><!-- /.p-news-info__head -->
-         <div class="p-news-info__body">
-           <a href="" class="p-news-info__text--hover-yellow">記事タイトルが入ります。記事タイトルが入ります。記事タイトルが入ります。</a><!-- /.p-news-info__text -->
-         </div><!-- /.p-news-info__body -->
-        </article>
-     
-    
-     
+  
+        <?php
+          endwhile;
+          ?>      
+     <?php endif; ?>
      
     </div><!-- /.p-news__items -->
+
+
+
   </div><!-- /.l-inner -->
 </div><!-- /.l-top-news -->
 
 </section>
 
 
+
 <!-- pagination -->
 <div class="l-news-pagination">
 
-   <div class='wp-pagenavi'>
-      <a class="previouspostslink" rel="prev" href="#">PREV</a>
-      <span class='current'>1</span>
-      <a class="page smaller" href="#">2</a>
-      <a class="page smaller" href="#">3</a>
-      <a class="page larger" href="#">4</a>
-      <a class="nextpostslink" rel="next" href="#">NEXT</a>
-    </div>
+<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
 </div><!-- /.l-news-paginaition -->
 

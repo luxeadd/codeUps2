@@ -18,6 +18,13 @@
 
 .p-news__items {
 
+   @include mq(tab) {
+     display: flex;
+   }
+}
+
+.p-news__items-inner {
+
 }
 
 .p-news__item {
@@ -39,8 +46,8 @@
  
 
    @include mq(tab) {
-      margin-top: 0;
-      margin-left: rem(48);
+      margin-top: rem(5);
+      margin-left: auto;
       margin-right: 0;
       width: rem(134);
      display: flex;
@@ -48,7 +55,7 @@
      font-weight: 500;
      font-size: rem(16);
     letter-spacing: 0.001em;
-     
+     align-self: flex-start;
 
    }
    

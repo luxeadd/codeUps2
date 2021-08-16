@@ -14,13 +14,18 @@
 <div class="l-lower-works-nav p-lower-works-nav">
   <div class="l-inner p-lower-works-nav__inner">
     <div class="p-lower-works-nav__top">
-      <a href="" class="p-lower-works-nav__item p-lower-works-nav__item--is-active">GENRE</a>
+      <a href="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="p-lower-works-nav__item--top is-genre-active">GENRE</a>
     </div><!-- /.p-lower-works-nav__top -->
 
     <div class="p-lower-works-nav__bottom">
-      <a href="" class="p-lower-works-nav__item">カテゴリ１</a>
-      <a href="" class="p-lower-works-nav__item">カテゴリカテゴリ</a>
-      <a href="" class="p-lower-works-nav__item">カテ</a>
+    <?php
+    $genre_terms = get_terms( 'genre', array( 'hide_empty' => false ) );
+    foreach ( $genre_terms as $genre_term ) :
+  ?>
+      <a href="<?php echo esc_url( get_term_link( $genre_term, 'genre' ) ); ?>" class="p-lower-works-nav__item"><?php echo esc_html( $genre_term->name ); ?></a>
+      <?php
+    endforeach;
+  ?>
     </div><!-- /.p-lower-works-nav__top -->
   </div><!-- /.l-inner -->
 </div><!-- /.p-lower-works-nav -->
@@ -30,123 +35,48 @@
 <section class="l-lower-blog-items">
    <div class="l-inner">      
       <div class="p-lower-blog-items">
-         <a href="" class="p-lower-blog-items__item p-card">
+
+      <?php
+         //記事があればentriesブロック以下を表示
+         if ( have_posts() ) : ?>
+            <?php
+            //記事数ぶんループ
+            while ( have_posts() ) :
+            the_post(); ?>
+
+         <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-blog-items__item p-card">
             <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog1.jpg" alt="blog画像1">
+            <?php
+               if (has_post_thumbnail() ) {
+               // アイキャッチ画像が設定されてれば大サイズで表示
+               the_post_thumbnail('large');
+               } 
+               ?>
             </div><!-- /.p-card_img -->
             <div href="" class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
+               <h3 class="p-card__title">
+               <?php the_title(); //タイトルを表示 ?>
+               </h3><!-- /.p-card__title -->
+               <div class="p-card__text">
+                    <?php if(SCF::get( 'news-text-sub' )) {
+                       echo mb_substr(SCF::get( 'news-text-sub' ),0,39);
+                    } ?>
+               </div><!-- /.p-card__text -->
                <div href="" class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
+                  <div class="p-card__category">
+                  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+                  </div><!-- /.p-card__category -->
+                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
                </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->
          </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog2.jpg" alt="blog画像2">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog3.jpg" alt="blog画像3">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog4.jpg" alt="blog画像4">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog5.jpg" alt="blog画像5">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog6.jpg" alt="blog画像6">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog7.jpg" alt="blog画像7">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog8.jpg" alt="blog画像8">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
-         <a href="" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
-               <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog9.jpg" alt="blog画像9">
-            </div><!-- /.p-card_img -->
-            <div class="p-card__body">
-               <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-               <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-               <div class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-         </a>
+         
+
+         <?php
+          endwhile;
+          ?>      
+          <?php endif; ?>
+
       </div><!-- /.p-lower-blog-items__items -->
    </div><!-- /.l-inner -->
 </section><!-- /.l-lower-blog-items -->
@@ -156,14 +86,7 @@
 <!-- pagination -->
 <div class="l-lower-blog-pagination p-lower-blog-pagination">
 
-   <div class='wp-pagenavi'>
-      <a class="previouspostslink" rel="prev" href="#">PREV</a>
-      <span class='current'>1</span>
-      <a class="page smaller" href="#">2</a>
-      <a class="page smaller" href="#">3</a>
-      <a class="page larger" href="#">4</a>
-      <a class="nextpostslink" rel="next" href="#">NEXT</a>
-    </div>
+<?php if(function_exists('wp_pagenavi')) { wp_pagenavi(); } ?>
 
 </div><!-- /.l-news-paginaition -->
 

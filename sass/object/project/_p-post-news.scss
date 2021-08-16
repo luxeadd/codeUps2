@@ -5,6 +5,7 @@
 .p-post-news__title {
   font-size: rem(20);
   letter-spacing: 0.02em;font-weight: 400;
+  line-height: 1.76;
   @include mq(tab) {
     font-size: rem(23);
     letter-spacing: 0.017em;
@@ -36,7 +37,7 @@ letter-spacing: 0.025em;
  font-size: rem(16);
  letter-spacing: 0,125em;
  line-height: 1;
- padding: rem(8) rem(20);
+ padding: rem(10) rem(23);
  border: 1px solid $text-color;
 margin-left: rem(24);
 
@@ -94,8 +95,8 @@ margin-left: rem(24);
  letter-spacing: 0.1em;
  line-height: 1.448;
  border-left: 3px solid $text-color;
- margin-top: rem(24);
- padding: 0 rem(8);
+ margin-top: rem(26);
+ padding: 0 rem(5);
 }
 
 .p-post-news__text {
@@ -112,6 +113,7 @@ margin-left: rem(24);
 display: inline-block; 
  margin-top: rem(24);
  font-size: rem(18);
+ letter-spacing: 0.1em;
  margin: 0 rem(8);
  line-height: 1.4477;
  border-bottom: 3px solid;

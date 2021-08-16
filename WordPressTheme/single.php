@@ -18,50 +18,62 @@
 <div class="l-inner p-post-news__inner">
 
   <h1 class="p-post-news__title">
-  タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。タイトルが入ります。
+        <?php the_title(); ?>
   </h1><!-- /.p-post-news__title -->
   
   <div class="p-post-news__title-bottom">
-    <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>">2020/06/13</time>
+    <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
     <div class="p-post-news__category">
-         カテゴリ１
+    <?php
+          // カテゴリー１つ目の名前を表示
+          $category = get_the_category();
+          if ($category[0] ) {
+          echo '<div class="">' . $category[0]->cat_name . '</div>';
+          }
+          ?>
     </div><!-- /.p-post-news__category -->
   </div><!-- /.p-post-news__title-bottom -->
 
 </div><!-- /.l-inner -->
 
 <div class="p-post-news__img">
-  <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/post/post1-pc.jpg" alt="">
+      <?php
+      if (has_post_thumbnail() ) {
+      // アイキャッチ画像が設定されてれば大サイズで表示
+      the_post_thumbnail('large');
+      } 
+      ?>
 </div><!-- /.p-post-news__img -->
 
 <div class="p-post-news__body">
   <div class="l-inner p-post-news__inner">
 
     <p class="p-post-news__text">
-    テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+         <?php echo SCF::get( 'news-text' );?>
+         
      </p><!-- /.p-post-news__text -->
       
       <h2 class="p-post-news__sub-title">
-         見出し２
+      <?php echo  SCF::get( 'news-title-sub' );?>
       </h2><!-- /.p-post-news__sub-title -->
-        
+
       <p class="p-post-news__text">
-      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      <?php $newsTextSub = scf::get('news-text-sub'); echo nl2br( $newsTextSub ); ?>
       </p><!-- /.p-post-news__text -->
           
       <h3 class="p-post-news__sub-title2">
-      見出し３見出し３見出し３見出し３
+      <?php echo SCF::get( 'news-title-sub2' );?>
       </h3><!-- /.p-post-news__sub-title2 -->
             
       <p class="p-post-news__text">
-      テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。
+      <?php echo SCF::get( 'news-text-sub2' );?>
       </p><!-- /.p-post-news__text -->
           
   </div><!-- / -->
 </div><!-- /.p-post-news__body -->
 
   <div class="p-post-news__img2">
-    <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/post/post2-pc.jpg" alt="">
+   <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
   </div><!-- /.p-post-news__img -->
 
 
@@ -69,33 +81,26 @@
   <div class="l-inner p-post-news__inner">
 
     <ul class="p-post-news__lists">
-      <li class="p-post-news__list">
-      ・リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ・リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ・リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ・リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
+
+    <?php $newsListMain = SCF::get('news-list-main'); ?>
+          <?php foreach ($newsListMain as $fields ) :?>
+            <li class="p-post-news__list">
+                <?php echo $fields['news-list-main1']; ?>
+              </li><!-- /.p-post-news__list -->
+          <?php endforeach ?>
+      
+   
     </ul><!-- /.p-post-news__lists -->
     
     <ol class="p-post-news__lists">
-      <li class="p-post-news__list">
-      １リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ２リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ３リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
-      <li class="p-post-news__list">
-      ４リストが入ります。リストが入ります。リストが入ります。リストが入ります。
-      </li><!-- /.p-post-news__list -->
+   
+    <?php $newsListSub = SCF::get('news-list-sub'); ?>
+          <?php foreach ($newsListSub as $fields ) :?>
+            <li class="p-post-news__list">
+                <?php echo $fields['news-list-sub1']; ?>
+              </li><!-- /.p-post-news__list -->
+          <?php endforeach ?>
+
     </ol><!-- /.p-post-news__lists -->
     
   </div><!-- /.l-inner -->
@@ -106,15 +111,26 @@
 
 
 
+
+
 <!-- pagination -->
+
+<?php
+ $previous_post = get_previous_post();
+ $previous_id = $previous_post->ID;
+ $previous_date = mysql2date('Y.m.d', $previous_post->post_date);
+ $next_post = get_next_post();
+ $next_id = $next_post->ID;
+ $next_date = mysql2date('Y.m.d', $next_post->post_date);
+?>
+
+
 <div class="l-post-news-pagination p-post-news-pagination">
 
    <div class='wp-pagenavi'>
-      <a class="previouspostslink" rel="prev" href="#">PREV</a>
-      
+      <a class="previouspostslink" rel="prev" href="<?php the_permalink( $previous_id ); ?>">PREV</a>
        <a href="/news" class="home">一覧</a>
-
-      <a class="nextpostslink" rel="next" href="#">NEXT</a>
+      <a class="nextpostslink" rel="next" href="<?php the_permalink( $next_id ); ?>">NEXT</a>
     </div>
 
 </div><!-- /.l-news-paginaition -->
@@ -133,58 +149,57 @@
   </div><!-- /.p-post-news-article__head -->
 
   <div class="p-post-news-article__box">
-        <a href="" class="p-post-news-article__item p-card">
+      
+
+          <?php
+          // 同じカテゴリから記事を10件呼び出す
+          $categories = get_the_category($post->ID);
+          
+          $category_ID = array();
+          
+          foreach($categories as $category):
+            array_push( $category_ID, $category -> cat_ID);
+          endforeach ;
+          
+          $args = array(
+            // 今読んでいる記事を除く
+            'post__not_in' => array($post -> ID),
+            'posts_per_page'=> 4,
+            'category__in' => $category_ID,
+            // ランダムに記事を選ぶ
+            'orderby' => 'rand',
+          );
+          $query = new WP_Query($args);
+          if( $query -> have_posts() ):
+            while ($query -> have_posts()) :
+            $query -> the_post();
+          ?>
+         
+         <a href="<?php the_permalink(); ?>" class="p-post-news-article__item p-card">
             <div class="p-card__img">
-              <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog10.jpg" alt="blog画像10">
+            <?php the_post_thumbnail('thumbnail'); ?>
             </div><!-- /.p-card_img -->
             <div href="" class="p-card__body">
-              <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-              <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
+              <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->
+              <div class="p-card__text"><?php the_excerpt(); //抜粋を表示 ?></div><!-- /.p-card__text -->
               <div href="" class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
+              <?php
+                // カテゴリー１つ目の名前を表示
+                $category = get_the_category();
+                if ($category[0] ) {
+                echo '<div class="p-card__category">' . $category[0]->cat_name . '</div>';
+                }
+                ?>
+                <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->
         </a>
-        <a href="" class="p-post-news-article__item p-card">
-            <div class="p-card__img">
-              <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog11.jpg" alt="blog画像11">
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
-              <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-              <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-              <div href="" class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-        </a>
-        <a href="" class="p-post-news-article__item p-card">
-            <div class="p-card__img">
-              <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog12.jpg" alt="blog画像12">
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
-              <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-              <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-              <div href="" class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-        </a>
-        <a href="" class="p-post-news-article__item p-card">
-            <div class="p-card__img">
-              <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/blog13.jpg" alt="blog画像13">
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
-              <h3 class="p-card__title">タイトルが入ります。タイトルが入ります。</h3><!-- /.p-card__title -->
-              <div class="p-card__text">説明文が入ります。説明文が入ります。説明文が入ります。</div><!-- /.p-card__text -->
-              <div href="" class="p-card__bottom">
-                  <div class="p-card__category">カテゴリ</div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>">2021.07.20</time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-        </a>
+         
+
+          <?php endwhile; endif; ?>
+          <?php wp_reset_postdata(); ?> 
+
+       
   </div><!-- /.p-post-news-article__box -->
 
 </div><!-- /.l-inner -->

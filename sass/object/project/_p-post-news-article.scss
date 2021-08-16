@@ -5,7 +5,7 @@
 .p-post-news-article__head--sp,
 .p-post-news-article__head--pc {
    font-size: rem(16);
-   padding: rem(8) 0;
+   padding: rem(11) 0;
    line-height: 1;
    letter-spacing: 0.125em;
    text-align: center;
@@ -28,7 +28,13 @@ text-align: center;
 }
 
 .p-post-news-article__item {
- margin-top: rem(24);
+  &+& {
+    margin-top: rem(24);
+   
+    @include mq(tab) {
+      margin-top: 0;
+    }
+  }
 
  @include mq(tab) {
    margin-top: 0;
