@@ -228,7 +228,7 @@
         <?php if ($my_query->have_posts()): // 投稿がある場合 ?>
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-      <a href="" class="p-blog__item p-card">
+      <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-blog__item p-card">
          <div class="p-card__img">
          
             <?php

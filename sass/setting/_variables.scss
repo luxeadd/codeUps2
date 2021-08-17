@@ -24,12 +24,14 @@ $l-tab: 768px; // タブレットサイズ
 
 $l-inner: 1100px; // インナー幅
 $l-pc: 1440px; // パソコン幅
+$l-md: 1280px; // パソコン幅
 
 // ブレークポイント（PC基準）
 $breakpoints: (
 	"sp": "screen and (min-width: 375px)",
 	"tab": "screen and (min-width: #{$l-tab})",
 	"pc": "screen and (min-width: #{$l-inner})",
+	"md": "screen and (min-width: #{$l-md})",
 	"lg": "screen and (min-width: #{$l-pc})",
 
 );

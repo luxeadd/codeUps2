@@ -2975,10 +2975,6 @@ html {
 	background: url(../img/common/line-pc.png) no-repeat top/cover;
 	height: 2688px;
 	left: -0.25rem;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -100;
 }
 
 .l-blog-items {
@@ -4015,6 +4011,14 @@ html {
 
 .u-hidden-pc {
 	display: none;
+}
+
+}
+
+@media screen and (min-width: 1280px) {
+
+.l-bg-line {
+	height: 3112px;
 }
 
 }
