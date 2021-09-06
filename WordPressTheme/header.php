@@ -41,13 +41,13 @@
       <!-- ドロワーメニュー -->
       <div class="p-header__menu p-drawer-menu js-drawer-menu">
         <ul class="p-drawer-menu__items">
-          <li class="p-drawer-menu__item"><a href="/home">トップ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/content">事業内容</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/works">制作実績</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/overview">企業概要</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/blog">ブログ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="/contact">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/home/' ) ); ?>">トップ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/content/' ) ); ?>">事業内容</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">制作実績</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>">企業概要</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">ブログ</a></li><!-- /.p-drawer-menu__item -->
+          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
         </ul><!-- /.p-drawer-menu__items -->
       </div><!-- /.p-header__menu -->
 
@@ -55,11 +55,11 @@
           <!-- pcーメニュー -->
       <nav class="p-header__pc-menu p-pc-menu ">
         <ul class="p-pc-menu__items">
-          <li class="p-pc-menu__item"><a href="/news">お知らせ</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="/content">事業内容</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="/works">制作実績</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="/overview">企業概要</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="/blog">ブログ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo esc_url( home_url( '/content/' ) ); ?>">事業内容</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">制作実績</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>">企業概要</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">ブログ</a></li><!-- /.p-pc-menu__item -->
         </ul><!-- /.p-pc-menu__items -->
       </nav><!-- /.p-header__menu -->
 

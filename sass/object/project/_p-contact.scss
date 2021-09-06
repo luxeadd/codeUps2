@@ -73,17 +73,8 @@
   
   @include mq(tab) {
    margin-top: rem(40);
- display: none;
+ 
 }
 
 }
-.p-contact__btn--pc {
- display: none;
 
- @include mq(tab) {
- margin-top: rem(54);    
- display: flex;
- justify-content: center;
-}
-
-}

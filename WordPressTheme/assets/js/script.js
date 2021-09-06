@@ -244,6 +244,10 @@ var slider = new Swiper ('.gallery-slider', {
 			 jQuery('.js-header').removeClass('change-color'); } });
  
       
+
+  setTimeout(function() {
+    $('.loader-wrap').fadeOut();
+}, 1000);
 			
 	
 		

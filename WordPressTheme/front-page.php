@@ -1,5 +1,18 @@
 <?php get_header(); ?>
 
+<!-- ローディングアニメーション -->
+<div class="loader-wrap">
+      <div class="container">
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+        <div class="ball"></div>
+      </div>
+    </div><!-- /.loader-wrap -->
+
 <!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
 
@@ -92,7 +105,7 @@
         
       </div><!-- /.p-news__items-inner -->
          <div class="p-news__btn c-btn--slide">
-             <a href="/news" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
+             <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
          </div><!-- /.p-news-info__btn -->
     </div><!-- /.p-news__items -->
   </div><!-- /.linner -->
@@ -184,7 +197,7 @@
         <div class="p-works__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
         <p class="p-works__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
         <div class="p-works__btn c-btn--slide--white" >
-          <a href="/works" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-works__inner -->
@@ -204,7 +217,7 @@
         <div class="p-overview__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
         <p class="p-overview__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
         <div class="p-overview__btn c-btn--slide--white">
-          <a href="/overview" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-overview__inner -->
@@ -264,7 +277,7 @@
     </div><!-- /.p-blog__items -->
 
     <div class="p-blog__btn c-btn--slide--white">
-       <a href="blog" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+       <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
     </div><!-- /.p-blog__btn -->
   </div><!-- /.l-inner -->
 </section><!-- /.l-top-blog p-blog -->

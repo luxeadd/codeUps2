@@ -8,15 +8,12 @@
        <!-- pcテキスト -->
        <div class="p-contact__text--pc">テキストが入ります。テキストが入ります。テキストが入ります。</div><!-- /.p-contact__text -->
 
-       <!-- SPボタン -->
+       
        <div class="p-contact__btn c-btn--slide--white">
-         <a href="/contact" class="c-btn">お問い合わせへ</a><!-- /.c-btn -->
+         <a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>" class="c-btn">お問い合わせへ</a><!-- /.c-btn -->
        </div><!-- /.p-contact__btn -->
 
-          <!-- PCボタン -->
-       <div class="p-contact__btn--pc c-btn--slide--white">
-         <a href="/contact" class="c-btn">詳しく見る</a><!-- /.c-btn -->
-       </div><!-- /.p-contact__btn -->
+        
 
     </div><!-- /.l-inner -->
 </div><!-- /p-contact -->
