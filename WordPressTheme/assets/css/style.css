@@ -1103,7 +1103,7 @@ summary {
 .p-card__body {
 	background: #fff;
 	color: #333;
-	padding: 0.5rem 0.9375rem 0.9375rem 1.4375rem;
+	padding: 0.5rem 0.9375rem 1.4375rem 0.9375rem;
 	transition: all .3s;
 }
 
@@ -2562,8 +2562,7 @@ summary {
 	margin-left: auto;
 	margin-right: auto;
 	margin-top: 1rem;
-	max-width: 49.9375rem;
-	position: relative;
+	max-width: 49.875rem;
 	width: 100%;
 }
 
@@ -2571,6 +2570,8 @@ summary {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 29.3125rem;
+	overflow: hidden;
+	position: relative;
 	width: 100%;
 }
 
@@ -2624,6 +2625,7 @@ summary {
 	background: #111111;
 	border-radius: 50%;
 	height: 1.875rem;
+	top: 32%;
 	width: 1.875rem;
 }
 
@@ -2645,6 +2647,7 @@ summary {
 	background: #111111;
 	border-radius: 50%;
 	height: 1.875rem;
+	top: 32%;
 	width: 1.875rem;
 }
 
@@ -3221,7 +3224,7 @@ html {
 }
 
 .p-card__body {
-	padding: 0.25rem 0.9375rem 0.9375rem 1.5625rem;
+	padding: 0.25rem 0.9375rem 1.5625rem 0.8125rem;
 }
 
 .p-card__text {
@@ -3870,6 +3873,7 @@ html {
 
 .gallery .swiper-button-next {
 	height: 3.125rem;
+	top: 40%;
 	width: 3.125rem;
 }
 
@@ -3882,6 +3886,7 @@ html {
 
 .gallery .swiper-button-prev {
 	height: 3.125rem;
+	top: 40%;
 	width: 3.125rem;
 }
 
