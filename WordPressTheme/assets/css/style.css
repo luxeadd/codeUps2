@@ -2570,7 +2570,6 @@ summary {
 	margin-left: auto;
 	margin-right: auto;
 	max-width: 29.3125rem;
-	overflow: hidden;
 	position: relative;
 	width: 100%;
 }
@@ -2625,7 +2624,7 @@ summary {
 	background: #111111;
 	border-radius: 50%;
 	height: 1.875rem;
-	top: 32%;
+	top: 50%;
 	width: 1.875rem;
 }
 
@@ -2647,7 +2646,7 @@ summary {
 	background: #111111;
 	border-radius: 50%;
 	height: 1.875rem;
-	top: 32%;
+	top: 50%;
 	width: 1.875rem;
 }
 
@@ -3873,7 +3872,7 @@ html {
 
 .gallery .swiper-button-next {
 	height: 3.125rem;
-	top: 40%;
+	top: 50%;
 	width: 3.125rem;
 }
 
@@ -3886,7 +3885,7 @@ html {
 
 .gallery .swiper-button-prev {
 	height: 3.125rem;
-	top: 40%;
+	top: 50%;
 	width: 3.125rem;
 }
 

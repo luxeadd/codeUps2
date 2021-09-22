@@ -32,7 +32,7 @@
 
 <div class="p-post-works__img">
 <div class="gallery">                
-    <div class="swiper-container gallery-slider">
+    <div class="swiper gallery-slider">
         <div class="swiper-wrapper">
             <div class="swiper-slide">
             <?php

@@ -18,5 +18,8 @@
 		"postcss-cssnext": "^3.1.0",
 		"gulp-rename": "^2.0.0",
 		"gulp-sourcemaps": "^2.6.5"
+	},
+	"dependencies": {
+		"swiper": "^7.0.5"
 	}
 }

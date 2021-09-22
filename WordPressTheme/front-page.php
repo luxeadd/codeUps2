@@ -16,9 +16,8 @@
 <!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
 
-  <div class="swiper">
       <!-- Slider main container -->
-      <div class="swiper-container p-mv-swiper">
+      <div class="swiper p-mv-swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -48,7 +47,6 @@
         </div>
       </div>
     
- </div><!-- /.swiper -->
 
   </div><!-- /.p-mv__img -->
   <div class="p-mv__content">
@@ -155,9 +153,8 @@
 
       <div class="p-works__img-box">
         
-        <div class="swiper  ">
           <!-- Slider main container -->
-          <div class="swiper-container p-works-swiper">
+          <div class="swiper p-works-swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper ">
               <!-- Slides -->
@@ -190,7 +187,6 @@
             <!-- If we need scrollbar -->
             <!-- <div class="swiper-scrollbar"></div> -->
           </div> 
-        </div><!-- /.swiper -->
       </div><!-- /.p-works__img-box -->
       
       <div class="p-works__text-box">
