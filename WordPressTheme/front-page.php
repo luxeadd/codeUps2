@@ -2,15 +2,10 @@
 
 <!-- ローディングアニメーション -->
 <div class="loader-wrap">
-      <div class="container">
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-        <div class="ball"></div>
-      </div>
+<div class="ring">
+<img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
+ <span></span>
+ </div>
     </div><!-- /.loader-wrap -->
 
 <!-- トップページMV -->

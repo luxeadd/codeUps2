@@ -248,9 +248,11 @@ var slider = new Swiper ('.gallery-slider', {
  
       
 
+
+	//ローディングアニメーション
   setTimeout(function() {
     $('.loader-wrap').fadeOut();
-}, 1000);
+}, 1500);
 			
 	
 		
