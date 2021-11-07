@@ -956,7 +956,7 @@ summary {
 	z-index: 9999;
 }
 
-.ring {
+.loader-ring {
 	align-items: center;
 	background: transparent;
 	background: linear-gradient(0deg, #333, #000);
@@ -976,7 +976,7 @@ summary {
 	width: 15.625rem;
 }
 
-.ring:before {
+.loader-ring:before {
 	-webkit-animation: animateCircle 2s linear infinite;
 	animation: animateCircle 2s linear infinite;
 	border: 3px solid transparent;
@@ -991,7 +991,7 @@ summary {
 	width: 100%;
 }
 
-.ring span {
+.loader-ring span {
 	-webkit-animation: animate 2s linear infinite;
 	animation: animate 2s linear infinite;
 	background: transparent;
@@ -1004,7 +1004,7 @@ summary {
 	width: 50%;
 }
 
-.ring span:before {
+.loader-ring span:before {
 	background: #fff000;
 	border-radius: 50%;
 	box-shadow: 0 0 20px #fff000;
@@ -1016,7 +1016,7 @@ summary {
 	width: 16px;
 }
 
-.ring img {
+.loader-ring img {
 	-webkit-animation-name: fadeInAnime; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
 	-webkit-animation-duration: 1s; /*アニメーションの長さ*/

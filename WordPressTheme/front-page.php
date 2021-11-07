@@ -2,9 +2,9 @@
 
 <!-- ローディングアニメーション -->
 <div class="loader-wrap">
-<div class="ring">
+<div class="loader-ring">
+  <span></span>
 <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
- <span></span>
  </div>
     </div><!-- /.loader-wrap -->
 

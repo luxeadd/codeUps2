@@ -14,7 +14,7 @@
 
 }
 
-.ring
+.loader-ring
 {
   position: absolute;
   top: 50%;
@@ -34,7 +34,7 @@ box-shadow: 0 0 0 20px rgba(0,0,0,.5);
 background: linear-gradient(0deg, #333, #000);
 box-shadow: 0 0 0 4px  #353535, 0 0 0 5px #3e3e3e,inset 0 0 10px rgba(0,0,0,1), 0 5px 20px rgba(0,0,0,5), inset 0 0 15px rgba(0,0,0,.2);
 }
-.ring:before
+.loader-ring:before
 {
   content: '';
   position:absolute;
@@ -48,7 +48,7 @@ box-shadow: 0 0 0 4px  #353535, 0 0 0 5px #3e3e3e,inset 0 0 10px rgba(0,0,0,1), 
   border-radius: 50%;
   animation: animateCircle 2s linear infinite;
 }
-.ring span
+.loader-ring span
 {
   display: block;
   position: absolute;
@@ -60,7 +60,7 @@ box-shadow: 0 0 0 4px  #353535, 0 0 0 5px #3e3e3e,inset 0 0 10px rgba(0,0,0,1), 
   transform-origin: left;
   animation: animate 2s linear infinite;
 }
-.ring span:before
+.loader-ring span:before
 {
   content: '';
   position: absolute;
@@ -97,7 +97,7 @@ box-shadow: 0 0 0 4px  #353535, 0 0 0 5px #3e3e3e,inset 0 0 10px rgba(0,0,0,1), 
 }
 
 
-.ring img {
+.loader-ring img {
   width: 100%;
   height: 100%;
   opacity: 0;
