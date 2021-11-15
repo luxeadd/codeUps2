@@ -1959,16 +1959,198 @@ summary {
 .p-mv__title {
 	font-size: 1.75rem;
 	font-weight: 700;
-	letter-spacing: 0.017em;
 	line-height: 1;
 }
 
+.p-mv__title span {
+	display: inline-block;
+}
+
+.p-mv__title span:first-child {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s;
+	animation-delay: 2.0s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(2) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.1s;
+	animation-delay: 2.1s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(3) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.2s;
+	animation-delay: 2.2s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(4) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.3s;
+	animation-delay: 2.3s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(5) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.4s;
+	animation-delay: 2.4s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(6) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.5s;
+	animation-delay: 2.5s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(7) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.6s;
+	animation-delay: 2.6s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(8) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.7s;
+	animation-delay: 2.7s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(9) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.8s;
+	animation-delay: 2.8s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(10) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.9s;
+	animation-delay: 2.9s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(11) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 3.0s;
+	animation-delay: 3.0s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
+.p-mv__title span:nth-child(12) {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 3.1s;
+	animation-delay: 3.1s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
+}
+
 .p-mv__suv-title {
+	-webkit-animation-name: slideUp;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 3.2s;
+	animation-delay: 3.2s;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideUp;
+	animation-timing-function: ease;
 	font-size: 1.25rem;
 	font-weight: 700;
 	letter-spacing: 0.025em;
 	line-height: 1;
 	margin-top: 1.5rem;
+	opacity: 0; /*アニメーションの開始を遅らせる*/
 }
 
 .p-mv-swiper {
@@ -3652,7 +3834,6 @@ html {
 
 .p-mv__title {
 	font-size: 3.125rem;
-	letter-spacing: 0.01em;
 }
 
 .p-mv__suv-title {
@@ -4137,6 +4318,32 @@ html {
 100% {
 	opacity: 1;
 	transform: translate(0);
+}
+
+}
+
+@-webkit-keyframes slideUp {
+
+0% {
+	transform: translateY(50px);
+}
+
+100% {
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+@keyframes slideUp {
+
+0% {
+	transform: translateY(50px);
+}
+
+100% {
+	opacity: 1;
+	transform: translateY(0);
 }
 
 }

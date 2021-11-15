@@ -42,13 +42,138 @@
 .p-mv__title {
    font-size: rem(28);
    font-weight: 700;
-   letter-spacing: 0.017em;
    line-height: 1;
-
+   
    @include mq(tab) {
       font-size: rem(50);
-      letter-spacing: 0.01em;
    }
+
+}
+
+.p-mv__title span {
+   display: inline-block;
+}
+
+.p-mv__title span:first-child {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.0s;/*アニメーションの開始を遅らせる*/
+ 
+}
+
+.p-mv__title span:nth-child(2) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.1s;/*アニメーションの開始を遅らせる*/
+   
+}
+.p-mv__title span:nth-child(3) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.2s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(4) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.3s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(5) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.4s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(6) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.5s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(7) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.6s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(8) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.7s;/*アニメーションの開始を遅らせる*/
+
+} 
+.p-mv__title span:nth-child(9) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.8s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(10) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 2.9s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(11) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 3.0s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-mv__title span:nth-child(12) {
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 3.1s;/*アニメーションの開始を遅らせる*/
+
+}
+
+@keyframes slideUp {
+   0% {
+     
+      transform: translateY(50px);
+   }
+   
+   100% {
+      opacity: 1;
+      transform: translateY(0);
+    }
 
 }
 
@@ -58,6 +183,14 @@
    font-weight: 700;
    letter-spacing: 0.025em;
    line-height: 1;
+
+   opacity: 0;
+   animation-name: slideUp;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:.5s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 3.2s;/*アニメーションの開始を遅らせる*/
+
 
    @include mq(tab) {
       font-size: rem(25);

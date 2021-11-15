@@ -45,7 +45,20 @@
 
   </div><!-- /.p-mv__img -->
   <div class="p-mv__content">
-    <h1 class="p-mv__title">メインタイトルが入ります</h1><!-- /.p-mv__title -->
+    <h1 class="p-mv__title">
+        <span>メ</span>
+        <span>イ</span>
+        <span>ン</span>
+        <span>タ</span>
+        <span>イ</span>
+        <span>ト</span>
+        <span>ル</span>
+        <span>が</span>
+        <span>入</span>
+        <span>リ</span>
+        <span>ま</span>
+        <span>す</span>
+    </h1><!-- /.p-mv__title -->
     <div class="p-mv__suv-title">サブタイトルが入ります</div><!-- /.p-mv__suv-title -->
   </div><!-- /.p-mv__content -->
 
