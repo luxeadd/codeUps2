@@ -1957,13 +1957,14 @@ summary {
 }
 
 .p-mv__title {
-	font-size: 1.5625rem;
+	font-size: 1.75rem;
 	font-weight: 700;
 	line-height: 1;
 }
 
 .p-mv__title span {
 	display: inline-block;
+	letter-spacing: -0.2em;
 }
 
 .p-mv__title span:first-child {
