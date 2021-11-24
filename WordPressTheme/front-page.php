@@ -119,8 +119,7 @@
 
 
 <!-- 事業内容 -->
-<section class="l-top-content p-content">
-    <div class="l-bg-line"></div><!-- /.l-bg-line -->
+<section class="l-top-content p-content js-scrollAnimation">
     <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item">
@@ -210,7 +209,7 @@
   
   
 <!--企業概要 -->
-<section class="l-top-overview p-overview">
+<section class="l-top-overview p-overview js-scrollAnimation">
   <h2 class="p-overview__title c-section-title">企業概要</h2><!-- /.p-works__title -->
   <div class="p-overview__content">
     <div class="p-overview__inner">

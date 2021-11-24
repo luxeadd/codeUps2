@@ -3,9 +3,43 @@
 
   @include mq(tab) {
     padding-top: rem(103);
-    
+    position: relative;
   }
 }
+
+.p-content.is-animated::before {
+
+  @include mq(tab) {
+    content: "";
+    display: block;
+    width: rem(1);
+    height: calc(0 / 1280 * 100vw);
+    background: $title-color;
+    position: absolute;
+    top: -7%;
+    left: 0%;
+    transform: rotate(-45deg);
+    z-index: -1;
+    
+    animation-name: borderSlide1;/*1で解説*/
+    animation-fill-mode:forwards;/*開始と終了の状態*/
+    animation-duration:1s;/*アニメーションの長さ*/
+    animation-timing-function:linear;/*アニメーションの進行具合*/
+    animation-direction:normal;/*アニメーションの向き*/
+    animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+    
+      }
+  }
+
+  @keyframes borderSlide1{
+  
+    100% {
+    height: calc(1714 / 1280 * 100vw);
+    top: -60%;
+    left: 46%;
+    }
+  }
+
 
 .p-content__title {
   @include mq(tab) {
