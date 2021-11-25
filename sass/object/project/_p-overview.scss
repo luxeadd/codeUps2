@@ -23,7 +23,7 @@
     animation-duration:1s;/*アニメーションの長さ*/
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-direction:normal;/*アニメーションの向き*/
-    animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+    animation-delay: 1.0s;/*アニメーションの開始を遅らせる*/
   }
   }
 
@@ -96,6 +96,7 @@
   .p-overview__img {
     width: 100%;
     position: relative;
+    opacity: 0;
 
     @include mq(tab) {
       // height: rem(510);
@@ -106,6 +107,27 @@
     }
     
   }
+
+  .p-overview__img.is-animated {
+    animation-name: slideRight;/*1で解説*/
+    animation-fill-mode:forwards;/*開始と終了の状態*/
+    animation-duration:.5s;/*アニメーションの長さ*/
+    animation-timing-function:linear;/*アニメーションの進行具合*/
+    animation-delay: 0.5s;/*アニメーションの開始を遅らせる*/
+    animation-direction:normal;/*アニメーションの向き*/
+  }
+  
+  @keyframes slideRight{
+    0% {
+     transform: translateX(-100%);
+    }
+  
+    100% {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+  
 
     .p-overview__img::after {
       content: "";
@@ -141,6 +163,7 @@
     
   }
     }
+
   
   .p-overview__text-box {
   width: 100%;

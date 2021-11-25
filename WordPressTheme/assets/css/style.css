@@ -578,16 +578,6 @@ summary {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 
-.l-bg-line {
-	background: url(../img/common/line-sp.png) no-repeat top/cover;
-	height: 2110px;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-	z-index: -100;
-}
-
 .l-blog-items {
 	margin-top: 3.4375rem;
 }
@@ -1053,6 +1043,10 @@ summary {
 	text-align: center;
 }
 
+.p-blog__item {
+	opacity: 0;
+}
+
 .p-blog__item:first-child::after {
 	align-items: center;
 	background: #FFBA6A;
@@ -1070,6 +1064,51 @@ summary {
 
 .p-blog__item + .p-blog__item {
 	margin-top: 1.375rem;
+}
+
+.p-blog__item.is-animated:first-child {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 0.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
+.p-blog__item.is-animated:nth-child(2) {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: .5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: .5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
+.p-blog__item.is-animated:nth-child(3) {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 0.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
 }
 
 .p-blog__btn {
@@ -1221,6 +1260,7 @@ summary {
 
 .p-content-box__item {
 	flex: 0 0 50%;
+	opacity: 0;
 	position: relative;
 }
 
@@ -1250,6 +1290,66 @@ summary {
 	background-position: top;
 	background-repeat: no-repeat;
 	background-size: cover;
+}
+
+.p-content-box__item.is-animated:first-child {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 0.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
+.p-content-box__item.is-animated:nth-child(2) {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.0s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 1.0s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
+.p-content-box__item.is-animated:nth-child(3) {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 1.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
+.p-content-box__item.is-animated:nth-child(4) {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 2.0s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
 }
 
 .p-content-box__link {
@@ -2301,8 +2401,24 @@ summary {
 }
 
 .p-overview__img {
+	opacity: 0;
 	position: relative;
 	width: 100%;
+}
+
+.p-overview__img.is-animated {
+	-webkit-animation-name: slideRight; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 0.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideRight;
+	animation-timing-function: linear; /*アニメーションの向き*/
 }
 
 .p-overview__img::after {
@@ -3022,6 +3138,25 @@ summary {
 	padding-bottom: 1.375rem;
 }
 
+.p-works__img-box {
+	opacity: 0;
+}
+
+.p-works__img-box.is-animated {
+	-webkit-animation-name: slideLeft; /*1で解説*/
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-direction: normal;
+	animation-delay: 0.5s;
+	animation-direction: normal;
+	animation-duration: .5s;
+	animation-fill-mode: forwards;
+	animation-name: slideLeft;
+	animation-timing-function: linear; /*アニメーションの向き*/
+}
+
 .p-works__img-box img {
 	vertical-align: bottom;
 	width: 100%;
@@ -3204,12 +3339,6 @@ html {
 
 html {
 	font-size: 1.45455vw;
-}
-
-.l-bg-line {
-	background: url(../img/common/line-pc.png) no-repeat top/cover;
-	height: 2688px;
-	left: -0.25rem;
 }
 
 .l-blog-items {
@@ -3407,20 +3536,17 @@ html {
 }
 
 .p-blog__item {
-	display: none;
 	width: calc(33.3% - 50px / 3);
 }
 
-.p-blog__item:nth-child(1) {
-	display: block;
+.p-blog__item.is-animated:nth-child(2) {
+	-webkit-animation-delay: 1.0s;
+	animation-delay: 1.0s; /*アニメーションの開始を遅らせる*/
 }
 
-.p-blog__item:nth-child(2) {
-	display: block;
-}
-
-.p-blog__item:nth-child(3) {
-	display: block;
+.p-blog__item.is-animated:nth-child(3) {
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s; /*アニメーションの開始を遅らせる*/
 }
 
 .p-blog__btn {
@@ -3926,8 +4052,8 @@ html {
 	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
 	-webkit-animation-direction: normal; /*アニメーションの向き*/
-	-webkit-animation-delay: 1.5s;
-	animation-delay: 1.5s;
+	-webkit-animation-delay: 1.0s;
+	animation-delay: 1.0s;
 	animation-direction: normal;
 	animation-duration: 1s;
 	animation-fill-mode: forwards;
@@ -4292,14 +4418,6 @@ html {
 
 }
 
-@media screen and (min-width: 1280px) {
-
-.l-bg-line {
-	height: 3112px;
-}
-
-}
-
 @media screen and (min-width: 1440px) {
 
 .c-test {
@@ -4374,6 +4492,45 @@ html {
 100% {
 	opacity: 1;
 	transform: translate(0);
+}
+
+}
+
+@-webkit-keyframes slideRight {
+
+0% {
+	transform: translateX(-100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@keyframes slideRight {
+
+0% {
+	transform: translateX(-100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@keyframes slideRight {
+
+0% {
+	transform: translateX(-100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 }
@@ -4464,6 +4621,45 @@ to {
 	height: calc(1780 / 1280 * 100vw);
 	left: 50%;
 	top: -76%;
+}
+
+}
+
+@keyframes slideRight {
+
+0% {
+	transform: translateX(-100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@-webkit-keyframes slideLeft {
+
+0% {
+	transform: translateX(100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
+}
+
+}
+
+@keyframes slideLeft {
+
+0% {
+	transform: translateX(100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 }

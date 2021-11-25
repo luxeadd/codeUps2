@@ -84,9 +84,7 @@
 		<?php if ($my_query->have_posts()): // 投稿がある場合 ?>
 	  <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-
        <article class="p-news__item p-news-info">
-         
          <div class="p-news-info__head">
            <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
            <?php
@@ -96,7 +94,6 @@
                 echo '<div class="p-news-info__category">' . $category[0]->cat_name . '</div>';
               }
               ?>
-
       </div><!-- /.p-news-info__head -->
 
             <div class="p-news-info__body">
@@ -122,28 +119,24 @@
 <section class="l-top-content p-content js-scrollAnimation">
     <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
-      <li class="p-content-box__item">
+      <li class="p-content-box__item js-scrollAnimation">
       <a href="/content" class="p-content-box__link">
          <h3  class="p-content-box__text">経営理念ページへ</h3>
-      
       </a>
     </li>
-    <li class="p-content-box__item">
+    <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content1" class="p-content-box__link">
-      <h3 class="p-content-box__text">理念1へ</h3>
-      
+        <h3 class="p-content-box__text">理念1へ</h3>
       </a>
     </li>
-    <li class="p-content-box__item">
+    <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content2" class="p-content-box__link">     
-      <h3  class="p-content-box__text">理念2へ</h3>
-       
+        <h3  class="p-content-box__text">理念2へ</h3>
       </a>
     </li>
-    <li class="p-content-box__item">
+    <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content3" class="p-content-box__link">
       <h3  class="p-content-box__text">理念3へ</h3>
-     
       </a>
     </li>
     
@@ -158,7 +151,7 @@
   <div class="p-works__content">
     <div class="p-works__inner">
 
-      <div class="p-works__img-box">
+      <div class="p-works__img-box js-scrollAnimation">
         
           <!-- Slider main container -->
           <div class="swiper p-works-swiper">
@@ -213,7 +206,7 @@
   <h2 class="p-overview__title c-section-title">企業概要</h2><!-- /.p-works__title -->
   <div class="p-overview__content">
     <div class="p-overview__inner">
-      <div class="p-overview__img">
+      <div class="p-overview__img js-scrollAnimation">
         <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/overview1.jpg" alt="overview画像">
       </div><!-- /.p-works__img -->
       <div class="p-overview__text-box">
@@ -237,14 +230,14 @@
     <?php
       $args = [
         'post_type' => 'blog', // カスタム投稿名が「」の場合
-        'posts_per_page' => 6, // 表示する数
+        'posts_per_page' => 3, // 表示する数
           ];
         $my_query = new WP_Query($args); ?>
 
         <?php if ($my_query->have_posts()): // 投稿がある場合 ?>
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-      <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-blog__item p-card">
+      <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-blog__item  p-card js-scrollAnimation">
          <div class="p-card__img">
          
             <?php

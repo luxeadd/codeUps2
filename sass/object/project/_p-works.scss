@@ -59,26 +59,47 @@
   }
 
 .p-works__img-box {
+  opacity: 0;
   @include mq(tab) {
     display: flex;
     align-items: center;
     width: 100%;
     max-width: rem(557);
   }
-  img {
-    vertical-align: bottom;
-    width: 100%;
-    @include mq(tab) {
-      max-width: rem(557);
-    
-    }
-   
-  }
-    
+  
+}
+
+.p-works__img-box.is-animated {
+  animation-name: slideLeft;/*1で解説*/
+  animation-fill-mode:forwards;/*開始と終了の状態*/
+  animation-duration:.5s;/*アニメーションの長さ*/
+  animation-timing-function:linear;/*アニメーションの進行具合*/
+  animation-delay: 0.5s;/*アニメーションの開始を遅らせる*/
+  animation-direction:normal;/*アニメーションの向き*/
+}
+
+@keyframes slideLeft{
+  0% {
+   transform: translateX(100%);
   }
 
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
 
-    .p-works__img::after {
+.p-works__img-box img {
+  vertical-align: bottom;
+  width: 100%;
+  @include mq(tab) {
+    max-width: rem(557);
+  
+  }
+ 
+}
+
+.p-works__img::after {
       content: "";
       display: block;
       width: 100%;
