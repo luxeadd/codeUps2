@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- ローディングアニメーション -->
-<div class="loader-wrap">
+<div id="loader" class="loader-wrap">
 <div class="loader-ring">
   <span></span>
 <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
@@ -284,8 +284,6 @@
 </section><!-- /.l-top-contact -->
 
 <!-- toTopボタン -->
-<div class="c-toTop js-to-top">
-    <div class="arrow-top"></div>
-</div><!-- /.c-toTop -->
+<?php get_template_part( 'template-parts/to-top' ); ?>
 
 <?php get_footer(); ?>

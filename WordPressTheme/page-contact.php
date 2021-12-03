@@ -46,9 +46,8 @@
     
     
     
-    <!-- toTopボタン -->
-<div class="c-toTop js-to-top">
-    <div class="arrow-top"></div>
-</div><!-- /.c-toTop -->
+ <!-- toTopボタン -->
+<?php get_template_part( 'template-parts/to-top' ); ?>
+
 
 <?php get_footer(); ?>

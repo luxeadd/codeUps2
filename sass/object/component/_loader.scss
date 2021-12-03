@@ -11,8 +11,19 @@
   z-index: 9999;
   display: flex;
   align-items: center;
-
+  animation : loader-fadeOut 2s;
+  animation-fill-mode: both;
 }
+
+@keyframes loader-fadeOut {
+  60% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
 
 .loader-ring
 {

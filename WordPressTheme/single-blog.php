@@ -202,4 +202,8 @@
    <?php get_template_part( 'template-parts/contact' ); ?>
 </section><!-- /.l-top-contact -->
 
+<!-- toTopボタン -->
+<?php get_template_part( 'template-parts/to-top' ); ?>
+
+
 <?php get_footer(); ?>
