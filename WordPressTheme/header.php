@@ -30,7 +30,7 @@
       </div><!-- /.p-header__logo -->
 
      <!-- ドロワーアイコン  -->
-      <div class="p-header__drawer c-hamburger js-hamburger ">
+      <div id="js-hamburger" class="p-header__drawer c-hamburger js-hamburger ">
           <span></span>
           <span></span>
           <span></span>
@@ -38,15 +38,15 @@
 
 
       <!-- ドロワーメニュー -->
-      <div class="p-header__menu p-drawer-menu js-drawer-menu">
+      <div id="js-drawer-menu" class="p-header__menu p-drawer-menu js-drawer-menu">
         <ul class="p-drawer-menu__items">
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/home/' ) ); ?>">トップ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/content/' ) ); ?>">事業内容</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">制作実績</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>">企業概要</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">ブログ</a></li><!-- /.p-drawer-menu__item -->
-          <li class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/home/' ) ); ?>">トップ</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/content/' ) ); ?>">事業内容</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/works/' ) ); ?>">制作実績</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>">企業概要</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>">ブログ</a></li><!-- /.p-drawer-menu__item -->
+          <li id="js-drawer-menu__item" class="p-drawer-menu__item"><a href="<?php echo esc_url( home_url( '/contact/' ) ); ?>">お問い合わせ</a></li><!-- /.p-drawer-menu__item -->
         </ul><!-- /.p-drawer-menu__items -->
       </div><!-- /.p-header__menu -->
 
@@ -70,7 +70,7 @@
 
 
       <!-- ドロワーメニュー展開時背景 -->
-      <div class="p-header__overlay js-overlay"></div><!-- /.p-header__overlay -->
+      <div id="js-header__overlay" class="p-header__overlay js-overlay"></div><!-- /.p-header__overlay -->
 
     </div><!-- /.p-header__inner -->
   </header>

@@ -135,7 +135,7 @@
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content3" class="p-content-box__link">
+      <a href="#rrr" class="p-content-box__link">
       <h3  class="p-content-box__text">理念3へ</h3>
       </a>
     </li>
@@ -222,7 +222,7 @@
 
 
 <!-- ブログ -->
-<section class="l-top-blog p-blog">
+<section id="rrr" class="l-top-blog p-blog">
   <div class="l-inner">
     <h2 class="p-blog__title c-section-title">ブログ</h2><!-- /.p-blog__title -->
     <div class="l-blog-items p-blog__items">
@@ -279,7 +279,7 @@
 </section><!-- /.l-top-blog p-blog -->
 
 <!-- お問い合わせ -->
-<section class="l-top-contact">
+<section  class="l-top-contact">
    <?php get_template_part( 'template-parts/contact' ); ?>
 </section><!-- /.l-top-contact -->
 

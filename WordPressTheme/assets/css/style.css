@@ -1555,6 +1555,10 @@ summary {
 	z-index: 99;
 }
 
+.p-header__overlay.open {
+	display: block;
+}
+
 .p-header__pc-menu {
 	height: inherit;
 	margin-left: auto;

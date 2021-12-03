@@ -71,6 +71,12 @@ background: rgba($color: #111111, $alpha: 0.5);
   display: none;
 }
 
+.p-header__overlay.open {
+  display: block;
+}
+
+
+
 .p-header__pc-menu {
   margin-left: auto;
   height: inherit;

@@ -10,11 +10,11 @@
   transform: translateX(200%);
   transition: all 0.3s;
 
-  &.open {
-    transform: translateX(0);
-  }
 }
 
+.p-drawer-menu.open {
+  transform: translateX(0);
+}
 
 .p-drawer-menu__items {
  
