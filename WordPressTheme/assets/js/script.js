@@ -221,4 +221,3 @@ var slider = new Swiper ('.gallery-slider', {
 	slider.controller.control = thumbs;
 	thumbs.controller.control = slider;
 
-
