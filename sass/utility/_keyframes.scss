@@ -1,0 +1,100 @@
+//トップMVタイトル 順番に
+@keyframes slideUp {
+  0% {
+    
+     transform: translateY(50px);
+  }
+  
+  100% {
+     opacity: 1;
+     transform: translateY(0);
+   }
+
+}
+
+//トップMVアップ
+@keyframes zoom {
+  from {
+      transform: scale(1);
+  }
+
+  to {
+      transform: scale(1.3);
+  }
+}
+
+
+//トップへボタン
+@keyframes to-top-fadeIn{
+  0% {
+    opacity: 0;
+    height: 0;
+  }
+
+  50% {
+    opacity: 1;
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    height: rem(45);
+  }
+}
+
+//トップブログスライド
+//トップコンテントスライド
+//トップオーバーレイスライド
+@keyframes slideRight{
+  0% {
+   transform: translateX(-100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//トップワークススライド
+@keyframes slideLeft{
+  0% {
+   transform: translateX(100%);
+  }
+
+  100% {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+//トップコンテントボーダースライド
+@keyframes borderSlide1{
+  
+ 50% {
+  height: calc(1714 / 1280 * 100vw);
+  top: -60%;
+  left: 46%;
+  width: rem(1);
+ }
+
+  100% {
+  height: 100%;
+  top: 0;
+  left: 0;
+  width: 80%;
+  }
+}
+
+//トップオーバーレイボーダースライド
+@keyframes borderSlide2{
+  
+  100% {
+    height: calc(1780 / 1280 * 100vw);
+    top: -76%;
+    left: 50%;
+  }
+}
+
+
+

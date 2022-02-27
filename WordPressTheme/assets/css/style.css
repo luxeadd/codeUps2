@@ -335,8 +335,8 @@ body {
 body {
 	-webkit-font-smoothing: antialiased;
 	-moz-osx-font-smoothing: grayscale;
-	background: #111111;
-	color: #FFFFFF;
+	background: #fff;
+	color: #111;
 	font-family: "Noto Sans JP", sans-serif;
 	font-size: 16px;
 	font-weight: 400;
@@ -578,10 +578,6 @@ summary {
 
 /* Remove all animations and transitions for people that prefer not to see them */
 
-.l-blog-items {
-	margin-top: 3.4375rem;
-}
-
 .l-header {
 	color: #fff;
 	left: 0;
@@ -744,7 +740,7 @@ summary {
 
 .c-btn {
 	background: #333333;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	display: inline-block;
 	font-size: 1.25rem;
 	letter-spacing: 0.1em;
@@ -759,7 +755,7 @@ summary {
 
 .c-btn--news {
 	background: #333333;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	display: inline-block;
 	overflow: hidden;
 	padding: 0.875rem 0;
@@ -790,7 +786,7 @@ summary {
 }
 
 .c-btn--slide a:hover {
-	color: #FFFFFF;
+	color: #111;
 }
 
 .c-btn--slide a:hover:before {
@@ -1043,7 +1039,7 @@ summary {
 }
 
 .p-blog__title::before {
-	color: #F9F871;
+	color: #e99bc1;
 	content: "Blog";
 	display: block;
 	font-family: "Noto Serif JP", serif;
@@ -1057,6 +1053,7 @@ summary {
 }
 
 .p-blog__items {
+	margin-top: 3.4375rem;
 	text-align: center;
 }
 
@@ -1086,13 +1083,11 @@ summary {
 .p-blog__item.is-animated:first-child {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 0.5s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1101,13 +1096,13 @@ summary {
 .p-blog__item.is-animated:nth-child(2) {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: .5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-delay: .3s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: .5s;
+	animation-delay: .3s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1116,13 +1111,13 @@ summary {
 .p-blog__item.is-animated:nth-child(3) {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-delay: .6s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 0.5s;
+	animation-delay: .6s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1147,7 +1142,7 @@ summary {
 .p-card:hover .p-card__title,
 .p-card:hover .p-card__text,
 .p-card:hover .p-card__date {
-	color: #FFFFFF;
+	color: #111;
 }
 
 .p-card:hover .p-card__img > img {
@@ -1238,7 +1233,7 @@ summary {
 }
 
 .p-contact__title::before {
-	color: #F9F871;
+	color: #e99bc1;
 	content: "Contact";
 	display: block;
 	font-family: "Noto Serif JP", serif;
@@ -1312,13 +1307,11 @@ summary {
 .p-content-box__item.is-animated:first-child {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 0.5s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1327,13 +1320,13 @@ summary {
 .p-content-box__item.is-animated:nth-child(2) {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 1.0s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-delay: .3s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 1.0s;
+	animation-delay: .3s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1342,13 +1335,13 @@ summary {
 .p-content-box__item.is-animated:nth-child(3) {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 1.5s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-delay: .6s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 1.5s;
+	animation-delay: .6s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1357,13 +1350,13 @@ summary {
 .p-content-box__item.is-animated:nth-child(4) {
 	-webkit-animation-name: slideRight; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.0s; /*アニメーションの開始を遅らせる*/
+	-webkit-animation-delay: .9s; /*アニメーションの開始を遅らせる*/
 	-webkit-animation-direction: normal;
-	animation-delay: 2.0s;
+	animation-delay: .9s;
 	animation-direction: normal;
-	animation-duration: .5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideRight;
 	animation-timing-function: linear; /*アニメーションの向き*/
@@ -1410,7 +1403,7 @@ summary {
 }
 
 .p-content__title::before {
-	color: #F9F871;
+	color: #e99bc1;
 	content: "Content";
 	display: block;
 	font-family: "Noto Serif JP", serif;
@@ -1428,7 +1421,7 @@ summary {
 }
 
 .p-drawer-menu {
-	background: #111111;
+	background: #fff;
 	height: 100vh;
 	margin-left: auto;
 	max-width: 32.5rem;
@@ -1624,7 +1617,7 @@ summary {
 .p-lower-blog-pagination .wp-pagenavi .current,
 .p-lower-blog-pagination .wp-pagenavi .page,
 .p-lower-blog-pagination .wp-pagenavi .nextpostslink {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 }
@@ -2311,7 +2304,7 @@ summary {
 .p-news-info__category {
 	align-items: center;
 	align-self: flex-start;
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	display: flex;
 	font-size: 0.875rem;
 	justify-content: center;
@@ -2335,7 +2328,7 @@ summary {
 }
 
 .p-news-info__text::after {
-	background: #FFFFFF;
+	background: #111;
 	bottom: 0;
 	content: '';
 	height: 1px;
@@ -2402,7 +2395,7 @@ summary {
 }
 
 .p-overview__title::before {
-	color: #F9F871;
+	color: #e99bc1;
 	content: "Overview";
 	display: block;
 	font-family: "Noto Serif JP", serif;
@@ -2553,7 +2546,7 @@ summary {
 
 .p-post-news-article__head--sp,
 .p-post-news-article__head--pc {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 	line-height: 1;
@@ -2582,7 +2575,7 @@ summary {
 .p-post-news-pagination .wp-pagenavi .page,
 .p-post-news-pagination .wp-pagenavi .nextpostslink,
 .p-post-news-pagination .wp-pagenavi .home {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 }
@@ -2669,7 +2662,7 @@ summary {
 }
 
 .p-post-news__category {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0,125em;
 	line-height: 1;
@@ -2710,7 +2703,7 @@ summary {
 }
 
 .p-post-news__sub-title {
-	border-left: 3px solid #FFFFFF;
+	border-left: 3px solid #111;
 	font-size: 1.25rem;
 	letter-spacing: 0.1em;
 	line-height: 1.448;
@@ -2778,7 +2771,7 @@ summary {
 
 .p-post-works-article__head--sp,
 .p-post-works-article__head--pc {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 	line-height: 1;
@@ -2807,7 +2800,7 @@ summary {
 .p-post-works-pagination .wp-pagenavi .page,
 .p-post-works-pagination .wp-pagenavi .nextpostslink,
 .p-post-works-pagination .wp-pagenavi .home {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 }
@@ -2894,7 +2887,7 @@ summary {
 }
 
 .p-post-works__category {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0,125em;
 	line-height: 1;
@@ -3009,14 +3002,14 @@ summary {
 }
 
 .p-post-works__body {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	margin-top: 3.375rem;
 	padding: 0rem 0.625rem 2.0625rem;
 }
 
 .p-post-works__sub-title {
-	background: #111111;
-	border: 1px solid #FFFFFF;
+	background: #fff;
+	border: 1px solid #111;
 	border-radius: 2rem;
 	display: inline-block;
 	font-size: 1.25rem;
@@ -3140,7 +3133,7 @@ summary {
 }
 
 .p-works__title::before {
-	color: #F9F871;
+	color: #e99bc1;
 	content: "Works";
 	display: block;
 	font-family: "Noto Serif JP", serif;
@@ -3246,7 +3239,7 @@ summary {
 }
 
 .p-works-swiper .swiper-pagination-bullet-active {
-	background: #F9F871;
+	background: #e99bc1;
 }
 
 .swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
@@ -3263,7 +3256,7 @@ summary {
 .wp-pagenavi .current,
 .wp-pagenavi .page,
 .wp-pagenavi .nextpostslink {
-	border: 1px solid #FFFFFF;
+	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 }
@@ -3360,10 +3353,6 @@ html {
 
 html {
 	font-size: 1.45455vw;
-}
-
-.l-blog-items {
-	margin-top: 1.9375rem;
 }
 
 .l-inner {
@@ -3541,33 +3530,16 @@ html {
 .p-blog__items {
 	display: flex;
 	flex-wrap: wrap;
-}
-
-.p-blog__item + .p-blog__item {
-	margin-left: 1.5625rem;
-	margin-top: 0rem;
-}
-
-.p-blog__item + .p-blog__item:nth-child(3n + 1) {
-	margin-left: 0;
-}
-
-.p-blog__item + .p-blog__item:nth-child(n + 4) {
-	margin-top: 3rem;
+	margin-top: 1.9375rem;
 }
 
 .p-blog__item {
 	width: calc(33.3% - 50px / 3);
 }
 
-.p-blog__item.is-animated:nth-child(2) {
-	-webkit-animation-delay: 1.0s;
-	animation-delay: 1.0s; /*アニメーションの開始を遅らせる*/
-}
-
-.p-blog__item.is-animated:nth-child(3) {
-	-webkit-animation-delay: 1.5s;
-	animation-delay: 1.5s; /*アニメーションの開始を遅らせる*/
+.p-blog__item + .p-blog__item {
+	margin-left: 1.5625rem;
+	margin-top: initial;
 }
 
 .p-blog__btn {
@@ -3634,17 +3606,17 @@ html {
 .p-content.is-animated::before {
 	-webkit-animation-name: borderSlide1; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
+	-webkit-animation-duration: 2s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
 	-webkit-animation-direction: normal; /*アニメーションの向き*/
 	-webkit-animation-delay: 1.5s;
 	animation-delay: 1.5s;
 	animation-direction: normal;
-	animation-duration: 1s;
+	animation-duration: 2s;
 	animation-fill-mode: forwards;
 	animation-name: borderSlide1;
 	animation-timing-function: linear;
-	background: #F9F871;
+	background: #e99bc1;
 	content: "";
 	display: block;
 	height: calc(0 / 1280 * 100vw);
@@ -4080,7 +4052,7 @@ html {
 	animation-fill-mode: forwards;
 	animation-name: borderSlide2;
 	animation-timing-function: linear;
-	background: #F9F871;
+	background: #e99bc1;
 	content: "";
 	display: block;
 	height: calc(0 / 1280 * 100vw);
@@ -4451,44 +4423,6 @@ html {
 
 }
 
-@-webkit-keyframes to-top-fadeIn {
-
-0% {
-	height: 0;
-	opacity: 0;
-}
-
-50% {
-	opacity: 1;
-}
-
-100% {
-	height: 2.8125rem;
-	opacity: 1;
-	transform: translateY(0);
-}
-
-}
-
-@keyframes to-top-fadeIn {
-
-0% {
-	height: 0;
-	opacity: 0;
-}
-
-50% {
-	opacity: 1;
-}
-
-100% {
-	height: 2.8125rem;
-	opacity: 1;
-	transform: translateY(0);
-}
-
-}
-
 @-webkit-keyframes loader-fadeOut {
 
 60% {
@@ -4579,65 +4513,6 @@ html {
 
 }
 
-@-webkit-keyframes slideRight {
-
-0% {
-	transform: translateX(-100%);
-}
-
-100% {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-}
-
-@keyframes slideRight {
-
-0% {
-	transform: translateX(-100%);
-}
-
-100% {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-}
-
-@keyframes slideRight {
-
-0% {
-	transform: translateX(-100%);
-}
-
-100% {
-	opacity: 1;
-	transform: translateX(0);
-}
-
-}
-
-@-webkit-keyframes borderSlide1 {
-
-100% {
-	height: calc(1714 / 1280 * 100vw);
-	left: 46%;
-	top: -60%;
-}
-
-}
-
-@keyframes borderSlide1 {
-
-100% {
-	height: calc(1714 / 1280 * 100vw);
-	left: 46%;
-	top: -60%;
-}
-
-}
-
 @-webkit-keyframes slideUp {
 
 0% {
@@ -4688,22 +4563,53 @@ to {
 
 }
 
-@-webkit-keyframes borderSlide2 {
+@-webkit-keyframes to-top-fadeIn {
+
+0% {
+	height: 0;
+	opacity: 0;
+}
+
+50% {
+	opacity: 1;
+}
 
 100% {
-	height: calc(1780 / 1280 * 100vw);
-	left: 50%;
-	top: -76%;
+	height: 2.8125rem;
+	opacity: 1;
+	transform: translateY(0);
 }
 
 }
 
-@keyframes borderSlide2 {
+@keyframes to-top-fadeIn {
+
+0% {
+	height: 0;
+	opacity: 0;
+}
+
+50% {
+	opacity: 1;
+}
 
 100% {
-	height: calc(1780 / 1280 * 100vw);
-	left: 50%;
-	top: -76%;
+	height: 2.8125rem;
+	opacity: 1;
+	transform: translateY(0);
+}
+
+}
+
+@-webkit-keyframes slideRight {
+
+0% {
+	transform: translateX(-100%);
+}
+
+100% {
+	opacity: 1;
+	transform: translateX(0);
 }
 
 }
@@ -4743,6 +4649,62 @@ to {
 100% {
 	opacity: 1;
 	transform: translateX(0);
+}
+
+}
+
+@-webkit-keyframes borderSlide1 {
+
+50% {
+	height: calc(1714 / 1280 * 100vw);
+	left: 46%;
+	top: -60%;
+	width: 0.0625rem;
+}
+
+100% {
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 80%;
+}
+
+}
+
+@keyframes borderSlide1 {
+
+50% {
+	height: calc(1714 / 1280 * 100vw);
+	left: 46%;
+	top: -60%;
+	width: 0.0625rem;
+}
+
+100% {
+	height: 100%;
+	left: 0;
+	top: 0;
+	width: 80%;
+}
+
+}
+
+@-webkit-keyframes borderSlide2 {
+
+100% {
+	height: calc(1780 / 1280 * 100vw);
+	left: 50%;
+	top: -76%;
+}
+
+}
+
+@keyframes borderSlide2 {
+
+100% {
+	height: calc(1780 / 1280 * 100vw);
+	left: 50%;
+	top: -76%;
 }
 
 }

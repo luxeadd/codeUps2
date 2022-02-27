@@ -225,7 +225,7 @@
 <section  class="l-top-blog p-blog">
   <div class="l-inner">
     <h2 class="p-blog__title c-section-title">ブログ</h2><!-- /.p-blog__title -->
-    <div class="l-blog-items p-blog__items">
+    <div class="p-blog__items">
 
     <?php
       $args = [

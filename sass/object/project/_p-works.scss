@@ -78,16 +78,6 @@
   animation-direction:normal;/*アニメーションの向き*/
 }
 
-@keyframes slideLeft{
-  0% {
-   transform: translateX(100%);
-  }
-
-  100% {
-    opacity: 1;
-    transform: translateX(0);
-  }
-}
 
 .p-works__img-box img {
   vertical-align: bottom;

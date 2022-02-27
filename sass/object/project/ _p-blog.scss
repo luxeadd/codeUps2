@@ -4,138 +4,103 @@
     letter-spacing: 0.0167em;    
     
   }
-  
+}
 
+.p-blog__title::before {
+  content: "Blog";
+  display: block;
+  font-size: rem(50);
+  font-weight: normal;
+  position: absolute;
+  top: rem(-51);
+  left: 50%;
+  transform: translateX(-50%);
+  color: $title-color;
+  opacity: 0.2;
+  font-family: $font-family-sub;
 
-  &::before {
-    content: "Blog";
-    display: block;
-    font-size: rem(50);
-    font-weight: normal;
-    position: absolute;
-    top: rem(-51);
-    left: 50%;
-    transform: translateX(-50%);
-    color: $title-color;
-    opacity: 0.2;
-    font-family: $font-family-sub;
-
-    @include mq(tab) {
-      left: rem(472);
-      font-size: rem(110);
-      top: rem(-63);
-      
-    }
+  @include mq(tab) {
+    left: rem(472);
+    font-size: rem(110);
+    top: rem(-63);
+    
   }
 }
 
 .p-blog__items{
    text-align: center;
+   margin-top: rem(55);
 
    @include mq(tab) {
     display: flex; 
     flex-wrap: wrap;
+    margin-top: rem(31);
   
   } 
-
 }
 
 .p-blog__item {
   opacity: 0;
-  &:first-child {
-
-    &::after {
-      content: "New";
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      width: rem(60);
-      height: rem(60);
-      border-radius: 50%;
-     background: #FFBA6A;
-     color: #333333;
-     position: absolute;
-     top: rem(-12);
-     left: rem(-12);
-    }
-  }
- 
-
- 
-  &+& {
-    margin-top: rem(22);
-    
-    
-   @include mq(tab) {
-    margin-top: rem(0);
-    margin-left: rem(25);
-
-    &:nth-child(3n + 1) {
-      margin-left: 0;
-
-    }
-
-    &:nth-child(n + 4) {
-      margin-top: rem(48);
-    }
-   }
-
- }
-
+  
   @include mq(tab) {
    width: calc(33.3% - 50px / 3);
 
   }
 }
 
+.p-blog__item:first-child::after {
+  content: "New";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(60);
+  height: rem(60);
+  border-radius: 50%;
+ background: #FFBA6A;
+ color: #333333;
+ position: absolute;
+ top: rem(-12);
+ left: rem(-12);
+} 
+
+.p-blog__item + .p-blog__item {
+  margin-top: rem(22);
+  @include mq(tab) {
+    margin-top: initial;
+    margin-left: rem(25);
+
+   }
+}
+
 .p-blog__item.is-animated:first-child {
   animation-name: slideRight;/*1で解説*/
   animation-fill-mode:forwards;/*開始と終了の状態*/
-  animation-duration:.5s;/*アニメーションの長さ*/
+  animation-duration:.3s;/*アニメーションの長さ*/
   animation-timing-function:linear;/*アニメーションの進行具合*/
-  animation-delay: 0.5s;/*アニメーションの開始を遅らせる*/
   animation-direction:normal;/*アニメーションの向き*/
 
 }
 .p-blog__item.is-animated:nth-child(2) {
   animation-name: slideRight;/*1で解説*/
   animation-fill-mode:forwards;/*開始と終了の状態*/
-  animation-duration:.5s;/*アニメーションの長さ*/
+  animation-duration:.3s;/*アニメーションの長さ*/
   animation-timing-function:linear;/*アニメーションの進行具合*/
-  animation-delay: .5s;/*アニメーションの開始を遅らせる*/
+  animation-delay: .3s;/*アニメーションの開始を遅らせる*/
   animation-direction:normal;/*アニメーションの向き*/
   
-  @include mq(tab) {
-    animation-delay: 1.0s;/*アニメーションの開始を遅らせる*/
-    
-  }
 
 }
 .p-blog__item.is-animated:nth-child(3) {
   animation-name: slideRight;/*1で解説*/
   animation-fill-mode:forwards;/*開始と終了の状態*/
-  animation-duration:.5s;/*アニメーションの長さ*/
+  animation-duration:.3s;/*アニメーションの長さ*/
   animation-timing-function:linear;/*アニメーションの進行具合*/
-  animation-delay: 0.5s;/*アニメーションの開始を遅らせる*/
+  animation-delay: .6s;/*アニメーションの開始を遅らせる*/
   animation-direction:normal;/*アニメーションの向き*/
-  
-  @include mq(tab) {
-    animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
-    
-  }
 
 }
   
-  @keyframes slideRight{
-    0% {
-     transform: translateX(-100%);
-    }
   
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
-  }
 
 
 .p-blog__btn {

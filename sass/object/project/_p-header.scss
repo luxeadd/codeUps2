@@ -2,9 +2,11 @@
  height: rem(50);
 background: rgba($color: #111111, $alpha: 0.5);
 
- &.change-color {
+}
+
+.p-header.change-color {
   background: rgba($color: #111111, $alpha: 1.0);
- }
+
 }
 
 .p-header__inner {

@@ -111,7 +111,7 @@ var loader = document.getElementById('loader');
 				
 //アニメーションスクロール判定
 let targets = document.querySelectorAll('.js-scrollAnimation');//アニメーションさせたい要素
-let offset = 100;//アニメーションタイミング
+let offset = 50;//アニメーションタイミング
 
 window.addEventListener('scroll', function() {//スクロールしたとき
 

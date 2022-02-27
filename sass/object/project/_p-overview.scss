@@ -27,15 +27,6 @@
   }
   }
 
-  @keyframes borderSlide2{
-  
-    100% {
-      height: calc(1780 / 1280 * 100vw);
-      top: -76%;
-      left: 50%;
-    }
-  }
-
 
 .p-overview__title {
   @include mq(tab) {
@@ -115,17 +106,6 @@
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-delay: 0.5s;/*アニメーションの開始を遅らせる*/
     animation-direction:normal;/*アニメーションの向き*/
-  }
-  
-  @keyframes slideRight{
-    0% {
-     transform: translateX(-100%);
-    }
-  
-    100% {
-      opacity: 1;
-      transform: translateX(0);
-    }
   }
   
 

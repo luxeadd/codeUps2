@@ -23,21 +23,12 @@
     
     animation-name: borderSlide1;/*1で解説*/
     animation-fill-mode:forwards;/*開始と終了の状態*/
-    animation-duration:1s;/*アニメーションの長さ*/
+    animation-duration:2s;/*アニメーションの長さ*/
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-direction:normal;/*アニメーションの向き*/
     animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
     
       }
-  }
-
-  @keyframes borderSlide1{
-  
-    100% {
-    height: calc(1714 / 1280 * 100vw);
-    top: -60%;
-    left: 46%;
-    }
   }
 
 
