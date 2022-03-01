@@ -41,7 +41,7 @@ if ( have_posts() ) : ?>
             
          </div><!-- /.p-news-info__head -->
          <div class="p-news-info__body">
-           <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-news-info__text--hover-yellow"><?php the_title(); //タイトルを表示 ?></a><!-- /.p-news-info__text -->
+           <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-news-info__text"><?php the_title(); //タイトルを表示 ?></a><!-- /.p-news-info__text -->
          </div><!-- /.p-news-info__body -->
         </article>
   

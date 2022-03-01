@@ -24,14 +24,12 @@
 }
 
 .p-news__items-inner {
-
+ width: 100%;
 }
 
-.p-news__item {
-   
-   &+& {
-      margin-top: rem(32);
-   }
+.p-news__item + .p-news__item { 
+   margin-top: rem(32);
+
 }
 
 .p-news__btn {
@@ -46,8 +44,8 @@
  
 
    @include mq(tab) {
-      margin-top: rem(5);
-      margin-left: auto;
+      margin-top: rem(3);
+      margin-left: rem(30);
       margin-right: 0;
       width: rem(134);
      display: flex;

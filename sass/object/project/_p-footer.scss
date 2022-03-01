@@ -1,6 +1,6 @@
 .p-footer {
    padding: rem(46) 0;
-
+   background: $footer-color;
    @include mq(tab) {
      padding-top: rem(37);
    }

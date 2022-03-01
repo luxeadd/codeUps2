@@ -13,13 +13,12 @@
 }
 
 
-.p-news-news__item {
+
   
-  &+& {
+.p-news-news__item + .p-news-news__item {
      margin-top: rem(30);
 
      @include mq(tab) {
        margin-top: rem(32);
      }
-  }
 }

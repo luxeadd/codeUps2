@@ -187,11 +187,8 @@
 <!-- 関連記事 -->
 <section class="l-post-works-article p-post-works-article">
 <div class="l-inner">
-  <div class="p-post-works-article__head--sp sp-only">
-    おすすめ記事
-  </div><!-- /.p-post-works-article__head -->
-  <div class="p-post-works-article__head--pc pc-only">
-    関連記事
+  <div class="p-post-works-article__head">
+    その他の商品
   </div><!-- /.p-post-works-article__head -->
 
   <div class="p-post-works-article__box">
@@ -211,30 +208,23 @@
         <?php $related_query->the_post(); ?>
 
 
-        <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-post-works-article__item p-card">
-            <div class="p-card__img">
-            <?php
-               if (has_post_thumbnail() ) {
-               // アイキャッチ画像が設定されてれば大サイズで表示
-               the_post_thumbnail('large');
-               } 
-               ?>
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
-              <h3 class="p-card__title">
-                   <?php the_title(); //タイトルを表示 ?>
-              </h3><!-- /.p-card__title -->
-              <div class="p-card__text">
-             
-              </div><!-- /.p-card__text -->
-              <div href="" class="p-card__bottom">
-                  <div class="p-card__category">
-                  <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name )?>
-                  </div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-              </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
-        </a>
+  <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-post-works-article__item p-works-card">
+   <div class="p-work-card__img">
+    <?php
+            if (has_post_thumbnail() ) {
+              // アイキャッチ画像が設定されてれば大サイズで表示
+              the_post_thumbnail('large');
+            } 
+            ?>
+      <div class="p-works-card__category">
+        <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
+      </div><!-- /.p-works-card__category -->
+      </div><!-- /.p-work-card__img -->
+      <div class="p-works-card__title">
+        <?php the_title(); //タイトルを表示 ?>
+      </div><!-- /.p-lower-card__title -->
+    </a><!-- /.p-lower-works__item -->
+    
         
         <?php endwhile; ?> 
         <?php endif; ?>

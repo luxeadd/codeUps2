@@ -2,16 +2,13 @@
   display: block;
   position: relative;
   transition: all 0.3s;
+}
   
-  &:hover {
+  .p-works-card:hover {
     .p-work-card__img img {
       transform: scale(1.1) translate(-45%, -45%);
     }
   }
-  
-
-
-}
 
 .p-work-card__img {
   width: 100%;
@@ -21,7 +18,7 @@
   }
   
   .p-work-card__img::before {
-    padding-top: 66.4%; //画像縦 249/375 横
+    padding-top: 120%; //画像縦 249/375 横
     display: block;
     content: "";
   
@@ -40,25 +37,32 @@
   }
 
 .p-works-card__category {
-  font-size: rem(16);
+  font-size: rem(12);
   letter-spacing: 0.125em;
-  background:#111111; 
+  background:$main-color; 
   position: absolute; 
-  top: 0;
+  color: #fff;
+  bottom: 0;
   right: 0;
-  padding: rem(7) rem(23);
+  padding: rem(3) rem(5);
+  
+  @include mq(tab) {
+    font-size: rem(16);
+    padding: rem(7) rem(23);
+    
+  }
 
 }
 
 .p-works-card__title {
-   font-size: rem(20);
+   font-size: rem(16);
    letter-spacing: 0.1em;
    font-weight: 500; 
-   text-align: center;
-   margin-top: rem(27);
-
-  @include mq(tab) {
-   margin-top: rem(15);  
+   margin-top: rem(5);
+   
+   @include mq(tab) {
+     margin-top: rem(15);  
+     font-size: rem(20);
    }
 
 }

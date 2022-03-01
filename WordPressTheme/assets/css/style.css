@@ -579,7 +579,6 @@ summary {
 /* Remove all animations and transitions for people that prefer not to see them */
 
 .l-header {
-	color: #fff;
 	left: 0;
 	position: fixed;
 	right: 0;
@@ -739,8 +738,8 @@ summary {
 }
 
 .c-btn {
-	background: #333333;
-	border: 1px solid #111;
+	background: #FFEA2E;
+	border: 1px solid #FFEA2E;
 	display: inline-block;
 	font-size: 1.25rem;
 	letter-spacing: 0.1em;
@@ -754,7 +753,7 @@ summary {
 }
 
 .c-btn--news {
-	background: #333333;
+	background: #FFEA2E;
 	border: 1px solid #111;
 	display: inline-block;
 	overflow: hidden;
@@ -774,7 +773,7 @@ summary {
 }
 
 .c-btn--slide a:before {
-	background-color: #333333;
+	background-color: #e99bc1;
 	content: '';
 	height: 100%;
 	left: -100%;
@@ -786,7 +785,7 @@ summary {
 }
 
 .c-btn--slide a:hover {
-	color: #111;
+	color: #fff;
 }
 
 .c-btn--slide a:hover:before {
@@ -803,7 +802,8 @@ summary {
 }
 
 .c-btn--slide--white a:before {
-	background-color: #ffffff;
+	background-color: #e99bc1;
+	border: 1px #e99bc1;
 	content: '';
 	height: 100%;
 	left: -100%;
@@ -815,7 +815,8 @@ summary {
 }
 
 .c-btn--slide--white a:hover {
-	color: #333333;
+	border: 1px solid #e99bc1;
+	color: #fff;
 }
 
 .c-btn--slide--white a:hover:before {
@@ -824,7 +825,7 @@ summary {
 
 .c-btn--header {
 	align-items: center;
-	background: #fff;
+	background: #FFEA2E;
 	color: #333333;
 	display: flex;
 	height: 100%;
@@ -873,6 +874,48 @@ summary {
 .c-hamburger.open span:nth-child(3) {
 	top: -0.625rem;
 	transform: rotate(-45deg);
+}
+
+.c-loader {
+	-webkit-animation: loader-fadeOut 2.5s;
+	-webkit-animation-fill-mode: both;
+	-webkit-animation-timing-function: ease;
+	animation: loader-fadeOut 2.5s;
+	animation-fill-mode: both;
+	animation-timing-function: ease;
+	background: #fff;
+	height: 100vh;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9999; /*アニメーションの進行具合*/
+}
+
+.c-loader__top {
+	-webkit-animation-name: clip-1;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: .5s;
+	animation-delay: .5s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-name: clip-1;
+	animation-timing-function: linear;
+	background: #e99bc1;
+	height: 100vh;
+	left: 0;
+	margin: 0;
+	padding: 0;
+	position: fixed;
+	right: 0;
+	top: 0;
+	width: 100%;
+	z-index: 9998; /*アニメーションの開始を遅らせる*/
 }
 
 .c-section-title {
@@ -940,116 +983,18 @@ summary {
 	width: 18px;
 }
 
-.loader-wrap {
-	-webkit-animation: loader-fadeOut 2s;
-	-webkit-animation-fill-mode: both;
-	align-items: center;
-	animation: loader-fadeOut 2s;
-	animation-fill-mode: both;
-	background: #000000;
-	display: flex;
-	height: 100vh;
-	left: 0;
-	margin: 0;
-	padding: 0;
-	position: fixed;
-	right: 0;
-	top: 0;
-	width: 100%;
-	z-index: 9999;
-}
-
-.loader-ring {
-	align-items: center;
-	background: transparent;
-	background: linear-gradient(0deg, #333, #000);
-	border: 3px solid #3c3c3c;
-	border-radius: 50%;
-	box-shadow: 0 0 0 20px rgba(0, 0, 0, 0.5);
-	box-shadow: 0 0 0 4px #353535, 0 0 0 5px #3e3e3e, inset 0 0 10px black, 0 5px 20px black, inset 0 0 15px rgba(0, 0, 0, 0.2);
-	height: 15.625rem;
-	left: 50%;
-	letter-spacing: 2px;
-	position: absolute;
-	text-align: center;
-	text-shadow: 1px 2px 10px #fff000;
-	text-transform: uppercase;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 15.625rem;
-}
-
-.loader-ring:before {
-	-webkit-animation: animateCircle 2s linear infinite;
-	animation: animateCircle 2s linear infinite;
-	border: 3px solid transparent;
-	border-radius: 50%;
-	border-right: 3px solid #FFEA2E;
-	border-top: 3px solid #FFEA2E;
-	content: '';
-	height: 100%;
-	left: -3px;
-	position: absolute;
-	top: -3px;
-	width: 100%;
-}
-
-.loader-ring span {
-	-webkit-animation: animate 2s linear infinite;
-	animation: animate 2s linear infinite;
-	background: transparent;
-	display: block;
-	height: 4px;
-	left: 50%;
-	position: absolute;
-	top: calc(50% - 2px);
-	transform-origin: left;
-	width: 50%;
-}
-
-.loader-ring span:before {
-	background: #fff000;
-	border-radius: 50%;
-	box-shadow: 0 0 20px #fff000;
-	content: '';
-	height: 16px;
-	position: absolute;
-	right: -8px;
-	top: -6px;
-	width: 16px;
-}
-
-.loader-ring img {
-	-webkit-animation-name: fadeInAnime; /*1で解説*/
-	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
-	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 0.5s; /*アニメーションの開始を遅らせる*/
-	-webkit-animation-direction: normal;
-	animation-delay: 0.5s;
-	animation-direction: normal;
-	animation-duration: 1s;
-	animation-fill-mode: forwards;
-	animation-name: fadeInAnime;
-	animation-timing-function: ease;
-	height: 100%;
-	opacity: 0;
-	transform: translateY(20px);
-	width: 100%; /*アニメーションの向き*/
-}
-
 .p-blog__title::before {
-	color: #e99bc1;
+	color: #f7af3c;
 	content: "Blog";
 	display: block;
 	font-family: "Noto Serif JP", serif;
 	font-size: 3.125rem;
 	font-weight: normal;
 	left: 50%;
-	opacity: 0.2;
 	position: absolute;
 	top: -3.1875rem;
 	transform: translateX(-50%);
+	z-index: -2;
 }
 
 .p-blog__items {
@@ -1058,6 +1003,7 @@ summary {
 }
 
 .p-blog__item {
+	box-shadow: 0 2px 5px #000;
 	opacity: 0;
 }
 
@@ -1131,12 +1077,13 @@ summary {
 .p-card {
 	-ms-grid-row-align: auto;
 	align-self: auto;
-	display: inline-block;
+	display: flex;
+	flex-direction: column;
 	position: relative;
 }
 
 .p-card:hover .p-card__body {
-	background: #333333;
+	background: rgba(233, 155, 193, 0.6);
 }
 
 .p-card:hover .p-card__title,
@@ -1202,8 +1149,9 @@ summary {
 
 .p-card__bottom {
 	display: flex;
-	margin-top: 0.5rem;
+	margin-top: auto;
 	padding-right: 0.5rem;
+	padding-top: 0.5rem;
 }
 
 .p-card__category {
@@ -1223,7 +1171,7 @@ summary {
 }
 
 .p-contact {
-	background: #3D3D3D;
+	background: #cbf0f3;
 	padding-bottom: 4rem;
 	padding-top: 3.625rem;
 }
@@ -1233,17 +1181,17 @@ summary {
 }
 
 .p-contact__title::before {
-	color: #e99bc1;
+	color: #f7af3c;
 	content: "Contact";
 	display: block;
 	font-family: "Noto Serif JP", serif;
 	font-size: 3.125rem;
 	font-weight: normal;
 	left: 50%;
-	opacity: 0.2;
 	position: absolute;
 	top: -2.5625rem;
 	transform: translateX(-50%);
+	z-index: -2;
 }
 
 .p-contact__text {
@@ -1271,37 +1219,29 @@ summary {
 }
 
 .p-content-box__item {
+	background-position: top;
+	background-repeat: no-repeat;
+	background-size: cover;
 	flex: 0 0 50%;
+	height: 50vw;
 	opacity: 0;
 	position: relative;
 }
 
 .p-content-box__item:first-child {
-	background-image: url(../../../WordPressTheme/assets/img/common/content1.jpg);
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../img/common/furisode.plan01.webp);
 }
 
 .p-content-box__item:nth-child(2) {
-	background-image: url(../../../WordPressTheme/assets/img/common/content2.jpg);
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../img/common/furisode.plan02.webp);
 }
 
 .p-content-box__item:nth-child(3) {
-	background-image: url(../../../WordPressTheme/assets/img/common/content3.jpg);
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../img/common/furisode_plan03.webp);
 }
 
 .p-content-box__item:nth-child(4) {
-	background-image: url(../../../WordPressTheme/assets/img/common/content4.jpg);
-	background-position: top;
-	background-repeat: no-repeat;
-	background-size: cover;
+	background-image: url(../img/common/furisode.plan01.webp);
 }
 
 .p-content-box__item.is-animated:first-child {
@@ -1363,39 +1303,21 @@ summary {
 }
 
 .p-content-box__link {
-	display: inline-block;
+	align-items: center;
+	display: flex;
 	height: 100%;
-	padding: 5.0625rem 0;
-	position: relative;
+	justify-content: center;
 	width: 100%;
-}
-
-.p-content-box__link::after {
-	content: "";
-	display: block;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	transition: all .3s;
-	width: 100%;
-}
-
-.p-content-box__link:hover::after {
-	background: rgba(255, 255, 255, 0.6);
 }
 
 .p-content-box__text {
-	display: inline-block;
+	background: rgba(233, 155, 193, 0.6);
+	color: #fff;
 	font-size: 1.25rem;
 	font-weight: 400;
-	left: 50%;
 	letter-spacing: 0.1em;
-	position: absolute;
 	text-align: center;
-	top: 50%;
-	transform: translate(-50%, -50%);
-	width: 100%;
+	transition: .3s;
 }
 
 .p-content {
@@ -1403,14 +1325,13 @@ summary {
 }
 
 .p-content__title::before {
-	color: #e99bc1;
-	content: "Content";
+	color: #f7af3c;
+	content: "Plan";
 	display: block;
 	font-family: "Noto Serif JP", serif;
 	font-size: 3.125rem;
 	font-weight: normal;
 	left: 50%;
-	opacity: 0.2;
 	position: absolute;
 	top: -3.0625rem;
 	transform: translateX(-50%);
@@ -1466,6 +1387,7 @@ summary {
 }
 
 .p-footer {
+	background: #e6e6e6;
 	padding: 2.875rem 0;
 }
 
@@ -1493,12 +1415,15 @@ summary {
 }
 
 .p-header {
-	background: rgba(17, 17, 17, 0.5);
+	background: transparent;
+	color: #fff;
 	height: 3.125rem;
 }
 
 .p-header.change-color {
-	background: #111111;
+	background: #fff;
+	box-shadow: 0 2px 2px #e99bc1;
+	color: #111;
 }
 
 .p-header__inner {
@@ -1977,15 +1902,14 @@ summary {
 	text-align: center;
 }
 
-.p-lower-works-items__item {
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 36.875rem;
-	width: 100%;
-}
-
-.p-lower-works-items__item + .p-lower-works-items__item {
-	margin-top: 3rem;
+.p-lower-works-items__body {
+	-ms-grid-columns: (1fr)[2];
+	-ms-grid-rows: 1fr;
+	grid-gap: 1.25rem 1.25rem;
+	display: -ms-grid;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	grid-template-rows: 1fr;
 }
 
 .p-lower-works-mv {
@@ -1994,34 +1918,21 @@ summary {
 	padding-top: 10.9375rem;
 }
 
-.p-lower-works-nav__inner {
-	padding-left: 0;
-}
-
 .p-lower-works-nav__item--top {
 	font-size: 1rem;
 	letter-spacing: 0.125em;
-	margin-left: 0.9375rem;
 	padding: 0.125rem 0.4375rem;
 }
 
 .is-genre-active {
-	background: #fff;
-	color: #333;
+	background: #f7af3c;
+	color: #fff;
 }
 
 .p-lower-works-nav__item {
 	font-size: 1rem;
 	letter-spacing: 0.125em;
 	padding: 0.125rem 0.4375rem;
-}
-
-.p-lower-works-nav__item:first-child {
-	margin-left: 10px;
-}
-
-.p-lower-works-nav__item + .p-lower-works-nav__item {
-	margin-left: 0.625rem;
 }
 
 .p-lower-works-nav__bottom {
@@ -2042,17 +1953,6 @@ summary {
 	width: 100%;
 }
 
-.p-mv__img::after {
-	background: rgba(17, 17, 17, 0.2);
-	content: "";
-	display: block;
-	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
-	width: 100%;
-}
-
 .p-mv__img img {
 	-o-object-fit: cover;
 	height: 100%;
@@ -2061,13 +1961,39 @@ summary {
 }
 
 .p-mv__content {
-	left: 50%;
+	color: #fff;
+	left: 30%;
+	padding: 1.25rem 0;
 	position: absolute;
 	text-align: center;
-	top: 50%;
+	top: 70%;
 	transform: translate(-50%, -50%);
 	width: 100%;
+	width: 37.5rem;
 	z-index: 100;
+}
+
+.p-mv__content::before {
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
+	-webkit-animation-name: clip-2;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s;
+	animation-delay: 2.0s;
+	animation-duration: 1s;
+	animation-fill-mode: forwards;
+	animation-name: clip-2;
+	animation-timing-function: linear;
+	background-color: #e99bc1;
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
+	content: "";
+	display: block;
+	height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%; /*アニメーションの開始を遅らせる*/
 }
 
 .p-mv__title {
@@ -2081,14 +2007,18 @@ summary {
 	letter-spacing: -0.2em;
 }
 
+.p-mv__title span:not(:first-child) {
+	margin-left: 0.9375rem;
+}
+
 .p-mv__title span:first-child {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.0s;
-	animation-delay: 2.0s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.0s;
+	animation-delay: 1.0s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2098,11 +2028,11 @@ summary {
 .p-mv__title span:nth-child(2) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.1s;
-	animation-delay: 2.1s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.1s;
+	animation-delay: 1.1s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2112,11 +2042,11 @@ summary {
 .p-mv__title span:nth-child(3) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.2s;
-	animation-delay: 2.2s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2126,11 +2056,11 @@ summary {
 .p-mv__title span:nth-child(4) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.3s;
-	animation-delay: 2.3s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.3s;
+	animation-delay: 1.3s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2140,11 +2070,11 @@ summary {
 .p-mv__title span:nth-child(5) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.4s;
-	animation-delay: 2.4s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.4s;
+	animation-delay: 1.4s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2154,11 +2084,11 @@ summary {
 .p-mv__title span:nth-child(6) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.5s;
-	animation-delay: 2.5s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2168,11 +2098,11 @@ summary {
 .p-mv__title span:nth-child(7) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.6s;
-	animation-delay: 2.6s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.6s;
+	animation-delay: 1.6s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2182,11 +2112,11 @@ summary {
 .p-mv__title span:nth-child(8) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.7s;
-	animation-delay: 2.7s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.7s;
+	animation-delay: 1.7s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2196,53 +2126,11 @@ summary {
 .p-mv__title span:nth-child(9) {
 	-webkit-animation-name: slideUp;
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
+	-webkit-animation-duration: .3s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.8s;
-	animation-delay: 2.8s;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-	animation-name: slideUp;
-	animation-timing-function: ease;
-	opacity: 0; /*アニメーションの開始を遅らせる*/
-}
-
-.p-mv__title span:nth-child(10) {
-	-webkit-animation-name: slideUp;
-	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
-	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 2.9s;
-	animation-delay: 2.9s;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-	animation-name: slideUp;
-	animation-timing-function: ease;
-	opacity: 0; /*アニメーションの開始を遅らせる*/
-}
-
-.p-mv__title span:nth-child(11) {
-	-webkit-animation-name: slideUp;
-	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
-	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 3.0s;
-	animation-delay: 3.0s;
-	animation-duration: .5s;
-	animation-fill-mode: forwards;
-	animation-name: slideUp;
-	animation-timing-function: ease;
-	opacity: 0; /*アニメーションの開始を遅らせる*/
-}
-
-.p-mv__title span:nth-child(12) {
-	-webkit-animation-name: slideUp;
-	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: .5s; /*アニメーションの長さ*/
-	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
-	-webkit-animation-delay: 3.1s;
-	animation-delay: 3.1s;
-	animation-duration: .5s;
+	-webkit-animation-delay: 1.8s;
+	animation-delay: 1.8s;
+	animation-duration: .3s;
 	animation-fill-mode: forwards;
 	animation-name: slideUp;
 	animation-timing-function: ease;
@@ -2316,22 +2204,26 @@ summary {
 
 .p-news-info__body {
 	margin-top: 1rem;
+	width: 100%;
 }
 
 .p-news-info__text {
-	display: inline-block;
+	align-items: center;
+	display: flex;
+	height: 100%;
 	letter-spacing: 0.01;
 	line-height: 1.4375;
 	position: relative;
 	text-decoration: none;
 	transition: all 0.3s;
+	width: 100%;
 }
 
 .p-news-info__text::after {
-	background: #111;
+	background: #e99bc1;
 	bottom: 0;
 	content: '';
-	height: 1px;
+	height: 2px;
 	left: 0;
 	position: absolute;
 	transform: scale(0, 1);
@@ -2344,18 +2236,8 @@ summary {
 	transform: scale(1, 1);
 }
 
-.p-news-info__text--hover-yellow {
-	display: inline-block;
-	letter-spacing: 0.01;
-	line-height: 1.4375;
-	position: relative;
-	text-decoration: none;
-	transition: all 0.3s;
-	transition: all 0.3s;
-}
-
-.p-news-info__text--hover-yellow:hover {
-	color: #f9f871;
+.p-news-info__text:hover {
+	color: #e99bc1;
 }
 
 .p-news-mv {
@@ -2379,6 +2261,10 @@ summary {
 	width: 100%;
 }
 
+.p-news__items-inner {
+	width: 100%;
+}
+
 .p-news__item + .p-news__item {
 	margin-top: 2rem;
 }
@@ -2394,22 +2280,26 @@ summary {
 	text-align: center;
 }
 
+.p-overview {
+	position: relative;
+}
+
 .p-overview__title::before {
-	color: #e99bc1;
+	color: #f7af3c;
 	content: "Overview";
 	display: block;
 	font-family: "Noto Serif JP", serif;
 	font-size: 3.125rem;
 	font-weight: normal;
 	left: 50%;
-	opacity: 0.2;
 	position: absolute;
 	top: -3.0625rem;
 	transform: translateX(-50%);
+	z-index: -2;
 }
 
 .p-overview__content {
-	background: #333333;
+	background: #cbf0f3;
 	margin-top: 2.875rem;
 	padding-bottom: 1.375rem;
 }
@@ -2517,10 +2407,10 @@ summary {
 }
 
 .p-pc-menu__item a::after {
-	background: #FFEA2E;
+	background: #e99bc1;
 	bottom: 0;
 	content: '';
-	height: 1px;
+	height: 3px;
 	left: 0.9375rem;
 	position: absolute;
 	transform: scale(0, 1);
@@ -2769,8 +2659,7 @@ summary {
 	line-height: 2.1875;
 }
 
-.p-post-works-article__head--sp,
-.p-post-works-article__head--pc {
+.p-post-works-article__head {
 	border: 1px solid #111;
 	font-size: 1rem;
 	letter-spacing: 0.125em;
@@ -2781,12 +2670,12 @@ summary {
 }
 
 .p-post-works-article__box {
+	-ms-grid-columns: (1fr)[2];
+	grid-gap: 1.25rem 1.25rem;
+	display: -ms-grid;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
 	margin-top: 2rem;
-	text-align: center;
-}
-
-.p-post-works-article__item + .p-post-works-article__item {
-	margin-top: 1.5rem;
 }
 
 .p-post-works-pagination .wp-pagenavi {
@@ -3097,7 +2986,7 @@ summary {
 .p-work-card__img::before {
 	content: "";
 	display: block;
-	padding-top: 66.4%;
+	padding-top: 120%;
 }
 
 .p-work-card__img img {
@@ -3115,44 +3004,50 @@ summary {
 }
 
 .p-works-card__category {
-	background: #111111;
-	font-size: 1rem;
+	background: #e99bc1;
+	bottom: 0;
+	color: #fff;
+	font-size: 0.75rem;
 	letter-spacing: 0.125em;
-	padding: 0.4375rem 1.4375rem;
+	padding: 0.1875rem 0.3125rem;
 	position: absolute;
 	right: 0;
-	top: 0;
 }
 
 .p-works-card__title {
-	font-size: 1.25rem;
+	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: 0.1em;
-	margin-top: 1.6875rem;
-	text-align: center;
+	margin-top: 0.3125rem;
+}
+
+.p-works__title {
+	position: relative;
 }
 
 .p-works__title::before {
-	color: #e99bc1;
-	content: "Works";
+	color: #f7af3c;
+	content: "Collection";
 	display: block;
 	font-family: "Noto Serif JP", serif;
 	font-size: 3.125rem;
 	font-weight: normal;
 	left: 50%;
-	opacity: 0.2;
 	position: absolute;
 	top: -3.0625rem;
 	transform: translateX(-50%);
+	z-index: -1;
 }
 
 .p-works__content {
-	background: #333333;
+	background: #cbf0f3;
 	margin-top: 3rem;
 	padding-bottom: 1.375rem;
 }
 
 .p-works__img-box {
+	height: 60vw;
+	max-height: 26.25rem;
 	opacity: 0;
 }
 
@@ -3172,23 +3067,16 @@ summary {
 }
 
 .p-works__img-box img {
-	vertical-align: bottom;
-	width: 100%;
-}
-
-.p-works__img::after {
-	background: rgba(17, 17, 17, 0.2);
-	content: "";
-	display: block;
+	-o-object-fit: cover;
+	-o-object-position: 50% 20%;
 	height: 100%;
-	left: 0;
-	position: absolute;
-	top: 0;
+	object-fit: cover;
+	object-position: 50% 20%;
 	width: 100%;
 }
 
 .p-works__text-box {
-	margin-top: -0.375rem;
+	margin-top: 1.3125rem;
 	padding-left: 1.3125rem;
 	padding-right: 1.3125rem;
 	width: 100%;
@@ -3211,6 +3099,11 @@ summary {
 	text-align: center;
 }
 
+.p-works-swiper {
+	height: inherit;
+	max-height: 26.25rem;
+}
+
 .p-works-swiper .swiper-container img {
 	width: 100%;
 }
@@ -3221,29 +3114,6 @@ summary {
 
 .p-works-swiper .swiper-slide {
 	width: 100%;
-}
-
-.p-works-swiper .swiper-pagination {
-	left: 0;
-	position: relative;
-	text-align: center;
-	top: -4px;
-}
-
-.p-works-swiper .swiper-pagination-bullet {
-	background: #C4C4C4;
-	display: inline-block;
-	height: 0.5rem;
-	opacity: 1;
-	width: 0.5rem;
-}
-
-.p-works-swiper .swiper-pagination-bullet-active {
-	background: #e99bc1;
-}
-
-.swiper-container-horizontal > .swiper-pagination-bullets .swiper-pagination-bullet {
-	margin: 0 5.5px;
 }
 
 .wp-pagenavi {
@@ -3494,8 +3364,6 @@ html {
 }
 
 .c-btn--news {
-	background: #fff;
-	color: #333333;
 	padding: 0.3125rem 0;
 	transition: all 0.3s;
 }
@@ -3557,7 +3425,7 @@ html {
 }
 
 .p-card__bottom {
-	margin-top: 0.75rem;
+	padding-top: 0.75rem;
 }
 
 .p-contact {
@@ -3587,10 +3455,12 @@ html {
 
 .p-content-box__item {
 	flex: 0 0 25%;
+	height: 26.66667vw;
 }
 
-.p-content-box__link {
-	padding: 9.8125rem 0;
+.p-content-box__link:hover .p-content-box__text {
+	color: #FFEA2E;
+	font-size: 2.125rem;
 }
 
 .p-content-box__text {
@@ -3604,28 +3474,29 @@ html {
 }
 
 .p-content.is-animated::before {
+	-webkit-clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 	-webkit-animation-name: borderSlide1; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: 2s; /*アニメーションの長さ*/
+	-webkit-animation-duration: 1.5s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
 	-webkit-animation-direction: normal; /*アニメーションの向き*/
 	-webkit-animation-delay: 1.5s;
 	animation-delay: 1.5s;
 	animation-direction: normal;
-	animation-duration: 2s;
+	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 	animation-name: borderSlide1;
 	animation-timing-function: linear;
-	background: #e99bc1;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(0 0, 0 0, 0 0, 0 0);
 	content: "";
 	display: block;
-	height: calc(0 / 1280 * 100vw);
+	height: 81.25rem;
 	left: 0%;
 	position: absolute;
-	top: -7%;
-	transform: rotate(-45deg);
-	width: 0.0625rem;
-	z-index: -1; /*アニメーションの開始を遅らせる*/
+	top: 0;
+	width: 100%;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
 }
 
 .p-content__title {
@@ -3652,10 +3523,10 @@ html {
 }
 
 .p-footer-menu--pc__item a::after {
-	background: #FFEA2E;
-	bottom: 0;
+	background: #e99bc1;
+	bottom: -0.3125rem;
 	content: '';
-	height: 1px;
+	height: 3px;
 	left: 0.9375rem;
 	position: absolute;
 	transform: scale(0, 1);
@@ -3928,32 +3799,19 @@ html {
 	letter-spacing: 0.066em;
 }
 
-.p-lower-works-items {
-	display: flex;
-	flex-wrap: wrap;
-	justify-content: start;
-	margin-left: auto;
-	margin-right: auto;
-	max-width: 71.875rem;
-	padding-left: 1.5625rem;
-	padding-right: 1.5625rem;
+.p-lower-works-items__body {
+	-ms-grid-columns: (1fr)[3];
+	grid-gap: 3.125rem 3.125rem;
+	grid-template-columns: repeat(3, 1fr);
 }
 
-.p-lower-works-items__item + .p-lower-works-items__item {
-	margin-left: 0;
-	margin-top: 0;
-}
-
-.p-lower-works-items__item {
-	width: calc(50% - 48px  / 2);
-}
-
-.p-lower-works-items__item:nth-child(even) {
-	margin-left: 3rem;
-}
-
-.p-lower-works-items__item:nth-child(n + 3) {
-	margin-top: 7.125rem;
+.p-lower-works-items__item:first-child {
+	-ms-grid-row: 1;
+	-ms-grid-row-span: 2;
+	-ms-grid-column: 1;
+	-ms-grid-column-span: 2;
+	grid-column: 1/3;
+	grid-row: 1/3;
 }
 
 .p-lower-works-mv {
@@ -3963,15 +3821,12 @@ html {
 }
 
 .p-lower-works-nav__inner {
+	align-items: center;
 	display: flex;
 }
 
-.p-lower-works-nav__item:first-child {
-	margin-left: 1.875rem;
-}
-
-.p-lower-works-nav__item + .p-lower-works-nav__item {
-	margin-left: 1.875rem;
+.p-lower-works-nav__item {
+	margin-left: 1.25rem;
 }
 
 .p-lower-works-nav__bottom {
@@ -3998,6 +3853,9 @@ html {
 .p-news-info__body {
 	margin-left: 3.8125rem;
 	margin-top: 0;
+}
+
+.p-news-info__text {
 	padding: 0.1875rem 0;
 }
 
@@ -4029,39 +3887,36 @@ html {
 	font-size: 1rem;
 	font-weight: 500;
 	letter-spacing: 0.001em;
-	margin-left: auto;
+	margin-left: 1.875rem;
 	margin-right: 0;
-	margin-top: 0.3125rem;
+	margin-top: 0.1875rem;
 	width: 8.375rem;
 }
 
-.p-overview {
-	position: relative;
-}
-
 .p-overview.is-animated::before {
+	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
 	-webkit-animation-name: borderSlide2; /*1で解説*/
 	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
-	-webkit-animation-duration: 1s; /*アニメーションの長さ*/
+	-webkit-animation-duration: 1.5s; /*アニメーションの長さ*/
 	-webkit-animation-timing-function: linear; /*アニメーションの進行具合*/
 	-webkit-animation-direction: normal; /*アニメーションの向き*/
-	-webkit-animation-delay: 1.0s;
-	animation-delay: 1.0s;
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
 	animation-direction: normal;
-	animation-duration: 1s;
+	animation-duration: 1.5s;
 	animation-fill-mode: forwards;
 	animation-name: borderSlide2;
 	animation-timing-function: linear;
-	background: #e99bc1;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
 	content: "";
 	display: block;
-	height: calc(0 / 1280 * 100vw);
-	left: 100%;
+	height: 81.25rem;
+	left: 0%;
 	position: absolute;
-	top: -37%;
-	transform: rotate(45deg);
-	width: 0.0625rem;
-	z-index: -1; /*アニメーションの開始を遅らせる*/
+	top: -24.375rem;
+	width: 100%;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
 }
 
 .p-overview__title {
@@ -4076,7 +3931,7 @@ html {
 }
 
 .p-overview__content {
-	background: linear-gradient(to left, transparent 30%, #333333 30%);
+	background: linear-gradient(to left, transparent 30%, #cbf0f3 30%);
 	margin-top: 2.125rem;
 	padding-bottom: 5rem;
 	padding-top: 5rem;
@@ -4142,7 +3997,7 @@ html {
 
 .p-post-news-article__head--sp,
 .p-post-news-article__head--pc {
-	background: #333333;
+	background: #cbf0f3;
 }
 
 .p-post-news-article__box {
@@ -4191,27 +4046,10 @@ html {
 	max-width: 52.4375rem;
 }
 
-.p-post-works-article__head--sp,
-.p-post-works-article__head--pc {
-	background: #333333;
-}
-
 .p-post-works-article__box {
-	display: flex;
+	-ms-grid-columns: (1fr)[4];
+	grid-template-columns: repeat(4, 1fr);
 	margin-top: 5rem;
-}
-
-.p-post-works-article__item + .p-post-works-article__item {
-	margin-top: 0;
-}
-
-.p-post-works-article__item {
-	margin-top: 0;
-	width: calc(26% - 108px / 4);
-}
-
-.p-post-works-article__item + .p-post-works-article__item {
-	margin-left: 2rem;
 }
 
 .p-post-works__title {
@@ -4290,7 +4128,13 @@ html {
 	font-size: 3.125rem;
 }
 
+.p-works-card__category {
+	font-size: 1rem;
+	padding: 0.4375rem 1.4375rem;
+}
+
 .p-works-card__title {
+	font-size: 1.25rem;
 	margin-top: 0.9375rem;
 }
 
@@ -4300,15 +4144,15 @@ html {
 
 .p-works__title::before {
 	font-size: 6.875rem;
-	left: 27.375rem;
+	left: 25rem;
 	letter-spacing: 0.0182em;
 	top: -3.5625rem;
 }
 
 .p-works__content {
-	background: linear-gradient(to right, transparent 30.5%, #333333 30.5%);
+	background: linear-gradient(to right, transparent 30.5%, #cbf0f3 30.5%);
 	margin-top: 2rem;
-	padding-bottom: 3.4375rem;
+	padding-bottom: 5rem;
 	padding-top: 5rem;
 	width: 100%;
 }
@@ -4326,6 +4170,7 @@ html {
 .p-works__img-box {
 	align-items: center;
 	display: flex;
+	height: 35vw;
 	max-width: 34.8125rem;
 	width: 100%;
 }
@@ -4336,7 +4181,7 @@ html {
 
 .p-works__text-box {
 	flex: 0 1 35.875rem;
-	margin-top: 0rem;
+	margin-top: 0;
 	padding-bottom: 1.75rem;
 	padding-left: 2rem;
 	padding-right: 0rem;
@@ -4370,11 +4215,6 @@ html {
 
 .p-works-swiper .swiper-slide {
 	max-width: 34.8125rem;
-}
-
-.p-works-swiper .swiper-pagination {
-	left: -1.25rem;
-	top: 0.375rem;
 }
 
 .pc-only {
@@ -4425,10 +4265,6 @@ html {
 
 @-webkit-keyframes loader-fadeOut {
 
-60% {
-	opacity: 1;
-}
-
 100% {
 	opacity: 0;
 }
@@ -4437,78 +4273,74 @@ html {
 
 @keyframes loader-fadeOut {
 
-60% {
-	opacity: 1;
-}
-
 100% {
 	opacity: 0;
 }
 
 }
 
-@-webkit-keyframes animateCircle {
+@-webkit-keyframes clip-1 {
 
 0% {
-	transform: rotate(0deg);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+50% {
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
 }
 
 100% {
-	transform: rotate(360deg);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
 }
 
 }
 
-@keyframes animateCircle {
+@keyframes clip-1 {
 
 0% {
-	transform: rotate(0deg);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+}
+
+50% {
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
 }
 
 100% {
-	transform: rotate(360deg);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 0);
 }
 
 }
 
-@-webkit-keyframes animate {
+@-webkit-keyframes clip-2 {
 
-0% {
-	transform: rotate(45deg);
-}
-
-100% {
-	transform: rotate(405deg);
-}
-
-}
-
-@keyframes animate {
-
-0% {
-	transform: rotate(45deg);
+50% {
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
 }
 
 100% {
-	transform: rotate(405deg);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 
 }
 
-@-webkit-keyframes fadeInAnime {
+@keyframes clip-2 {
+
+50% {
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 0 100%);
+}
 
 100% {
-	opacity: 1;
-	transform: translate(0);
-}
-
-}
-
-@keyframes fadeInAnime {
-
-100% {
-	opacity: 1;
-	transform: translate(0);
+	-webkit-clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
+	clip-path: polygon(100% 0, 0 0, 0 100%, 100% 100%);
 }
 
 }
@@ -4656,17 +4488,13 @@ to {
 @-webkit-keyframes borderSlide1 {
 
 50% {
-	height: calc(1714 / 1280 * 100vw);
-	left: 46%;
-	top: -60%;
-	width: 0.0625rem;
+	-webkit-clip-path: polygon(0 0.5%, 0 0, 100% 100%, 99.5% 100%);
+	clip-path: polygon(0 0.5%, 0 0, 100% 100%, 99.5% 100%);
 }
 
 100% {
-	height: 100%;
-	left: 0;
-	top: 0;
-	width: 80%;
+	-webkit-clip-path: polygon(0 65%, 0 0, 100% 100%, 35% 100%);
+	clip-path: polygon(0 65%, 0 0, 100% 100%, 35% 100%);
 }
 
 }
@@ -4674,37 +4502,41 @@ to {
 @keyframes borderSlide1 {
 
 50% {
-	height: calc(1714 / 1280 * 100vw);
-	left: 46%;
-	top: -60%;
-	width: 0.0625rem;
+	-webkit-clip-path: polygon(0 0.5%, 0 0, 100% 100%, 99.5% 100%);
+	clip-path: polygon(0 0.5%, 0 0, 100% 100%, 99.5% 100%);
 }
 
 100% {
-	height: 100%;
-	left: 0;
-	top: 0;
-	width: 80%;
+	-webkit-clip-path: polygon(0 65%, 0 0, 100% 100%, 35% 100%);
+	clip-path: polygon(0 65%, 0 0, 100% 100%, 35% 100%);
 }
 
 }
 
 @-webkit-keyframes borderSlide2 {
 
+50% {
+	-webkit-clip-path: polygon(0.5% 100%, 0 100%, 100% 0, 100% 0.5%);
+	clip-path: polygon(0.5% 100%, 0 100%, 100% 0, 100% 0.5%);
+}
+
 100% {
-	height: calc(1780 / 1280 * 100vw);
-	left: 50%;
-	top: -76%;
+	-webkit-clip-path: polygon(65% 100%, 0 100%, 100% 0, 100% 65%);
+	clip-path: polygon(65% 100%, 0 100%, 100% 0, 100% 65%);
 }
 
 }
 
 @keyframes borderSlide2 {
 
+50% {
+	-webkit-clip-path: polygon(0.5% 100%, 0 100%, 100% 0, 100% 0.5%);
+	clip-path: polygon(0.5% 100%, 0 100%, 100% 0, 100% 0.5%);
+}
+
 100% {
-	height: calc(1780 / 1280 * 100vw);
-	left: 50%;
-	top: -76%;
+	-webkit-clip-path: polygon(65% 100%, 0 100%, 100% 0, 100% 65%);
+	clip-path: polygon(65% 100%, 0 100%, 100% 0, 100% 65%);
 }
 
 }

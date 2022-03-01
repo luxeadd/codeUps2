@@ -12,18 +12,18 @@
   @include mq(tab) {
     content: "";
     display: block;
-    width: rem(1);
-    height: calc(0 / 1280 * 100vw);
-    background: $title-color;
+    width: 100%;
+    height: rem(1300);
+    background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover; 
+    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     position: absolute;
-    top: -7%;
+    top: 0;
     left: 0%;
-    transform: rotate(-45deg);
-    z-index: -1;
+    z-index: -2;
     
     animation-name: borderSlide1;/*1で解説*/
     animation-fill-mode:forwards;/*開始と終了の状態*/
-    animation-duration:2s;/*アニメーションの長さ*/
+    animation-duration:1.5s;/*アニメーションの長さ*/
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-direction:normal;/*アニメーションの向き*/
     animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
@@ -36,10 +36,11 @@
   @include mq(tab) {
     letter-spacing: 0.0667em;
   }
+}
 
 
-  &::before {
-    content: "Content";
+  .p-content__title::before {
+    content: "Plan";
     display: block;
     font-size: rem(50);
     font-weight: normal;
@@ -48,7 +49,6 @@
     left: 50%;
     transform: translateX(-50%);
     color: $title-color;
-    opacity: 0.2;
     font-family: $font-family-sub;
 
     @include mq(tab) {
@@ -58,9 +58,6 @@
       
     }
   }
-
- 
-}
 
 .p-content__items {
   margin-top: rem(45);

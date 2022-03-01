@@ -1,31 +1,31 @@
 .p-card {
   position: relative;
-  display: inline-block;
+  display: flex;
+  flex-direction: column;
   align-self:auto;
+}
 
+    .p-card:hover {
+      .p-card__body {
+        background: rgba($color: $main-color, $alpha: 0.6);
   
-  &:hover {
-
-    .p-card__body {
-      background: #333333;
-
-    }
-
-    .p-card__title,
-    .p-card__text,
-    .p-card__date  {
-      color: $text-color;
-      
+      }
+  
+      .p-card__title,
+      .p-card__text,
+      .p-card__date  {
+        color: $text-color;
+        
+      }
+      .p-card__img > img {
+        transform: scale(1.2) translate(-40%, -40%);
+      }
     }
 
    
 
-    .p-card__img > img {
-      transform: scale(1.2) translate(-40%, -40%);
-    }
 
-  }
-}
+ 
 
 .p-card__img {
   width: 100%;
@@ -95,12 +95,13 @@
 }
 
 .p-card__bottom {
-  margin-top: rem(8);
+   margin-top: auto;
    display: flex;
    padding-right: rem(8);
+   padding-top: rem(8);
 
    @include mq(tab) {
-     margin-top: rem(12);
+     padding-top: rem(12);
    }
 }
 

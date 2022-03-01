@@ -1,7 +1,7 @@
 .p-contact {
    padding-top: rem(58);
    padding-bottom: rem(64);
-   background: #3D3D3D;
+   background: $bg-sub-color;
 
    @include mq(tab) {
     padding-top: rem(143);
@@ -12,14 +12,14 @@
 
 .p-contact__title {
    font-size: rem(25);
-  
-
+   
    @include mq(sp) {
      letter-spacing: 0.0667em;
-   }
+    }
+  }
 
 
-  &::before {
+  .p-contact__title::before {
     content: "Contact";
     display: block;
     font-size: rem(50);
@@ -29,7 +29,7 @@
     left: 50%;
     transform: translateX(-50%);
     color: $title-color;
-    opacity: 0.2;
+    z-index: -2;
     font-family: $font-family-sub;
 
     @include mq(tab) {
@@ -39,7 +39,6 @@
       
     }
   }
-}
 
 .p-contact__text {
   margin-top: rem(16);

@@ -1,40 +1,43 @@
 .p-overview {
-  @include mq(tab) {
     position: relative;
-  }
+
 }
 
 .p-overview.is-animated::before {
 
-  @include mq(tab) {
-    content: "";
-    display: block;
-    width: rem(1);
-    height: calc(0 / 1280 * 100vw);
-    background: $title-color;
-    position: absolute;
-    top: -37%;
-    left: 100%;
-    transform: rotate(45deg);
-    z-index: -1;
+    @include mq(tab) {
+      content: "";
+      display: block;
+      width: 100%;
+      height: rem(1300);
+      background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover; 
+      clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
+      position: absolute;
+      top: rem(-390);
+      left: 0%;
+      z-index: -2;
+      
+      animation-name: borderSlide2;/*1で解説*/
+      animation-fill-mode:forwards;/*開始と終了の状態*/
+      animation-duration:1.5s;/*アニメーションの長さ*/
+      animation-timing-function:linear;/*アニメーションの進行具合*/
+      animation-direction:normal;/*アニメーションの向き*/
+      animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+      
+    }
+ }
+  
 
-    animation-name: borderSlide2;/*1で解説*/
-    animation-fill-mode:forwards;/*開始と終了の状態*/
-    animation-duration:1s;/*アニメーションの長さ*/
-    animation-timing-function:linear;/*アニメーションの進行具合*/
-    animation-direction:normal;/*アニメーションの向き*/
-    animation-delay: 1.0s;/*アニメーションの開始を遅らせる*/
-  }
-  }
 
 
 .p-overview__title {
   @include mq(tab) {
     letter-spacing: 0.0167em;    
   }
+}
 
 
-  &::before {
+.p-overview__title::before {
     content: "Overview";
     display: block;
     font-size: rem(50);
@@ -44,8 +47,8 @@
     left: 50%;
     transform: translateX(-50%);
     color: $title-color;
-    opacity: 0.2;
     font-family: $font-family-sub;
+    z-index: -2;
 
     @include mq(tab) {
       left: rem(-228);
@@ -55,7 +58,6 @@
       
     }
   }
-}
 
 .p-overview__content {
     margin-top: rem(46);

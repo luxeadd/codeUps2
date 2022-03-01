@@ -1,9 +1,5 @@
-.p-post-works-article {
 
-}
-
-.p-post-works-article__head--sp,
-.p-post-works-article__head--pc {
+.p-post-works-article__head{
    font-size: rem(16);
    padding: rem(11) 0;
    line-height: 1;
@@ -12,35 +8,17 @@
    width: 100%;
    border: 1px solid $text-color;
 
-   @include mq(tab) {
-    background: $bg-sub-color;
-  }
 }
 
 .p-post-works-article__box {
 margin-top: rem(32);
-text-align: center;
+display: grid;
+grid-template-columns: repeat(2,1fr);
+grid-gap: rem(20) rem(20);
+
 @include mq(tab) {
-  display: flex;
   margin-top: rem(80);
+  grid-template-columns: repeat(4,1fr);
   
 }
-}
-
-.p-post-works-article__item {
-  &+& {
-    margin-top: rem(24);
-   
-    @include mq(tab) {
-      margin-top: 0;
-    }
-  }
-
- @include mq(tab) {
-   margin-top: 0;
-   width: calc(26% - 108px / 4);
-   &+& {
-     margin-left: rem(32);
-   }
- }
 }

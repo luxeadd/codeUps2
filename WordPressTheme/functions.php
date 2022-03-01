@@ -162,3 +162,22 @@ location = 'http://codeups2.local/thanks/'; /* 遷移先のURL */
 </script>
 EOD;
 }
+
+//WebPのアップロードを許可
+function custom_mime_types( $mimes ) {
+  $mimes['webp'] = 'image/webp';
+  return $mimes;
+}
+add_filter( 'upload_mimes', 'custom_mime_types' );
+
+//メディア画面のWebPサムネイルを表示する
+function enable_webp_thumbnail ($result, $path) {
+  if ($result === true) return $result;
+  //ファイルがWebPかどうか判定する
+  $info = getimagesize($path);
+  if ($info[2] === IMAGETYPE_WEBP) {
+    $result = true;
+  }
+  return $result;
+}
+add_filter('file_is_displayable_image', 'enable_webp_thumbnail', 10, 2);

@@ -1,12 +1,9 @@
 <?php get_header(); ?>
 
 <!-- ローディングアニメーション -->
-<div id="loader" class="loader-wrap">
-<div class="loader-ring">
-  <span></span>
-<img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="タイトルロゴ">
- </div>
-    </div><!-- /.loader-wrap -->
+<div id="loader" class="c-loader"></div>
+<!-- ローディングアニメーショントップページ -->
+<div id="loader" class="c-loader__top"></div>
 
 <!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
@@ -19,7 +16,7 @@
           <div class="swiper-slide">
           <div class="p-mv__img">
           <picture>
-                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv1.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
                 <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-sp.jpg" alt="MV1画像">
             </picture>
           </div>
@@ -27,7 +24,7 @@
           <div class="swiper-slide">
           <div class="p-mv__img">
           <picture>
-                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv2.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
                 <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-sp.jpg" alt="MV2画像">
             </picture>
              </div>
@@ -35,7 +32,7 @@
          <div class="swiper-slide">
          <div class="p-mv__img">
          <picture>
-                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-pc.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv3.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
                 <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-sp.jpg" alt="MV3画像">
             </picture>
             </div>
@@ -45,21 +42,10 @@
 
   </div><!-- /.p-mv__img -->
   <div class="p-mv__content">
-    <h1 class="p-mv__title">
-        <span>メ</span>
-        <span>イ</span>
-        <span>ン</span>
-        <span>タ</span>
-        <span>イ</span>
-        <span>ト</span>
-        <span>ル</span>
-        <span>が</span>
-        <span>入</span>
-        <span>リ</span>
-        <span>ま</span>
-        <span>す</span>
+    <h1 class="p-mv__title js-span-wrap">
+        しあわせの晴れ舞台
     </h1><!-- /.p-mv__title -->
-    <div class="p-mv__suv-title">サブタイトルが入ります</div><!-- /.p-mv__suv-title -->
+    <div class="p-mv__suv-title">ハタチのいろどり</div><!-- /.p-mv__suv-title -->
   </div><!-- /.p-mv__content -->
 
 </div><!-- /.l-mv p-mv -->
@@ -115,28 +101,28 @@
 </section><!-- /.l-top-news -->
 
 
-<!-- 事業内容 -->
+<!-- プラン -->
 <section class="l-top-content p-content js-scrollAnimation">
-    <h2 class="p-content__title c-section-title">事業内容</h2><!-- /.p-content__title -->
+    <h2 class="p-content__title c-section-title">プラン</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item js-scrollAnimation">
       <a href="/content" class="p-content-box__link">
-         <h3  class="p-content-box__text">経営理念ページへ</h3>
+         <h3  class="p-content-box__text">レンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content1" class="p-content-box__link">
-        <h3 class="p-content-box__text">理念1へ</h3>
+        <h3 class="p-content-box__text">オーダーレンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content2" class="p-content-box__link">     
-        <h3  class="p-content-box__text">理念2へ</h3>
+        <h3  class="p-content-box__text">購入<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content3" class="p-content-box__link">
-      <h3  class="p-content-box__text">理念3へ</h3>
+      <h3  class="p-content-box__text">ママ振袖<br>プラン</h3>
       </a>
     </li>
     
@@ -145,13 +131,13 @@
 
 
 
-<!-- 制作実績 -->
-<section class="l-top-works p-works">
-  <h2 class="p-works__title c-section-title">制作実績</h2><!-- /.p-works__title -->
+<!-- 振袖コレクション -->
+<section class="l-top-works p-works ">
+  <h2 class="p-works__title c-section-title">振袖コレクション</h2><!-- /.p-works__title -->
   <div class="p-works__content">
     <div class="p-works__inner">
 
-      <div class="p-works__img-box js-scrollAnimation">
+      <div class="p-works__img-box  js-scrollAnimation">
         
           <!-- Slider main container -->
           <div class="swiper p-works-swiper">
@@ -162,7 +148,7 @@
               <?php
                     $args = [
                       'post_type' => 'works', // カスタム投稿名が「gourmet」の場合
-                      'posts_per_page' => 3, // 表示する数
+                      'orderby' => 'rand', //ランダム表示
                     ];
                     $my_query = new WP_Query($args); ?>
                   
@@ -180,12 +166,6 @@
               <?php endwhile; ?>
               <?php endif; wp_reset_postdata(); ?>
             </div>
-            
-            <!-- If we need pagination -->
-            <div class="swiper-pagination"></div>
-            
-            <!-- If we need scrollbar -->
-            <!-- <div class="swiper-scrollbar"></div> -->
           </div> 
       </div><!-- /.p-works__img-box -->
       
@@ -201,9 +181,9 @@
   </section><!-- /.l-top-works -->
   
   
-<!--企業概要 -->
+<!--会社紹介 -->
 <section class="l-top-overview p-overview js-scrollAnimation">
-  <h2 class="p-overview__title c-section-title">企業概要</h2><!-- /.p-works__title -->
+  <h2 class="p-overview__title c-section-title">会社紹介</h2><!-- /.p-works__title -->
   <div class="p-overview__content">
     <div class="p-overview__inner">
       <div class="p-overview__img js-scrollAnimation">

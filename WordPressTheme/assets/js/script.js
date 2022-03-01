@@ -111,7 +111,7 @@ var loader = document.getElementById('loader');
 				
 //アニメーションスクロール判定
 let targets = document.querySelectorAll('.js-scrollAnimation');//アニメーションさせたい要素
-let offset = 50;//アニメーションタイミング
+let offset = 100;//アニメーションタイミング
 
 window.addEventListener('scroll', function() {//スクロールしたとき
 
@@ -161,7 +161,7 @@ let mvswiper = new Swiper('.p-mv-swiper', {
 		let workswiper = new Swiper('.p-works-swiper', {
 		 //自動スライド
 				 autoplay: {
-					 delay: 2000,
+					 delay: 300,
 					
 				 },
 				
@@ -170,7 +170,7 @@ let mvswiper = new Swiper('.p-mv-swiper', {
 			 effect: "fade",
 			
 			 //切り替わる速さ
-			 speed: 4000,
+			 speed: 2500,
 			 
 			 //ループの有無
 			 loop: true,
@@ -221,3 +221,9 @@ var slider = new Swiper ('.gallery-slider', {
 	slider.controller.control = thumbs;
 	thumbs.controller.control = slider;
 
+
+//一文字づつspanタグで囲む
+var textWrap = document.querySelectorAll('.js-span-wrap');
+textWrap.forEach((t) => (
+  t.innerHTML = t.textContent.replace(/\S/g,'<span>$&</span>')
+));

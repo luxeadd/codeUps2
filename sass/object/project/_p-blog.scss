@@ -16,7 +16,7 @@
   left: 50%;
   transform: translateX(-50%);
   color: $title-color;
-  opacity: 0.2;
+ z-index: -2;
   font-family: $font-family-sub;
 
   @include mq(tab) {
@@ -41,7 +41,7 @@
 
 .p-blog__item {
   opacity: 0;
-  
+  box-shadow: 0 2px 5px #000;
   @include mq(tab) {
    width: calc(33.3% - 50px / 3);
 
