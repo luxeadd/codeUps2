@@ -22,13 +22,20 @@
    width: 100%;
    text-align: center;
    position: absolute;
-   width: rem(600);
+   width: 100%;
+   max-width: rem(280);
    padding: rem(20) 0;
    top: 70%;
-   left: 30%;
+   left: 40%;
    transform: translate(-50%, -50%);
    z-index: 100;
    color: #fff;
+   
+   @include mq(tab) {
+      left: 30%;
+      max-width: rem(550);
+      
+   }
 }
 
 .p-mv__content::before {
@@ -66,7 +73,11 @@
 }
 
 .p-mv__title span:not(:first-child) {
-   margin-left: rem(15);
+     margin-left: rem(5);
+   @include mq(tab) {
+      margin-left: rem(15);
+      
+   }
 
 }
 

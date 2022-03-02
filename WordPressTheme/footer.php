@@ -2,7 +2,7 @@
   <div class="p-footer__inner">
     <div class="p-footer__content">
       <div class="p-footer__logo">
-        <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/logo.svg" alt="">
+        <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisodeups.svg" alt="">
       </div><!-- /.p-footer__logo -->
 
        

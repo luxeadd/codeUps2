@@ -5,15 +5,14 @@
 
 .p-overview.is-animated::before {
 
-    @include mq(tab) {
       content: "";
       display: block;
       width: 100%;
-      height: rem(1300);
+      height: rem(900);
       background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover; 
       clip-path: polygon(100% 0, 100% 0, 100% 0, 100% 0);
       position: absolute;
-      top: rem(-390);
+      top: rem(-240);
       left: 0%;
       z-index: -2;
       
@@ -24,6 +23,10 @@
       animation-direction:normal;/*アニメーションの向き*/
       animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
       
+      @include mq(tab) {
+        height: rem(1300);
+        top: rem(-390);
+
     }
  }
   

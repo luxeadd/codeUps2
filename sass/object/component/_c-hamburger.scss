@@ -11,7 +11,7 @@
   display: block;
   height: 2px;
   width: 26px;
-  background: #fff;
+  background: $text-color;
   -webkit-transition: ease .3s;
   transition: ease .3s;
  }
@@ -29,7 +29,7 @@
  }
  /*OPEN時の動き*/
  .c-hamburger.open  span:nth-child(1) {
-  top: rem(6);
+  top: rem(10);
   -webkit-transform: rotate(45deg);
   transform: rotate(45deg);
  }

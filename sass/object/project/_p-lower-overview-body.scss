@@ -2,9 +2,8 @@
 .p-lower-overview-body__list{
   display: flex;
   padding-bottom: rem(21);
-    padding-top: rem(14);
-  border-bottom: 1px solid #FFFFFF;
-
+  padding-top: rem(14);
+  border-bottom: 1px solid $text-color;
   
   @include mq(tab) {
     padding-bottom: rem(24);
@@ -13,8 +12,6 @@
 }
 
 .p-lower-overview-body__title-box {
-  // max-width: rem(109);
-  // width: 100%;
   flex: 0 0 rem(109);
   
   @include mq(tab) {
@@ -23,8 +20,6 @@
     align-items: center;
     
   }
-
-
 }
 .p-lower-overview-body__title {
    font-size: rem(13);
@@ -35,6 +30,8 @@
    font-size: rem(16); 
   }
 }
+
+
 
 .p-lower-overview-body__text-box {
   // width: 100%;

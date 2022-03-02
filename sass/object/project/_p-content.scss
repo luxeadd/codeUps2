@@ -9,13 +9,12 @@
 
 .p-content.is-animated::before {
 
-  @include mq(tab) {
-    content: "";
-    display: block;
-    width: 100%;
-    height: rem(1300);
-    background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover; 
-    clip-path: polygon(0 0, 0 0, 0 0, 0 0);
+  content: "";
+  display: block;
+  width: 100%;
+  height: rem(900);
+  background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover; 
+  clip-path: polygon(0 0, 0 0, 0 0, 0 0);
     position: absolute;
     top: 0;
     left: 0%;
@@ -27,7 +26,9 @@
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-direction:normal;/*アニメーションの向き*/
     animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
-    
+    @include mq(tab) {
+      height: rem(1300);
+      
       }
   }
 

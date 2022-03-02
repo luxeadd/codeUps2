@@ -1,10 +1,8 @@
 .p-lower-content-mv {
-  background: url(../../../WordPressTheme/assets/img/content/under-conten-mv-sp.jpg) no-repeat center /cover;
- 
+  background: url(../img/common/plan-mv.jpg) no-repeat center /cover;
 
   @include mq(tab) {
-    background: url(../../../WordPressTheme/assets/img/content/under-content-mv-pc.jpg) no-repeat center /cover;
- 
+    background: url(../img/common/plan-mv.jpg) no-repeat center /cover;
   }
 
 }

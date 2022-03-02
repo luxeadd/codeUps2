@@ -2,7 +2,7 @@
 
 <!-- 下層ページMV -->
 <div class="l-lower-works-mv p-lower-works-mv p-lower-common-mv js-mv">
-  <h1 class="p-lower-common-mv__title">制作実績</h1><!-- /.p-news-mv__title -->
+  <h1 class="p-lower-common-mv__title">コレクション</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
 
 <!-- breadcrumbs -->

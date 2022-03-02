@@ -17,7 +17,7 @@
           <div class="p-mv__img">
           <picture>
                 <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv1.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV1-sp.jpg" alt="MV1画像">
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv1-sp.jpg" alt="MV1画像">
             </picture>
           </div>
           </div> 
@@ -25,7 +25,7 @@
           <div class="p-mv__img">
           <picture>
                 <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv2.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV2-sp.jpg" alt="MV2画像">
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv2-sp.jpg" alt="MV2画像">
             </picture>
              </div>
           </div>
@@ -33,7 +33,7 @@
          <div class="p-mv__img">
          <picture>
                 <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv3.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/MV3-sp.jpg" alt="MV3画像">
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv3-sp.jpg" alt="MV3画像">
             </picture>
             </div>
         </div>
@@ -106,22 +106,22 @@
     <h2 class="p-content__title c-section-title">プラン</h2><!-- /.p-content__title -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content" class="p-content-box__link">
+      <a href="/content/#content1" class="p-content-box__link">
          <h3  class="p-content-box__text">レンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content1" class="p-content-box__link">
+      <a href="/content/#content2" class="p-content-box__link">
         <h3 class="p-content-box__text">オーダーレンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content2" class="p-content-box__link">     
+      <a href="/content/#content3" class="p-content-box__link">     
         <h3  class="p-content-box__text">購入<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content3" class="p-content-box__link">
+      <a href="/content/#content4" class="p-content-box__link">
       <h3  class="p-content-box__text">ママ振袖<br>プラン</h3>
       </a>
     </li>
@@ -187,7 +187,7 @@
   <div class="p-overview__content">
     <div class="p-overview__inner">
       <div class="p-overview__img js-scrollAnimation">
-        <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/overview1.jpg" alt="overview画像">
+        <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/office.jpg" alt="overview画像">
       </div><!-- /.p-works__img -->
       <div class="p-overview__text-box">
         <div class="p-overview__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
