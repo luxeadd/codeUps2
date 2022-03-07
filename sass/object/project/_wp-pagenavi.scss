@@ -23,8 +23,11 @@
     transition: all 0.3s;
     
     &:hover {
-      background: #333;
-      color: #fff;
+      @include mq(tab) {
+        background: #333;
+        color: #fff;
+        
+      }
     }
   }
   
@@ -53,8 +56,11 @@
     transition: all 0.3s;
     
     &:hover {
-      background: #333;
-      color: #fff;
+      @include mq(tab) {
+        background: #333;
+        
+        color: #fff;
+      }
     }
   }
   

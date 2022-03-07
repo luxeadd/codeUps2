@@ -6,7 +6,10 @@
   
   .p-works-card:hover {
     .p-work-card__img img {
-      transform: scale(1.1) translate(-45%, -45%);
+      @include mq(tab) {
+        transform: scale(1.1) translate(-45%, -45%);
+        
+      }
     }
   }
 

@@ -45,7 +45,10 @@ height: rem(35);
   transition: transform .3s;
 }
 .p-pc-menu__item a:hover::after {
-  transform: scale(1, 1);
+  @include mq(tab) {
+    transform: scale(1, 1);
+    
+  }
 }
 .p-pc-menu__btn {
   height: inherit;

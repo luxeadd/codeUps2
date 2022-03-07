@@ -54,7 +54,7 @@
 <!-- トップページコンテンツ -->
 <!-- お知らせ -->
 <section class="l-top-news p-news">
-  <div class="p-news__inner">
+  <div class="l-inner">
     <div class="p-news__items">
       <div class="p-news__items-inner">
 

@@ -162,8 +162,6 @@
   </div><!-- /.p-post-news-article__box -->
 
 </div><!-- /.l-inner -->
-
-
 </section><!-- /.l-post-news-article -->
 
 

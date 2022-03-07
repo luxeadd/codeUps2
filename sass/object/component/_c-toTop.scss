@@ -25,11 +25,18 @@
 
 
   .c-to-top:hover {
-    background: #333333;
+
+    @include mq(tab) {
+      background: #333333;
+      
+    }
 
     .c-to-top__arrow {
-      border-top: rem(4) solid #fff;
-      border-left: rem(4) solid #fff;
+      @include mq(tab) {
+        border-top: rem(4) solid #fff;
+        border-left: rem(4) solid #fff;
+        
+      }
     }
    
 

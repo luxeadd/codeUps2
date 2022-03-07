@@ -8,9 +8,15 @@
 }
 
 .p-card:hover {
+  @include mq(tab) {
     background: rgba($color: $main-color, $alpha: 0.6);
+    
+  }
   .p-card__img > img {
-    transform: scale(1.2) translate(-40%, -40%);
+    @include mq(tab) {
+      transform: scale(1.2) translate(-40%, -40%);
+      
+    }
   }
 }
 

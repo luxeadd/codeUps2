@@ -63,12 +63,18 @@
   transition: all 300ms linear;
 }
 .c-btn--slide a:hover {
-  color: #fff;
+  @include mq(tab) {
+    color: #fff;
+    
+  }
  
  
 }
 .c-btn--slide a:hover:before {
-  left: 0;
+  @include mq(tab) {
+    left: 0;
+    
+  }
   
 }
 
@@ -94,12 +100,18 @@
   transition: all 300ms linear;
 }
 .c-btn--slide--white a:hover {
-  color: #fff;
-  border:  1px solid $main-color;
+  @include mq(tab) {
+    color: #fff;
+    border:  1px solid $main-color;
+    
+  }
  
 }
 .c-btn--slide--white a:hover:before {
-  left: 0;
+  @include mq(tab) {
+    left: 0;
+    
+  }
 }
 
 

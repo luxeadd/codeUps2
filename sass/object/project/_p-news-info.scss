@@ -92,9 +92,16 @@
   transition: transform .3s;
 }
 .p-news-info__text:hover::after {
-  transform: scale(1, 1);
+
+  @include mq(tab) {
+    transform: scale(1, 1);
+    
+  }
 }
 .p-news-info__text:hover {
-  color: $main-color;
+  @include mq(tab) {
+    color: $main-color;
+    
+  }
 
 }

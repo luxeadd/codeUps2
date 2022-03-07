@@ -14,13 +14,6 @@
       letter-spacing: 0.125em;
       border: 1px solid $text-color;
       
-      &:hover {
-        @include mq(tab) {
-          
-        }
-
-      }
-      
     }
     
     .previouspostslink,
@@ -33,8 +26,11 @@
       line-height: 1.448;
       
       &:hover {
-        background: #fff;
-        color: #333;
+        @include mq(tab) {
+          background: #fff;
+          color: #333;
+          
+        }
 
         
       }
@@ -67,8 +63,11 @@
       transition: all 0.3s;
       
       &:hover {
-        background: #fff;
-        color: #333;
+        @include mq(tab) {
+          background: #fff;
+          color: #333;
+          
+        }
 
       
       }
@@ -88,8 +87,11 @@
     line-height: 1.448;
 
     &:hover {
-      background: #fff;
-      color: #333;
+      @include mq(tab) {
+        background: #fff;
+        color: #333;
+        
+      }
 
     }
   }

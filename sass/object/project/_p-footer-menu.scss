@@ -44,5 +44,9 @@
   }
 }
 .p-footer-menu--pc__item a:hover::after {
-  transform: scale(1, 1);
+
+  @include mq(tab) {
+    transform: scale(1, 1);
+    
+  }
 }
