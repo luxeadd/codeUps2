@@ -12,30 +12,31 @@
   background-repeat: no-repeat;
   background-size: cover;
   
-  &:first-child {
-    background-image: url(../img/common/furisode1.jpg);
-    
-  }
-  
-  &:nth-child(2){
-    background-image: url(../img/common/furisode2.jpg);
-    
-  }
-  &:nth-child(3){
-    background-image: url(../img/common/furisode3.jpg);
-    
-  }
-  &:nth-child(4){
-    background-image: url(../img/common/furisode4.jpg);
-  
-  }
-
   @include mq(tab) {
     flex: 0 0 25%;
     height: (80 / 300) * 100vw;
    
   }
 }
+
+.p-content-box__item:first-child {
+  background-image: url(../img/common/furisode1.jpg);
+  
+}
+
+.p-content-box__item:nth-child(2){
+  background-image: url(../img/common/furisode2.jpg);
+  
+}
+.p-content-box__item:nth-child(3){
+  background-image: url(../img/common/furisode3.jpg);
+  
+}
+.p-content-box__item:nth-child(4){
+  background-image: url(../img/common/furisode4.jpg);
+
+}
+
 
 
 .p-content-box__item.is-animated:first-child {

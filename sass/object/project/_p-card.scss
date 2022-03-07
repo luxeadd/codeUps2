@@ -54,10 +54,7 @@
   font-weight: 500;
   line-height: 1.6;
   letter-spacing: 0.0556em;
-  text-align: center;  
-
-  @include mq(tab) {
-  }
+  
 
 }
 
@@ -67,7 +64,7 @@
   letter-spacing: 0.0714em;
   line-height: (26 / 14);
   margin-top: rem(4);
-  text-align: left;  
+  
 
   @include mq(tab) {
     margin-top: rem(8);

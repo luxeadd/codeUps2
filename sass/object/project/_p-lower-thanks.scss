@@ -17,10 +17,10 @@
     letter-spacing: 0.066em;
     
   }
-
-&+& {
-  margin-top: rem(80);
 }
+
+.p-lower-thanks__text + .p-lower-thanks__text {
+  margin-top: rem(80);
 }
 
 .p-lower-thanks__btn--pc {

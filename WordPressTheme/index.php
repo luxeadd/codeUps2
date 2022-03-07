@@ -12,10 +12,9 @@
 
 
 <!-- 下層ページコンテンツ -->
-<section class="l-news-news">
-<div class="p-news-news">
-  <div class="p-news-news__inner l-inner">
-    <div class="p-news-news__items">
+<section class="l-lower-news p-lower-news">
+  <div class="p-lower-news__inner l-inner">
+    <div class="p-lower-news__items">
 
   <?php
 //記事があればentriesブロック以下を表示
@@ -25,7 +24,7 @@ if ( have_posts() ) : ?>
     while ( have_posts() ) :
     the_post(); ?>
 
-      <article class="p-news-news__item p-news-info">
+      <article class="p-lower-news__item p-news-info">
         <div class="p-news-info__head">
           <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
            <div class="p-news-info__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
@@ -44,7 +43,6 @@ if ( have_posts() ) : ?>
      
     </div><!-- /.p-news__items -->
   </div><!-- /.l-inner -->
-</div><!-- /.l-top-news -->
 </section>
 
 

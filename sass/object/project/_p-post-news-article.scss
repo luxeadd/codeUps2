@@ -19,7 +19,6 @@
 
 .p-post-news-article__box {
 margin-top: rem(32);
-text-align: center;
 @include mq(tab) {
   display: flex;
   margin-top: rem(80);
@@ -28,19 +27,18 @@ text-align: center;
 }
 
 .p-post-news-article__item {
-  &+& {
-    margin-top: rem(24);
-   
-    @include mq(tab) {
-      margin-top: 0;
-    }
-  }
 
  @include mq(tab) {
    margin-top: 0;
    width: calc(26% - 108px / 4);
-   &+& {
-     margin-left: rem(32);
-   }
  }
+}
+
+.p-post-news-article__item + .p-post-news-article__item {
+  margin-top: rem(24);
+ 
+  @include mq(tab) {
+    margin-top: 0;
+    margin-left: rem(32);
+  }
 }
