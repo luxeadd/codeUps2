@@ -85,11 +85,15 @@
   font-size: rem(20);
    letter-spacing: 0.1em;
    text-align: center;
+   background-image:radial-gradient(#7bded962 30%, transparent 30%);
+    background-size: 20px 20px;
+    padding: rem(20);
+    color: $accent-color;
+    font-weight: 700;
 
    @include mq(tab) {
      font-size: rem(25);
      letter-spacing: 0.08em;
-     text-align: left;
 }
 }
 

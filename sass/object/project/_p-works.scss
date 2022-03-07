@@ -22,9 +22,9 @@
     z-index: -1;
 
     @include mq(tab) {
-      left: rem(400);
+      left: 78%;
       font-size: rem(110);
-      top: rem(-57);
+      top: rem(-34);
       letter-spacing: 0.0182em;
       
     }

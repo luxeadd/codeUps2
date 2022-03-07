@@ -1,5 +1,6 @@
 
 .p-blog__title {
+  position: relative;
   @include mq(tab) {
     letter-spacing: 0.0167em;    
     
@@ -20,7 +21,7 @@
   font-family: $font-family-sub;
 
   @include mq(tab) {
-    left: rem(472);
+    left: 90%;
     font-size: rem(110);
     top: rem(-63);
     

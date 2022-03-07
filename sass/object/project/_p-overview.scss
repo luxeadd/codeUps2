@@ -24,7 +24,7 @@
       animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
       
       @include mq(tab) {
-        height: rem(1300);
+        height: rem(1380);
         top: rem(-390);
 
     }
@@ -34,6 +34,7 @@
 
 
 .p-overview__title {
+  position: relative;
   @include mq(tab) {
     letter-spacing: 0.0167em;    
   }
@@ -54,9 +55,9 @@
     z-index: -2;
 
     @include mq(tab) {
-      left: rem(-228);
+      left: 20%;
       font-size: rem(110);
-      top: rem(-56);
+      top: rem(-32);
       letter-spacing: 0.0182em;
       
     }

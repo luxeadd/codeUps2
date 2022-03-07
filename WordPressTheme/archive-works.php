@@ -54,7 +54,7 @@ while ( have_posts() ) :
               the_post_thumbnail('large');
             } 
             ?>
-      <div class="p-works-card__category">
+      <div class="p-works-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->slug ); ?>">
         <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
       </div><!-- /.p-works-card__category -->
       </div><!-- /.p-work-card__img -->

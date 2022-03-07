@@ -41,37 +41,36 @@
          if ( have_posts() ) : ?>
             <?php
             //記事数ぶんループ
-            while ( have_posts() ) :
+            while ( have_posts()):
             the_post(); ?>
 
-         <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-blog-items__item p-card">
-            <div class="p-card__img">
+          <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-blog-items__item  p-card">
+             <div class="p-card__img">
             <?php
-               if (has_post_thumbnail() ) {
-               // アイキャッチ画像が設定されてれば大サイズで表示
-               the_post_thumbnail('large');
+                  if (has_post_thumbnail() ) {
+                  // アイキャッチ画像が設定されてれば大サイズで表示
+                  the_post_thumbnail('large');
                } 
                ?>
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
+             </div><!-- /.p-card_img -->
+            <div class="p-card__body  ">
                <h3 class="p-card__title">
-               <?php the_title(); //タイトルを表示 ?>
+                  <?php the_title(); //タイトルを表示 ?>
                </h3><!-- /.p-card__title -->
                <div class="p-card__text">
-                    <?php if(SCF::get( 'news-text-sub' )) {
-                       echo mb_substr(SCF::get( 'news-text-sub' ),0,39);
-                    } ?>
+                     <?php if(SCF::get( 'news-text' )) {
+                       echo mb_substr(SCF::get( 'news-text' ),0,40);
+                     } ?>.....
                </div><!-- /.p-card__text -->
-               <div href="" class="p-card__bottom">
-                  <div class="p-card__category">
-                  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
-                  </div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-               </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->
-         </a>
-         
-
+                <div href="" class="p-card__bottom">
+                  <div class="p-card__category  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
+                     <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+                   </div><!-- /.p-card__category -->
+                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+                </div><!-- /.p-card__bottom -->
+             </a>
+            
          <?php
           endwhile;
           ?>      

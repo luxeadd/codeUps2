@@ -23,143 +23,104 @@
   
   <div class="p-post-works__title-bottom">
     <time class="p-post-works__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-    <div class="p-post-works__category">
+    <div class="p-post-works__category <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->slug ); ?>">
     <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
     </div><!-- /.p-post-works__category -->
   </div><!-- /.p-post-works__title-bottom -->
 
-</div><!-- /.l-inner -->
-
-<div class="p-post-works__img">
-<div class="gallery">                
-    <div class="swiper gallery-slider">
-        <div class="swiper-wrapper">
+  
+  <div class="p-post-works__block">
+    <div class="p-post-works__img">
+      <div class="gallery">                
+        <div class="swiper gallery-slider">
+          <div class="swiper-wrapper">
             <div class="swiper-slide">
-            <?php
+              <?php
                   if (has_post_thumbnail() ) {
-                  // アイキャッチ画像が設定されてれば大サイズで表示
-                  the_post_thumbnail('large');
+                    // アイキャッチ画像が設定されてれば大サイズで表示
+                    the_post_thumbnail('large');
                   } 
                   ?>
               </div>
-
+              
               <?php 
               $works_image_box = SCF::get('works-image-box'); 
               ?>
                 <?php foreach ($works_image_box as $works_image ) :?>
-                
-                <div class="swiper-slide">
-                <?php echo wp_get_attachment_image($works_image['works-image'],'large') ; ?>
+                  
+                  <div class="swiper-slide">
+                    <?php echo wp_get_attachment_image($works_image['works-image'],'large') ; ?>
+                  </div>
+                  
+                  <?php endforeach ?>
                 </div>
-
-                <?php endforeach ?>
                 
-        </div>
-
-        <div class="swiper-button-prev">
-               <div class="arrow-left"></div>
-        </div>
-        <div class="swiper-button-next">
-              <div class="arrow-right"></div>
-        </div>
-    </div>
-
-    <div class="swiper-container gallery-thumbs">
-        <div class="swiper-wrapper">
-            <div class="swiper-slide">
-            <?php
+                <div class="swiper-button-prev">
+                  <div class="arrow-left"></div>
+                </div>
+                <div class="swiper-button-next">
+                  <div class="arrow-right"></div>
+                </div>
+              </div>
+              <div class="swiper-container gallery-thumbs">
+                <div class="swiper-wrapper">
+                  <div class="swiper-slide">
+                    <?php
                   if (has_post_thumbnail() ) {
-                  // アイキャッチ画像が設定されてれば大サイズで表示
+                    // アイキャッチ画像が設定されてれば大サイズで表示
                   the_post_thumbnail('thumbnail');
-                  } 
-                  ?>
+                } 
+                ?>
             </div>
-
+            
             <?php 
             $works_image_box = SCF::get('works-image-box'); 
-          
             ?>
                 <?php foreach ($works_image_box as $works_image ) :?>
-                
-                <div class="swiper-slide">
-                <?php echo wp_get_attachment_image($works_image['works-image'],'thumbnail') ; ?>
+                  
+                  <div class="swiper-slide">
+                    <?php echo wp_get_attachment_image($works_image['works-image'],'thumbnail') ; ?>
+                  </div>
+                  
+                  <?php endforeach ?>
                 </div>
-
-                <?php endforeach ?>
-         
-        </div>
-    </div>
-</div>
-
-</div><!-- /.p-post-works__img -->
-
-
-<div class="p-post-works__wrapper">
-  <div class="l-inner p-post-works__inner">
-
-
-  <?php $works_text_box = SCF::get('works-text-box'); ?>
-<?php foreach ($works_text_box as $works_text ) :?>
-
- <div class="p-post-works__body">
-   <h2 class="p-post-works__sub-title">
-         <?php echo $works_text['works-title']; ?>
-   </h2><!-- /.p-post-works__sub-title -->
-   <p class="p-post-works__text">
-        <?php echo nl2br($works_text['works-text']); ?>
-    </p><!-- /.p-post-works__text -->
-  </div><!-- /.p-post-works__body -->
-  
-  <?php endforeach ?>
-
-    
-  </div><!-- / -->
-</div><!-- /.p-post-works__wrapper -->
-  
-  
-<div class="p-post-works__list-box sp-only">
-  <div class="l-inner p-post-works__inner">
-
-    <ul class="p-post-works__lists">
-
-    <?php $works_lists1 = SCF::get('works-lists1'); ?>
-      <?php foreach ($works_lists1 as $works_list1 ) :?>
-      <li class="p-post-works__list">
-            <?php echo $works_list1['works-list1']; ?>
-        </li><!-- /.p-post-works__list -->
-  <?php endforeach ?>
-     
-    </ul><!-- /.p-post-works__lists -->
-    
-    <ol class="p-post-works__lists">
-
-    <?php $works_lists2 = SCF::get('works-lists2'); ?>
-      <?php foreach ($works_lists2 as $works_list2 ) :?>
-      <li class="p-post-works__list">
-            <?php echo $works_list2['works-list2']; ?>
-        </li><!-- /.p-post-works__list -->
-  <?php endforeach ?>
-
-    </ol><!-- /.p-post-works__lists -->
-    
-  </div><!-- /.l-inner -->
-</div><!-- /.p-post-works__list-box -->
-
-</section><!-- /.l-post-works -->
-
-
-
-
-<!-- pagination -->
-
-<?php
+              </div>
+            </div>
+          </div><!-- /.p-post-works__img -->
+          
+          
+          <div class="p-post-works__wrapper">          
+            <?php $works_text_box = SCF::get('works-text-box'); ?>
+            <?php foreach ($works_text_box as $works_text ) :?>
+              
+              <div class="p-post-works__body">
+                <h2 class="p-post-works__sub-title">
+                  <?php echo $works_text['works-title']; ?>
+                </h2><!-- /.p-post-works__sub-title -->
+                <p class="p-post-works__text">
+                  <?php echo $works_text['works-text']; ?>
+                </p><!-- /.p-post-works__text -->
+              </div><!-- /.p-post-works__body -->
+              
+              <?php endforeach ?>
+            </div><!-- /.p-post-works__wrapper -->
+          </div><!-- /.p-post-works__block -->
+        </div><!-- /.l-inner -->
+      </section><!-- /.l-post-works -->
+          
+          
+          
+          
+          <!-- pagination -->
+          
+          <?php
  $previous_post = get_previous_post();
  $previous_id = $previous_post->ID;
  $previous_date = mysql2date('Y.m.d', $previous_post->post_date);
  $next_post = get_next_post();
  $next_id = $next_post->ID;
  $next_date = mysql2date('Y.m.d', $next_post->post_date);
-?>
+ ?>
 
 <div class="l-post-works-pagination p-post-works-pagination">
 
@@ -216,9 +177,9 @@
               the_post_thumbnail('large');
             } 
             ?>
-      <div class="p-works-card__category">
-        <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
-      </div><!-- /.p-works-card__category -->
+      <div class="p-works-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->slug ); ?>">
+    <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
+    </div><!-- /.p-works-card__category -->
       </div><!-- /.p-work-card__img -->
       <div class="p-works-card__title">
         <?php the_title(); //タイトルを表示 ?>

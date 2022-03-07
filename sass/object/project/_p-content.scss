@@ -25,7 +25,7 @@
     animation-duration:1.5s;/*アニメーションの長さ*/
     animation-timing-function:linear;/*アニメーションの進行具合*/
     animation-direction:normal;/*アニメーションの向き*/
-    animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+    animation-delay: 1.7s;/*アニメーションの開始を遅らせる*/
     @include mq(tab) {
       height: rem(1300);
       
@@ -34,6 +34,7 @@
 
 
 .p-content__title {
+  position: relative;
   @include mq(tab) {
     letter-spacing: 0.0667em;
   }
@@ -53,9 +54,9 @@
     font-family: $font-family-sub;
 
     @include mq(tab) {
-      left: rem(-271);
+      left: 17%;
       font-size: rem(110);
-      top: rem(-44);
+      top: rem(-26);
       
     }
   }

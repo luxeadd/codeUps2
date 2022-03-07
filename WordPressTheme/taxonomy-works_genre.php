@@ -22,11 +22,12 @@
     $worksGenre_terms = get_terms( 'works_genre', array( 'hide_empty' => false ) );
     foreach ( $worksGenre_terms as $worksGenre_term ) :
   ?>
-      <a href="<?php echo esc_url( get_term_link( $worksGenre_term, 'works_genre' ) ); ?>" class="p-lower-works-nav__item  <?php
+      <a href="<?php echo esc_url( get_term_link( $worksGenre_term, 'works_genre' ) ); ?>" class="p-lower-works-nav__item   <?php
       $cat = get_queried_object();
       $cat_name = $cat -> name;
+      $cat_slug = $cat -> slug;
 if( $cat_name == esc_html( $worksGenre_term->name )) {
-echo "is-genre-active"; }
+echo $cat_slug; }
 ?>"><?php echo esc_html( $worksGenre_term->name ); ?></a>
       
       <?php
@@ -58,7 +59,7 @@ echo "is-genre-active"; }
               the_post_thumbnail('large');
             } 
             ?>
-        <div class="p-works-card__category">
+        <div class="p-works-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->slug ); ?>">
           <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
         </div><!-- /.p-works-card__category -->
       </div><!-- /.p-work-card__img -->

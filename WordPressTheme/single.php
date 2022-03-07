@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div class="js-mv"></div>
 
 <div class="l-post-news-breadcrumbs">
   <div class="breadcrumbs">
@@ -23,14 +24,8 @@
   
   <div class="p-post-news__title-bottom">
     <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-    <div class="p-post-news__category">
-    <?php
-          // カテゴリー１つ目の名前を表示
-          $category = get_the_category();
-          if ($category[0] ) {
-          echo '<div class="">' . $category[0]->cat_name . '</div>';
-          }
-          ?>
+    <div class="p-post-news__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
+      <?php $cat = get_the_category(  ); $cat = $cat[0]; {echo $cat->cat_name; } ?>
     </div><!-- /.p-post-news__category -->
   </div><!-- /.p-post-news__title-bottom -->
 
@@ -49,7 +44,7 @@
   <div class="l-inner p-post-news__inner">
 
     <p class="p-post-news__text">
-         <?php echo SCF::get( 'news-text' );?>
+    <?php $newsTextSub = scf::get('news-text'); echo nl2br( $newsTextSub ); ?>
          
      </p><!-- /.p-post-news__text -->
       
@@ -66,7 +61,7 @@
       </h3><!-- /.p-post-news__sub-title2 -->
             
       <p class="p-post-news__text">
-      <?php echo SCF::get( 'news-text-sub2' );?>
+      <?php $newsTextSub = scf::get('news-text-sub2'); echo nl2br( $newsTextSub ); ?>
       </p><!-- /.p-post-news__text -->
           
   </div><!-- / -->
@@ -75,37 +70,6 @@
   <div class="p-post-news__img2">
    <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
   </div><!-- /.p-post-news__img -->
-
-
-<div class="p-post-news__list-box">
-  <div class="l-inner p-post-news__inner">
-
-    <ul class="p-post-news__lists">
-
-    <?php $newsListMain = SCF::get('news-list-main'); ?>
-          <?php foreach ($newsListMain as $fields ) :?>
-            <li class="p-post-news__list">
-                <?php echo $fields['news-list-main1']; ?>
-              </li><!-- /.p-post-news__list -->
-          <?php endforeach ?>
-      
-   
-    </ul><!-- /.p-post-news__lists -->
-    
-    <ol class="p-post-news__lists">
-   
-    <?php $newsListSub = SCF::get('news-list-sub'); ?>
-          <?php foreach ($newsListSub as $fields ) :?>
-            <li class="p-post-news__list">
-                <?php echo $fields['news-list-sub1']; ?>
-              </li><!-- /.p-post-news__list -->
-          <?php endforeach ?>
-
-    </ol><!-- /.p-post-news__lists -->
-    
-  </div><!-- /.l-inner -->
-</div><!-- /.p-post-news__list-box -->
-
 </section><!-- /.l-post-news -->
 
 
@@ -181,18 +145,13 @@
             </div><!-- /.p-card_img -->
             <div href="" class="p-card__body">
               <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->
-              <div class="p-card__text"><?php the_excerpt(); //抜粋を表示 ?></div><!-- /.p-card__text -->
+            </div><!-- /.p-card__body -->
               <div href="" class="p-card__bottom">
-              <?php
-                // カテゴリー１つ目の名前を表示
-                $category = get_the_category();
-                if ($category[0] ) {
-                echo '<div class="p-card__category">' . $category[0]->cat_name . '</div>';
-                }
-                ?>
+               <div class="p-card__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
+                  <?php $cat = get_the_category(  ); $cat = $cat[0]; {echo $cat->cat_name; } ?>
+               </div><!-- /.p-card__category -->
                 <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
         </a>
          
 

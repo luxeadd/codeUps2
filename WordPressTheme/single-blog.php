@@ -1,5 +1,6 @@
 <?php get_header(); ?>
 
+<div class="js-mv"></div>
 
 <div class="l-post-news-breadcrumbs">
   <div class="breadcrumbs">
@@ -69,36 +70,6 @@
   <div class="p-post-news__img2">
    <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
   </div><!-- /.p-post-news__img -->
-
-
-<div class="p-post-news__list-box">
-  <div class="l-inner p-post-news__inner">
-
-    <ul class="p-post-news__lists">
-
-    <?php $newsListMain = SCF::get('news-list-main'); ?>
-          <?php foreach ($newsListMain as $fields ) :?>
-            <li class="p-post-news__list">
-                <?php echo $fields['news-list-main1']; ?>
-              </li><!-- /.p-post-news__list -->
-          <?php endforeach ?>
-      
-   
-    </ul><!-- /.p-post-news__lists -->
-    
-    <ol class="p-post-news__lists">
-   
-    <?php $newsListSub = SCF::get('news-list-sub'); ?>
-          <?php foreach ($newsListSub as $fields ) :?>
-            <li class="p-post-news__list">
-                <?php echo $fields['news-list-sub1']; ?>
-              </li><!-- /.p-post-news__list -->
-          <?php endforeach ?>
-
-    </ol><!-- /.p-post-news__lists -->
-    
-  </div><!-- /.l-inner -->
-</div><!-- /.p-post-news__list-box -->
 
 </section><!-- /.l-post-news -->
 

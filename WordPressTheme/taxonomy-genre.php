@@ -14,7 +14,7 @@
 <div class="l-lower-works-nav p-lower-works-nav">
   <div class="l-inner p-lower-works-nav__inner">
     <div class="p-lower-works-nav__top">
-      <a href="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="p-lower-works-nav__item--top is-genre-active">GENRE</a>
+      <a href="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="p-lower-works-nav__item--top">すべて</a>
     </div><!-- /.p-lower-works-nav__top -->
 
     <div class="p-lower-works-nav__bottom">
@@ -25,8 +25,9 @@
       <a href="<?php echo esc_url( get_term_link( $genre_term, 'genre' ) ); ?>" class="p-lower-works-nav__item <?php
       $cat = get_queried_object();
       $cat_name = $cat -> name;
+      $cat_slug = $cat -> slug;
 if( $cat_name == esc_html( $genre_term->name )) {
-echo "is-genre-active"; }
+echo $cat_slug; }
 ?>"><?php echo esc_html( $genre_term->name ); ?></a>
       <?php
     endforeach;
@@ -58,22 +59,22 @@ echo "is-genre-active"; }
                } 
                ?>
             </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
+            <div class="p-card__body">
                <h3 class="p-card__title">
                <?php the_title(); //タイトルを表示 ?>
                </h3><!-- /.p-card__title -->
                <div class="p-card__text">
-                    <?php if(SCF::get( 'news-text-sub' )) {
-                       echo mb_substr(SCF::get( 'news-text-sub' ),0,39);
-                    } ?>
+                    <?php if(SCF::get( 'news-text' )) {
+                       echo mb_substr(SCF::get( 'news-text' ),0,40);
+                    } ?>.....
                </div><!-- /.p-card__text -->
-               <div href="" class="p-card__bottom">
-                  <div class="p-card__category">
-                  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
-                  </div><!-- /.p-card__category -->
-                  <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-               </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->
+            <div href="" class="p-card__bottom">
+               <div class="p-card__category  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
+               <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+               </div><!-- /.p-card__category -->
+               <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+            </div><!-- /.p-card__bottom -->
          </a>
          
 

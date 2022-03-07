@@ -15,8 +15,6 @@
 <section class="l-news-news">
 <div class="p-news-news">
   <div class="p-news-news__inner l-inner">
-
-
     <div class="p-news-news__items">
 
   <?php
@@ -30,15 +28,9 @@ if ( have_posts() ) : ?>
       <article class="p-news-news__item p-news-info">
         <div class="p-news-info__head">
           <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-           
-           <?php
-                // カテゴリー１つ目の名前を表示
-                $category = get_the_category();
-                if ($category[0] ) {
-                echo '<div class="p-news-info__category">' . $category[0]->cat_name . '</div><!-- /.p-news-info__category -->';
-                }
-                ?>
-            
+           <div class="p-news-info__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
+            <?php $cat = get_the_category(  ); $cat = $cat[0]; {echo $cat->cat_name; } ?>
+           </div><!-- /.p-news-info__category -->
          </div><!-- /.p-news-info__head -->
          <div class="p-news-info__body">
            <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-news-info__text"><?php the_title(); //タイトルを表示 ?></a><!-- /.p-news-info__text -->
@@ -51,12 +43,8 @@ if ( have_posts() ) : ?>
      <?php endif; ?>
      
     </div><!-- /.p-news__items -->
-
-
-
   </div><!-- /.l-inner -->
 </div><!-- /.l-top-news -->
-
 </section>
 
 

@@ -1,6 +1,6 @@
 <div class="p-contact">
     <div class="l-inner">
-       <h2 class="p-contact__title c-section-title">お問い合わせ</h2><!-- /.p-contact__title c-section-title -->
+       <h2 class="p-contact__title c-section-title js-scrollAnimation">お問い合わせ</h2><!-- /.p-contact__title c-section-title -->
 
        <!-- spテキスト -->
        <div class="p-contact__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</div><!-- /.p-contact__text -->

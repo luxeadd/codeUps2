@@ -4,11 +4,16 @@
 
 .p-post-works__title {
   font-size: rem(20);
+  padding: rem(20);
+  text-align: center;
   letter-spacing: 0.02em;font-weight: 400;
   line-height: 1.76;
+  background-image:radial-gradient(#7bded962 30%, transparent 30%);
+  background-size: 20px 20px;
   @include mq(tab) {
     font-size: rem(23);
     letter-spacing: 0.017em;
+    
   }
 }
 
@@ -38,24 +43,48 @@ letter-spacing: 0.025em;
  letter-spacing: 0,125em;
  line-height: 1;
  padding: rem(10) rem(23);
+ background-color: #fff;
  border: 1px solid $text-color;
-margin-left: rem(24);
-
-@include mq(tab) {
-    
+ color: $text-color;
+ margin-left: rem(24);
 }
+
+.p-post-works__category.sweet {
+  background-color: $main-color;
+ border: 1px solid $main-color;
+ color: #fff;
+}
+.p-post-works__category.elegant {
+  background-color: $elegant-color;
+ border: 1px solid $elegant-color;
+ color: #fff;
+}
+.p-post-works__category.gorgeous {
+  background-color: $title-color;
+ border: 1px solid $title-color;
+ color: #fff;
+}
+.p-post-works__category.cool {
+  background-color: $bg-sub-color;
+ border: 1px solid $bg-sub-color;
+ color: #111;
+}
+.p-post-works__block {
+  @include mq(tab) {
+    display: flex;
+  }
 }
 
 .p-post-works__img {
   margin-top: rem(16);
-  width: 100%;
-  max-width: rem(798);
-  margin-left: auto;
-  margin-right: auto;
+  margin: rem(16) calc(50% - 50vw);
+  width: 100vw;
   
   
   @include mq(tab) {
-    margin-top: rem(32);
+    margin: rem(32) 0 0;
+    width: 50%;
+    
   }
   
 }
@@ -65,13 +94,13 @@ margin-left: rem(24);
 .gallery {
     position: relative;
     width: 100%;
-    max-width: rem(469);
+    max-width: rem(450);
     margin-left: auto;
     margin-right: auto;
     
 
     @include mq(tab) {
-      max-width: rem(799);
+      max-width: 100%;
       
     }
     
@@ -84,10 +113,10 @@ margin-left: rem(24);
 
         .swiper-slide {
             width: 100%;
-            height: rem(251);
+            height: rem(550);
 
             @include mq(tab) {
-              height: rem(427);
+              height: rem(680);
             }
             
             img {
@@ -105,15 +134,15 @@ margin-left: rem(24);
         width: 100%;
         padding: 0;
         overflow: hidden;
-        margin-top: rem(32);
+        margin-top: rem(5);
 
         @include mq(tab) {
-          margin-top: rem(40);
+          margin-top: rem(5);
         }
 
         .swiper-slide {
-            width: rem(163);
-            height: rem(163);
+            width: rem(100);
+            height: rem(100);
             text-align: center;
             overflow: hidden;
             opacity: 1;
@@ -211,14 +240,19 @@ margin-left: rem(24);
 }
 
 
-
+.p-post-works__wrapper {
+  @include mq(tab) {
+    width: 50%;
+    margin-left: rem(50);
+  }
+}
 
 .p-post-works__body {
   margin-top: rem(54);
   padding: rem(0) rem(10) rem(33);
-  border: 1px solid $text-color;
+  border: 3px solid $main-color;
   @include mq(tab) {
-    padding: rem(0) rem(23) rem(32);
+    padding: rem(0) rem(50) rem(30);
   }
 }
 
@@ -228,7 +262,7 @@ display: inline-block;
  font-size: rem(20);
  letter-spacing: 0.02em;
  line-height: 1.448;
- border :1px solid $text-color;
+ border :3px solid $main-color;
  padding: rem(5) rem(20);
  border-radius: rem(32);
  background: $background;
@@ -236,9 +270,12 @@ display: inline-block;
 }
 
 .p-post-works__text {
- font-size: rem(16);
+ font-size: rem(36);
+ color: $accent-color;
+ font-weight: 700;
  letter-spacing: 0.025em;
- line-height: 2.1875;
+ line-height: 1;
+ text-align: center;
 
 }
 
@@ -288,24 +325,3 @@ display: inline-block;
     height: 100%;
   }
 
-
-.p-post-works__list-box {
-
-}
-
-.p-post-works__lists {
-  margin-top: rem(24);
-}
-
-.p-post-works__list {
- font-size: rem(16);
- line-height: 2.1875;
- letter-spacing: 0.025em;
-}
-
-.p-post-works__inner {
-  
-  @include mq(tab) {
-    max-width: rem(839);
-  }
-}

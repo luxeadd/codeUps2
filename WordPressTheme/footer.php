@@ -20,7 +20,7 @@
   </div><!-- /.l-inner -->
 
     <div class="p-footer__copy">
-      &copy; 2021 CodeUps Inc.
+      &copy; 2022 furisodeups Inc.
     </div><!-- /.p-footer__copy -->
 
 

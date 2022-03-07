@@ -1,3 +1,17 @@
+//各ページ全体fadeIn
+body {
+  opacity: 0;
+  animation : loader-fadeOut 2s;
+  animation-fill-mode: both;
+  animation-timing-function:ease;/*アニメーションの進行具合*/
+}
+
+@keyframes loader-fadeOut {
+  100% {
+    opacity: 1;
+  }
+}
+
 //メインビュー背景
 @keyframes clip-1{
   0%{
@@ -121,6 +135,60 @@
     }
 }
 
+//ボールアニメーション
+@keyframes ball {
+  12% {
+    transform: translateY(-20px);
+  }
+  25% {
+    transform: translateY(0px);
+  }
+  37% {
+    transform: translateY(-15px);
+  }
+  50% {
+    transform: translateY(0px);
+  }
+  65% {
+    transform: translateY(-10px);
+  }
+  80% {
+    transform: translateY(0px);
+  }
+  90% {
+    transform: translateY(-5px);
+  }
+  100% {
+    transform: translateY(0px);
+  }
+}
 
+//ボールアニメーション2
+@keyframes ball2 {
+  12% {
+    transform: translateY(-5px);
+  }
+  25% {
+    transform: translateY(15px);
+  }
+  37% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(15px);
+  }
+  65% {
+    transform: translateY(5px);
+  }
+  80% {
+    transform: translateY(15px);
+  }
+  90% {
+    transform: translateY(10px);
+  }
+  100% {
+    transform: translateY(15px);
+  }
+}
 
 

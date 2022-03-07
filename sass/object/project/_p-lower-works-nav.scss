@@ -1,5 +1,13 @@
+.p-lower-works-nav {
+  padding: rem(20) 0;
+  background-image:radial-gradient(#7bded962 30%, transparent 30%);
+  background-size: 20px 20px;
+
+}
 
 .p-lower-works-nav__inner {
+  
+
   @include mq(tab) {
     display: flex;
     align-items: center;
@@ -27,6 +35,45 @@
     margin-left: rem(20);
   }
 
+}
+//コレクションページカテゴリカラー
+.p-lower-works-nav__item.sweet {
+  background-color: $main-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.elegant {
+  background-color: $elegant-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.gorgeous {
+  background-color: $title-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.cool {
+  background-color: $bg-sub-color;
+ color: #111;
+}
+
+//ブログページカテゴリカラー
+.p-lower-works-nav__item.blog {
+  background-color: $main-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.item {
+  background-color: $elegant-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.shop-info {
+  background-color: $title-color;
+ color: #fff;
+}
+.p-lower-works-nav__item.staff {
+  background-color: $bg-sub-color;
+ color: #111;
+}
+.p-lower-works-nav__item.trivia {
+  background-color: $category-color;
+ color: #111;
 }
 
 

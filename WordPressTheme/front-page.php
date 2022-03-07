@@ -1,7 +1,5 @@
 <?php get_header(); ?>
 
-<!-- ローディングアニメーション -->
-<div id="loader" class="c-loader"></div>
 <!-- ローディングアニメーショントップページ -->
 <div id="loader" class="c-loader__top"></div>
 
@@ -24,16 +22,16 @@
           <div class="swiper-slide">
           <div class="p-mv__img">
           <picture>
-                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv2.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv2-sp.jpg" alt="MV2画像">
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv2.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv2.jpg" alt="MV2画像">
             </picture>
              </div>
           </div>
          <div class="swiper-slide">
          <div class="p-mv__img">
          <picture>
-                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv3.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/hurisode-mv3-sp.jpg" alt="MV3画像">
+                <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv3.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv3.jpg" alt="MV3画像">
             </picture>
             </div>
         </div>
@@ -63,7 +61,7 @@
     <?php
   $args = [
     'post_type' => 'post', // カスタム投稿名が「」の場合
-    'posts_per_page' => 1, // 表示する数
+    'posts_per_page' => 3, // 表示する数
 		  ];
 	  $my_query = new WP_Query($args); ?>
 
@@ -73,13 +71,9 @@
        <article class="p-news__item p-news-info">
          <div class="p-news-info__head">
            <time class=" p-news-info__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-           <?php
-              // カテゴリー１つ目の名前を表示
-              $category = get_the_category();
-              if ($category[0] ) {
-                echo '<div class="p-news-info__category">' . $category[0]->cat_name . '</div>';
-              }
-              ?>
+           <div class="p-news-info__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
+            <?php $cat = get_the_category(  ); $cat = $cat[0]; {echo $cat->cat_name; } ?>
+           </div><!-- /.p-news-info__category -->
       </div><!-- /.p-news-info__head -->
 
             <div class="p-news-info__body">
@@ -103,7 +97,9 @@
 
 <!-- プラン -->
 <section class="l-top-content p-content js-scrollAnimation">
-    <h2 class="p-content__title c-section-title">プラン</h2><!-- /.p-content__title -->
+  <div class="l-inner">
+    <h2 class="p-content__title c-section-title js-scrollAnimation">プラン</h2><!-- /.p-content__title -->
+  </div><!-- /.l-inner -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item js-scrollAnimation">
       <a href="/content/#content1" class="p-content-box__link">
@@ -133,8 +129,10 @@
 
 <!-- 振袖コレクション -->
 <section class="l-top-works p-works ">
-  <h2 class="p-works__title c-section-title">振袖コレクション</h2><!-- /.p-works__title -->
-  <div class="p-works__content">
+  <div class="l-inner">
+    <h2 class="p-works__title c-section-title js-scrollAnimation">振袖コレクション</h2><!-- /.p-works__title -->
+  </div><!-- /.l-inner -->
+  <div class="p-works__content js-scrollAnimation">
     <div class="p-works__inner">
 
       <div class="p-works__img-box  js-scrollAnimation">
@@ -170,8 +168,10 @@
       </div><!-- /.p-works__img-box -->
       
       <div class="p-works__text-box">
-        <div class="p-works__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
-        <p class="p-works__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
+        <div class="p-works__sub-title">王道からモダンまで</div><!-- /.p-works__sub-title -->
+        <p class="p-works__text">furisodeupsの振袖コレクションページです。<br>王道古典柄からモダン最新柄まで人気の振袖をご用意しております。<br>きっとあなたの１着が見つかりますよ！運命の１着を探してみてください。
+
+</p><!-- /.p-works__text -->
         <div class="p-works__btn c-btn--slide--white" >
           <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
@@ -183,15 +183,17 @@
   
 <!--会社紹介 -->
 <section class="l-top-overview p-overview js-scrollAnimation">
-  <h2 class="p-overview__title c-section-title">会社紹介</h2><!-- /.p-works__title -->
+  <div class="l-inner">
+    <h2 class="p-overview__title c-section-title js-scrollAnimation">会社紹介</h2><!-- /.p-works__title -->
+  </div><!-- /.l-inner -->
   <div class="p-overview__content">
     <div class="p-overview__inner">
       <div class="p-overview__img js-scrollAnimation">
         <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/office.jpg" alt="overview画像">
       </div><!-- /.p-works__img -->
       <div class="p-overview__text-box">
-        <div class="p-overview__sub-title">メインタイトルが入ります。</div><!-- /.p-works__sub-title -->
-        <p class="p-overview__text">テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。テキストが入ります。</p><!-- /.p-works__text -->
+        <div class="p-overview__sub-title">老舗振袖専門店だからこその</div><!-- /.p-works__sub-title -->
+        <p class="p-overview__text">創業50年だからこその安心感と品揃えで、あなたの成人式を徹底サポート致します。<br>年間2000名を超えるお客様に好評を頂いております。</p><!-- /.p-works__text -->
         <div class="p-overview__btn c-btn--slide--white">
           <a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
@@ -204,7 +206,7 @@
 <!-- ブログ -->
 <section  class="l-top-blog p-blog">
   <div class="l-inner">
-    <h2 class="p-blog__title c-section-title">ブログ</h2><!-- /.p-blog__title -->
+    <h2 class="p-blog__title c-section-title js-scrollAnimation">ブログ</h2><!-- /.p-blog__title -->
     <div class="p-blog__items">
 
     <?php
@@ -233,15 +235,14 @@
              <?php the_title(); //タイトルを表示 ?>
              </h3><!-- /.p-card__title -->
              <div class="p-card__text">
-                <?php if(SCF::get( 'news-text-sub' )) {
-                  echo mb_substr(SCF::get( 'news-text-sub' ),0,39);
-                } ?>
+                <?php if(SCF::get( 'news-text' )) {
+                  echo mb_substr(SCF::get( 'news-text' ),0,40);
+                } ?>.....
              </div><!-- /.p-card__text -->
              <div href="" class="p-card__bottom">
-                <div class="p-card__category">
+                <div class="p-card__category   <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
                 <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
                  </div>
-                
                <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
             </div><!-- /.p-card__body -->

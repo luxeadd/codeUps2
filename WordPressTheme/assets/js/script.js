@@ -87,28 +87,13 @@ window.addEventListener('scroll', () => {
   scrollToTop();
  };
 
-
-
 //ローディングフェイドアウト
-var loader = document.getElementById('loader');
-  setTimeout(function(){ 
-		loader.style.display = "none"; 
-  }, 2000);
+// var loader = document.getElementById('loader');
+//   setTimeout(function(){ 
+// 		loader.style.display = "none"; 
+//   }, 2000);
 	
-	//CSSに以下を付与しておくとフワッと消える
-	// animation : loader-fadeOut 2s;
-  // animation-fill-mode: both;
-	
-	// @keyframes loader-fadeOut {
-		// 	60% {
-			// 		opacity: 1;
-			// 	}
-			// 	100% {
-				// 		opacity: 0;
-				// 	}
-				// }
-				
-				
+								
 //アニメーションスクロール判定
 let targets = document.querySelectorAll('.js-scrollAnimation');//アニメーションさせたい要素
 let offset = 100;//アニメーションタイミング
@@ -222,8 +207,14 @@ var slider = new Swiper ('.gallery-slider', {
 	thumbs.controller.control = slider;
 
 
-//一文字づつspanタグで囲む
+//MVタイトル一文字づつspanタグで囲む
 var textWrap = document.querySelectorAll('.js-span-wrap');
+textWrap.forEach((t) => (
+  t.innerHTML = t.textContent.replace(/\S/g,'<span>$&</span>')
+));
+
+//セクションタイトル一文字づつspanタグで囲む
+var textWrap = document.querySelectorAll('.c-section-title');
 textWrap.forEach((t) => (
   t.innerHTML = t.textContent.replace(/\S/g,'<span>$&</span>')
 ));

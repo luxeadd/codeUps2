@@ -1,17 +1,33 @@
 .c-section-title {
-  display: inline-block;
-  text-align: center;
+  display: block;
   font-size: rem(20);
   font-weight: 400;
   letter-spacing: 0.066em;
-  text-align: center;
-  position: relative;
-  left: 50%;
-  transform: translateX(-50%);
-
-
+   text-align: center;
   @include mq(tab) {
     font-size: rem(30);
    
   }
+}
+
+.c-section-title span {
+  display: inline-block;
+  padding: rem(10) rem(17);
+  background-color: $section-title-color;
+  margin-right: rem(10);
+  border-radius: 50%;
+
+}
+
+.c-section-title.is-animated span {
+  animation: ball 2s ease-out alternate;
+
+}
+
+.c-section-title span:nth-child(even) {
+ transform: translateY(15px);
+}
+.c-section-title.is-animated span:nth-child(even) {
+  animation: ball2 2.5s ease-out  alternate;
+
 }
