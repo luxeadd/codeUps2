@@ -24,7 +24,7 @@
   
   <div class="p-post-news__title-bottom">
     <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-    <div class="p-post-news__category">
+    <div class="p-post-news__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
     <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
     </div><!-- /.p-post-news__category -->
   </div><!-- /.p-post-news__title-bottom -->
@@ -126,18 +126,19 @@
   <div class="p-post-news-article__box">
       
   <?php
-    $related_query = new WP_Query(
-      array(
-         'posts_per_page'=> 4, //表示件数
-         'post_type' => 'blog', //カスタム投稿タイプ名
-         'orderby' => 'rand', //ランダム表示
-         'post__not_in' => array($post->ID) //表示中の記事を除外
-      )
-    );
-    ?>
-    <?php if ( $related_query->have_posts() ) : ?>
-      <?php while ( $related_query->have_posts() ) : ?>
-        <?php $related_query->the_post(); ?>
+ global $post;
+ $term = array_shift(get_the_terms($post->ID, 'genre')); 
+ $args = array(
+  'numberposts' => 4, 
+  'post_type' => 'blog', //カスタム投稿タイプ名
+  'taxonomy' => 'genre', //タクソノミー名
+  'term' => $term->slug, //ターム名
+  'orderby' => 'rand', //ランダム表示
+  'post__not_in' => array($post->ID) //表示中の記事を除外
+ );
+?>
+<?php $myPosts = get_posts($args); if($myPosts) : ?>
+<?php foreach($myPosts as $post) : setup_postdata($post); ?>
         
          
          <a href="<?php the_permalink(); ?>" class="p-post-news-article__item p-card">
@@ -147,18 +148,19 @@
             <div href="" class="p-card__body">
               <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->
               <div class="p-card__text"><?php the_excerpt(); //抜粋を表示 ?></div><!-- /.p-card__text -->
+            </div><!-- /.p-card__body -->
               <div href="" class="p-card__bottom">
-              <div class="p-card__category">
+              <div class="p-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
                   <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
                   </div><!-- /.p-card__category -->
                 <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
         </a>
 
-        <?php endwhile; ?> 
-        <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
+        <?php endforeach; ?>
+<?php else : ?>
+ <p>関連アイテムはまだありません。</p>
+<?php endif; wp_reset_postdata(); ?>
           
        
   </div><!-- /.p-post-news-article__box -->

@@ -1,48 +1,18 @@
 .p-lower-blog-items {
-  text-align: center;
-
+  display: grid; 
+  grid-template-columns: 1fr;
+  grid-gap: rem(20);
    @include mq(tab) {
-    display: flex; 
-    flex-wrap: wrap;
-  
+   grid-template-columns: repeat(3, 1fr);
+   grid-gap: rem(25);
   } 
 }
 
 .p-lower-blog-items__item {
-
-  &:first-child {
-
-    &::after {
-      
-    }
-  }
- 
-
-  &+& {
-    margin-top: rem(22);
-    
-   @include mq(tab) {
-    margin-top: rem(0);
-    margin-left: rem(25);
-
-    &:nth-child(3n + 1) {
-      margin-left: 0;
-
-    }
-
-    &:nth-child(n + 4) {
-      margin-top: rem(46);
-    }
-   }
-
- }
-
-  @include mq(tab) {
-   width: calc(33.3% - 50px / 3);
-
-  }
-
+  box-shadow:  0 1px 10px #333;
 }
+
+
 
 .p-lower-blog-items__item--new::after {
   content: "New";

@@ -28,8 +28,8 @@
     background: #333333;
 
     .c-to-top__arrow {
-      border-top: 4px solid #fff;
-      border-left: 4px solid #fff;
+      border-top: rem(4) solid #fff;
+      border-left: rem(4) solid #fff;
     }
    
 
@@ -38,11 +38,11 @@
 
 .c-to-top__arrow {
   display: inline-block;
-  width: 18px;
-  height: 18px;
-  margin: 8px 10px 0;
-  border-top: 4px solid #000;
-  border-left: 4px solid #000;
+  width: rem(18);
+  height: rem(18);
+  margin: rem(8) rem(10) 0;
+  border-top: rem(4) solid #000;
+  border-left: rem(4) solid #000;
   transform: rotate(45deg);
   transition: all .3s;
 }

@@ -51,7 +51,7 @@
    
    animation-name: clip-2;
    animation-fill-mode:forwards;/*開始と終了の状態*/
-   animation-duration:1s;/*アニメーションの長さ*/
+   animation-duration:.5s;/*アニメーションの長さ*/
    animation-timing-function:linear;/*アニメーションの進行具合*/
    animation-delay: 2.0s;/*アニメーションの開始を遅らせる*/
 }
@@ -178,7 +178,7 @@
    animation-fill-mode:forwards;/*開始と終了の状態*/
    animation-duration:.5s;/*アニメーションの長さ*/
    animation-timing-function:ease;/*アニメーションの進行具合*/
-   animation-delay: 3.2s;/*アニメーションの開始を遅らせる*/
+   animation-delay: 2.2s;/*アニメーションの開始を遅らせる*/
 
 
    @include mq(tab) {

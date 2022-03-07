@@ -149,24 +149,25 @@
 <section class="l-post-works-article p-post-works-article">
 <div class="l-inner">
   <div class="p-post-works-article__head">
-    その他の商品
+    関連商品
   </div><!-- /.p-post-works-article__head -->
 
   <div class="p-post-works-article__box">
 
   <?php
-    $related_query = new WP_Query(
-      array(
-         'posts_per_page'=> 4, //表示件数
-         'post_type' => 'works', //カスタム投稿タイプ名
-         'orderby' => 'rand', //ランダム表示
-         'post__not_in' => array($post->ID) //表示中の記事を除外
-      )
-    );
-    ?>
-    <?php if ( $related_query->have_posts() ) : ?>
-      <?php while ( $related_query->have_posts() ) : ?>
-        <?php $related_query->the_post(); ?>
+ global $post;
+ $term = array_shift(get_the_terms($post->ID, 'works_genre')); 
+ $args = array(
+  'numberposts' => 4, 
+  'post_type' => 'works', //カスタム投稿タイプ名
+  'taxonomy' => 'works_genre', //タクソノミー名
+  'term' => $term->slug, //ターム名
+  'orderby' => 'rand', //ランダム表示
+  'post__not_in' => array($post->ID) //表示中の記事を除外
+ );
+?>
+<?php $myPosts = get_posts($args); if($myPosts) : ?>
+<?php foreach($myPosts as $post) : setup_postdata($post); ?>
 
 
   <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-post-works-article__item p-works-card">
@@ -187,9 +188,10 @@
     </a><!-- /.p-lower-works__item -->
     
         
-        <?php endwhile; ?> 
-        <?php endif; ?>
-  <?php wp_reset_postdata(); ?>
+    <?php endforeach; ?>
+<?php else : ?>
+ <p>関連アイテムはまだありません。</p>
+<?php endif; wp_reset_postdata(); ?>
 
   </div><!-- /.p-post-works-article__box -->
 

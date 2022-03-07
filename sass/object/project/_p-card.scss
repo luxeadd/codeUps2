@@ -3,24 +3,16 @@
   display: flex;
   flex-direction: column;
   align-self:auto;
+  transition: .3s;
+  box-shadow: 0 1px 5px #333;
 }
 
 .p-card:hover {
-      .p-card__body {
-        background: rgba($color: $main-color, $alpha: 0.6);
-  
-      }
-  
-      .p-card__title,
-      .p-card__text,
-      .p-card__date  {
-        color: $text-color;
-        
-      }
-      .p-card__img > img {
-        transform: scale(1.2) translate(-40%, -40%);
-      }
-    }
+    background: rgba($color: $main-color, $alpha: 0.6);
+  .p-card__img > img {
+    transform: scale(1.2) translate(-40%, -40%);
+  }
+}
 
 .p-card__img {
   width: 100%;
@@ -51,23 +43,18 @@
   }
 
 .p-card__body {
-   background: #fff;
    padding: rem(8) rem(15) rem(23) rem(15);
    color: #333;
    transition: all .3s;
    
-   @include mq(tab) {
-     padding: rem(4) rem(15) rem(25) rem(13);
-     
-   }
 }
 
 .p-card__title {
   font-size: rem(18);
   font-weight: 500;
-  line-height: (35 / 18);
+  line-height: 1.6;
   letter-spacing: 0.0556em;
-  text-align: left;  
+  text-align: center;  
 
   @include mq(tab) {
   }
@@ -83,7 +70,7 @@
   text-align: left;  
 
   @include mq(tab) {
-    margin-top: rem(11);
+    margin-top: rem(8);
   }
 
 
@@ -92,11 +79,10 @@
 .p-card__bottom {
    margin-top: auto;
    display: flex;
-   padding-right: rem(8);
-   padding-top: rem(8);
+    padding: rem(8) rem(15);
 
    @include mq(tab) {
-     padding-top: rem(12);
+   
    }
 }
 
@@ -114,11 +100,13 @@
 .p-card__category.event {
   background-color: $main-color;
   border:  1px solid $main-color;
+  color: #fff;
   
 }
 .p-card__category.news {
   background-color: $title-color;
   border:  1px solid $title-color;
+  color: #fff;
   
 }
 .p-card__category.shop {

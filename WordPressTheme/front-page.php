@@ -239,13 +239,13 @@
                   echo mb_substr(SCF::get( 'news-text' ),0,40);
                 } ?>.....
              </div><!-- /.p-card__text -->
+            </div><!-- /.p-card__body -->
              <div href="" class="p-card__bottom">
                 <div class="p-card__category   <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
                 <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
                  </div>
                <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
               </div><!-- /.p-card__bottom -->
-            </div><!-- /.p-card__body -->
        </a>
 
        <?php endwhile; ?>
