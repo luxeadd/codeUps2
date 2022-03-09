@@ -172,12 +172,7 @@
 
   <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-post-works-article__item p-works-card">
    <div class="p-work-card__img">
-    <?php
-            if (has_post_thumbnail() ) {
-              // アイキャッチ画像が設定されてれば大サイズで表示
-              the_post_thumbnail('large');
-            } 
-            ?>
+   <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');}  ?>
       <div class="p-works-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->slug ); ?>">
     <?php echo esc_html( get_the_terms( get_the_ID(), 'works_genre' )[0]->name ); ?>
     </div><!-- /.p-works-card__category -->

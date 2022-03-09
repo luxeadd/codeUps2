@@ -12,7 +12,7 @@
 
 .p-contact__title {
    font-size: rem(25);
-   
+   position: relative;
    @include mq(sp) {
      letter-spacing: 0.0667em;
     }
@@ -25,17 +25,16 @@
     font-size: rem(50);
     font-weight: normal;
     position: absolute;
-    top: rem(-41);
+    top: rem(-55);
     left: 50%;
     transform: translateX(-50%);
     color: $title-color;
-    z-index: -2;
     font-family: $font-family-sub;
 
     @include mq(tab) {
-      left: rem(-249);
+      left: 50%;
       font-size: rem(110);
-      top: rem(-95);
+      top: rem(-115);
       
     }
   }

@@ -141,7 +141,7 @@
          
          <a href="<?php the_permalink(); ?>" class="p-post-news-article__item p-card">
             <div class="p-card__img">
-            <?php the_post_thumbnail('thumbnail'); ?>
+            <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');}  ?>
             </div><!-- /.p-card_img -->
             <div href="" class="p-card__body">
               <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->

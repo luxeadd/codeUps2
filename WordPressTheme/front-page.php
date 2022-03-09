@@ -154,12 +154,7 @@
                     <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
               <div class="swiper-slide ">
-                    <?php
-                  if (has_post_thumbnail() ) {
-                  // アイキャッチ画像が設定されてれば大サイズで表示
-                  the_post_thumbnail('large');
-                  } 
-                  ?>
+                    <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');}  ?>
               </div>
               <?php endwhile; ?>
               <?php endif; wp_reset_postdata(); ?>

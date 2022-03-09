@@ -1187,6 +1187,7 @@ body {
 
 .p-contact__title {
 	font-size: 1.5625rem;
+	position: relative;
 }
 
 .p-contact__title::before {
@@ -1198,9 +1199,8 @@ body {
 	font-weight: normal;
 	left: 50%;
 	position: absolute;
-	top: -2.5625rem;
+	top: -3.4375rem;
 	transform: translateX(-50%);
-	z-index: -2;
 }
 
 .p-contact__text {
@@ -3604,8 +3604,8 @@ html {
 
 .p-contact__title::before {
 	font-size: 6.875rem;
-	left: -15.5625rem;
-	top: -5.9375rem;
+	left: 50%;
+	top: -7.1875rem;
 }
 
 .p-contact__text {
@@ -4284,7 +4284,7 @@ html {
 
 .p-works__title::before {
 	font-size: 6.875rem;
-	left: 78%;
+	left: 74%;
 	letter-spacing: 0.0182em;
 	top: -2.125rem;
 }
