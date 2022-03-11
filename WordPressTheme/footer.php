@@ -21,6 +21,10 @@
 
     <div class="p-footer__copy">
       &copy; 2022 furisodeups Inc.
+      <script type="text/javascript" language="JavaScript">
+          TYnow = new Date();
+          document.write(' - ' + TYnow.getFullYear());
+      </script>
     </div><!-- /.p-footer__copy -->
 
 

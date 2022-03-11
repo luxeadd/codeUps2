@@ -3569,9 +3569,9 @@ body {
 
 .sakura li:nth-child(3) {
 	-webkit-animation: fall 24s linear infinite, sway1 3.5s ease-in-out infinite alternate;
-	-webkit-animation-delay: 13s;
+	-webkit-animation-delay: 5s;
 	animation: fall 24s linear infinite, sway1 3.5s ease-in-out infinite alternate;
-	animation-delay: 13s;
+	animation-delay: 5s;
 	height: 10px;
 	left: 15%;
 	width: 16px;
@@ -3579,9 +3579,9 @@ body {
 
 .sakura li:nth-child(4) {
 	-webkit-animation: fall 23s linear infinite, sway2 4s ease-in-out infinite alternate;
-	-webkit-animation-delay: 7s;
+	-webkit-animation-delay: 0s;
 	animation: fall 23s linear infinite, sway2 4s ease-in-out infinite alternate;
-	animation-delay: 7s;
+	animation-delay: 0s;
 	height: 10px;
 	left: 30%;
 	width: 16px;
@@ -3634,6 +3634,96 @@ body {
 	animation-delay: 4s;
 	height: 10px;
 	left: 80%;
+	width: 16px;
+}
+
+.sakura li:nth-child(10) {
+	-webkit-animation: fall 25s linear infinite, sway1 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 2s;
+	animation: fall 25s linear infinite, sway1 3s ease-in-out infinite alternate;
+	animation-delay: 2s;
+	height: 15px;
+	left: 0%;
+	width: 24px;
+}
+
+.sakura li:nth-child(11) {
+	-webkit-animation: fall 35s linear infinite, sway1 2s ease-in-out infinite alternate;
+	-webkit-animation-delay: 12s;
+	animation: fall 35s linear infinite, sway1 2s ease-in-out infinite alternate;
+	animation-delay: 12s;
+	height: 8px;
+	left: 20%;
+	width: 12px;
+}
+
+.sakura li:nth-child(12) {
+	-webkit-animation: fall 28s linear infinite, sway1 3.5s ease-in-out infinite alternate;
+	-webkit-animation-delay: 4s;
+	animation: fall 28s linear infinite, sway1 3.5s ease-in-out infinite alternate;
+	animation-delay: 4s;
+	height: 8px;
+	left: 40%;
+	width: 14px;
+}
+
+.sakura li:nth-child(13) {
+	-webkit-animation: fall 18s linear infinite, sway2 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 2s;
+	animation: fall 18s linear infinite, sway2 4s ease-in-out infinite alternate;
+	animation-delay: 2s;
+	height: 9px;
+	left: 52%;
+	width: 15px;
+}
+
+.sakura li:nth-child(14) {
+	-webkit-animation: fall 18s linear infinite, sway1 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 0s;
+	animation: fall 18s linear infinite, sway1 4s ease-in-out infinite alternate;
+	animation-delay: 0s;
+	height: 10px;
+	left: 64%;
+	width: 16px;
+}
+
+.sakura li:nth-child(15) {
+	-webkit-animation: fall 13s linear infinite, sway2 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 5s;
+	animation: fall 13s linear infinite, sway2 3s ease-in-out infinite alternate;
+	animation-delay: 5s;
+	height: 15px;
+	left: 78%;
+	width: 24px;
+}
+
+.sakura li:nth-child(16) {
+	-webkit-animation: fall 28s linear infinite, sway2 3.5s ease-in-out infinite alternate;
+	-webkit-animation-delay: 10s;
+	animation: fall 28s linear infinite, sway2 3.5s ease-in-out infinite alternate;
+	animation-delay: 10s;
+	height: 10px;
+	left: 88%;
+	width: 16px;
+}
+
+.sakura li:nth-child(17) {
+	-webkit-animation: fall 18s linear infinite, sway1 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 0s;
+	animation: fall 18s linear infinite, sway1 3s ease-in-out infinite alternate;
+	animation-delay: 0s;
+	height: 9px;
+	left: 22%;
+	width: 13px;
+}
+
+.sakura li:nth-child(18) {
+	-webkit-animation: fall 28s linear infinite, sway2 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 2s;
+	animation: fall 28s linear infinite, sway2 4s ease-in-out infinite alternate;
+	animation-delay: 2s;
+	height: 10px;
+	left: 45%;
 	width: 16px;
 }
 
