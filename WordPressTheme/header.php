@@ -28,7 +28,7 @@
 
       <div class="p-header__logo">
         <a href="<?php echo esc_url( home_url( '/home/' ) ); ?>">
-          <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisodeups.svg" alt="タイトルロゴ">
+          <img class="c-logo" src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisodeups.svg" alt="furisodeups">
         </a>
       </div><!-- /.p-header__logo -->
 

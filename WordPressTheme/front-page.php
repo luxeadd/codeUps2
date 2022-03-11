@@ -3,6 +3,19 @@
 <!-- ローディングアニメーショントップページ -->
 <div id="loader" class="c-loader__top"></div>
 
+<!-- 背景桜 -->
+<ul class="sakura">
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+  <li></li>
+</ul>
+
 <!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
 

@@ -1204,17 +1204,11 @@ body {
 }
 
 .p-contact__text {
-	font-size: 1rem;
+	font-size: 1.25rem;
 	letter-spacing: 0.125em;
 	line-height: 1.4375;
-	margin-top: 1rem;
-}
-
-.p-contact__text--pc {
-	display: none;
-	font-size: 1rem;
-	letter-spacing: 0.125em;
-	line-height: 1.4375;
+	margin-top: 2.25rem;
+	text-align: center;
 }
 
 .p-contact__btn {
@@ -1721,6 +1715,57 @@ body {
 	background: url(../img/common/contact-mv.jpg) no-repeat center/cover;
 }
 
+.p-lower-content-back {
+	position: relative;
+}
+
+.p-lower-content-back::before,
+.p-lower-content-back::after {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.p-lower-content-back::before {
+	-webkit-clip-path: polygon(0 0, 0 0, 0 0);
+	-webkit-animation-name: lowerBackSlideLeft;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideLeft;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(0 0, 0 0, 0 0);
+	height: 31.25rem;
+	opacity: 0.7;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
+}
+
+.p-lower-content-back::after {
+	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 0);
+	-webkit-animation-name: lowerBackSlideRight;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s;
+	animation-delay: 2.0s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideRight;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu.jpg) no-repeat center center/cover;
+	clip-path: polygon(100% 0, 100% 0, 100% 0);
+	height: 25rem;
+	z-index: -1; /*アニメーションの開始を遅らせる*/
+}
+
 .p-lower-content-body__block + .p-lower-content-body__block {
 	margin-top: 3.4375rem;
 }
@@ -1831,6 +1876,57 @@ body {
 	background: url(../img/common/plan-mv.jpg) no-repeat center/cover;
 }
 
+.p-lower-news-back {
+	position: relative;
+}
+
+.p-lower-news-back::before,
+.p-lower-news-back::after {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.p-lower-news-back::before {
+	-webkit-clip-path: polygon(0 0, 0 0, 0 0);
+	-webkit-animation-name: lowerBackSlideLeft;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideLeft;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(0 0, 0 0, 0 0);
+	height: 31.25rem;
+	opacity: 0.7;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
+}
+
+.p-lower-news-back::after {
+	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 0);
+	-webkit-animation-name: lowerBackSlideRight;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s;
+	animation-delay: 2.0s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideRight;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu.jpg) no-repeat center center/cover;
+	clip-path: polygon(100% 0, 100% 0, 100% 0);
+	height: 25rem;
+	z-index: -1; /*アニメーションの開始を遅らせる*/
+}
+
 .p-lower-news__inner {
 	margin: 0 auto;
 	width: 100%;
@@ -1905,6 +2001,57 @@ body {
 .p-lower-thanks__btn--pc {
 	margin-top: 5rem;
 	text-align: center;
+}
+
+.p-lower-works-back {
+	position: relative;
+}
+
+.p-lower-works-back::before,
+.p-lower-works-back::after {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.p-lower-works-back::before {
+	-webkit-clip-path: polygon(0 0, 0 0, 0 0);
+	-webkit-animation-name: lowerBackSlideLeft;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideLeft;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(0 0, 0 0, 0 0);
+	height: 31.25rem;
+	opacity: 0.7;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
+}
+
+.p-lower-works-back::after {
+	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 0);
+	-webkit-animation-name: lowerBackSlideRight;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 2.0s;
+	animation-delay: 2.0s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideRight;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu.jpg) no-repeat center center/cover;
+	clip-path: polygon(100% 0, 100% 0, 100% 0);
+	height: 25rem;
+	z-index: -1; /*アニメーションの開始を遅らせる*/
 }
 
 .p-lower-works-items__body {
@@ -2536,6 +2683,38 @@ body {
 	margin-top: 1.5rem;
 }
 
+.p-post-news-back {
+	position: relative;
+}
+
+.p-post-news-back::before,
+.p-post-news-back::after {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.p-post-news-back::after {
+	-webkit-clip-path: polygon(100% 0, 100% 0, 100% 0);
+	-webkit-animation-name: lowerBackSlideRight;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.2s;
+	animation-delay: 1.2s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideRight;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu.jpg) no-repeat center center/cover;
+	clip-path: polygon(100% 0, 100% 0, 100% 0);
+	height: 62.5rem;
+	z-index: -1; /*アニメーションの開始を遅らせる*/
+}
+
 .p-post-news-pagination .wp-pagenavi {
 	align-items: center;
 	display: flex;
@@ -2789,6 +2968,39 @@ body {
 	display: grid;
 	grid-template-columns: repeat(2, 1fr);
 	margin-top: 2rem;
+}
+
+.p-post-works-back {
+	position: relative;
+}
+
+.p-post-works-back::before,
+.p-post-works-back::after {
+	content: "";
+	display: block;
+	left: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+}
+
+.p-post-works-back::before {
+	-webkit-clip-path: polygon(0 0, 0 0, 0 0);
+	-webkit-animation-name: lowerBackSlideLeft;
+	-webkit-animation-fill-mode: forwards; /*開始と終了の状態*/
+	-webkit-animation-duration: 1.0s; /*アニメーションの長さ*/
+	-webkit-animation-timing-function: ease; /*アニメーションの進行具合*/
+	-webkit-animation-delay: 1.5s;
+	animation-delay: 1.5s;
+	animation-duration: 1.0s;
+	animation-fill-mode: forwards;
+	animation-name: lowerBackSlideLeft;
+	animation-timing-function: ease;
+	background: url(../img/common/itimatu-pink.jpg) no-repeat center center/cover;
+	clip-path: polygon(0 0, 0 0, 0 0);
+	height: 62.5rem;
+	opacity: 0.7;
+	z-index: -2; /*アニメーションの開始を遅らせる*/
 }
 
 .p-post-works-pagination .wp-pagenavi {
@@ -3313,6 +3525,118 @@ body {
 	opacity: 0; /*アニメーションの進行具合*/
 }
 
+.sakura {
+	align-items: center;
+	display: flex;
+	height: 100%;
+	justify-content: center;
+	margin: 0;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	width: 100%;
+}
+
+.sakura li {
+	-webkit-animation: fall 15s linear infinite, sway .5s ease-in-out infinite alternate;
+	animation: fall 15s linear infinite, sway .5s ease-in-out infinite alternate;
+	background: #ffdbed;
+	border-radius: 0% 70%;
+	list-style: none;
+	position: absolute;
+	top: -50px;
+}
+
+.sakura li:nth-child(1) {
+	-webkit-animation: fall 25s linear infinite, sway1 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 2s;
+	animation: fall 25s linear infinite, sway1 3s ease-in-out infinite alternate;
+	animation-delay: 2s;
+	height: 15px;
+	left: 0%;
+	width: 24px;
+}
+
+.sakura li:nth-child(2) {
+	-webkit-animation: fall 30s linear infinite, sway1 2s ease-in-out infinite alternate;
+	-webkit-animation-delay: 8s;
+	animation: fall 30s linear infinite, sway1 2s ease-in-out infinite alternate;
+	animation-delay: 8s;
+	height: 9px;
+	left: 5%;
+	width: 13px;
+}
+
+.sakura li:nth-child(3) {
+	-webkit-animation: fall 24s linear infinite, sway1 3.5s ease-in-out infinite alternate;
+	-webkit-animation-delay: 13s;
+	animation: fall 24s linear infinite, sway1 3.5s ease-in-out infinite alternate;
+	animation-delay: 13s;
+	height: 10px;
+	left: 15%;
+	width: 16px;
+}
+
+.sakura li:nth-child(4) {
+	-webkit-animation: fall 23s linear infinite, sway2 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 7s;
+	animation: fall 23s linear infinite, sway2 4s ease-in-out infinite alternate;
+	animation-delay: 7s;
+	height: 10px;
+	left: 30%;
+	width: 16px;
+}
+
+.sakura li:nth-child(5) {
+	-webkit-animation: fall 25s linear infinite, sway1 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 0s;
+	animation: fall 25s linear infinite, sway1 4s ease-in-out infinite alternate;
+	animation-delay: 0s;
+	height: 10px;
+	left: 40%;
+	width: 16px;
+}
+
+.sakura li:nth-child(6) {
+	-webkit-animation: fall 26s linear infinite, sway2 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 3s;
+	animation: fall 26s linear infinite, sway2 3s ease-in-out infinite alternate;
+	animation-delay: 3s;
+	height: 15px;
+	left: 55%;
+	width: 24px;
+}
+
+.sakura li:nth-child(7) {
+	-webkit-animation: fall 22s linear infinite, sway2 3.5s ease-in-out infinite alternate;
+	-webkit-animation-delay: 7s;
+	animation: fall 22s linear infinite, sway2 3.5s ease-in-out infinite alternate;
+	animation-delay: 7s;
+	height: 10px;
+	left: 65%;
+	width: 16px;
+}
+
+.sakura li:nth-child(8) {
+	-webkit-animation: fall 22s linear infinite, sway1 3s ease-in-out infinite alternate;
+	-webkit-animation-delay: 3s;
+	animation: fall 22s linear infinite, sway1 3s ease-in-out infinite alternate;
+	animation-delay: 3s;
+	height: 9px;
+	left: 50%;
+	width: 13px;
+}
+
+.sakura li:nth-child(9) {
+	-webkit-animation: fall 25s linear infinite, sway2 4s ease-in-out infinite alternate;
+	-webkit-animation-delay: 4s;
+	animation: fall 25s linear infinite, sway2 4s ease-in-out infinite alternate;
+	animation-delay: 4s;
+	height: 10px;
+	left: 80%;
+	width: 16px;
+}
+
 .pc-only {
 	display: none;
 }
@@ -3604,18 +3928,12 @@ html {
 
 .p-contact__title::before {
 	font-size: 6.875rem;
-	left: 50%;
-	top: -7.1875rem;
+	left: 19%;
+	top: -6.25rem;
 }
 
 .p-contact__text {
-	display: none;
-}
-
-.p-contact__text--pc {
-	display: block;
-	margin-top: 1.5rem;
-	text-align: center;
+	font-size: 1.625rem;
 }
 
 .p-contact__btn {
@@ -4704,6 +5022,42 @@ to {
 
 }
 
+@-webkit-keyframes lowerBackSlideLeft {
+
+100% {
+	-webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+	clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+}
+
+@keyframes lowerBackSlideLeft {
+
+100% {
+	-webkit-clip-path: polygon(0 0, 0% 100%, 100% 0);
+	clip-path: polygon(0 0, 0% 100%, 100% 0);
+}
+
+}
+
+@-webkit-keyframes lowerBackSlideRight {
+
+100% {
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%);
+	clip-path: polygon(0 0, 100% 0%, 100% 100%);
+}
+
+}
+
+@keyframes lowerBackSlideRight {
+
+100% {
+	-webkit-clip-path: polygon(0 0, 100% 0%, 100% 100%);
+	clip-path: polygon(0 0, 100% 0%, 100% 100%);
+}
+
+}
+
 @-webkit-keyframes ball {
 
 12% {
@@ -4964,6 +5318,70 @@ to {
 100% {
 	opacity: 1;
 	transform: translateY(5px);
+}
+
+}
+
+@-webkit-keyframes fall {
+
+to {
+	top: 100%;
+}
+
+}
+
+@keyframes fall {
+
+to {
+	top: 100%;
+}
+
+}
+
+@-webkit-keyframes sway1 {
+
+from {
+	transform: translateX(0px) rotate(0deg);
+}
+
+to {
+	transform: translateX(200px) rotate(-45deg);
+}
+
+}
+
+@keyframes sway1 {
+
+from {
+	transform: translateX(0px) rotate(0deg);
+}
+
+to {
+	transform: translateX(200px) rotate(-45deg);
+}
+
+}
+
+@-webkit-keyframes sway2 {
+
+from {
+	transform: translateX(200px) rotate(-45deg);
+}
+
+to {
+	transform: translateX(0px) rotate(0deg);
+}
+
+}
+
+@keyframes sway2 {
+
+from {
+	transform: translateX(200px) rotate(-45deg);
+}
+
+to {
+	transform: translateX(0px) rotate(0deg);
 }
 
 }

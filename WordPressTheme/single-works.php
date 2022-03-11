@@ -1,6 +1,9 @@
 <?php get_header(); ?>
 <div class="js-mv"></div>
 
+<!-- 背景画像 -->
+<div class="p-post-works-back"></div><!-- /.p-lower-news-back -->
+
 <div class="l-post-works-breadcrumbs">
   <div class="breadcrumbs">
     <div class="l-inner">

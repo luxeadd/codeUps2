@@ -218,3 +218,5 @@ var textWrap = document.querySelectorAll('.c-section-title');
 textWrap.forEach((t) => (
   t.innerHTML = t.textContent.replace(/\S/g,'<span>$&</span>')
 ));
+
+

@@ -2,6 +2,9 @@
 
 <div class="js-mv"></div>
 
+<!-- 背景画像 -->
+<div class="p-post-news-back"></div><!-- /.p-lower-news-back -->
+
 <div class="l-post-news-breadcrumbs">
   <div class="breadcrumbs">
     <div class="l-inner">
@@ -68,7 +71,7 @@
 </div><!-- /.p-post-news__body -->
 
   <div class="p-post-news__img2">
-   <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
+   <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="投稿サブ画像" >
   </div><!-- /.p-post-news__img -->
 </section><!-- /.l-post-news -->
 

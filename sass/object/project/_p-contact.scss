@@ -32,38 +32,26 @@
     font-family: $font-family-sub;
 
     @include mq(tab) {
-      left: 50%;
+      left: 19%;
       font-size: rem(110);
-      top: rem(-115);
+      top: rem(-100);
       
     }
   }
 
 .p-contact__text {
-  margin-top: rem(16);
-  font-size: rem(16);
+  margin-top: rem(36);
+  font-size: rem(20);
   letter-spacing: 0.125em;
   line-height: (23 / 16);
-
+  text-align: center;
+  
   @include mq(tab) {
-  display: none;
+    font-size: rem(26);
+    
   }
-
 }
 
-.p-contact__text--pc {
-  font-size: rem(16);
-  letter-spacing: 0.125em;
-  line-height: (23 / 16);
-  display: none;
-
-  @include mq(tab) {
-    margin-top: rem(24);
-   text-align: center;  
-   display: block;
-  }
-
-}
 
 .p-contact__btn {
   margin-top: rem(46);

@@ -135,6 +135,20 @@ body {
     }
 }
 
+//下層ページ背景スライド
+@keyframes lowerBackSlideLeft{
+    100% {
+      clip-path: polygon(0 0, 0% 100%, 100% 0);
+    }
+}
+//下層ページ背景スライド
+@keyframes lowerBackSlideRight{
+    100% {
+      clip-path: polygon(0 0, 100% 0%, 100% 100%);
+    }
+}
+
+
 //ボールアニメーション
 @keyframes ball {
   12% {

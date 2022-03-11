@@ -6,7 +6,10 @@
 <div class="l-news-mv p-news-mv p-lower-common-mv js-mv">
   <h1 class="p-lower-common-mv__title">お知らせ</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
-  
+
+<!-- 背景画像 -->
+<div class="p-lower-news-back"></div><!-- /.p-lower-news-back -->
+
 <!-- breadcrumbs -->
 <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 

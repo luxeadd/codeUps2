@@ -1,0 +1,41 @@
+.p-lower-news-back{
+  position: relative;
+}
+
+.p-lower-news-back::before,
+.p-lower-news-back::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+
+}
+
+.p-lower-news-back::before {
+  height: rem(500);
+  background: url(../img/common/itimatu-pink.jpg) no-repeat center center / cover;
+  z-index: -2;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  opacity: 0.7;
+   animation-name: lowerBackSlideLeft;
+   animation-fill-mode:forwards;/*開始と終了の状態*/
+   animation-duration:1.0s;/*アニメーションの長さ*/
+   animation-timing-function:ease;/*アニメーションの進行具合*/
+   animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+
+}
+.p-lower-news-back::after {
+  height: rem(400);
+  background: url(../img/common/itimatu.jpg) no-repeat center center / cover;
+  z-index: -1;
+  clip-path: polygon(100% 0, 100% 0, 100% 0);
+
+  animation-name:lowerBackSlideRight;
+  animation-fill-mode:forwards;/*開始と終了の状態*/
+  animation-duration:1.0s;/*アニメーションの長さ*/
+  animation-timing-function:ease;/*アニメーションの進行具合*/
+  animation-delay: 2.0s;/*アニメーションの開始を遅らせる*/
+ 
+}
