@@ -34,10 +34,13 @@ add_action( 'after_setup_theme', 'my_setup' );
  */
 function my_script_init()
 {
-
-	wp_enqueue_style( 'my', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all' );
-	wp_enqueue_script( 'you', get_template_directory_uri() . '/assets/js/smoothscroll.js', array(), '1.0.1', true );
-	wp_enqueue_script( 'my', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.1', true );
+	wp_enqueue_style('my-font1', '//fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap');
+	wp_enqueue_style('my-font2', '//fonts.googleapis.com/css2?family=Noto+Serif+JP&display=swap');
+	wp_enqueue_style('my-swiper-css', '//unpkg.com/swiper@7/swiper-bundle.min.css');
+	wp_enqueue_style( 'my-css', get_template_directory_uri() . '/assets/css/style.css', array(), '1.0.1', 'all' );
+	wp_enqueue_script( 'my-swiper', '//unpkg.com/swiper@7/swiper-bundle.min.js' );
+	wp_enqueue_script( 'my-smooth', get_template_directory_uri() . '/assets/js/smoothscroll.js', array(), '1.0.1',  );
+	wp_enqueue_script( 'my-js', get_template_directory_uri() . '/assets/js/script.js', array(), '1.0.1', true );
 
 
 }
