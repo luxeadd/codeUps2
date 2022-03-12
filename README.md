@@ -1,6 +1,3 @@
-# wp-flocss-rem-fromSPの使い方
-
-
 - WordPressThemeは必要に応じて変更してください
 	- WordPressTheme
 	- sass
@@ -12,7 +9,6 @@
 ## JSの記述
 - assets内のjsフォルダ内で直書きする
 
-
 ## 画像
 - assets内のimgフォルダ内で直書きする
 - 必要に応じてフォルダを作成してその中にいれる
@@ -21,6 +17,3 @@
 ## 使い方
 - npm i でインストール → node_modulesが生成されればOK
 - npx gulp で起動
-# wp-flocss-rem-fromSP
-# wp-flocss-rem-fromSP
-# codeUps2
