@@ -1,6 +1,6 @@
 - WordPressThemeは必要に応じて変更してください
 	- WordPressTheme
-	- sass
+	- sassCancel changes
 	- gulpfile.js
 	- package.json
 	- .gitignore
@@ -8,6 +8,9 @@
 
 ## JSの記述
 - assets内のjsフォルダ内で直書きする
+
+## CSSの記述
+- sassフォルダ内にて記述をする
 
 ## 画像
 - assets内のimgフォルダ内で直書きする
