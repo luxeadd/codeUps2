@@ -5,24 +5,10 @@
 
 <!-- 背景桜 -->
 <ul class="sakura">
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
-  <li></li>
+  <?php
+  for ($count = 0; $count < 18; $count++){ ?>
+    <li></li>
+  <?php } ?>
 </ul>
 
 <!-- トップページMV -->
