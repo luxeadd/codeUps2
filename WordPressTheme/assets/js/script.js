@@ -62,8 +62,6 @@ window.addEventListener('scroll', () => {
 })
 
 
-
-
 //topに戻るボタン
 //トップに戻るボタンの要素を取得
  const topButton = document.getElementById('js-to-top')
