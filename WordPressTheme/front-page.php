@@ -111,22 +111,22 @@
   </div><!-- /.l-inner -->
     <ul class="p-content__items  p-content-box">
       <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content1" class="p-content-box__link">
+      <a href="<?php echo esc_url( home_url( '/content/#content1' ) ); ?>" class="p-content-box__link">
          <h3  class="p-content-box__text">レンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content2" class="p-content-box__link">
+      <a href="<?php echo esc_url( home_url( '/content/#content2' ) ); ?>" class="p-content-box__link">
         <h3 class="p-content-box__text">オーダーレンタル<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content3" class="p-content-box__link">     
+      <a href="<?php echo esc_url( home_url( '/content/#content3' ) ); ?>" class="p-content-box__link">     
         <h3  class="p-content-box__text">購入<br>プラン</h3>
       </a>
     </li>
     <li class="p-content-box__item js-scrollAnimation">
-      <a href="/content/#content4" class="p-content-box__link">
+      <a href="<?php echo esc_url( home_url( '/content/#content4' ) ); ?>" class="p-content-box__link">
       <h3  class="p-content-box__text">ママ振袖<br>プラン</h3>
       </a>
     </li>

@@ -217,4 +217,12 @@ textWrap.forEach((t) => (
   t.innerHTML = t.textContent.replace(/\S/g,'<span>$&</span>')
 ));
 
-
+//ページ遷移時にヘッダーの高さ分調整
+document.addEventListener("DOMContentLoaded", () => {
+  if (location.hash) {
+    const headerHeight = document.querySelector(".js-header").clientHeight;
+    setTimeout(() => {
+      window.scrollBy(0, - headerHeight);
+    },100)
+  }
+})
