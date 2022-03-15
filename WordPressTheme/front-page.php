@@ -32,7 +32,7 @@
           <div class="p-mv__img">
           <picture>
                 <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv2.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv2.jpg" alt="MV2画像">
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv2-sp.jpg" alt="MV2画像">
             </picture>
              </div>
           </div>
@@ -40,7 +40,7 @@
          <div class="p-mv__img">
          <picture>
                 <source srcset="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv3.jpg" media="(min-width: 757px)"/><!-- 幅757px以上なら表示 -->
-                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv3.jpg" alt="MV3画像">
+                <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisode-mv3-sp.jpg" alt="MV3画像">
             </picture>
             </div>
         </div>

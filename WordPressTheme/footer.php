@@ -4,7 +4,6 @@
       <div class="p-footer__logo">
         <img src="<?php echo get_template_directory_uri(  ) ?>/assets/img/common/furisodeups.svg" alt="furisodeups">
       </div><!-- /.p-footer__logo -->
-
        
       <ul class="p-footer__menu--pc  p-footer-menu--pc">
         <li class="p-footer-menu--pc__item"><a href="<?php echo esc_url( home_url( '/news/' ) ); ?>">お知らせ</a></li><!-- /.p-footer__item -->
