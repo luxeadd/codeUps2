@@ -14,7 +14,7 @@
 <div class="l-lower-works-nav p-lower-works-nav">
   <div class="l-inner p-lower-works-nav__inner">
     <div class="p-lower-works-nav__top">
-      <a href="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="p-lower-works-nav__item--top is-genre-active">GENRE</a>
+      <a href="<?php echo esc_url( get_post_type_archive_link( 'blog' ) ); ?>" class="p-lower-works-nav__item--top is-genre-active">すべて</a>
     </div><!-- /.p-lower-works-nav__top -->
 
     <div class="p-lower-works-nav__bottom">

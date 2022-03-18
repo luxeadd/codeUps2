@@ -23,7 +23,7 @@
    animation-fill-mode:forwards;/*開始と終了の状態*/
    animation-duration:1.0s;/*アニメーションの長さ*/
    animation-timing-function:ease;/*アニメーションの進行具合*/
-   animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
+   animation-delay: 1.0s;/*アニメーションの開始を遅らせる*/
 
 }
 .p-lower-news-back::after {
@@ -36,6 +36,6 @@
   animation-fill-mode:forwards;/*開始と終了の状態*/
   animation-duration:1.0s;/*アニメーションの長さ*/
   animation-timing-function:ease;/*アニメーションの進行具合*/
-  animation-delay: 2.0s;/*アニメーションの開始を遅らせる*/
+  animation-delay: 1.5s;/*アニメーションの開始を遅らせる*/
  
 }

@@ -115,21 +115,36 @@ window.addEventListener('scroll', function() {//スクロールしたとき
 //Swiper-------------------------------------------------------------------
 //トップMV
 let mvswiper = new Swiper('.p-mv-swiper', {
+
+	// スライドの間隔ー単位はpx
+	spaceBetween: 0,
+	// 表示されるスライドの枚数
+	slidesPerView: 1,
+	// スライドの高さに合わせてSwiperの高さを変える
+	autoHeight: true,
+	// ループする
+	loop: true,
+  effect: 'fade',
+  speed: 0,
+
+
 	//自動スライド
 			autoplay: {
-				delay: 2000,
-			 
+				delay: 3000,
+				stopOnLastSlide: false,
+				disableOnInteraction: false,
+				reverseDirection: false
 			},
 		 
 		//切り替えエフェクトの指定
 			//slide  fade  cube coverflow  flip
-		effect: "fade",
+		// effect: "fade",
 	 
 		//切り替わる速さ
-		speed: 4000,
+		// speed: 4000,
 		
 		//ループの有無
-		loop: true,
+		// loop: true,
 	
 		// If we need pagination
 		pagination: {
