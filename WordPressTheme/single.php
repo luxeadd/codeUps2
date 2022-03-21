@@ -17,62 +17,61 @@
 </div><!-- /.l-post-news-breadcrumbs -->
 
 
-
 <section class="l-post-news p-post-news">
-<div class="l-inner p-post-news__inner">
+ <div class="l-inner p-post-news__inner">
 
-  <h1 class="p-post-news__title">
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
+
+    <h1 class="p-post-news__title">
         <?php the_title(); ?>
-  </h1><!-- /.p-post-news__title -->
+    </h1><!-- /.p-post-news__title -->
   
-  <div class="p-post-news__title-bottom">
-    <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+    <div class="p-post-news__title-bottom">
+      <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
     <div class="p-post-news__category <?php $cat = get_the_category( ); $cat = $cat[0]; { echo $cat->slug;} ?>">
       <?php $cat = get_the_category(  ); $cat = $cat[0]; {echo $cat->cat_name; } ?>
     </div><!-- /.p-post-news__category -->
   </div><!-- /.p-post-news__title-bottom -->
 
-</div><!-- /.l-inner -->
-
-<div class="p-post-news__img">
-      <?php
+  
+  <div class="p-post-news__img">
+    <?php
       if (has_post_thumbnail() ) {
-      // アイキャッチ画像が設定されてれば大サイズで表示
-      the_post_thumbnail('large');
+        // アイキャッチ画像が設定されてれば大サイズで表示
+        the_post_thumbnail('large');
       } 
       ?>
-</div><!-- /.p-post-news__img -->
+  </div><!-- /.p-post-news__img -->
 
-<div class="p-post-news__body">
-  <div class="l-inner p-post-news__inner">
-
+  <div class="p-post-news__body">
     <p class="p-post-news__text">
-    <?php $newsTextSub = scf::get('news-text'); echo nl2br( $newsTextSub ); ?>
-         
-     </p><!-- /.p-post-news__text -->
+      <?php $newsTextSub = scf::get('news-text'); echo nl2br( $newsTextSub ); ?>
       
-      <h2 class="p-post-news__sub-title">
+    </p><!-- /.p-post-news__text -->
+    
+    <h2 class="p-post-news__sub-title">
       <?php echo  SCF::get( 'news-title-sub' );?>
-      </h2><!-- /.p-post-news__sub-title -->
-
-      <p class="p-post-news__text">
+    </h2><!-- /.p-post-news__sub-title -->
+    
+    <p class="p-post-news__text">
       <?php $newsTextSub = scf::get('news-text-sub'); echo nl2br( $newsTextSub ); ?>
-      </p><!-- /.p-post-news__text -->
-          
-      <h3 class="p-post-news__sub-title2">
+    </p><!-- /.p-post-news__text -->
+    
+    <h3 class="p-post-news__sub-title2">
       <?php echo SCF::get( 'news-title-sub2' );?>
-      </h3><!-- /.p-post-news__sub-title2 -->
-            
-      <p class="p-post-news__text">
+    </h3><!-- /.p-post-news__sub-title2 -->
+    
+    <p class="p-post-news__text">
       <?php $newsTextSub = scf::get('news-text-sub2'); echo nl2br( $newsTextSub ); ?>
-      </p><!-- /.p-post-news__text -->
-          
-  </div><!-- / -->
-</div><!-- /.p-post-news__body -->
+    </p><!-- /.p-post-news__text -->
+  </div><!-- /.p-post-news__body -->
 
   <div class="p-post-news__img2">
-   <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="投稿サブ画像" >
+     <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="投稿サブ画像" >
   </div><!-- /.p-post-news__img -->
+
+  <?php endwhile; endif; ?>
+  </div><!-- /.l-inner -->
 </section><!-- /.l-post-news -->
 
 

@@ -20,6 +20,7 @@
 <section class="l-post-works p-post-works">
 <div class="l-inner p-post-works__inner">
 
+<?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
   <h1 class="p-post-works__title">
        <?php the_title(); ?>
   </h1><!-- /.p-post-works__title -->
@@ -108,6 +109,7 @@
               <?php endforeach ?>
             </div><!-- /.p-post-works__wrapper -->
           </div><!-- /.p-post-works__block -->
+          <?php endwhile; endif; ?>
         </div><!-- /.l-inner -->
       </section><!-- /.l-post-works -->
           

@@ -16,64 +16,60 @@
 
 
 <section class="l-post-news p-post-news">
-<div class="l-inner p-post-news__inner">
-
-  <h1 class="p-post-news__title">
-        <?php the_title(); ?>
-  </h1><!-- /.p-post-news__title -->
-  
-  <div class="p-post-news__title-bottom">
-    <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-    <div class="p-post-news__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
-    <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
-    </div><!-- /.p-post-news__category -->
-  </div><!-- /.p-post-news__title-bottom -->
-
-</div><!-- /.l-inner -->
-
-<div class="p-post-news__img">
-      <?php
-      if (has_post_thumbnail() ) {
-      // アイキャッチ画像が設定されてれば大サイズで表示
-      the_post_thumbnail('large');
-      } 
-      ?>
-</div><!-- /.p-post-news__img -->
-
-<div class="p-post-news__body">
   <div class="l-inner p-post-news__inner">
 
-    <p class="p-post-news__text">
-    <?php $newsTextSub = scf::get('news-text'); echo nl2br( $newsTextSub ); ?>
-         
-     </p><!-- /.p-post-news__text -->
-      
-      <h2 class="p-post-news__sub-title">
-      <?php echo  SCF::get( 'news-title-sub' );?>
-      </h2><!-- /.p-post-news__sub-title -->
+  <?php if ( have_posts() ) : while ( have_posts() ) : the_post(); ?>
 
-      <p class="p-post-news__text">
-      <?php $newsTextSub = scf::get('news-text-sub'); echo nl2br( $newsTextSub ); ?>
-      </p><!-- /.p-post-news__text -->
-          
-      <h3 class="p-post-news__sub-title2">
-      <?php echo SCF::get( 'news-title-sub2' );?>
-      </h3><!-- /.p-post-news__sub-title2 -->
-            
-      <p class="p-post-news__text">
-      <?php $newsTextSub = scf::get('news-text-sub2'); echo nl2br( $newsTextSub ); ?>
-      </p><!-- /.p-post-news__text -->
-          
-  </div><!-- / -->
-</div><!-- /.p-post-news__body -->
+    <h1 class="p-post-news__title">
+        <?php the_title(); ?>
+    </h1><!-- /.p-post-news__title -->
+  
+    <div class="p-post-news__title-bottom">
+      <time class="p-post-news__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+      <div class="p-post-news__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
+        <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+     </div><!-- /.p-post-news__category -->
+    </div><!-- /.p-post-news__title-bottom -->
 
-  <div class="p-post-news__img2">
-   <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
-  </div><!-- /.p-post-news__img -->
+  
+    <div class="p-post-news__img">
+       <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');} ?>
+    </div><!-- /.p-post-news__img -->
 
+    <div class="p-post-news__body">
+       <div class="l-inner p-post-news__inner">
+    
+        <p class="p-post-news__text">
+            <?php $newsTextSub = scf::get('news-text'); echo nl2br( $newsTextSub ); ?>
+         </p><!-- /.p-post-news__text -->
+    
+        <h2 class="p-post-news__sub-title">
+           <?php echo  SCF::get( 'news-title-sub' );?>
+        </h2><!-- /.p-post-news__sub-title -->
+    
+        <p class="p-post-news__text">
+           <?php $newsTextSub = scf::get('news-text-sub'); echo nl2br( $newsTextSub ); ?>
+        </p><!-- /.p-post-news__text -->
+    
+        <h3 class="p-post-news__sub-title2">
+           <?php echo SCF::get( 'news-title-sub2' );?>
+        </h3><!-- /.p-post-news__sub-title2 -->
+    
+        <p class="p-post-news__text">
+           <?php $newsTextSub = scf::get('news-text-sub2'); echo nl2br( $newsTextSub ); ?>
+        </p><!-- /.p-post-news__text -->
+    
+      </div><!-- / -->
+    </div><!-- /.p-post-news__body -->
+
+     <div class="p-post-news__img2">
+       <img src="<?php $newsImageSub = scf::get('news-image-sub'); echo wp_get_attachment_url( $newsImageSub ); ?>" alt="">
+    </div><!-- /.p-post-news__img -->
+  
+  <?php endwhile; endif; ?>
+  
+  </div><!-- /.l-inner -->
 </section><!-- /.l-post-news -->
-
-
 
 
 
@@ -104,10 +100,7 @@
        <?php if( $next_post ): ?>  
       <a class="nextpostslink" rel="next" href="<?php the_permalink( $next_id ); ?>">NEXT</a>
       <?php endif; ?>
-
-
     </div>
-
 </div><!-- /.l-news-paginaition -->
 
 
@@ -115,13 +108,13 @@
 
 <!-- 関連記事 -->
 <section class="l-post-news-article p-post-news-article">
-<div class="l-inner">
-  <div class="p-post-news-article__head--sp sp-only">
-    おすすめ記事
-  </div><!-- /.p-post-news-article__head -->
-  <div class="p-post-news-article__head--pc pc-only">
-    関連記事
-  </div><!-- /.p-post-news-article__head -->
+  <div class="l-inner">
+    <div class="p-post-news-article__head--sp sp-only">
+      おすすめ記事
+    </div><!-- /.p-post-news-article__head -->
+    <div class="p-post-news-article__head--pc pc-only">
+     関連記事
+    </div><!-- /.p-post-news-article__head -->
 
   <div class="p-post-news-article__box">
       
@@ -141,33 +134,27 @@
 <?php foreach($myPosts as $post) : setup_postdata($post); ?>
         
          
-         <a href="<?php the_permalink(); ?>" class="p-post-news-article__item p-card">
-            <div class="p-card__img">
-            <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');}  ?>
-            </div><!-- /.p-card_img -->
-            <div href="" class="p-card__body">
-              <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->
-              <div class="p-card__text"><?php the_excerpt(); //抜粋を表示 ?></div><!-- /.p-card__text -->
-            </div><!-- /.p-card__body -->
-              <div href="" class="p-card__bottom">
-              <div class="p-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
-                  <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
-                  </div><!-- /.p-card__category -->
-                <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
-              </div><!-- /.p-card__bottom -->
-        </a>
-
-        <?php endforeach; ?>
+      <a href="<?php the_permalink(); ?>" class="p-post-news-article__item p-card">
+        <div class="p-card__img">
+           <?php if (has_post_thumbnail() ) {  the_post_thumbnail('large');}  ?>
+        </div><!-- /.p-card_img -->
+        <div href="" class="p-card__body">
+          <h3 class="p-card__title"><?php the_title(); //タイトルを表示 ?></h3><!-- /.p-card__title -->
+         <div class="p-card__text"><?php the_excerpt(); //抜粋を表示 ?></div><!-- /.p-card__text -->
+        </div><!-- /.p-card__body -->
+        <div href="" class="p-card__bottom">
+          <div class="p-card__category <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->slug ); ?>">
+               <?php echo esc_html( get_the_terms( get_the_ID(), 'genre' )[0]->name ); ?>
+            </div><!-- /.p-card__category -->
+            <time class=" p-card__date" datetime="<?php the_time( 'c' ) ; ?>"><?php the_time('Y/n/j'); ?></time>
+        </div><!-- /.p-card__bottom -->
+      </a>
+   <?php endforeach; ?>
 <?php else : ?>
  <p>関連アイテムはまだありません。</p>
-<?php endif; wp_reset_postdata(); ?>
-          
-       
-  </div><!-- /.p-post-news-article__box -->
-
-</div><!-- /.l-inner -->
-
-
+<?php endif; wp_reset_postdata(); ?>     
+    </div><!-- /.p-post-news-article__box -->
+  </div><!-- /.l-inner -->
 </section><!-- /.l-post-news-article -->
 
 
