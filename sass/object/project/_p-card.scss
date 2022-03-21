@@ -7,6 +7,26 @@
   box-shadow: 0 1px 5px #333;
 }
 
+.p-card--new {
+  position: relative;
+}
+
+.p-card--new::after {
+  content: "New";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(60);
+  height: rem(60);
+  border-radius: 50%;
+ background: #FFBA6A;
+ color: #333333;
+ position: absolute;
+ top: rem(-12);
+ left: rem(-12);
+} 
+
+
 .p-card:hover {
   @include mq(tab) {
     background: rgba($color: $main-color, $alpha: 0.6);

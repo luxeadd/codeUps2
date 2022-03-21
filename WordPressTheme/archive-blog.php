@@ -9,7 +9,6 @@
 <?php get_template_part( 'template-parts/breadcrumbs' ); ?>
 
 
-
 <!-- 下層ページコンテンツ -->
 <div class="l-lower-works-nav p-lower-works-nav">
   <div class="l-inner p-lower-works-nav__inner">
@@ -39,12 +38,14 @@
       <?php
          //記事があればentriesブロック以下を表示
          if ( have_posts() ) : ?>
-            <?php
-            //記事数ぶんループ
-            while ( have_posts()):
-            the_post(); ?>
+            <?php while ( have_posts()): the_post(); ?>
+            <?
+            $get_time = get_the_time('U'); //記事の公開時間
+            $day = 30; //何日以内か指定
+            $last = time() - ($day * 24 * 60 * 60); // 今の時間 - $day
+            ?>
 
-          <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-blog-items__item  p-card">
+          <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-lower-blog-items__item  p-card  <? if ($get_time > $last) { echo 'p-card--new'; } ?>">
              <div class="p-card__img">
             <?php
                   if (has_post_thumbnail() ) {
@@ -71,10 +72,8 @@
                 </div><!-- /.p-card__bottom -->
              </a>
             
-         <?php
-          endwhile;
-          ?>      
-          <?php endif; ?>
+         <?php  endwhile; ?>      
+        <?php endif; ?>
 
       </div><!-- /.p-lower-blog-items__items -->
    </div><!-- /.l-inner -->

@@ -232,7 +232,13 @@
         <?php if ($my_query->have_posts()): // 投稿がある場合 ?>
         <?php while ($my_query->have_posts()) : $my_query->the_post(); ?>
 
-      <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-blog__item  p-card js-scrollAnimation">
+        <?
+        $get_time = get_the_time('U'); //記事の公開時間
+        $day = 30; //何日以内か指定
+        $last = time() - ($day * 24 * 60 * 60); // 今の時間 - $day
+        ?>
+
+      <a href="<?php the_permalink(); //記事のリンクを表示 ?>" class="p-blog__item  p-card js-scrollAnimation <? if ($get_time > $last) { echo 'p-card--new'; } ?>">
          <div class="p-card__img">
          
             <?php
