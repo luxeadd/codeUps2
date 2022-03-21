@@ -2360,19 +2360,19 @@ body {
 	opacity: 0; /*アニメーションの開始を遅らせる*/
 }
 
-.p-mv-swiper {
+.p-mv__swiper {
 	background: #e99bc1;
 	height: 100%;
 	width: 100%;
 }
 
-.p-mv-swiper .swiper-wrapper .swiper-slide {
+.p-mv__swiper .swiper-wrapper .swiper-slide {
 	overflow: hidden;
 }
 
-.p-mv-swiper .swiper-wrapper .swiper-slide-prev img,
-.p-mv-swiper .swiper-wrapper .swiper-slide-active img,
-.p-mv-swiper .swiper-wrapper .swiper-slide-duplicate-active img {
+.p-mv__swiper .swiper-wrapper .swiper-slide-prev img,
+.p-mv__swiper .swiper-wrapper .swiper-slide-active img,
+.p-mv__swiper .swiper-wrapper .swiper-slide-duplicate-active img {
 	-webkit-animation-name: diagonalSlide;
 	-webkit-animation-duration: 1s;
 	-webkit-animation-fill-mode: forwards;
@@ -3444,20 +3444,20 @@ body {
 	text-align: center;
 }
 
-.p-works-swiper {
+.p-works__swiper {
 	height: inherit;
 	max-height: 26.25rem;
 }
 
-.p-works-swiper .swiper-container img {
+.p-works__swiper .swiper-container img {
 	width: 100%;
 }
 
-.p-works-swiper .swiper-wrapper {
+.p-works__swiper .swiper-wrapper {
 	width: 100%;
 }
 
-.p-works-swiper .swiper-slide {
+.p-works__swiper .swiper-slide {
 	width: 100%;
 }
 
@@ -3538,6 +3538,7 @@ body {
 	padding: 0;
 	position: absolute;
 	width: 100%;
+	z-index: -1;
 }
 
 .sakura li {
@@ -3997,8 +3998,6 @@ html {
 }
 
 .p-blog__btn {
-	display: flex;
-	justify-content: center;
 	margin-top: 3rem;
 }
 
@@ -4473,8 +4472,7 @@ html {
 .p-overview__text-box {
 	flex: 0 1 35.875rem;
 	margin-top: 0rem;
-	padding-bottom: 5px;
-	padding-left: 0rem;
+	padding-left: 0.625rem;
 	padding-right: 2rem;
 }
 
@@ -4733,7 +4731,6 @@ html {
 .p-works__text-box {
 	flex: 0 1 35.875rem;
 	margin-top: 0;
-	padding-bottom: 1.75rem;
 	padding-left: 2rem;
 	padding-right: 0rem;
 }
@@ -4756,15 +4753,15 @@ html {
 	text-align: left;
 }
 
-.p-works-swiper .swiper-container img {
+.p-works__swiper .swiper-container img {
 	max-width: 34.8125rem;
 }
 
-.p-works-swiper .swiper-wrapper {
+.p-works__swiper .swiper-wrapper {
 	max-width: 34.8125rem;
 }
 
-.p-works-swiper .swiper-slide {
+.p-works__swiper .swiper-slide {
 	max-width: 34.8125rem;
 }
 

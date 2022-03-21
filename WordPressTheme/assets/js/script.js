@@ -114,7 +114,7 @@ window.addEventListener('scroll', function() {//スクロールしたとき
 
 //Swiper-------------------------------------------------------------------
 //トップMV
-let mvswiper = new Swiper('.p-mv-swiper', {
+let mvswiper = new Swiper('.js-mv-swiper', {
 
 	// スライドの間隔ー単位はpx
 	spaceBetween: 0,
@@ -156,7 +156,7 @@ let mvswiper = new Swiper('.p-mv-swiper', {
 
 
 		//トップworks
-		let workswiper = new Swiper('.p-works-swiper', {
+		let workswiper = new Swiper('.js-works-swiper', {
 		 //自動スライド
 				 autoplay: {
 					 delay: 300,

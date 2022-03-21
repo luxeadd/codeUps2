@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- 下層ページMV -->
-<div class="l-lower-blog-mv p-lower-blog-mv p-lower-common-mv js-mv">
+<div class="p-lower-blog-mv p-lower-common-mv js-mv">
   <h1 class="p-lower-common-mv__title">ブログ</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
 

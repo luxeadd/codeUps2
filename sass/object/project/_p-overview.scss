@@ -30,16 +30,12 @@
     }
  }
   
-
-
-
 .p-overview__title {
   position: relative;
   @include mq(tab) {
     letter-spacing: 0.0167em;    
   }
 }
-
 
 .p-overview__title::before {
     content: "Overview";
@@ -160,9 +156,8 @@
   @include mq(tab) {
     margin-top: rem(0);
     flex: 0 1 rem(574);
-    padding-left: rem(0);
+    padding-left: rem(10);
     padding-right: rem(32);
-    padding-bottom: 5px;
     
   }
 

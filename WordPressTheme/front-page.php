@@ -11,12 +11,21 @@
   <?php } ?>
 </ul>
 
+<?php
+  $home = esc_url( home_url( "/" ));
+  $news = esc_url( home_url( "/news/" ));
+  $content = esc_url( home_url( "/content/" ));
+  $works = esc_url( home_url( "/works/" ));
+  $overview = esc_url( home_url( "/overview/" ));
+  $blog = esc_url( home_url( "/blog/" ));
+  $contact = esc_url( home_url( "/contact/" ));
+?>
 
 <!-- トップページMV -->
 <div class="l-top-mv p-mv js-mv">
 
       <!-- Slider main container -->
-      <div class="swiper p-mv-swiper">
+      <div class="swiper  p-mv__swiper  js-mv-swiper">
         <!-- Additional required wrapper -->
         <div class="swiper-wrapper">
           <!-- Slides -->
@@ -92,13 +101,13 @@
         
         <?php endwhile; ?>
         <?php endif; wp_reset_postdata(); ?>
-        
-        
-        
+    
       </div><!-- /.p-news__items-inner -->
+
          <div class="p-news__btn c-btn--slide">
-             <a href="<?php echo esc_url( home_url( '/news/' ) ); ?>" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
+             <a href="<?php echo $news; ?>" class="c-btn--news">すべて見る</a><!-- /.c-btn -->
          </div><!-- /.p-news-info__btn -->
+         
     </div><!-- /.p-news__items -->
   </div><!-- /.linner -->
 </section><!-- /.l-top-news -->
@@ -147,7 +156,7 @@
       <div class="p-works__img-box  js-scrollAnimation">
         
           <!-- Slider main container -->
-          <div class="swiper p-works-swiper">
+          <div class="swiper p-works__swiper  js-works-swiper">
             <!-- Additional required wrapper -->
             <div class="swiper-wrapper ">
               <!-- Slides -->
@@ -177,7 +186,7 @@
 
 </p><!-- /.p-works__text -->
         <div class="p-works__btn c-btn--slide--white" >
-          <a href="<?php echo esc_url( home_url( '/works/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="<?php echo $works; ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-works__inner -->
@@ -199,7 +208,7 @@
         <div class="p-overview__sub-title">老舗振袖専門店だからこその</div><!-- /.p-works__sub-title -->
         <p class="p-overview__text">創業50年だからこその安心感と品揃えで、あなたの成人式を徹底サポート致します。<br>年間2000名を超えるお客様に好評を頂いております。</p><!-- /.p-works__text -->
         <div class="p-overview__btn c-btn--slide--white">
-          <a href="<?php echo esc_url( home_url( '/overview/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+          <a href="<?php echo $overview; ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
         </div><!-- /.p-works__btn -->
       </div><!-- /.p-works__box -->
     </div><!-- /.p-overview__inner -->
@@ -258,8 +267,9 @@
     </div><!-- /.p-blog__items -->
 
     <div class="p-blog__btn c-btn--slide--white">
-       <a href="<?php echo esc_url( home_url( '/blog/' ) ); ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
+       <a href="<?php echo $blog; ?>" class="c-btn">詳しく見る</a><!-- /.c-btn -->
     </div><!-- /.p-blog__btn -->
+
   </div><!-- /.l-inner -->
 </section><!-- /.l-top-blog p-blog -->
 

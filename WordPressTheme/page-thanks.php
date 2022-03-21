@@ -1,8 +1,5 @@
 <?php get_header(); ?>
 
-
-
-
 <!-- 下層ページコンテンツ -->
 <section class="p-lower-thanks">
    <div class="p-lower-thanks__text">お問い合わせ完了</div><!-- /.p-lower-thanks__text -->
@@ -12,15 +9,5 @@
      <a href="home" class="c-btn">TOPへ</a><!-- /.c-btn -->
     </div><!-- /.p-contact__btn -->
   </section><!-- /.l-lower-thanks -->
-    
-
-
-
-
-
-
-
-
-
 
 <?php get_footer(); ?>

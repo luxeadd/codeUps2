@@ -1,7 +1,7 @@
 <?php get_header(); ?>
 
 <!-- 下層ページMV -->
-<div class="l-lower-overview-mv p-lower-overview-mv p-lower-common-mv js-mv">
+<div class="p-lower-overview-mv p-lower-common-mv js-mv">
   <h1 class="p-lower-common-mv__title">企業概要</h1><!-- /.p-news-mv__title -->
 </div><!-- /.l-news-mv p-news-mv -->
 
