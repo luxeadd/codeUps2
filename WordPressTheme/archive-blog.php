@@ -35,10 +35,9 @@
    <div class="l-inner">      
       <div class="p-lower-blog-items">
 
-      <?php
-         //記事があればentriesブロック以下を表示
-         if ( have_posts() ) : ?>
+      <?php  if ( have_posts() ) : ?>
             <?php while ( have_posts()): the_post(); ?>
+            
             <?
             $get_time = get_the_time('U'); //記事の公開時間
             $day = 30; //何日以内か指定

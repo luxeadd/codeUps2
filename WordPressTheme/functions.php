@@ -155,16 +155,6 @@ function my_excerpt_more( $more ) {
 add_filter( 'excerpt_more', 'my_excerpt_more' );
 
 
-add_action( 'wp_footer', 'add_thanks_page' );
-function add_thanks_page() {
-echo <<< EOD
-<script>
-document.addEventListener( 'wpcf7mailsent', function( event ) {
-location = 'http://codeups2.local/thanks/'; /* 遷移先のURL */
-}, false );
-</script>
-EOD;
-}
 
 //WebPのアップロードを許可
 function custom_mime_types( $mimes ) {
