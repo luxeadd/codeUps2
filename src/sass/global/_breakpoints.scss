@@ -3,7 +3,7 @@ $startFrom: pc;
 
 // デフォルト値を設定
 $mediaquerys: (
-  sm: "screen",
+  sp: "screen",
   tab: "screen",
   lg: "screen",
   pc: "screen",
@@ -12,7 +12,7 @@ $mediaquerys: (
 @if $startFrom == sp {
   //スマホファースト
   $breakpoints: (
-    sm: 600,
+    sp: 600,
     tab: 768,
     lg: 1024,
     pc: 1440,
@@ -20,7 +20,7 @@ $mediaquerys: (
 
   //メディアクエリー
   $mediaquerys: (
-    sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+    sp: "screen and (min-width: #{map-get($breakpoints,'sp')}px)",
     tab: "screen and (min-width: #{map-get($breakpoints,'tab')}px)",
     lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
     pc: "screen and (min-width: #{map-get($breakpoints,'pc')}px)",
@@ -31,10 +31,10 @@ $mediaquerys: (
     pc: 1440,
     lg: 1023,
     tab: 767,
-    sm: 600,
+    sp: 600,
   );
   $mediaquerys: (
-    sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
+    sp: "screen and (max-width: #{map-get($breakpoints,'sp')}px)",
     tab: "screen and (max-width: #{map-get($breakpoints,'tab')}px)",
     lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
     pc: "screen and (max-width: #{map-get($breakpoints,'pc')}px)",

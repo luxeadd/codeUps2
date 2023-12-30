@@ -121,12 +121,12 @@
 .p-works__text {
   margin-top: rem(24);
   letter-spacing: 0.125em;
-  line-height: (23 / 16);
+  line-height: calc(23 / 16);
 
   @include mq(tab) {
     margin-top: rem(35);
     font-size: rem(16);
-    line-height: (35 / 16);
+    line-height: calc(35 / 16);
     letter-spacing: 0.0313em;
   }
 }

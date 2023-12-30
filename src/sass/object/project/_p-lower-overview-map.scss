@@ -9,11 +9,11 @@
 }
 .p-lower-overview-map__iframe-wrap {
   width: 100%;
-  padding-top: 300 / 375 * 100%;
+  padding-top: calc(300 / 375) * 100%;
   position: relative;
 
   @include mq(tab) {
-    padding-top: 367 / 1100 * 100%;
+    padding-top:calc(367 / 1100) * 100%;
   }
   iframe {
     width: 100%;

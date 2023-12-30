@@ -309,7 +309,7 @@ display: inline-block;
   }
   
   .p-post-works__img2::before {
-    padding-top: 251 / 375 * 100%;
+    padding-top: calc(251 / 375) * 100%;
     display: block;
     content: "";
   

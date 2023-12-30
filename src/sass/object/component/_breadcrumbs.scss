@@ -4,3 +4,10 @@
   margin-top: rem(13);
   letter-spacing: 0.0625em;
 }
+.breadcrumbs {
+  font-size: rem(14);
+
+  @include mq(tab) {
+    font-size: rem(16);
+  }
+}

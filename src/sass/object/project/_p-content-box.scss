@@ -15,7 +15,7 @@
 
   @include mq(tab) {
     flex: 0 0 25%;
-    height: (80 / 300) * 100vw;
+    height: calc(80 / 300) * 100vw;
   }
 }
 
