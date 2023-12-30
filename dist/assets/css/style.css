@@ -14,9 +14,17 @@
 
 body {
 	background: #fff;
+	display: flex;
+	flex-direction: column;
 	font-family: "Noto Sans JP", sans-serif;
 	font-weight: 400;
 	line-height: 1.6;
+	min-height: 100vh;
+	position: relative;
+}
+
+main {
+	flex: 1;
 }
 
 /* 背景固定用CSS */
@@ -26,10 +34,6 @@ body {
 }
 
 .u-desktop {
-	display: block;
-}
-
-.u-mobile {
 	display: none;
 }
 
@@ -3091,34 +3095,30 @@ body {
 	display: none;
 }
 
-@media screen and (max-width: 1440px) {
+@media screen and (min-width: 600px) {
 
-.u-hidden-pc {
+.p-contact__title {
+	letter-spacing: 0.0667em;
+}
+
+.u-hidden-sp {
 	display: none;
 }
 
 }
 
-@media (max-width: 1100px) {
-
-html {
-	font-size: 1.4545454545vw;
-}
-
-}
-
-@media screen and (max-width: 767px) {
+@media screen and (min-width: 768px) {
 
 .u-desktop {
-	display: none;
-}
-
-.u-mobile {
 	display: block;
 }
 
+.u-mobile {
+	display: none;
+}
+
 html {
-	font-size: 16px;
+	font-size: 1.4545454545vw;
 }
 
 .breadcrumbs {
@@ -4117,22 +4117,26 @@ html {
 
 }
 
-@media (max-width: 750px) {
+@media (min-width: 1100px) {
 
 html {
-	font-size: 2.1333333333vw;
+	font-size: 16px;
 }
 
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (min-width: 1440px) {
 
-.p-contact__title {
-	letter-spacing: 0.0667em;
-}
-
-.u-hidden-sp {
+.u-hidden-pc {
 	display: none;
+}
+
+}
+
+@media (max-width: 375px) {
+
+html {
+	font-size: 4.2666666667vw;
 }
 
 }

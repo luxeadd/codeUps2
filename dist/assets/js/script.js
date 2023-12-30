@@ -4,40 +4,40 @@ function _createForOfIteratorHelper(o, allowArrayLike) { var it = typeof Symbol 
 function _unsupportedIterableToArray(o, minLen) { if (!o) return; if (typeof o === "string") return _arrayLikeToArray(o, minLen); var n = Object.prototype.toString.call(o).slice(8, -1); if (n === "Object" && o.constructor) n = o.constructor.name; if (n === "Map" || n === "Set") return Array.from(o); if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return _arrayLikeToArray(o, minLen); }
 function _arrayLikeToArray(arr, len) { if (len == null || len > arr.length) len = arr.length; for (var i = 0, arr2 = new Array(len); i < len; i++) arr2[i] = arr[i]; return arr2; }
 //ハンバーガーメニュー---------------
-var jsHamburger = document.getElementById('js-hamburger');
+var jsHamburger = document.getElementById("js-hamburger");
 var body = document.body;
-var spHeaderMenu = document.getElementById('js-drawer-menu');
-var drawerBackground = document.getElementById('js-header__overlay');
-var drawerMenuItem = document.getElementById('js-drawer-menu__item');
+var spHeaderMenu = document.getElementById("js-drawer-menu");
+var drawerBackground = document.getElementById("js-header__overlay");
+var drawerMenuItem = document.getElementById("js-drawer-menu__item");
 
 //ハンバーガーメニュークリックアクション
-jsHamburger.addEventListener('click', function () {
-  jsHamburger.classList.toggle('open');
-  spHeaderMenu.classList.toggle('open');
-  drawerBackground.classList.toggle('open');
+jsHamburger.addEventListener("click", function () {
+  jsHamburger.classList.toggle("open");
+  spHeaderMenu.classList.toggle("open");
+  drawerBackground.classList.toggle("open");
 });
-drawerBackground.addEventListener('click', function () {
-  jsHamburger.classList.toggle('open');
-  spHeaderMenu.classList.toggle('open');
-  drawerBackground.classList.toggle('open');
+drawerBackground.addEventListener("click", function () {
+  jsHamburger.classList.toggle("open");
+  spHeaderMenu.classList.toggle("open");
+  drawerBackground.classList.toggle("open");
 });
 
 //スムーススクロール
 var smoothScrollTrigger = document.querySelectorAll('a[href^="#"]');
 var _loop = function _loop(i) {
-  smoothScrollTrigger[i].addEventListener('click', function (e) {
+  smoothScrollTrigger[i].addEventListener("click", function (e) {
     e.preventDefault();
-    var href = smoothScrollTrigger[i].getAttribute('href');
-    var targetElement = document.getElementById(href.replace('#', ''));
+    var href = smoothScrollTrigger[i].getAttribute("href");
+    var targetElement = document.getElementById(href.replace("#", ""));
     var rect = targetElement.getBoundingClientRect().top;
     var offset = window.pageYOffset;
-    var header = document.querySelector('.js-header');
+    var header = document.querySelector(".js-header");
     var header_h = header.clientHeight;
     var gap = header_h;
     var targetLink = rect + offset - gap;
     window.scrollTo({
       top: targetLink,
-      behavior: 'smooth'
+      behavior: "smooth"
     });
   });
 };
@@ -47,37 +47,36 @@ for (var i = 0; i < smoothScrollTrigger.length; i++) {
 
 //スクロールしたらheaderの色を変える
 //headerにchange-colorクラスをつけ色を指定
-var jsHeader = document.querySelector('.js-header');
-var jsMv = document.querySelector('.js-mv');
+var jsHeader = document.querySelector(".js-header");
+var jsMv = document.querySelector(".js-mv");
 var mv_h = jsMv.clientHeight;
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
   if (window.scrollY >= mv_h) {
-    jsHeader.classList.add('change-color');
+    jsHeader.classList.add("change-color");
   }
   if (window.scrollY < mv_h) {
-    jsHeader.classList.remove('change-color');
+    jsHeader.classList.remove("change-color");
   }
 });
 
 //topに戻るボタン
 //トップに戻るボタンの要素を取得
-var topButton = document.getElementById('js-to-top');
+var topButton = document.getElementById("js-to-top");
 function getScrolled() {
   return window.pageYOffset !== undefined ? window.pageYOffset : document.documentElement.scrollTop;
 }
 //ボタンの表示・非表示
 window.onscroll = function () {
-  getScrolled() > 500 ? topButton.classList.add('is-fadein') : topButton.classList.remove('is-fadein');
+  getScrolled() > 500 ? topButton.classList.add("is-fadein") : topButton.classList.remove("is-fadein");
 };
 //トップに移動する関数
 function scrollToTop() {
   //scrollToは指定先にスクロールするメソッド
   window.scrollTo({
     top: 0,
-    behavior: 'smooth'
+    behavior: "smooth"
   });
 }
-;
 //イベント登録
 topButton.onclick = function () {
   scrollToTop();
@@ -85,15 +84,15 @@ topButton.onclick = function () {
 
 //ローディングフェイドアウト
 // var loader = document.getElementById('loader');
-//   setTimeout(function(){ 
-// 		loader.style.display = "none"; 
+//   setTimeout(function(){
+// 		loader.style.display = "none";
 //   }, 2000);
 
 //アニメーションスクロール判定
-var targets = document.querySelectorAll('.js-scrollAnimation'); //アニメーションさせたい要素
+var targets = document.querySelectorAll(".js-scrollAnimation"); //アニメーションさせたい要素
 var offset = 100; //アニメーションタイミング
 
-window.addEventListener('scroll', function () {
+window.addEventListener("scroll", function () {
   //スクロールしたとき
 
   var scroll = window.scrollY; //スクロール量を取得
@@ -106,7 +105,7 @@ window.addEventListener('scroll', function () {
       var pos = target.getBoundingClientRect().top + scroll; //アニメーションさせたい要素の位置を取得
       if (scroll > pos - h + offset) {
         //スクロール量 > アニメーションさせたい要素の位置
-        target.classList.add('is-animated');
+        target.classList.add("is-animated");
       }
     }
   } catch (err) {
@@ -118,7 +117,7 @@ window.addEventListener('scroll', function () {
 
 //Swiper-------------------------------------------------------------------
 //トップMV
-var mvswiper = new Swiper('.js-mv-swiper', {
+var mvswiper = new Swiper(".js-mv-swiper", {
   // スライドの間隔ー単位はpx
   spaceBetween: 0,
   // 表示されるスライドの枚数
@@ -127,7 +126,7 @@ var mvswiper = new Swiper('.js-mv-swiper', {
   autoHeight: true,
   // ループする
   loop: true,
-  effect: 'fade',
+  effect: "fade",
   speed: 0,
   //自動スライド
   autoplay: {
@@ -148,13 +147,13 @@ var mvswiper = new Swiper('.js-mv-swiper', {
 
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true
   }
 });
 
 //トップworks
-var workswiper = new Swiper('.js-works-swiper', {
+var workswiper = new Swiper(".js-works-swiper", {
   //自動スライド
   autoplay: {
     delay: 300
@@ -168,7 +167,7 @@ var workswiper = new Swiper('.js-works-swiper', {
   loop: true,
   // If we need pagination
   pagination: {
-    el: '.swiper-pagination',
+    el: ".swiper-pagination",
     clickable: true
   }
 });
@@ -176,7 +175,7 @@ var workswiper = new Swiper('.js-works-swiper', {
 //制作実績詳細ページ
 //【Swiper】アクティブサムネイルを中央に固定表示する連動スライダー
 //メインスライド
-var slider = new Swiper('.gallery-slider', {
+var slider = new Swiper(".gallery-slider", {
   autoplay: {
     delay: 2000
   },
@@ -186,14 +185,14 @@ var slider = new Swiper('.gallery-slider', {
   loopedSlides: 10,
   //スライドの枚数と同じ値を指定
   navigation: {
-    nextEl: '.swiper-button-next',
-    prevEl: '.swiper-button-prev'
+    nextEl: ".swiper-button-next",
+    prevEl: ".swiper-button-prev"
   }
 });
 
 //サムネイルスライド
-var thumbs = new Swiper('.gallery-thumbs', {
-  slidesPerView: 'auto',
+var thumbs = new Swiper(".gallery-thumbs", {
+  slidesPerView: "auto",
   spaceBetween: 10,
   centeredSlides: true,
   loop: true,
@@ -209,15 +208,15 @@ slider.controller.control = thumbs;
 thumbs.controller.control = slider;
 
 //MVタイトル一文字づつspanタグで囲む
-var textWrap = document.querySelectorAll('.js-span-wrap');
+var textWrap = document.querySelectorAll(".js-span-wrap");
 textWrap.forEach(function (t) {
-  return t.innerHTML = t.textContent.replace(/\S/g, '<span>$&</span>');
+  return t.innerHTML = t.textContent.replace(/\S/g, "<span>$&</span>");
 });
 
 //セクションタイトル一文字づつspanタグで囲む
-var textWrap = document.querySelectorAll('.c-section-title');
+var textWrap = document.querySelectorAll(".c-section-title");
 textWrap.forEach(function (t) {
-  return t.innerHTML = t.textContent.replace(/\S/g, '<span>$&</span>');
+  return t.innerHTML = t.textContent.replace(/\S/g, "<span>$&</span>");
 });
 
 //ページ遷移時にヘッダーの高さ分調整

@@ -6,7 +6,7 @@
 </div><!-- /.l-news-mv p-news-mv -->
 
 <!-- breadcrumbs -->
-<?php get_template_part( 'template-parts/breadcrumbs' ); ?>
+<?php get_template_part('template-parts/breadcrumbs'); ?>
 
 
 
@@ -14,40 +14,43 @@
 <div class="l-lower-contact-form p-lower-contact-form">
 
 
-    <div  class="contact__form">
-      <div  action=""  class="contact-form"  id="js-form" >
-     
-      <?php echo do_shortcode('[contact-form-7 id="332" title="オリジナルフォーム"]'); ?>
-       
-        </div><!-- /.contact-form -->
-        
-        <div  id="js-success"  class="contact__message">
-          <p>送信完了しました。ありがとうございました。 </p>
-        </div><!-- /.contact__message -->
-        
-        <div  id="js-error"  class="contact__message -error">
-          <p>送信に失敗しました。ページを更新して再度送信してください。 </p>
-        </div><!-- /.contact__message -->
-    
-        
-      </div><!-- /.contact__form -->
-    </div><!-- /.l-lower-contact-form -->
-    
-    
-    
-    
-    
-<section class="l-lower-contact-contact sp-only">
-   <?php get_template_part( 'template-parts/contact' ); ?>
-</section><!-- /.l-top-contact -->
+  <div class="contact__form">
+    <div action="" class="contact-form" id="js-form">
+
+      <?#php echo do_shortcode('[contact-form-7 id="332" title="オリジナルフォーム"]'); ?>
+
+    </div><!-- /.contact-form -->
 
     
-    
-    
-    
-    
- <!-- toTopボタン -->
-<?php get_template_part( 'template-parts/to-top' ); ?>
+
+
+    <div id="js-success" class="contact__message">
+      <p>送信完了しました。ありがとうございました。 </p>
+    </div><!-- /.contact__message -->
+
+    <div id="js-error" class="contact__message -error">
+      <p>送信に失敗しました。ページを更新して再度送信してください。 </p>
+    </div><!-- /.contact__message -->
+
+
+  </div><!-- /.contact__form -->
+</div><!-- /.l-lower-contact-form -->
+
+
+
+
+
+<section class="l-lower-contact-contact sp-only">
+  <?php get_template_part('template-parts/contact'); ?>
+</section><!-- /.l-top-contact -->
+
+
+
+
+
+
+<!-- toTopボタン -->
+<?php get_template_part('template-parts/to-top'); ?>
 
 
 <?php get_footer(); ?>

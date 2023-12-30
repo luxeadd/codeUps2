@@ -68,6 +68,14 @@ body {
   font-family: $font-family-base;
   background: $background;
   line-height: 1.6;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+main {
+  flex: 1;
 }
 
 
