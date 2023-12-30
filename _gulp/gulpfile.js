@@ -25,7 +25,7 @@ const replace = require("gulp-replace"); // 文字列や正規表現による置
 const srcPath = {
   css: "../src/sass/**/*.scss",
   js: "../src/js/**/*",
-  img: "../src/img/**/*",
+  img: "../src/images/**/*",
   ejs: "../src/ejs/**/*.ejs",
   // html: ["../src/**/*.html", "!./node_modules/**"],
 };
@@ -35,7 +35,7 @@ const destPath = {
   all: "../dist/**/*",
   css: "../dist/assets/css/",
   js: "../dist/assets/js/",
-  img: "../dist/assets/img/",
+  img: "../dist/assets/images/",
   ejs: "../dist/",
 };
 
@@ -44,7 +44,7 @@ const themeName = "frisodeups"; // WordPress theme name
 const destWpPath = {
 	css: `../${themeName}/assets/css/`,
 	js: `../${themeName}/assets/js/`,
-	img: `../${themeName}/assets/img/`,
+	img: `../${themeName}/assets/images/`,
 }
 
 const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];

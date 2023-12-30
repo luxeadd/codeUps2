@@ -1,0 +1,8 @@
+@use 'global' as * ; 
+.p-news-mv {
+  background: url(../img/common/news-mv.jpg) no-repeat center / cover;
+
+  @include mq(tab) {
+    background: url(../img/common/news-mv.jpg) no-repeat center / cover;
+  }
+}

@@ -1,0 +1,28 @@
+@use 'global' as * ; 
+.p-lower-thanks {
+  padding: rem(120) rem(20);
+
+  @include mq(tab) {
+    padding: rem(190) rem(20) rem(150);
+  }
+}
+
+.p-lower-thanks__text {
+  font-size: rem(20);
+  letter-spacing: 0.1em;
+  text-align: center;
+
+  @include mq(tab) {
+    font-size: rem(30);
+    letter-spacing: 0.066em;
+  }
+}
+
+.p-lower-thanks__text + .p-lower-thanks__text {
+  margin-top: rem(80);
+}
+
+.p-lower-thanks__btn--pc {
+  text-align: center;
+  margin-top: rem(80);
+}

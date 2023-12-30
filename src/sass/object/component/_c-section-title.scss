@@ -1,0 +1,44 @@
+@use 'global' as * ; 
+.c-section-title {
+  display: block;
+  font-size: rem(20);
+  font-weight: 400;
+  letter-spacing: 0.066em;
+  text-align: center;
+  @include mq(tab) {
+    font-size: rem(30);
+  }
+}
+
+.c-section-title span {
+  display: inline-block;
+  padding: rem(2) rem(5);
+  background-color: $section-title-color;
+  margin-right: rem(2);
+  border-radius: 50%;
+  opacity: 0;
+
+  @include mq(tab) {
+    padding: rem(10) rem(17);
+    margin-right: rem(10);
+  }
+}
+
+.c-section-title.is-animated span {
+  animation: ball 2s ease-in forwards;
+}
+
+.c-section-title span:nth-child(even) {
+  transform: translateY(5px);
+
+  @include mq(tab) {
+    transform: translateY(15px);
+  }
+}
+.c-section-title.is-animated span:nth-child(even) {
+  animation: ball2-sp 2.5s ease-in forwards;
+
+  @include mq(tab) {
+    animation: ball2 2.5s ease-in forwards;
+  }
+}

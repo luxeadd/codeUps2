@@ -1,0 +1,99 @@
+@use 'global' as * ; 
+.p-post-news-pagination {
+
+  .wp-pagenavi {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    
+    .previouspostslink,
+    .current,
+    .page,
+    .nextpostslink,
+    .home {
+      font-size: rem(16);
+      letter-spacing: 0.125em;
+      border: 1px solid $text-color;
+      
+    }
+    
+    .previouspostslink,
+    .nextpostslink {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      padding: 0 rem(9);
+      transition: all 0.3s;
+      line-height: 1.448;
+      
+      &:hover {
+        @include mq(tab) {
+          background: #fff;
+          color: #333;
+          
+        }
+
+        
+      }
+    }
+    
+    .current,
+    .page {
+      display: inline-block;
+      width: rem(24);
+      height: rem(24);
+      line-height: rem(16);
+      text-align: center;
+    }
+    
+    .previouspostslink {
+      margin-right: rem(8);
+    }
+    
+    .current {
+      margin-left: rem(16);
+      background: #fff;
+      color: #333;
+
+     
+      
+    }
+    
+    .page {
+      margin-left: rem(16);
+      transition: all 0.3s;
+      
+      &:hover {
+        @include mq(tab) {
+          background: #fff;
+          color: #333;
+          
+        }
+
+      
+      }
+    }
+    
+    .nextpostslink {
+      margin-left: rem(48);
+    }
+  }
+
+  .home {
+    display: flex;
+    justify-content: center;
+    padding: 0 rem(20);
+    margin-left: rem(48);
+    transition:  all 0.3s;
+    line-height: 1.448;
+
+    &:hover {
+      @include mq(tab) {
+        background: #fff;
+        color: #333;
+        
+      }
+
+    }
+  }
+}

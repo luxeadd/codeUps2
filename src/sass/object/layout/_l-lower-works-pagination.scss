@@ -1,0 +1,10 @@
+@use 'global' as * ; 
+.l-lower-works-pagination {
+  display: block;
+  margin-top: rem(78);
+
+  @include mq(tab) {
+    margin-top: rem(104);
+  }
+
+}

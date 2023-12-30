@@ -1,0 +1,22 @@
+@use 'global' as * ; 
+.p-post-works-article__head {
+  font-size: rem(16);
+  padding: rem(11) 0;
+  line-height: 1;
+  letter-spacing: 0.125em;
+  text-align: center;
+  width: 100%;
+  border: 1px solid $text-color;
+}
+
+.p-post-works-article__box {
+  margin-top: rem(32);
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: rem(20) rem(20);
+
+  @include mq(tab) {
+    margin-top: rem(80);
+    grid-template-columns: repeat(4, 1fr);
+  }
+}

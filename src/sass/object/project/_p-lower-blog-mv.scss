@@ -1,0 +1,8 @@
+@use 'global' as * ; 
+.p-lower-blog-mv {
+  background: url(../img/common/blog-mv.jpg) no-repeat center / cover;
+
+  @include mq(tab) {
+    background: url(../img/common/blog-mv.jpg) no-repeat center / cover;
+  }
+}

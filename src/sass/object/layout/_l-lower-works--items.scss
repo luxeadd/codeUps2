@@ -1,0 +1,9 @@
+@use 'global' as * ; 
+.l-lower-works-items {
+  margin-top: rem(22);
+
+  @include mq(tab) {
+    margin-top: rem(43);
+  }
+
+}

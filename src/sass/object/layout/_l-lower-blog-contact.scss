@@ -1,0 +1,9 @@
+@use 'global' as * ; 
+.l-lower-blog-contact {
+  margin-top: rem(125);
+
+  @include mq(tab) {
+    margin-top: rem(150);
+
+  }
+}

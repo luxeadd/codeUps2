@@ -1,0 +1,13 @@
+@use 'global' as * ; 
+.p-lower-works-mv {
+  background: url(../img/common/collection-mv.jpg) no-repeat center /cover;
+  padding-bottom: rem(201);
+  padding-top: rem(175);
+
+  @include mq(tab) {
+    background: url(../img/common/collection-mv.jpg) no-repeat center /cover;
+    padding-top: rem(151);
+    padding-bottom: rem(163);
+  }
+
+}

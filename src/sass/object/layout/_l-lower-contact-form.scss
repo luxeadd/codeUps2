@@ -1,0 +1,8 @@
+@use 'global' as * ; 
+.l-lower-contact-form {
+  margin-top: rem(75);
+  @include mq(tab) {
+    margin-top: rem(111);
+    
+  }
+}

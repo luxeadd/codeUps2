@@ -1,0 +1,8 @@
+@use 'global' as * ; 
+.l-lower-news {
+  margin-top: rem(82);
+
+  @include mq(tab) {
+    margin-top: rem(66);
+  }
+}

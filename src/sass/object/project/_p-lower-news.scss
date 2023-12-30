@@ -1,0 +1,17 @@
+@use 'global' as * ; 
+.p-lower-news__inner {
+  width: 100%;
+  margin: 0 auto;
+
+  @include mq(tab) {
+    max-width: rem(910);
+  }
+}
+
+.p-lower-news__item + .p-lower-news__item {
+  margin-top: rem(30);
+
+  @include mq(tab) {
+    margin-top: rem(32);
+  }
+}

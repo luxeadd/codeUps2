@@ -1,0 +1,28 @@
+@use 'global' as * ; 
+.p-post-works-back {
+  position: relative;
+}
+
+.p-post-works-back::before,
+.p-post-works-back::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+}
+
+.p-post-works-back::before {
+  height: rem(1000);
+  background: url(../img/common/itimatu-pink.jpg) no-repeat center center /
+    cover;
+  z-index: -2;
+  clip-path: polygon(0 0, 0 0, 0 0);
+  opacity: 0.7;
+  animation-name: lowerBackSlideLeft;
+  animation-fill-mode: forwards; /*開始と終了の状態*/
+  animation-duration: 1s; /*アニメーションの長さ*/
+  animation-timing-function: ease; /*アニメーションの進行具合*/
+  animation-delay: 1s; /*アニメーションの開始を遅らせる*/
+}

@@ -1,0 +1,49 @@
+@use "global" as *;
+.p-lower-overview-body__list {
+  display: flex;
+  padding-bottom: rem(21);
+  padding-top: rem(14);
+  border-bottom: 1px solid $text-color;
+
+  @include mq(tab) {
+    padding-bottom: rem(24);
+    padding-top: rem(34);
+  }
+}
+
+.p-lower-overview-body__title-box {
+  flex: 0 0 rem(109);
+
+  @include mq(tab) {
+    flex: 0 0 rem(154);
+    display: flex;
+    align-items: center;
+  }
+}
+.p-lower-overview-body__title {
+  font-size: rem(13);
+  font-weight: 400;
+
+  @include mq(tab) {
+    font-size: rem(16);
+  }
+}
+
+.p-lower-overview-body__text-box {
+  // width: 100%;
+  // max-width: rem(221);
+  width: calc(100% - 109px);
+
+  @include mq(tab) {
+    width: calc(100% - 154px);
+  }
+}
+
+.p-lower-overview-body__text {
+  font-size: rem(13);
+  line-height: 1.7;
+
+  @include mq(tab) {
+    font-size: rem(16);
+  }
+}

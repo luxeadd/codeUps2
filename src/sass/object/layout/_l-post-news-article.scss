@@ -1,0 +1,9 @@
+@use 'global' as * ; 
+.l-post-news-article {
+  margin-top: rem(120);
+
+  @include mq(tab) {
+    margin-top: rem(104);
+  }
+
+}

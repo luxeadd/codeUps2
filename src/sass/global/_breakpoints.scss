@@ -1,0 +1,84 @@
+// どっちファーストの設定（"sp" or "pc"）
+$startFrom: pc;
+
+// デフォルト値を設定
+$mediaquerys: (
+  sm: "screen",
+  tab: "screen",
+  lg: "screen",
+  pc: "screen",
+);
+
+@if $startFrom == sp {
+  //スマホファースト
+  $breakpoints: (
+    sm: 600,
+    tab: 768,
+    lg: 1024,
+    pc: 1440,
+  );
+
+  //メディアクエリー
+  $mediaquerys: (
+    sm: "screen and (min-width: #{map-get($breakpoints,'sm')}px)",
+    tab: "screen and (min-width: #{map-get($breakpoints,'tab')}px)",
+    lg: "screen and (min-width: #{map-get($breakpoints,'lg')}px)",
+    pc: "screen and (min-width: #{map-get($breakpoints,'pc')}px)",
+  );
+
+} @else {
+  $breakpoints: (
+    pc: 1440,
+    lg: 1023,
+    tab: 767,
+    sm: 600,
+  );
+  $mediaquerys: (
+    sm: "screen and (max-width: #{map-get($breakpoints,'sm')}px)",
+    tab: "screen and (max-width: #{map-get($breakpoints,'tab')}px)",
+    lg: "screen and (max-width: #{map-get($breakpoints,'lg')}px)",
+    pc: "screen and (max-width: #{map-get($breakpoints,'pc')}px)",
+  );
+
+}
+
+// @include mq(){}で書くとブレークポイントが反映される（初期値はtab）
+@mixin mq($mediaquery: tab) {
+  @media #{map-get($mediaquerys, $mediaquery)} {
+    @content;
+  }
+}
+
+
+@if $startFrom == sp {
+  //pcで表示
+  .u-desktop {
+    display: none;
+    @include mq("tab") {
+      display: block;
+    }
+  }
+
+  //モバイルのみ表示
+  .u-mobile {
+    @include mq("tab") {
+      display: none;
+    }
+  }
+} @else {
+  //pcで表示
+  .u-desktop {
+    display: block;
+    @include mq("tab") {
+      display: none;
+    }
+  }
+
+  //モバイルのみ表示
+  .u-mobile {
+    display: none;
+    @include mq("tab") {
+      display: block;
+    }
+  }
+}

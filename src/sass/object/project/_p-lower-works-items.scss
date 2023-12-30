@@ -1,0 +1,23 @@
+
+@use 'global' as * ; 
+.p-lower-works-items__body {
+  display: grid;
+  grid-template-columns: repeat(2,1fr);
+  grid-template-rows: 1fr;
+  grid-gap: rem(10) rem(10);
+  @include mq(tab) {
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: rem(10) rem(10);
+    
+  }
+}
+
+.p-lower-works-items__item:first-child {
+  
+  @include mq(tab) {
+    
+    grid-row: 1/3;
+    grid-column: 1/3;
+  
+  }
+}

@@ -1,0 +1,29 @@
+@use 'global' as * ; 
+.p-lower-blog-items {
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-gap: rem(20);
+  @include mq(tab) {
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: rem(25);
+  }
+}
+
+.p-lower-blog-items__item {
+  box-shadow: 0 1px 10px #333;
+}
+
+.p-lower-blog-items__item--new::after {
+  content: "New";
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: rem(60);
+  height: rem(60);
+  border-radius: 50%;
+  background: #ffba6a;
+  color: #333333;
+  position: absolute;
+  top: rem(-12);
+  left: rem(-12);
+}

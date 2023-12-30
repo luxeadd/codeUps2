@@ -1,0 +1,10 @@
+@use 'global' as * ; 
+.l-lower-overview-map {
+  margin-top: rem(120);
+  margin-left: auto;
+  margin-right: auto;
+
+  @include mq(tab) {
+    margin-top: rem(80);
+  }
+}
