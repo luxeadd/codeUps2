@@ -1,33 +1,45 @@
-
+// -----------------------
+// お問い合わせフォーム確認画面(ContactForm7用)
+// -----------------------
 
 // input[text],input[textAre]入力項目と確認用要素のペアを作成
 let fields = [
-  { input: document.querySelector(".js_inputCompany"), confirm: document.querySelector(".js_confirmCompany") },
-  { input: document.querySelector(".js_inputName"), confirm: document.querySelector(".js_confirmName") },
-  { input: document.querySelector(".js_inputEmail"), confirm: document.querySelector(".js_confirmMail") },
-  { input: document.querySelector(".js_inputTel"), confirm: document.querySelector(".js_confirmTel") },
-  { input: document.querySelector(".js_inputTextArea"), confirm: document.querySelector(".js_confirmTextArea") }
+  {
+    input: document.querySelector(".js_inputCompany"),
+    confirm: document.querySelector(".js_confirmCompany"),
+  },
+  {
+    input: document.querySelector(".js_inputName"),
+    confirm: document.querySelector(".js_confirmName"),
+  },
+  {
+    input: document.querySelector(".js_inputEmail"),
+    confirm: document.querySelector(".js_confirmMail"),
+  },
+  {
+    input: document.querySelector(".js_inputTel"),
+    confirm: document.querySelector(".js_confirmTel"),
+  },
+  {
+    input: document.querySelector(".js_inputTextArea"),
+    confirm: document.querySelector(".js_confirmTextArea"),
+  },
 ];
-
-// input[text],input[textAre]入力項目と確認用要素の値を同期
-fields.forEach(function(field) {
-  field.input.addEventListener("input", function() {
-    if (field.input.type === "textarea") {
-      field.confirm.innerHTML = field.input.value.replace(/\n/g, "<br>");
-    } else {
-      field.confirm.textContent = field.input.value;
-    }
-  });
-});
 
 // その他入力項目の各要素の取得
 let inputArea = document.querySelector(".inputArea");
-let radioButtons = document.querySelectorAll('.js_inputRadio input[type="radio"]');
-let checkboxes = document.querySelectorAll('.js_inputCheck input[type="checkbox"]');
+let radioButtons = document.querySelectorAll(
+  '.js_inputRadio input[type="radio"]'
+);
+let checkboxes = document.querySelectorAll(
+  '.js_inputCheck input[type="checkbox"]'
+);
 let inputSelect = document.querySelector(".js_inputSelect");
 let btnConfirm = document.querySelector(".js_btnConfirm");
 let requiredInputs = document.querySelectorAll(".js_inputRequired");
-let inputAgree = document.querySelector('.js_inputAgree input[type="checkbox"]');
+let inputAgree = document.querySelector(
+  '.js_inputAgree input[type="checkbox"]'
+);
 
 // その他確認表示用の各要素の取得
 let confirmArea = document.querySelector(".confirmArea");
@@ -37,7 +49,30 @@ let confirmSelect = document.querySelector(".js_confirmSelect");
 let confirmAgree = document.querySelector(".js_confirmAgree");
 
 
-// ラジオボタンの処理
+// input[text],input[textAre]入力項目と確認用要素の値を同期
+document.addEventListener('DOMContentLoaded', function() {
+  
+  if (fields && fields.length > 0) {
+    fields.forEach(function(field) {
+      if (field.input && field.confirm) {
+        field.input.addEventListener("input", function() {
+          if (field.input.type === "textarea") {
+            field.confirm.innerHTML = field.input.value.replace(/\n/g, "<br>");
+          } else {
+            field.confirm.textContent = field.input.value;
+          }
+        });
+      }
+    });
+  }
+
+  if (fields && fields.length > 0) {
+    
+  }
+});
+
+
+// ラジオボタン選択で確認用項目に表示
 function updateConfirmRadio() {
   const selectedRadio = [...radioButtons].find((radio) => radio.checked);
   confirmRadio.textContent = selectedRadio ? selectedRadio.value : "";
@@ -49,36 +84,33 @@ radioButtons.forEach((radio) => {
 
 updateConfirmRadio();
 
-
-// チェックボックスの処理
+// チェックボックス選択で確認用項目に表示
 function updateConfirmCheck() {
   let selectedValues = Array.from(checkboxes)
-    .filter(function(checkbox) {
+    .filter(function (checkbox) {
       return checkbox.checked;
     })
-    .map(function(checkbox) {
+    .map(function (checkbox) {
       return checkbox.nextElementSibling.textContent;
     });
 
   confirmCheck.textContent = selectedValues.join(", ");
 }
 
-checkboxes.forEach(function(checkbox) {
+checkboxes.forEach(function (checkbox) {
   checkbox.addEventListener("change", updateConfirmCheck);
 });
 
 updateConfirmCheck();
 
-
-// セレクトボックスの処理
-inputSelect.addEventListener("change", function() {
+// セレクトボックス選択で確認用項目に表示
+inputSelect.addEventListener("change", function () {
   let selectedOption = inputSelect.options[inputSelect.selectedIndex];
   confirmSelect.textContent = selectedOption.text;
 });
 
-
-// チェックボックスの変更を監視して確認要素にテキストを挿入
-inputAgree.addEventListener("change", function() {
+// 同意チェックの変更を監視して確認要素にテキストを挿入
+inputAgree.addEventListener("change", function () {
   if (inputAgree.checked) {
     confirmAgree.textContent = "プライバシーポリシーに同意します";
   } else {
@@ -87,7 +119,7 @@ inputAgree.addEventListener("change", function() {
 });
 
 // 初期値の設定
-fields.forEach(function(field) {
+fields.forEach(function (field) {
   if (field.input.type === "radio" && field.input.checked) {
     confirmRadio.textContent = field.input.value;
   } else if (field.input.type === "textarea") {
@@ -100,7 +132,6 @@ fields.forEach(function(field) {
 // チェックボックスとセレクトボックスの初期値を反映
 updateConfirmCheck();
 updateConfirmRadio();
-
 
 // 確認ボタンクリック時のオーバーレイ要素を作成
 function createOverlay() {
@@ -118,18 +149,17 @@ function createOverlay() {
   return overlay;
 }
 
-
 // 確認ボタンを押して確認画面を表示
 let overlay = createOverlay();
 
-btnConfirm.addEventListener("click", function() {
+btnConfirm.addEventListener("click", function () {
   confirmArea.style.display = "block";
   inputArea.style.display = "none";
   overlay.style.display = "block";
 
-  setTimeout(function() {
+  setTimeout(function () {
     overlay.style.opacity = "0";
-    setTimeout(function() {
+    setTimeout(function () {
       overlay.style.display = "none";
     }, 500);
   }, 500);
@@ -137,43 +167,46 @@ btnConfirm.addEventListener("click", function() {
   window.scrollTo(0, 0);
 });
 
-
 // 必須項目に入力があればボタン活性化（ContactForm7用）
-const requiredContainers = document.querySelectorAll('.wpcf7-validates-as-required');
+const requiredContainers = document.querySelectorAll(
+  ".wpcf7-validates-as-required"
+);
 
 const isCheckboxGroupFilled = (container) => {
-    const checkboxes = container.querySelectorAll('input[type="checkbox"]');
-    if (checkboxes.length === 0) return true; // チェックボックスがなければ常にtrue
-    return Array.from(checkboxes).some(checkbox => checkbox.checked);
+  const checkboxes = container.querySelectorAll('input[type="checkbox"]');
+  if (checkboxes.length === 0) return true; // チェックボックスがなければ常にtrue
+  return Array.from(checkboxes).some((checkbox) => checkbox.checked);
 };
 
 const checkFields = () => {
-    let isAllFilled = Array.from(requiredContainers).every(container => {
-        if (container.querySelector('input, select, textarea')) {
-            return container.querySelector('input, select, textarea').value !== '' && isCheckboxGroupFilled(container);
-        }
-        return isCheckboxGroupFilled(container);
-    });
+  let isAllFilled = Array.from(requiredContainers).every((container) => {
+    if (container.querySelector("input, select, textarea")) {
+      return (
+        container.querySelector("input, select, textarea").value !== "" &&
+        isCheckboxGroupFilled(container)
+      );
+    }
+    return isCheckboxGroupFilled(container);
+  });
 
-    btnConfirm.disabled = !isAllFilled;
+  btnConfirm.disabled = !isAllFilled;
 };
 
 if (requiredContainers.length > 0) {
-    btnConfirm.disabled = true;
-    requiredContainers.forEach(container => {
-        const inputs = container.querySelectorAll('input, select, textarea');
-        inputs.forEach(input => {
-            input.addEventListener('input', checkFields);
-        });
+  btnConfirm.disabled = true;
+  requiredContainers.forEach((container) => {
+    const inputs = container.querySelectorAll("input, select, textarea");
+    inputs.forEach((input) => {
+      input.addEventListener("input", checkFields);
     });
+  });
 }
 
-
-
-
-
-
-// サンクス画面へ
-document.addEventListener( 'wpcf7mailsent', function( event ) {
-	location = '/contact/thanks/';
-}, false );
+// 送信ボタンクリックでサンクス画面へ
+document.addEventListener(
+  "wpcf7mailsent",
+  function (event) {
+    location = "/contact/thanks/";
+  },
+  false
+);
