@@ -16,12 +16,13 @@
 
   <div class="contact__form">
     <div class="l-inner">
-      <div action="" class="contact-form" id="js-form">
+      <div class="contact-form" id="js-form">
 
-        <?#php echo do_shortcode('[contact-form-7 id="332" title="オリジナルフォーム"]'); 
+        <?php echo do_shortcode('[contact-form-7 id="332" title="オリジナルフォーム"]');
         ?>
 
-        <div class="form">
+<?php /* 
+        <div class="form inputArea js_form">
           <div class="form__top">
             <div class="form__topText">
               ご依頼やご相談についてのご質問やご要望がございましたら、下記フォームよりお気軽にお問い合わせください。送付いただいた内容を確認の上、担当者からご連絡させていただきます。
@@ -35,20 +36,21 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <div class="formRadio">
+                <!-- コンタクトフォーム7の場合以下を代入する -->
+                <span class="formRadio js_inputRadio">
                   <label>
-                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="制作依頼" checked><span>制作依頼</span>
+                    <input type="radio" name="radio-name" value="制作依頼" checked><span>制作依頼</span>
                   </label>
                   <label>
-                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="採用"><span>採用</span>
+                    <input type="radio" name="radio-name" value="採用"><span>採用</span>
                   </label>
                   <label>
-                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="IR"><span>IR</span>
+                    <input type="radio" name="radio-name" value="IR"><span>IR</span>
                   </label>
                   <label>
-                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name"  value="その他"><span>その他</span>
+                    <input type="radio" name="radio-name" value="その他"><span>その他</span>
                   </label>
-                </div>
+                </span>
               </div>
             </div>
 
@@ -58,20 +60,21 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <div class="formCheck">
+                <!-- コンタクトフォーム7の場合以下を代入する -->
+                <span class="formCheck js_inputCheck">
                   <label>
-                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check1" checked><span>備考1</span>
+                    <input type="checkbox" name="check1" checked><span>備考1</span>
                   </label>
                   <label>
-                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check2"><span>備考2</span>
+                    <input type="checkbox" name="check2"><span>備考2</span>
                   </label>
                   <label>
-                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check3"><span>備考3</span>
+                    <input type="checkbox" name="check3"><span>備考3</span>
                   </label>
                   <label>
-                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check4"><span>備考4</span>
+                    <input type="checkbox" name="check4"><span>備考4</span>
                   </label>
-                </div>
+                </span>
               </div>
             </div>
 
@@ -176,25 +179,25 @@
               </div>
             </div>
 
-
             <div class="form__content form__contentCheckbox">
-              <div class="formAgree">
+              <span class="formAgree js_inputAgree">
                 <label>
-                  <input class="formAgree__item js_inputAgree" type="checkbox" name=""><span>個人情報の取り扱いについて同意のうえ送信します。</span>
+                  <input type="checkbox" name=""><span>個人情報の取り扱いについて同意のうえ送信します。</span>
                 </label>
-              </div>
+              </span>
             </div>
 
             <div class="form__content form__contentButton">
-              <button class="formBtn js_inputConfirm">確認</button>
+              <button type="button" class="formBtn js_btnConfirm is_confirm">確認</button>
             </div>
           </div>
         </div>
 
 
-        <!-- 確認画面 -->
+        <!-- 確認画面-->
         <div class="form confirmArea">
           <div class="form__contents">
+
             <div class="form__content">
               <div class="form__head">
                 <p class="form__title">お問い合わせ種別</p>
@@ -253,7 +256,6 @@
               </div>
             </div>
 
-
             <div class="form__content">
               <div class="form__head">
                 <p class="form__title">ご用件</p>
@@ -274,10 +276,9 @@
               </div>
             </div>
 
-
             <div class="form__content">
               <div class="form__item">
-                <span class="confirmAreaItem">プライバシーポリシーに同意する</span>
+                <span class="confirmAreaItem js_confirmAgree"></span>
               </div>
             </div>
 
@@ -286,6 +287,7 @@
             </div>
           </div>
         </div>
+*/?>
 
 
       </div><!-- /.contact-form -->

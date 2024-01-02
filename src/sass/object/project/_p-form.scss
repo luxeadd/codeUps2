@@ -7,8 +7,8 @@ $formRadioCheckColor: #007bff;
 $formCheckBoxColor: #007bff;
 $formAgreeColorColor: #000;
 $formSubmitHoverColor: #007bff;
-$formDisableColor: #706e6e;
-$formConfirmColor: #ccc;
+$formDisableColor: #ccc;
+$formConfirmColor: #706e6e;
 
 // フォームレイアウト
 .form {
@@ -420,9 +420,10 @@ $formConfirmColor: #ccc;
   &.is_confirm {
     background: $formConfirmColor;
   }
-  // 非活性状態用
-  &.is_disable {
+
+  &:disabled {
     background: $formDisableColor;
+    pointer-events: none;
   }
 
   &:hover,
@@ -472,7 +473,7 @@ $formConfirmColor: #ccc;
 }
 
 .confirmArea {
-
+  // display: none;
 }
 .confirmAreaItem {
   font-size: rem(16);

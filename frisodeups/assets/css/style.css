@@ -1403,11 +1403,12 @@ body {
 }
 
 .formBtn.is_confirm {
-	background: #ccc;
+	background: #706e6e;
 }
 
-.formBtn.is_disable {
-	background: #706e6e;
+.formBtn:disabled {
+	background: #ccc;
+	pointer-events: none;
 }
 
 .formBtn:hover,
