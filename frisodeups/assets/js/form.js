@@ -38,6 +38,7 @@ var requiredInputs = document.querySelectorAll(".js_inputRequired");
 var inputAgree = document.querySelector('.js_inputAgree input[type="checkbox"]');
 
 // その他確認表示用の各要素の取得
+// .confirmAreaはCSSでdisplay:noneをつけておく
 var confirmArea = document.querySelector(".confirmArea");
 var confirmRadio = document.querySelector(".js_confirmRadio");
 var confirmCheck = document.querySelector(".js_confirmCheck");
@@ -45,22 +46,19 @@ var confirmSelect = document.querySelector(".js_confirmSelect");
 var confirmAgree = document.querySelector(".js_confirmAgree");
 
 // input[text],input[textAre]入力項目と確認用要素の値を同期
-document.addEventListener('DOMContentLoaded', function () {
-  if (fields && fields.length > 0) {
-    fields.forEach(function (field) {
-      if (field.input && field.confirm) {
-        field.input.addEventListener("input", function () {
-          if (field.input.type === "textarea") {
-            field.confirm.innerHTML = field.input.value.replace(/\n/g, "<br>");
-          } else {
-            field.confirm.textContent = field.input.value;
-          }
-        });
-      }
-    });
-  }
-  if (fields && fields.length > 0) {}
-});
+if (fields && fields.length > 0) {
+  fields.forEach(function (field) {
+    if (field.input && field.confirm) {
+      field.input.addEventListener("input", function () {
+        if (field.input.type === "textarea") {
+          field.confirm.innerHTML = field.input.value.replace(/\n/g, "<br>");
+        } else {
+          field.confirm.textContent = field.input.value;
+        }
+      });
+    }
+  });
+}
 
 // ラジオボタン選択で確認用項目に表示
 function updateConfirmRadio() {
@@ -114,7 +112,7 @@ fields.forEach(function (field) {
   }
 });
 
-// チェックボックスとセレクトボックスの初期値を反映
+// ラジオボタンとチェックボックスの初期値を反映
 updateConfirmCheck();
 updateConfirmRadio();
 
@@ -149,7 +147,7 @@ btnConfirm.addEventListener("click", function () {
   window.scrollTo(0, 0);
 });
 
-// 必須項目に入力があればボタン活性化（ContactForm7用）
+// 必須項目すべて入力でボタン活性化（ContactForm7用）
 var requiredContainers = document.querySelectorAll(".wpcf7-validates-as-required");
 var isCheckboxGroupFilled = function isCheckboxGroupFilled(container) {
   var checkboxes = container.querySelectorAll('input[type="checkbox"]');
@@ -177,7 +175,7 @@ if (requiredContainers.length > 0) {
   });
 }
 
-// 送信ボタンクリックでサンクス画面へ
+// 送信ボタンクリックでサンクス画面へ遷移
 document.addEventListener("wpcf7mailsent", function (event) {
   location = "/contact/thanks/";
 }, false);

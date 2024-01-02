@@ -449,7 +449,7 @@ $formConfirmColor: #706e6e;
   background: #fff;
   overflow-y: scroll;
 
-  .formPolicy__text {
+  p {
     font-size: rem(16);
     letter-spacing: 0.04em;
     line-height: 1.7142;
@@ -473,7 +473,7 @@ $formConfirmColor: #706e6e;
 }
 
 .confirmArea {
-  // display: none;
+  display: none;
 }
 .confirmAreaItem {
   font-size: rem(16);
