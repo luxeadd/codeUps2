@@ -978,6 +978,483 @@ body {
 	text-align: center;
 }
 
+.form__topText {
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+	line-height: 1.7;
+}
+
+.form__topText + .form__topText {
+	margin-top: 0.625rem;
+}
+
+.form__contents {
+	margin-top: 3.125rem;
+}
+
+.form__content + .form__content {
+	margin-top: 2.5rem;
+}
+
+.form__contentButton {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1.875rem 3.125rem;
+	justify-content: center;
+	width: 100%;
+}
+
+.form__contentButton > p {
+	display: inherit;
+	flex-wrap: inherit;
+	gap: inherit;
+	justify-content: inherit;
+	width: inherit;
+}
+
+.form__contentCheckbox {
+	text-align: center;
+}
+
+.form__head {
+	align-items: center;
+	display: flex;
+	gap: 0.625rem;
+}
+
+.form__title {
+	font-size: 1rem;
+	font-weight: 700;
+	line-height: 1;
+}
+
+.form__required {
+	color: red;
+	font-size: 1rem;
+	font-weight: bold;
+	line-height: 1;
+}
+
+.form__item {
+	margin-top: 0.625rem;
+}
+
+.formText {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #222;
+	border-radius: 0;
+	color: inherit;
+	font-family: inherit;
+	font-size: 1rem;
+	padding: 0.3125rem 0.625rem;
+	width: 100%;
+}
+
+.formText:focus {
+	box-shadow: none;
+	outline: 2px solid #007bff;
+}
+
+.formText::-moz-placeholder {
+	color: inherit;
+}
+
+.formText::placeholder {
+	color: inherit;
+}
+
+.formText:focus::-moz-placeholder {
+	color: transparent;
+}
+
+.formText:focus::placeholder {
+	color: transparent;
+}
+
+.formRadio {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	gap: 0.3125rem 0.625rem;
+	padding-left: 0.625rem;
+}
+
+.formRadio > p {
+	display: inherit;
+	flex-direction: inherit;
+	flex-wrap: inherit;
+	gap: inherit;
+	padding-left: inherit;
+}
+
+.formRadio br {
+	display: none;
+}
+
+.formRadio label {
+	position: relative;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.formRadio input[type=radio] {
+	clip: rect(0 0 0 0);
+	-webkit-clip-path: inset(50%);
+	border: 0;
+	clip-path: inset(50%);
+	height: 100%;
+	overflow: hidden;
+	padding: 0;
+	position: absolute;
+	white-space: nowrap;
+	width: 100%;
+}
+
+.formRadio input[type=radio]:focus-visible + span {
+	outline: 2px solid red;
+}
+
+.formRadio input[type=radio] + span {
+	cursor: pointer;
+	display: inline-block;
+	padding: 5px 15px 6px 25px;
+	position: relative;
+}
+
+.formRadio input[type=radio] + span::before {
+	-webkit-transform: translateY(-50%);
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.16);
+	border-radius: 50%;
+	content: "";
+	display: block;
+	height: 16px;
+	left: 0;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	width: 16px;
+}
+
+.formRadio input[type=radio] + span::after {
+	-webkit-transform: translateY(-50%);
+	background: #007bff;
+	border: 1px solid transparent;
+	border-radius: 50%;
+	content: "";
+	height: 8px;
+	left: 4px;
+	opacity: 0;
+	padding: 2px;
+	position: absolute;
+	top: 50%;
+	transform: translateY(-50%);
+	transition: all 0.3s ease 0s;
+	width: 8px;
+}
+
+.formRadio input[type=radio]:checked + span::after {
+	opacity: 1;
+}
+
+.formSelect {
+	border: 1px solid #222;
+	font-size: 1rem;
+	max-width: 100%;
+	padding: 0.3125rem 0.625rem;
+	width: -moz-fit-content;
+	width: fit-content;
+}
+
+.formSelect:focus {
+	box-shadow: none;
+	outline: 2px solid #007bff;
+}
+
+.formSelect::-moz-placeholder {
+	color: inherit;
+}
+
+.formSelect::placeholder {
+	color: inherit;
+}
+
+.formSelect:focus::-moz-placeholder {
+	color: transparent;
+}
+
+.formSelect:focus::placeholder {
+	color: transparent;
+}
+
+.formTextArea {
+	-moz-appearance: none;
+	-webkit-appearance: none;
+	appearance: none;
+	background-color: #fff;
+	background-image: none;
+	border: 1px solid #222;
+	border-radius: 0;
+	color: inherit;
+	font-size: 1rem;
+	min-height: 200px;
+	padding: 0.3125rem 0.625rem;
+	resize: none;
+	white-space: pre-wrap;
+	width: 100%;
+}
+
+.formTextArea:focus {
+	box-shadow: none;
+	outline: 2px solid #007bff;
+}
+
+.formTextArea::-moz-placeholder {
+	color: inherit;
+}
+
+.formTextArea::placeholder {
+	color: inherit;
+}
+
+.formTextArea:focus::-moz-placeholder {
+	color: transparent;
+}
+
+.formTextArea:focus::placeholder {
+	color: transparent;
+}
+
+.formCheck {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.3125rem 0.625rem;
+	padding-left: 0.625rem;
+}
+
+.formCheck > p {
+	display: inherit;
+	flex-direction: inherit;
+	flex-wrap: inherit;
+	gap: inherit;
+	padding-left: inherit;
+}
+
+.formCheck label {
+	position: relative;
+}
+
+.formCheck input[type=checkbox] {
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.formCheck input[type=checkbox] + span {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+	line-height: 1.714285;
+	margin: 0 0.2em 0;
+	padding: 0 0 0 1.5625rem;
+	position: relative;
+}
+
+.formCheck input[type=checkbox] + span::before {
+	-webkit-transform: translateY(-50%);
+	background: #fff;
+	border: 1px solid #222;
+	border-radius: 2px;
+	content: "";
+	display: block;
+	height: 1em;
+	left: 0;
+	position: absolute;
+	top: 0.9375rem;
+	width: 1em;
+}
+
+.formCheck input[type=checkbox] + span::after {
+	-webkit-transform: translateY(-50%) rotate(-45deg);
+	border-bottom: 3px solid #007bff;
+	border-left: 3px solid #007bff;
+	content: "";
+	display: block;
+	height: 0.6em;
+	left: 1px;
+	opacity: 0;
+	position: absolute;
+	top: 0.75rem;
+	transform: translateY(-50%) rotate(-45deg);
+	transition: all 0.3s ease 0s;
+	width: 1em;
+}
+
+.formCheck input[type=checkbox]:checked + span::before {
+	background: #fff;
+}
+
+.formCheck input[type=checkbox]:checked + span::after {
+	opacity: 1;
+}
+
+.formCheck input[type=checkbox]:focus-visible + span {
+	outline: 2px solid #007bff;
+}
+
+.formAgree label {
+	position: relative;
+}
+
+.formAgree input[type=checkbox] {
+	cursor: pointer;
+	height: 100%;
+	left: 0;
+	margin: 0;
+	opacity: 0;
+	position: absolute;
+	top: 0;
+	width: 100%;
+	z-index: 10;
+}
+
+.formAgree input[type=checkbox] + span {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 1.125rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	line-height: 1.714285;
+	margin: 0 0.2em 0;
+	padding: 0 0 0 26px;
+	position: relative;
+}
+
+.formAgree input[type=checkbox] + span::before {
+	-webkit-transform: translateY(-50%);
+	background: #fff;
+	border: 1px solid rgba(0, 0, 0, 0.16);
+	border-radius: 2px;
+	content: "";
+	display: block;
+	height: 1em;
+	left: 0;
+	position: absolute;
+	top: 17px;
+	width: 1em;
+}
+
+.formAgree input[type=checkbox] + span::after {
+	-webkit-transform: translateY(-50%) rotate(-45deg);
+	border-bottom: 3px solid #000;
+	border-left: 3px solid #000;
+	content: "";
+	display: block;
+	height: 0.6em;
+	left: 1px;
+	opacity: 0;
+	position: absolute;
+	top: 13px;
+	transform: translateY(-50%) rotate(-45deg);
+	transition: all 0.3s ease 0s;
+	width: 1em;
+}
+
+.formAgree input[type=checkbox]:checked + span::before {
+	background: #fff;
+}
+
+.formAgree input[type=checkbox]:checked + span::after {
+	opacity: 1;
+}
+
+.formAgree input[type=checkbox]:focus-visible + span {
+	outline: 2px solid #007bff;
+}
+
+.formBtn {
+	-webkit-appearance: none;
+	-webkit-text-decoration: none;
+	background-color: #000;
+	background-image: none;
+	border: none;
+	border-radius: 0;
+	color: #fff;
+	cursor: pointer;
+	display: inline-block;
+	flex: 0 0 12.5rem;
+	font-size: 0.875rem;
+	font-weight: 700;
+	margin: 0;
+	padding: 0.625rem;
+	text-decoration: none;
+	transition: background 0.3s ease;
+}
+
+.formBtn.is_confirm {
+	background: #ccc;
+}
+
+.formBtn.is_disable {
+	background: #706e6e;
+}
+
+.formBtn:hover,
+.formBtn:focus {
+	outline: none;
+}
+
+.formBtn::-moz-foucus-inner {
+	border: none;
+	padding: 0;
+}
+
+.formBtn:focus-visible {
+	outline: 1px solid #007bff;
+}
+
+.formPolicy {
+	background: #fff;
+	border: 1px solid #333;
+	height: 25rem;
+	overflow-y: scroll;
+	padding: 0.625rem;
+	width: 100%;
+}
+
+.formPolicy .formPolicy__text {
+	font-size: 1rem;
+	letter-spacing: 0.04em;
+	line-height: 1.7142;
+}
+
+.wpcf7-spinner {
+	display: none;
+}
+
+.wpcf7-list-item {
+	margin: 0;
+}
+
+.wpcf7-response-output {
+	display: none;
+}
+
+.wpcf7 form .wpcf7-response-output {
+	border: none;
+}
+
 .p-header {
 	background: rgba(255, 255, 255, 0.6);
 	color: #111;
@@ -3093,6 +3570,14 @@ body {
 
 .pc-only {
 	display: none;
+}
+
+@media (hover: hover) {
+
+.formBtn:hover {
+	background-color: #007bff;
+}
+
 }
 
 @media screen and (min-width: 600px) {

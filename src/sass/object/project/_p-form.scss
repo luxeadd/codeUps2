@@ -1,0 +1,472 @@
+@use "global" as *;
+
+$formBorderColor: #222;
+$formRequiredColor: red;
+$formOutLineColor: #007bff;
+$formRadioCheckColor: #007bff;
+$formCheckBoxColor: #007bff;
+$formAgreeColorColor: #000;
+$formSubmitHoverColor: #007bff;
+$formDisableColor: #706e6e;
+$formConfirmColor: #ccc;
+
+// フォームレイアウト
+.form {
+}
+
+.form__topText {
+  font-size: rem(16);
+  line-height: 1.7;
+  letter-spacing: 0.04em;
+}
+
+.form__topText + .form__topText {
+  margin-top: rem(10);
+}
+
+.form__contents {
+  margin-top: rem(50);
+}
+
+.form__content + .form__content {
+  margin-top: rem(40);
+}
+
+.form__contentButton {
+  display: flex;
+  flex-wrap: wrap;
+  gap: rem(30) rem(50);
+  justify-content: center;
+  width: 100%;
+
+  //コンタクトフォーム7対策
+  > p {
+    display: inherit;
+    flex-wrap: inherit;
+    gap: inherit;
+    justify-content: inherit;
+    width: inherit;
+  }
+}
+
+.form__contentCheckbox {
+  text-align: center;
+}
+
+.form__head {
+  display: flex;
+  align-items: center;
+  gap: rem(10);
+}
+
+.form__title {
+  font-size: rem(16);
+  line-height: 1;
+  font-weight: 700;
+}
+
+.form__required {
+  font-size: rem(16);
+  font-weight: bold;
+  line-height: 1;
+  color: $formRequiredColor;
+}
+
+.form__item {
+  margin-top: rem(10);
+}
+
+//テキスト
+.formText {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #222;
+  border-radius: 0;
+  color: inherit;
+  font-family: inherit;
+  font-size: rem(16);
+  padding: rem(5) rem(10);
+  width: 100%;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+//ラジオボタン
+.formRadio {
+  display: flex;
+  flex-wrap: wrap;
+  flex-direction: row;
+  padding-left: rem(10);
+  gap: rem(5) rem(10);
+
+  //contact-form7対策
+  > p {
+    display: inherit;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+    padding-left: inherit;
+    gap: inherit;
+  }
+
+  br {
+    display: none;
+  }
+
+  label {
+    position: relative;
+    width: fit-content;
+  }
+  input[type="radio"] {
+    position: absolute;
+    white-space: nowrap;
+    width: 100%;
+    height: 100%;
+    border: 0;
+    padding: 0;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+  }
+
+  input[type="radio"]:focus-visible + span {
+    outline: 2px solid $formRequiredColor;
+  }
+
+  input[type="radio"] + span {
+    cursor: pointer;
+    display: inline-block;
+    padding: 5px 15px 6px 25px;
+    position: relative;
+  }
+
+  input[type="radio"] + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 50%;
+    content: "";
+    display: block;
+    height: 16px;
+    left: 0;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+  }
+
+  input[type="radio"] + span::after {
+    -webkit-transform: translateY(-50%);
+    background: $formRadioCheckColor;
+    border: 1px solid transparent;
+    border-radius: 50%;
+    content: "";
+    height: 8px;
+    left: 4px;
+    opacity: 0;
+    padding: 2px;
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    transition: all 0.3s ease 0s;
+    width: 8px;
+  }
+
+  input[type="radio"]:checked + span::after {
+    opacity: 1;
+  }
+}
+
+//セレクトボタン
+.formSelect {
+  border: 1px solid $formBorderColor;
+  font-size: rem(16);
+  padding: rem(5) rem(10);
+  width: fit-content;
+  max-width: 100%;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+// テキストエリア
+.formTextArea {
+  -moz-appearance: none;
+  -webkit-appearance: none;
+  appearance: none;
+  background-color: #fff;
+  background-image: none;
+  border: 1px solid #222;
+  border-radius: 0;
+  color: inherit;
+  font-size: rem(16);
+  padding: rem(5) rem(10);
+  min-height: 200px;
+  width: 100%;
+  white-space: pre-wrap;
+  resize: none;
+
+  &:focus {
+    outline: 2px solid $formOutLineColor;
+    box-shadow: none;
+  }
+  &::placeholder {
+    color: inherit;
+  }
+  &:focus::placeholder {
+    color: transparent;
+  }
+}
+
+// チェックボックス
+.formCheck {
+  display: flex;
+  flex-wrap: wrap;
+  padding-left: rem(10);
+  gap: rem(5) rem(10);
+
+  //contact-form7対策
+  > p {
+    display: inherit;
+    flex-wrap: inherit;
+    flex-direction: inherit;
+    padding-left: inherit;
+    gap: inherit;
+  }
+
+  label {
+    position: relative;
+  }
+
+  input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] + span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2em 0;
+    padding: 0 0 0 rem(25);
+    position: relative;
+    font-size: rem(16);
+    letter-spacing: 0.04em;
+    line-height: 1.714285;
+  }
+
+  input[type="checkbox"] + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid $formBorderColor;
+    border-radius: 2px;
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    left: 0;
+    position: absolute;
+    top: rem(15);
+  }
+
+  input[type="checkbox"] + span::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    border-bottom: 3px solid $formCheckBoxColor;
+    border-left: 3px solid $formCheckBoxColor;
+    content: "";
+    display: block;
+    height: 0.6em;
+    left: 1px;
+    opacity: 0;
+    position: absolute;
+    top: rem(12);
+    transform: translateY(-50%) rotate(-45deg);
+    transition: all 0.3s ease 0s;
+    width: 1em;
+  }
+
+  input[type="checkbox"]:checked + span::before {
+    background: #fff;
+  }
+  input[type="checkbox"]:checked + span::after {
+    opacity: 1;
+  }
+  input[type="checkbox"]:focus-visible + span {
+    outline: 2px solid $formOutLineColor;
+  }
+}
+
+// プライバシーチェック
+.formAgree {
+  label {
+    position: relative;
+  }
+
+  input[type="checkbox"] {
+    width: 100%;
+    height: 100%;
+    margin: 0;
+    opacity: 0;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    cursor: pointer;
+  }
+
+  input[type="checkbox"] + span {
+    cursor: pointer;
+    display: inline-block;
+    margin: 0 0.2em 0;
+    padding: 0 0 0 26px;
+    position: relative;
+    font-size: rem(18);
+    font-weight: $bold;
+    letter-spacing: 0.04em;
+    line-height: 1.714285;
+  }
+
+  input[type="checkbox"] + span::before {
+    -webkit-transform: translateY(-50%);
+    background: #fff;
+    border: 1px solid rgba(0, 0, 0, 0.16);
+    border-radius: 2px;
+    content: "";
+    display: block;
+    width: 1em;
+    height: 1em;
+    left: 0;
+    position: absolute;
+    top: 17px;
+  }
+
+  input[type="checkbox"] + span::after {
+    -webkit-transform: translateY(-50%) rotate(-45deg);
+    border-bottom: 3px solid $formAgreeColorColor;
+    border-left: 3px solid $formAgreeColorColor;
+    content: "";
+    display: block;
+    height: 0.6em;
+    left: 1px;
+    opacity: 0;
+    position: absolute;
+    top: 13px;
+    transform: translateY(-50%) rotate(-45deg);
+    transition: all 0.3s ease 0s;
+    width: 1em;
+  }
+
+  input[type="checkbox"]:checked + span::before {
+    background: #fff;
+  }
+  input[type="checkbox"]:checked + span::after {
+    opacity: 1;
+  }
+  input[type="checkbox"]:focus-visible + span {
+    outline: 2px solid $formOutLineColor;
+  }
+}
+
+// 送信ボタン
+.formBtn {
+  -webkit-appearance: none;
+  background-color: #000;
+  background-image: none;
+  border: none;
+  border-radius: 0;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-size: rem(14);
+  font-weight: 700;
+  margin: 0;
+  flex: 0 0 rem(200);
+  padding: rem(10);
+  text-decoration: none;
+  transition: background 0.3s ease;
+
+  @media (hover: hover) {
+    &:hover {
+      background-color: $formSubmitHoverColor;
+    }
+  }
+
+  // 確認ボタン用
+  &.is_confirm {
+    background: $formConfirmColor;
+  }
+  // 非活性状態用
+  &.is_disable {
+    background: $formDisableColor;
+  }
+
+  &:hover,
+  &:focus {
+    outline: none;
+  }
+
+  &::-moz-foucus-inner {
+    border: none;
+    padding: 0;
+  }
+  &:focus-visible {
+    outline: 1px solid $formOutLineColor;
+  }
+}
+
+// プライバシーポリシー
+.formPolicy {
+  width: 100%;
+  height: rem(400);
+  padding: rem(10);
+  border: 1px solid #333;
+  background: #fff;
+  overflow-y: scroll;
+
+  .formPolicy__text {
+    font-size: rem(16);
+    letter-spacing: 0.04em;
+    line-height: 1.7142;
+  }
+}
+
+//contact form7 使用時に発生するためリセット
+.wpcf7-spinner {
+  display: none;
+}
+.wpcf7-list-item {
+  margin: 0;
+}
+//送信時のメッセージを消したければ記述
+.wpcf7-response-output {
+  display: none;
+}
+//必須未入力箇所囲み線なし
+.wpcf7 form .wpcf7-response-output {
+  border: none;
+}
