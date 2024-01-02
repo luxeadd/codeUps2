@@ -37,16 +37,16 @@
               <div class="form__item">
                 <div class="formRadio">
                   <label>
-                    <input type="radio" name="radio-name"><span>制作依頼</span>
+                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="制作依頼" checked><span>制作依頼</span>
                   </label>
                   <label>
-                    <input type="radio" name="radio-name"><span>採用</span>
+                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="採用"><span>採用</span>
                   </label>
                   <label>
-                    <input type="radio" name="radio-name"><span>IR</span>
+                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name" value="IR"><span>IR</span>
                   </label>
                   <label>
-                    <input type="radio" name="radio-name"><span>その他</span>
+                    <input type="radio" class="formRadio__item js_inputRadio" name="radio-name"  value="その他"><span>その他</span>
                   </label>
                 </div>
               </div>
@@ -60,16 +60,16 @@
               <div class="form__item">
                 <div class="formCheck">
                   <label>
-                    <input class="formCheck__item" type="checkbox" name="check1"><span>備考1</span>
+                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check1" checked><span>備考1</span>
                   </label>
                   <label>
-                    <input class="formCheck__item" type="checkbox" name="check2"><span>備考2</span>
+                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check2"><span>備考2</span>
                   </label>
                   <label>
-                    <input class="formCheck__item" type="checkbox" name="check3"><span>備考3</span>
+                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check3"><span>備考3</span>
                   </label>
                   <label>
-                    <input class="formCheck__item" type="checkbox" name="check4"><span>備考4</span>
+                    <input class="formCheck__item js_inputCheck" type="checkbox" name="check4"><span>備考4</span>
                   </label>
                 </div>
               </div>
@@ -80,7 +80,7 @@
                 <p class="form__title">会社名・団体名</p>
               </div>
               <div class="form__item">
-                <input class="formText" type="text">
+                <input class="formText js_inputCompany" type="text">
               </div>
             </div>
 
@@ -90,7 +90,7 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <input class="formText" type="text">
+                <input class="formText js_inputName" type="text">
               </div>
             </div>
 
@@ -100,7 +100,7 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <input class="formText" type="email">
+                <input class="formText js_inputEmail" type="email">
               </div>
             </div>
 
@@ -109,10 +109,9 @@
                 <p class="form__title">電話番号</p>
               </div>
               <div class="form__item">
-                <input class="formText" type="tel">
+                <input class="formText js_inputTel" type="tel">
               </div>
             </div>
-
 
             <div class="form__content">
               <div class="form__head">
@@ -120,7 +119,7 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <select name="ご用件" class="formSelect">
+                <select name="ご用件" class="formSelect js_inputSelect">
                   <option value="">ご用件を選択</option>
                   <option value="">セレクトAセレクトAセレクトA</option>
                   <option value="">セレクトBセレクトBセレクトB</option>
@@ -135,7 +134,7 @@
                 <span class="form__required">必須</span>
               </div>
               <div class="form__item">
-                <textarea class="formTextArea"></textarea>
+                <textarea class="formTextArea js_inputTextArea"></textarea>
               </div>
             </div>
 
@@ -181,8 +180,104 @@
             <div class="form__content form__contentCheckbox">
               <div class="formAgree">
                 <label>
-                  <input class="formAgree__item" type="checkbox" name=""><span>個人情報の取り扱いについて同意のうえ送信します。</span>
+                  <input class="formAgree__item js_inputAgree" type="checkbox" name=""><span>個人情報の取り扱いについて同意のうえ送信します。</span>
                 </label>
+              </div>
+            </div>
+
+            <div class="form__content form__contentButton">
+              <button class="formBtn js_inputConfirm">確認</button>
+            </div>
+          </div>
+        </div>
+
+
+        <!-- 確認画面 -->
+        <div class="form confirmArea">
+          <div class="form__contents">
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">お問い合わせ種別</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmRadio"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">お問い合わせ種別2</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmCheck"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">会社名・団体名</p>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmCompany"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">お名前</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmName"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">メールアドレス</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmMail"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">電話番号</p>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmTel"></span>
+              </div>
+            </div>
+
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">ご用件</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmSelect"></span>
+              </div>
+            </div>
+
+            <div class="form__content">
+              <div class="form__head">
+                <p class="form__title">お問い合わせ内容</p>
+                <span class="form__required">必須</span>
+              </div>
+              <div class="form__item">
+                <span class="confirmAreaItem js_confirmTextArea"></span>
+              </div>
+            </div>
+
+
+            <div class="form__content">
+              <div class="form__item">
+                <span class="confirmAreaItem">プライバシーポリシーに同意する</span>
               </div>
             </div>
 
