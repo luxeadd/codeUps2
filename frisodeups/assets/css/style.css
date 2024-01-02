@@ -1406,6 +1406,10 @@ body {
 	background: #706e6e;
 }
 
+.formBtn.is_remove {
+	background: #706e6e;
+}
+
 .formBtn:disabled {
 	background: #ccc;
 	pointer-events: none;

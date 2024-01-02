@@ -44,6 +44,7 @@ var confirmRadio = document.querySelector(".js_confirmRadio");
 var confirmCheck = document.querySelector(".js_confirmCheck");
 var confirmSelect = document.querySelector(".js_confirmSelect");
 var confirmAgree = document.querySelector(".js_confirmAgree");
+var btnRemove = document.querySelector(".js_confirmRemove");
 
 // input[text],input[textAre]入力項目と確認用要素の値を同期
 if (fields && fields.length > 0) {
@@ -138,6 +139,22 @@ btnConfirm.addEventListener("click", function () {
   confirmArea.style.display = "block";
   inputArea.style.display = "none";
   overlay.style.display = "block";
+  overlay.style.opacity = "1";
+  setTimeout(function () {
+    overlay.style.opacity = "0";
+    setTimeout(function () {
+      overlay.style.display = "none";
+    }, 500);
+  }, 500);
+  window.scrollTo(0, 0);
+});
+
+// 戻るボタンを押して入力画面を表示
+btnRemove.addEventListener("click", function () {
+  confirmArea.style.display = "none";
+  inputArea.style.display = "block";
+  overlay.style.display = "block";
+  overlay.style.opacity = "1";
   setTimeout(function () {
     overlay.style.opacity = "0";
     setTimeout(function () {

@@ -9,6 +9,7 @@ $formAgreeColorColor: #000;
 $formSubmitHoverColor: #007bff;
 $formDisableColor: #ccc;
 $formConfirmColor: #706e6e;
+$formRemoveColor: #706e6e;
 
 // フォームレイアウト
 .form {
@@ -419,6 +420,11 @@ $formConfirmColor: #706e6e;
   // 確認ボタン用
   &.is_confirm {
     background: $formConfirmColor;
+  }
+
+  // 戻るボタン用
+  &.is_remove {
+    background: $formRemoveColor;
   }
 
   &:disabled {

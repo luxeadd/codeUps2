@@ -283,6 +283,7 @@
             </div>
 
             <div class="form__content form__contentButton">
+              <button class="formBtn is_remove js_confirmRemove" type="button">戻る</button>
               <input class="formBtn" type="submit" value="送信">
             </div>
           </div>
