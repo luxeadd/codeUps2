@@ -132,9 +132,9 @@ function createOverlay() {
   document.body.appendChild(overlay);
   return overlay;
 }
+var overlay = createOverlay();
 
 // 確認ボタンを押して確認画面を表示
-var overlay = createOverlay();
 btnConfirm.addEventListener("click", function () {
   confirmArea.style.display = "block";
   inputArea.style.display = "none";

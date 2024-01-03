@@ -135,10 +135,9 @@ function createOverlay() {
   document.body.appendChild(overlay);
   return overlay;
 }
-
-// 確認ボタンを押して確認画面を表示
 let overlay = createOverlay();
 
+// 確認ボタンを押して確認画面を表示
 btnConfirm.addEventListener("click", function () {
   confirmArea.style.display = "block";
   inputArea.style.display = "none";
