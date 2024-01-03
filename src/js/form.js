@@ -2,7 +2,7 @@
 // お問い合わせフォーム確認画面(ContactForm7用)
 // -----------------------
 
-// input[text],input[textAre]入力項目と確認用要素のペアを作成
+// input[text],input[textAre]入力項目と確認用項目のペアを作成
 let fields = [
   {
     input: document.querySelector(".js_inputCompany"),
@@ -44,7 +44,8 @@ let confirmSelect = document.querySelector(".js_confirmSelect");
 let confirmAgree = document.querySelector(".js_confirmAgree");
 let btnRemove = document.querySelector(".js_confirmRemove");
 
-// input[text],input[textAre]入力項目と確認用要素の値を同期
+
+// input[text],input[textAre]入力項目と確認用要素の値を同期して表示
 if (fields && fields.length > 0) {
   fields.forEach(function (field) {
     if (field.input && field.confirm) {
@@ -59,7 +60,8 @@ if (fields && fields.length > 0) {
   });
 }
 
-// ラジオボタン選択で確認用項目に表示
+
+// ラジオボタン選択した要素を確認用項目に表示
 function updateConfirmRadio() {
   const selectedRadio = [...radioButtons].find((radio) => radio.checked);
   confirmRadio.textContent = selectedRadio ? selectedRadio.value : "";
@@ -71,7 +73,8 @@ radioButtons.forEach((radio) => {
 
 updateConfirmRadio();
 
-// チェックボックス選択で確認用項目に表示
+
+// チェックボックス選択した要素を確認用項目に表示
 function updateConfirmCheck() {
   let selectedValues = Array.from(checkboxes)
     .filter(function (checkbox) {
@@ -90,13 +93,15 @@ checkboxes.forEach(function (checkbox) {
 
 updateConfirmCheck();
 
-// セレクトボックス選択で確認用項目に表示
+
+// セレクトボックス選択した要素を確認用項目に表示
 inputSelect.addEventListener("change", function () {
   let selectedOption = inputSelect.options[inputSelect.selectedIndex];
   confirmSelect.textContent = selectedOption.text;
 });
 
-// 同意チェックの変更を監視して確認要素にテキストを挿入
+
+// プライバシーポリシー同意チェックの変更を監視して確認項目にテキストを挿入
 inputAgree.addEventListener("change", function () {
   if (inputAgree.checked) {
     confirmAgree.textContent = "プライバシーポリシーに同意します";
@@ -105,73 +110,8 @@ inputAgree.addEventListener("change", function () {
   }
 });
 
-// 初期値の設定
-fields.forEach(function (field) {
-  if (field.input.type === "radio" && field.input.checked) {
-    confirmRadio.textContent = field.input.value;
-  } else if (field.input.type === "textarea") {
-    field.confirm.innerHTML = field.input.value.replace(/\n/g, "<br>");
-  } else {
-    field.confirm.textContent = field.input.value;
-  }
-});
 
-// ラジオボタンとチェックボックスの初期値を反映
-updateConfirmCheck();
-updateConfirmRadio();
-
-// 確認ボタンクリック時のオーバーレイ要素を作成
-function createOverlay() {
-  let overlay = document.createElement("div");
-  overlay.className = "overlay";
-  overlay.style.position = "fixed";
-  overlay.style.top = "0";
-  overlay.style.left = "0";
-  overlay.style.width = "100%";
-  overlay.style.height = "100%";
-  overlay.style.backgroundColor = "rgba(255, 255, 255, 1)";
-  overlay.style.display = "none";
-  overlay.style.transition = "opacity .5s";
-  document.body.appendChild(overlay);
-  return overlay;
-}
-let overlay = createOverlay();
-
-// 確認ボタンを押して確認画面を表示
-btnConfirm.addEventListener("click", function () {
-  confirmArea.style.display = "block";
-  inputArea.style.display = "none";
-  overlay.style.display = "block";
-  overlay.style.opacity = "1";
-
-  setTimeout(function () {
-    overlay.style.opacity = "0";
-    setTimeout(function () {
-      overlay.style.display = "none";
-    }, 500);
-  }, 500);
-
-  window.scrollTo(0, 0);
-});
-
-// 戻るボタンを押して入力画面を表示
-btnRemove.addEventListener("click", function () {
-  confirmArea.style.display = "none";
-  inputArea.style.display = "block";
-  overlay.style.display = "block";
-  overlay.style.opacity = "1";
-
-  setTimeout(function () {
-    overlay.style.opacity = "0";
-    setTimeout(function () {
-      overlay.style.display = "none";
-    }, 500);
-  }, 500);
-
-  window.scrollTo(0, 0);
-});
-
-// 必須項目すべて入力でボタン活性化（ContactForm7用）
+// 必須項目すべて入力で確認ボタン活性化（ContactForm7用）
 const requiredContainers = document.querySelectorAll(".wpcf7-validates-as-required");
 
 const isCheckboxGroupFilled = (container) => {
@@ -203,6 +143,61 @@ if (requiredContainers.length > 0) {
     });
   });
 }
+
+
+// 確認ボタンクリック時のオーバーレイ要素を作成
+function createOverlay() {
+  let overlay = document.createElement("div");
+  overlay.className = "overlay";
+  overlay.style.position = "fixed";
+  overlay.style.top = "0";
+  overlay.style.left = "0";
+  overlay.style.width = "100%";
+  overlay.style.height = "100%";
+  overlay.style.backgroundColor = "rgba(255, 255, 255, 1)";
+  overlay.style.display = "none";
+  overlay.style.transition = "opacity .5s";
+  document.body.appendChild(overlay);
+  return overlay;
+}
+let overlay = createOverlay();
+
+
+// 確認ボタンクリックで確認画面を表示
+btnConfirm.addEventListener("click", function () {
+  confirmArea.style.display = "block";
+  inputArea.style.display = "none";
+  overlay.style.display = "block";
+  overlay.style.opacity = "1";
+
+  setTimeout(function () {
+    overlay.style.opacity = "0";
+    setTimeout(function () {
+      overlay.style.display = "none";
+    }, 500);
+  }, 500);
+
+  window.scrollTo(0, 0);
+});
+
+
+// 戻るボタンクリックで入力画面を表示
+btnRemove.addEventListener("click", function () {
+  confirmArea.style.display = "none";
+  inputArea.style.display = "block";
+  overlay.style.display = "block";
+  overlay.style.opacity = "1";
+
+  setTimeout(function () {
+    overlay.style.opacity = "0";
+    setTimeout(function () {
+      overlay.style.display = "none";
+    }, 500);
+  }, 500);
+
+  window.scrollTo(0, 0);
+});
+
 
 // 送信ボタンクリックでサンクス画面へ遷移
 document.addEventListener(
