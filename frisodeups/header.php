@@ -73,7 +73,7 @@
       <nav class="p-header__pc-menu p-pc-menu ">
         <ul class="p-pc-menu__items">
           <li class="p-pc-menu__item"><a href="<?php echo $news; ?>">お知らせ</a></li><!-- /.p-pc-menu__item -->
-          <li class="p-pc-menu__item"><a href="<?php echo $content; ?>">プランB</a></li><!-- /.p-pc-menu__item -->
+          <li class="p-pc-menu__item"><a href="<?php echo $content; ?>">プランA</a></li><!-- /.p-pc-menu__item -->
           <li class="p-pc-menu__item"><a href="<?php echo $works; ?>">コレクション</a></li><!-- /.p-pc-menu__item -->
           <li class="p-pc-menu__item"><a href="<?php echo $overview; ?>">会社紹介</a></li><!-- /.p-pc-menu__item -->
           <li class="p-pc-menu__item"><a href="<?php echo $blog; ?>">ブログ</a></li><!-- /.p-pc-menu__item -->
