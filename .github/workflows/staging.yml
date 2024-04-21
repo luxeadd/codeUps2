@@ -12,9 +12,9 @@ jobs:
     runs-on: ubuntu-latest    # 仮想環境の指定
 
     steps:
-        - uses: actions/checkout@v2   # チェックアウトアクション（https://github.com/actions/checkout）
+        - uses: actions/checkout@v4   # チェックアウトアクション（https://github.com/actions/checkout）
         - name: furisodeUps
-            uses: luxeadd/furisodeUps@4.2.0     # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+            uses: MrSquaare/ssh-setup-action@84ff9deaad2dbb1be99efe9080a849fe66139149 # v2.0.1
             with:
                 server: ${{ secrets.STAGING_SERVER }}       # FTPのサーバーアドレス
                 username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
