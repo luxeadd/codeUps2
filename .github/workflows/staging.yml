@@ -3,6 +3,8 @@ name: Staging Deploy
 on:                       # トリガーの設定
   push:                   # プッシュ時に実行
     branches: [main]    # ブランチの指定
+  pull_request:
+    branches: [main]
       
 jobs:
   FTP-Deploy-Action:
@@ -11,8 +13,8 @@ jobs:
 
     steps:
         - uses: actions/checkout@v2   # チェックアウトアクション（https://github.com/actions/checkout）
-        - name: FTP-Deploy-Action
-            uses: SamKirkland/FTP-Deploy-Action@4.2.0     # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+        - name: furisodeUps
+            uses: luxeadd/furisodeUps@4.2.0     # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
             with:
                 server: ${{ secrets.STAGING_SERVER }}       # FTPのサーバーアドレス
                 username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
