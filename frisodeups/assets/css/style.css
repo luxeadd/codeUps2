@@ -2553,7 +2553,6 @@ body {
 .p-pc-menu__item a {
 	-webkit-text-decoration: none;
 	align-items: center;
-	color: red;
 	display: flex;
 	height: 100%;
 	justify-content: center;
