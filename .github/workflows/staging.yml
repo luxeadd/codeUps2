@@ -15,7 +15,7 @@ jobs:
           uses: actions/checkout@v4   # チェックアウトアクション（https://github.com/actions/checkout）
 
         - name: Sync files
-          uses: SamKirkland/FTP-Deploy-Action@4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
           with:
               server: ${{ secrets.STAGING_SERVER }}       # FTPのサーバーアドレス
               username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
