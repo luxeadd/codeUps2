@@ -21,4 +21,4 @@ jobs:
               username: ${{ secrets.PROD_USERNAME }}   # FTPのユーザー名名
               password: ${{ secrets.PROD_PASSWORD }}   # FTPのパスワード
               local-dir: ./frisodeups/                           # アップロードしたいファイルのパス
-              server-dir: /sassy-make.com/public_html/maindelectory.sassy-make.com/wp-content/themes/frisodeups/      # アップロード先のリモートパス
+              server-dir: /sassy-make.com/public_html/maindelectory/wp-content/themes/frisodeups/      # アップロード先のリモートパス
