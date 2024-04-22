@@ -1,0 +1,24 @@
+name: Production Deploy
+
+on:                     # トリガーの設定
+  release:              # リリースイベント時に実行
+    branches: [main]    # ブランチの指定
+  workflow_dispatch:
+      
+jobs:
+  deploy:
+    name: Deploy   # ジョブの名前
+    runs-on: ubuntu-latest    # ランナー環境の指定
+
+    steps:
+        - name: Get latest codel
+          uses: actions/checkout@v4   # チェックアウトアクション（https://github.com/actions/checkout）
+
+        - name: Sync files
+          uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
+          with:
+              server: ${{ secrets.PROD_SERVER }}       # FTPのサーバーアドレス
+              username: ${{ secrets.PROD_USERNAME }}   # FTPのユーザー名名
+              password: ${{ secrets.PROD_PASSWORD }}   # FTPのパスワード
+              local-dir: ./frisodeups/                           # アップロードしたいファイルのパス
+              server-dir: /sassy-make.com/public_html/maindelectory.sassy-make.com/wp-content/themes/frisodeups/      # アップロード先のリモートパス
