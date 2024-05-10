@@ -10,7 +10,7 @@ jobs:
     name: Deploy   # ジョブの名前
     runs-on: ubuntu-latest    # ランナー環境の指定
     env:
-      BASE_FOLDER: ../dist  # GitHub Actions 実行時の出力先を設定
+      BASE_FOLDER: ../dist  # GitHub Actions 実行時の出力先を設定 (WPの場合のみ使用)
 
     steps:
         - name: Get latest codel
