@@ -25,6 +25,9 @@ jobs:
             npx gulp build
           working-directory: _gulp
         
+        - name: List output files in dist
+          run: ls -la ./dist
+        
         - name: List output files
           run: ls -la ${{ env.BASE_FOLDER }}
 
