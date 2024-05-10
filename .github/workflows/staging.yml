@@ -23,7 +23,7 @@ jobs:
           run: |
             cd _gulp  # _gulp フォルダに移動
             npm install
-            npm run build
+            npx gulp build
 
         - name: Sync files
           uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
