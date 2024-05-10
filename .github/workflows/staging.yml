@@ -9,8 +9,6 @@ jobs:
   deploy:
     name: Deploy   # ジョブの名前
     runs-on: ubuntu-latest    # ランナー環境の指定
-    env:
-      BASE_FOLDER: ./dist  # GitHub Actions 実行時の出力先を設定
 
     steps:
         - name: Get latest codel
@@ -20,15 +18,12 @@ jobs:
           uses: actions/setup-node@v2
           with:
             node-version: '20'
-
-        - name: Create Distribution Directory # BASE_FOLDERフォルダの作成
-          run: mkdir -p ${{ env.BASE_FOLDER }}
           
         - name: Install dependencies and build
           run: |
-            cd _gulp  # _gulp フォルダに移動
             npm install
             npx gulp build
+          working-directory: _gulp
         
         - name: List output files
           run: ls -la ${{ env.BASE_FOLDER }}
