@@ -10,7 +10,7 @@ jobs:
     name: Deploy   # ジョブの名前
     runs-on: ubuntu-latest    # ランナー環境の指定
     env:
-      BASE_FOLDER: /path/to/basefolder  # ジョブ全体で使用する環境変数を設定
+      BASE_FOLDER: ./dist  # ジョブ全体で使用する環境変数を設定
 
     steps:
         - name: Get latest codel
