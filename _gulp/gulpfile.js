@@ -17,43 +17,78 @@ const imageminMozjpeg = require("imagemin-mozjpeg"); // JPEGを最適化する�
 const imageminPngquant = require("imagemin-pngquant"); // PNGを最適化するためのモジュール
 const changed = require("gulp-changed"); // 変更されたファイルのみを対象にするためのモジュール
 const del = require("del"); // ファイルやディレクトリを削除するためのモジュール
-const webp = require('gulp-webp');//webp変換
-const rename = require('gulp-rename');//ファイル名変更
+const webp = require("gulp-webp"); //webp変換
+const rename = require("gulp-rename"); //ファイル名変更
 const replace = require("gulp-replace"); // 文字列や正規表現による置換
 
-// 読み込み先
+//---------------------------------------------------------------------
+//      初期設定
+// --------------------------------------------------------------------
+// コンパイル設定 ejsを使う場合は[ejs]、WordPressを使う場合は[wp]を指定
+const compilingSet = "wp";
+// WordPressの場合ローカル環境のプロジェクト名とテーマ名を指定
+const wpProject = "codeups2";
+const wpThemeName = "frisodeups"; //style.cssのテーマ名も変更すること
+const wpLocalUrl = "http://codeups2.local/"; //ローカル環境のURL
+//出力先のWordPressテーマのフォルダパス
+//Local
+const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Local Sites/${wpProject}/app/public/wp-content/themes/${wpThemeName}`;
+//MAMP
+// const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Desktop/mamp/${wpProject}/wp-content/themes/${wpThemeName}`;
+//docker
+// const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Desktop/docker/${wpProject}/wordpress/wp-content/themes/${wpThemeName}`;
+// -----------------------------------------------------------------------
+
+// 読み込み元
 const srcPath = {
   css: "../src/sass/**/*.scss",
   js: "../src/js/**/*",
-  img: "../src/images/**/*",
+  img: "../src/img/**/*",
   ejs: "../src/ejs/**/*.ejs",
-  // html: ["../src/**/*.html", "!./node_modules/**"],
+  wp: "../src/WordPress/**/*",
 };
 
-// html反映用
-const destPath = {
-  all: "../dist/**/*",
-  css: "../dist/assets/css/",
-  js: "../dist/assets/js/",
-  img: "../dist/assets/images/",
-  ejs: "../dist/",
-};
-
-// WordPress反映用
-const themeName = "frisodeups"; // WordPress theme name
-const destWpPath = {
-	css: `../${themeName}/assets/css/`,
-	js: `../${themeName}/assets/js/`,
-	img: `../${themeName}/assets/images/`,
+// 出力先
+let destPath;
+if (compilingSet === "ejs") {
+  destPath = {
+    all: "../dist/**/*",
+    css: "../dist/assets/css/",
+    js: "../dist/assets/js/",
+    img: "../dist/assets/img/",
+    ejs: "../dist/",
+  };
+} else if (compilingSet === "wp") {
+  destPath = {
+    all: `${wpFolder}/**/*`,
+    css: `${wpFolder}/assets/css/`,
+    js: `${wpFolder}/assets/js/`,
+    img: `${wpFolder}/assets/img/`,
+    wp: `${wpFolder}/`,
+  };
 }
 
-const browsers = ["last 2 versions", "> 5%", "ie = 11", "not ie <= 10", "ios >= 8", "and_chr >= 5", "Android >= 5"];
+const browsers = [
+  "last 2 versions",
+  "> 5%",
+  "ie = 11",
+  "not ie <= 10",
+  "ios >= 8",
+  "and_chr >= 5",
+  "Android >= 5",
+];
 
 // HTMLファイルのコピー
 // const htmlCopy = () => {
 //   return src(srcPath.html).pipe(dest(destPath.html));
 // };
 
+// WordPressファイルのコピー
+const wpCopy = () => {
+  return src(srcPath.wp).pipe(dest(destPath.wp));
+};
+
+// Sassのコンパイル
 const cssSass = () => {
   // ソースファイルを指定
   return (
@@ -86,19 +121,19 @@ const cssSass = () => {
       )
       // CSSプロパティをアルファベット順にソートし、未来のCSS構文を使用可能に
       .pipe(
-        postcss([cssdeclsort({
-          order: "alphabetical"
-        })]
-        ),
-        postcssPresetEnv({ browsers: 'last 2 versions' })
+        postcss([
+          cssdeclsort({
+            order: "alphabetical",
+          }),
+        ]),
+        postcssPresetEnv({ browsers: "last 2 versions" })
       )
       // メディアクエリを統合
       .pipe(mmq())
+      // コンパイル済みのCSSファイルを出力先に保存
       // ソースマップを書き出し
       .pipe(sourcemaps.write("./"))
-      // コンパイル済みのCSSファイルを出力先に保存
       .pipe(dest(destPath.css))
-      .pipe(dest(destWpPath.css))
       // Sassコンパイルが完了したことを通知
       .pipe(
         notify({
@@ -114,7 +149,7 @@ const imgImagemin = () => {
   // 画像ファイルを指定
   return (
     src(srcPath.img)
-      // 変更があった画像のみ処理対象に
+      //変更があった画像のみ処理対象に
       .pipe(changed(destPath.img))
       // 画像を圧縮
       .pipe(
@@ -140,15 +175,14 @@ const imgImagemin = () => {
           }
         )
       )
+      // 以下HTML用（WordPressの場合にはコメントアウト）
       .pipe(dest(destPath.img))
-      .pipe(dest(destWpPath.img))
-      .pipe(webp())//webpに変換
-      // 圧縮済みの画像ファイルを出力先に保存
-      .pipe(dest(destWpPath.img))
+      .pipe(webp())
+      .pipe(dest(destPath.img))
   );
 };
 
-// js圧縮
+// js
 const jsBabel = () => {
   // JavaScriptファイルを指定
   return (
@@ -167,16 +201,13 @@ const jsBabel = () => {
       )
       // 圧縮済みのファイルを出力先に保存
       .pipe(dest(destPath.js))
-      .pipe(dest(destWpPath.js))
   );
 };
 
 //  EJS
 const ejs = require("gulp-ejs");
-const htmlbeautify = require("gulp-html-beautify");
-
+const htmlBeautify = require("gulp-html-beautify");
 const srcEjsDir = "../src/ejs";
-
 const ejsCompile = (done) => {
   src([srcEjsDir + "/*.ejs", "!" + srcEjsDir + "/_*.ejs"])
     .pipe(
@@ -193,7 +224,7 @@ const ejsCompile = (done) => {
     .pipe(rename({ extname: ".html" }))
     .pipe(replace(/^[ \t]*\n/gim, ""))
     .pipe(
-      htmlbeautify({
+      htmlBeautify({
         indent_size: 2,
         indent_char: " ",
         max_preserve_newlines: 0,
@@ -206,39 +237,47 @@ const ejsCompile = (done) => {
 };
 
 // ブラウザーシンク
-// const browserSyncOption = {
-//   notify: false,
-//   server: "../dist/",
-// };
-// const browserSyncFunc = () => {
-//   browserSync.init(browserSyncOption);
-// };
-// const browserSyncReload = (done) => {
-//   browserSync.reload();
-//   done();
-// };
+let browserSyncOption = {
+  notify: false,
+};
+if (compilingSet === 'ejs') {
+  browserSyncOption.server = "../dist/";
+} else if (compilingSet === 'wp') {
+  browserSyncOption.proxy = wpLocalUrl;
+}
+const browserSyncFunc = () => {
+  browserSync.init(browserSyncOption);
+};
+const browserSyncReload = (done) => {
+  browserSync.reload();
+  done();
+};
 
 // ファイルの削除
 const clean = () => {
-  return del(destWpPath.all, { force: true });
+  return del(destPath.all, { force: true });
 };
+
 // ファイルの監視
-// const watchFiles = () => {
-//   watch(srcPath.css, series(cssSass, browserSyncReload));
-//   watch(srcPath.js, series(jsBabel, browserSyncReload));
-//   watch(srcPath.img, series(imgImagemin, browserSyncReload));
-//   watch(srcPath.ejs, series(ejsCompile, browserSyncReload));
-// };
 const watchFiles = () => {
-  watch(srcPath.css, series(cssSass));
-  watch(srcPath.js, series(jsBabel));
-  watch(srcPath.img, series(imgImagemin));
-  watch(srcPath.ejs, series(ejsCompile));
+  watch(srcPath.css, series(cssSass, browserSyncReload));
+  watch(srcPath.js, series(jsBabel, browserSyncReload));
+  watch(srcPath.img, series(imgImagemin, browserSyncReload));
+  watch(srcPath.ejs, series(ejsCompile, browserSyncReload));
+  watch(srcPath.wp, series(wpCopy, browserSyncReload));
 };
 
-// ブラウザシンク付きの開発用タスク
-// exports.default = series(series(cssSass, jsBabel, imgImagemin, ejsCompile), parallel(watchFiles, browserSyncFunc));
-exports.default = series(series(cssSass, jsBabel, imgImagemin, ejsCompile), parallel(watchFiles));
-
-// 本番用タスク
-exports.build = series(clean, cssSass, jsBabel, imgImagemin, ejsCompile);
+// タスクの実行
+if (compilingSet === "ejs") {
+  exports.default = series(
+    series(cssSass, jsBabel, imgImagemin, ejsCompile),
+    parallel(watchFiles, browserSyncFunc)
+  );
+  exports.build = series(clean, cssSass, jsBabel, imgImagemin, ejsCompile);
+} else if (compilingSet === "wp") {
+  exports.default = series(
+    series(cssSass, jsBabel, imgImagemin, wpCopy),
+    parallel(watchFiles, browserSyncFunc)
+  );
+  exports.build = series(clean, cssSass, jsBabel, imgImagemin, wpCopy);
+}
