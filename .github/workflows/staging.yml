@@ -20,8 +20,11 @@ jobs:
           uses: actions/setup-node@v2
           with:
            node-version: '20'
+
+        - name: Create Distribution Directory
+          run: mkdir -p ${{ env.BASE_FOLDER }}
           
-        - name: 🔨 Build Project
+        - name: Install dependencies and build
           run: |
             cd _gulp  # _gulp フォルダに移動
             npm install
