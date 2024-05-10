@@ -9,6 +9,8 @@ jobs:
   deploy:
     name: Deploy   # ジョブの名前
     runs-on: ubuntu-latest    # ランナー環境の指定
+    env:
+      BASE_FOLDER: /path/to/basefolder  # ジョブ全体で使用する環境変数を設定
 
     steps:
         - name: Get latest codel
@@ -31,5 +33,5 @@ jobs:
               server: ${{ secrets.STAGING_SERVER }}       # FTPのサーバーアドレス
               username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
               password: ${{ secrets.STAGING_PASSWORD }}   # FTPのパスワード
-              local-dir: ./frisodeups/                           # アップロードしたいファイルのパス
+              local-dir: ./dist/                           # アップロードしたいファイルのパス
               server-dir: /sassy-make.com/public_html/pf05.sassy-make.com/wp-content/themes/frisodeups/      # アップロード先のリモートパス
