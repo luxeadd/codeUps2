@@ -1,4 +1,4 @@
-name: Staging Deploy
+name: Staging Deploy # テスト環境へのデプロイ
 
 on:                     # トリガーの設定
   push:                 # プッシュ時に実行
@@ -9,27 +9,23 @@ jobs:
   deploy:
     name: Deploy   # ジョブの名前
     runs-on: ubuntu-latest    # ランナー環境の指定
+    env:
+      BASE_FOLDER: ../dist  # GitHub Actions 実行時の出力先を設定
 
     steps:
         - name: Get latest codel
           uses: actions/checkout@v4   # チェックアウトアクション（https://github.com/actions/checkout）
 
-        - name: Use Node.js 20
+        - name: Use Node.js 20  # Node.jsのバージョン指定(distフォルダが存在している場合は不要)
           uses: actions/setup-node@v2
           with:
             node-version: '20'
           
-        - name: Install dependencies and build
+        - name: Install dependencies and build # コンパイルの実行 (distフォルダが存在している場合は不要)
           run: |
             npm install
             npx gulp build
           working-directory: _gulp
-        
-        - name: List output files in dist
-          run: ls -la ./dist
-        
-        - name: List output files
-          run: ls -la ${{ env.BASE_FOLDER }}
 
         - name: Sync files
           uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
@@ -38,4 +34,4 @@ jobs:
               username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
               password: ${{ secrets.STAGING_PASSWORD }}   # FTPのパスワード
               local-dir: ./dist/                           # アップロードしたいファイルのパス
-              server-dir: /sassy-make.com/public_html/pf05.sassy-make.com/wp-content/themes/frisodeups/      # アップロード先のリモートパス
+              server-dir: /sassy-make.com/public_html/pf05.sassy-make.com/wp-content/themes/frisodeups/    # アップロード先のリモートパス

@@ -32,8 +32,7 @@ const wpThemeName = "frisodeups"; //style.cssのテーマ名も変更するこ�
 const wpLocalUrl = "http://codeups2.local/"; //ローカル環境のURL
 //出力先のWordPressテーマのフォルダパス
 //Local
-const wpFolder = `../dist`;
-// const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Local Sites/${wpProject}/app/public/wp-content/themes/${wpThemeName}`;
+const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Local Sites/${wpProject}/app/public/wp-content/themes/${wpThemeName}`;
 //MAMP
 // const wpFolder = process.env.BASE_FOLDER || `/Users/kounosatoshi/Desktop/mamp/${wpProject}/wp-content/themes/${wpThemeName}`;
 //docker
