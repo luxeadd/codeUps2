@@ -1,9 +1,9 @@
 name: Staging Deploy # テスト環境へのデプロイ
 
-on:                     # トリガーの設定
-  push:                 # プッシュ時に実行
-    branches: [main]    # ブランチの指定
-  workflow_dispatch:
+# on:                     # トリガーの設定
+#   push:                 # プッシュ時に実行
+#     branches: [main]    # ブランチの指定
+#   workflow_dispatch:
       
 jobs:
   deploy:
@@ -34,4 +34,4 @@ jobs:
               username: ${{ secrets.STAGING_USERNAME }}   # FTPのユーザー名名
               password: ${{ secrets.STAGING_PASSWORD }}   # FTPのパスワード
               local-dir: ./dist/                           # アップロードしたいファイルのパス
-              server-dir: /sassy-make.com/public_html/pf05.sassy-make.com/wp-content/themes/frisodeups/    # アップロード先のリモートパス
+              # server-dir: /sassy-make.com/public_html/pf05.sassy-make.com/wp-content/themes/frisodeups/    # アップロード先のリモートパス
