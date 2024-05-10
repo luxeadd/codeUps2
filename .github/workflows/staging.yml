@@ -19,9 +19,9 @@ jobs:
         - name: Use Node.js 20
           uses: actions/setup-node@v2
           with:
-           node-version: '20'
+            node-version: '20'
 
-        - name: Create Distribution Directory
+        - name: Create Distribution Directory # BASE_FOLDERフォルダの作成
           run: mkdir -p ${{ env.BASE_FOLDER }}
           
         - name: Install dependencies and build
@@ -29,6 +29,9 @@ jobs:
             cd _gulp  # _gulp フォルダに移動
             npm install
             npx gulp build
+        
+        - name: List output files
+          run: ls -la ${{ env.BASE_FOLDER }}
 
         - name: Sync files
           uses: SamKirkland/FTP-Deploy-Action@v4.3.5   # FTPアップロードアクション（https://github.com/SamKirkland/FTP-Deploy-Action）
